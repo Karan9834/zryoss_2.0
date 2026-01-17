@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, Play } from "lucide-react";
 
 const customStyles = `
@@ -21,7 +22,7 @@ const Button = ({ children, primary, outline, className = "", onClick }) => {
   const baseStyles = "px-5 py-3 rounded-xl font-semibold transition-all duration-500 flex items-center justify-center gap-2 relative overflow-hidden group/btn cursor-pointer text-sm";
   const primaryStyles = primary ? "bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg shadow-orange-500/30 hover:shadow-orange-500/60 hover:scale-105 hover:-translate-y-1 before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/30 before:via-white/10 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700 before:skew-x-12" : "";
   const outlineStyles = outline ? "border-2 border-orange-500/50 text-orange-400 hover:bg-gradient-to-r hover:from-orange-500/20 hover:to-orange-600/20 hover:border-orange-500 backdrop-blur-sm hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/30" : "";
-  
+
   return (
     <button className={`${baseStyles} ${primaryStyles} ${outlineStyles} ${className}`} onClick={onClick}>
       <span className="relative z-10 flex items-center justify-center gap-2">
@@ -65,9 +66,8 @@ export default function Hero() {
           muted
           playsInline
           onLoadedData={() => setVideoLoaded(true)}
-          className={`w-full h-full object-cover transition-opacity duration-1000 ${
-            videoLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          className={`w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? "opacity-100" : "opacity-0"
+            }`}
         >
           <source
             src="https://cdn.pixabay.com/video/2021/08/01/83542-583271427_large.mp4"
@@ -111,13 +111,17 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6">
-              <Button primary>
-                Explore How ZRYOSS Works
-                <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
-              </Button>
-              <Button outline>
-                Join as IPP / BPP
-              </Button>
+              <Link to="/platform/how-zryoss-works">
+                <Button primary>
+                  Explore How ZRYOSS Works
+                  <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link to="/apply">
+                <Button outline>
+                  Join as IPP / BPP
+                </Button>
+              </Link>
             </div>
 
             {/* Demo Link */}

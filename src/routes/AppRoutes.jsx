@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Apply from "../pages/Contact/Apply";
+import Contact from "../pages/Contact/Contact";
 
 // Platform
 import WhatIsZryoss from "../pages/Platform/WhatIsZryoss";
@@ -84,6 +85,7 @@ export default function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/apply" element={<Apply />} />
+      <Route path="/contact" element={<Contact />} />
 
       {/* Platform */}
       <Route path="/platform/what-is-zryoss" element={<WhatIsZryoss />} />

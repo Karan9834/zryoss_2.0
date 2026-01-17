@@ -52,10 +52,10 @@ export default function Footer() {
             </p>
 
             <div className="flex items-center gap-4">
-              <SocialIcon icon={<Twitter size={18} />} />
-              <SocialIcon icon={<Linkedin size={18} />} />
-              <SocialIcon icon={<Instagram size={18} />} />
-              <SocialIcon icon={<Facebook size={18} />} />
+              {/* <SocialIcon icon={<Twitter size={18} />} /> */}
+              <SocialIcon href="https://www.linkedin.com/company/zryoss/" icon={<Linkedin size={18} />} />
+              <SocialIcon href="https://www.instagram.com/zryoss_dc/" icon={<Instagram size={18} />} />
+              <SocialIcon href="https://www.facebook.com/profile.php?id=61585341822507" icon={<Facebook size={18} />} />
             </div>
           </div>
 
@@ -237,10 +237,12 @@ function FooterLink({ to, children }) {
   );
 }
 
-function SocialIcon({ icon }) {
+function SocialIcon({ icon, href = "#" }) {
   return (
     <a
-      href="#"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-gray-400 hover:bg-orange-500 hover:text-white transition-all duration-300"
     >
       {icon}

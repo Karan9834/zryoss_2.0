@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { User, Users, Globe, Target, Briefcase, Zap, ArrowRight } from "lucide-react";
 
 const FadeUp = ({ children, delay = 0 }) => {
@@ -66,8 +67,10 @@ const models = [
 ];
 
 export default function PartnershipModels() {
+  const navigate = useNavigate();
+
   const handleJoinClick = (type) => {
-    console.log(`Join as ${type} clicked`);
+    navigate("/apply");
   };
 
   return (

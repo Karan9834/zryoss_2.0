@@ -65,7 +65,7 @@ export default function HeroContact() {
       setIsSubmitting(true);
       // Simulate API call
       setTimeout(() => {
-        alert("Message sent successfully!");
+        alert("Message sent to sales@zryoss.com successfully!");
         setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
         setIsSubmitting(false);
       }, 1500);
@@ -94,27 +94,6 @@ export default function HeroContact() {
             </h1>
           </div>
 
-          {/* PRESENCE */}
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-5">
-              Our Presence
-            </p>
-            <div className="flex items-center gap-4">
-              {countries.map((c) => (
-                <div
-                  key={c.name}
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center overflow-hidden"
-                >
-                  <img
-                    src={c.flag}
-                    alt={c.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* CONTACT DETAILS */}
           <div className="space-y-4 text-sm text-gray-300 max-w-md leading-relaxed">
             <p>
@@ -123,9 +102,15 @@ export default function HeroContact() {
               Gurgaon, Haryana, India
             </p>
 
-            <p className="underline underline-offset-4">info@zryoss.com</p>
+            <p>
+              <a href="mailto:sales@zryoss.com" className="hover:text-orange-400 transition-colors underline underline-offset-4">sales@zryoss.com</a>
+              <span className="mx-2">/</span>
+              <a href="mailto:info@zryoss.com" className="hover:text-orange-400 transition-colors underline underline-offset-4">info@zryoss.com</a>
+            </p>
 
-            <p className="underline underline-offset-4">+91 98765 43210</p>
+            <p>
+              <a href="tel:01169269633" className="hover:text-orange-400 transition-colors underline underline-offset-4">011 6926 9633</a>
+            </p>
           </div>
         </div>
 
