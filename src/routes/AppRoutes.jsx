@@ -37,7 +37,7 @@ import IPPOverview from "../pages/Partnership/IPP/Overview";
 import IPPBrandCreation from "../pages/Partnership/IPP/BrandCreation";
 import IPPBusinessModel from "../pages/Partnership/IPP/BusinessModel";
 import IPPOperations from "../pages/Partnership/IPP/Operations";
-import IPPSupport from "../pages/Partnership/IPP/Support";
+import ClientHandlingDemo from "../pages/Partnership/IPP/Client&DemoHandling";
 import IPPSubPartner from "../pages/Partnership/IPP/SubPartner";
 import IPPAccountManagement from "../pages/Partnership/IPP/AccountManagement";
 
@@ -123,7 +123,7 @@ export default function AppRoutes() {
       <Route path="/partnership/ipp/brand-creation" element={<IPPBrandCreation />} />
       <Route path="/partnership/ipp/business-model" element={<IPPBusinessModel />} />
       <Route path="/partnership/ipp/operations" element={<IPPOperations />} />
-      <Route path="/partnership/ipp/support" element={<IPPSupport />} />
+      <Route path="/partnership/ipp/support" element={<ClientHandlingDemo />} />
       <Route path="/partnership/ipp/sub-partner" element={<IPPSubPartner />} />
       <Route path="/partnership/ipp/account-management" element={<IPPAccountManagement />} />
 
