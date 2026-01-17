@@ -1,16 +1,28 @@
-import PlatformSection from "./PlatformSection";
+import React from "react";
 
-export default function TechnologyPlatform() {
-  return (
-    <PlatformSection
-      title="Technology Platform"
-      intro="Zryoss leverages technology to standardize workflows, manage vendors, and ensure operational visibility across the ecosystem."
-      points={[
-        "CRM & lead management systems",
-        "Vendor and delivery tracking",
-        "Reporting and analytics",
-        "Security and compliance monitoring"
-      ]}
-    />
-  );
+// Sections
+import TechHeroSection from "../../components/system/technology/TechHeroSection";
+import TechWhyMattersSection from "../../components/system/technology/TechWhyMattersSection";
+import TechIncludesSection from "../../components/system/technology/TechIncludesSection";
+import TechAutomationSection from "../../components/system/technology/TechAutomationSection";
+import TechVisibilitySection from "../../components/system/technology/TechVisibilitySection";
+import TechInfrastructureSection from "../../components/system/technology/TechInfrastructureSection";
+import TechIntegrationSection from "../../components/system/technology/TechIntegrationSection";
+import TechGrowthSection from "../../components/system/technology/TechGrowthSection";
+import TechFinalCTASection from "../../components/system/technology/TechFinalCTASection";
+
+export default function Technology() {
+    return (
+        <>
+            <TechHeroSection />
+            <TechWhyMattersSection />
+            <TechIncludesSection />
+            <TechAutomationSection />
+            <TechVisibilitySection />
+            <TechInfrastructureSection />
+            <TechIntegrationSection />
+            <TechGrowthSection />
+            <TechFinalCTASection />
+        </>
+    );
 }
