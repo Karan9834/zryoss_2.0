@@ -20,6 +20,7 @@ export default function IPPRoles() {
             and how Zryoss supports them operationally.
           </p>
         </FadeUp>
+        
 
         {/* CORE RESPONSIBILITIES */}
         <div className="mt-24 grid md:grid-cols-3 gap-8">
