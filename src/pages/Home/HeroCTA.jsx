@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, MessageSquare } from "lucide-react";
 
+import { Link } from "react-router-dom";
+
 /* FadeUp stays same */
 const FadeUp = ({ children, delay = 0 }) => (
   <motion.div
@@ -45,18 +47,21 @@ export default function HeroCTA() {
 
           <FadeUp delay={0.3}>
             <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <button className="group inline-flex items-center gap-4 px-7 py-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition-all">
+              <Link
+                to="/contact"
+                className="group inline-flex items-center gap-4 px-7 py-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition-all"
+              >
                 Apply as Partner
                 <ArrowRight
                   size={18}
                   className="group-hover:translate-x-1 transition-transform"
                 />
-              </button>
+              </Link>
 
-              <button className="inline-flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors">
+              {/* <button className="inline-flex items-center gap-3 text-gray-400 hover:text-orange-400 transition-colors">
                 <MessageSquare size={18} />
                 Talk to Zryoss Team
-              </button>
+              </button> */}
             </div>
           </FadeUp>
         </div>
