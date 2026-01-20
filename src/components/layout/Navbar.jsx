@@ -16,6 +16,8 @@ import {
   Rocket,
   FileText,
   Users,
+  HeartPulse,
+  GraduationCap,
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -121,7 +123,7 @@ export default function Navbar() {
             { title: "Kryoss Softech", to: "/ecosystem/brands/kryoss-softech", icon: <Building2 className="w-4 h-4" /> },
             { title: "Clink HR", to: "/ecosystem/brands/clink-hr", icon: <Building2 className="w-4 h-4" /> },
             { title: "Vyombiz", to: "/ecosystem/brands/vyombiz", icon: <Building2 className="w-4 h-4" /> },
-            { title: "Edulinker", to: "/ecosystem/brands/edulinker", icon: <Building2 className="w-4 h-4" /> },
+            { title: "Edulinkers", to: "/ecosystem/brands/edulinker", icon: <Building2 className="w-4 h-4" /> },
             { title: "Medikryoss", to: "/ecosystem/brands/medikryoss", icon: <Building2 className="w-4 h-4" /> },
           ],
         },
@@ -181,9 +183,9 @@ export default function Navbar() {
             { title: "HR & Recruitment Solutions", to: "/solutions/hr-recruitment", icon: <Users className="w-4 h-4" /> },
             { title: "Digital Marketing Solutions", to: "/solutions/digital-marketing", icon: <Rocket className="w-4 h-4" /> },
             { title: "Business Consulting & Setup", to: "/solutions/business-consulting", icon: <Lightbulb className="w-4 h-4" /> },
-            { title: "Legal & Compliance Services", to: "/solutions/legal-compliance", icon: <Shield className="w-4 h-4" /> },
+            { title: "Healthcare & MedTech Solutions", to: "/solutions/healthcare", icon: <HeartPulse className="w-4 h-4" /> },
             { title: "Real Estate & Interior Solutions", to: "/solutions/real-estate-interior", icon: <Building2 className="w-4 h-4" /> },
-            { title: "Custom Industry Solutions", to: "/solutions/custom-industry", icon: <ArrowRight className="w-4 h-4" /> },
+            { title: "Education & EdTech Solutions", to: "/solutions/education", icon: <GraduationCap className="w-4 h-4" /> },
           ],
         },
       ],

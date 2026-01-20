@@ -56,9 +56,9 @@ import ITSoftware from "../pages/Solutions/ITSoftware";
 import HRRecruitment from "../pages/Solutions/HRRecruitment";
 import DigitalMarketing from "../pages/Solutions/DigitalMarketing";
 import BusinessConsulting from "../pages/Solutions/BusinessConsulting";
-import LegalCompliance from "../pages/Solutions/LegalCompliance";
+import Healthcare from "../pages/Solutions/Healthcare";
 import RealEstateInterior from "../pages/Solutions/RealEstateInterior";
-import CustomIndustry from "../pages/Solutions/CustomIndustry";
+import Education from "../pages/Solutions/Education";
 
 // Operations
 import OperationsOverview from "../pages/Operations/Overview";
@@ -142,9 +142,9 @@ export default function AppRoutes() {
       <Route path="/solutions/hr-recruitment" element={<HRRecruitment />} />
       <Route path="/solutions/digital-marketing" element={<DigitalMarketing />} />
       <Route path="/solutions/business-consulting" element={<BusinessConsulting />} />
-      <Route path="/solutions/legal-compliance" element={<LegalCompliance />} />
+      <Route path="/solutions/healthcare" element={<Healthcare />} />
       <Route path="/solutions/real-estate-interior" element={<RealEstateInterior />} />
-      <Route path="/solutions/custom-industry" element={<CustomIndustry />} />
+      <Route path="/solutions/education" element={<Education />} />
 
       {/* Operations */}
       <Route path="/operations" element={<OperationsOverview />} />
