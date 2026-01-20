@@ -157,12 +157,14 @@ const Overview = () => {
               {
                 icon: <GraduationCap size={32} />,
                 title: "Education & EdTech",
-                desc: "Learning platforms, school/institute software, and education technology systems."
+                desc: "Learning platforms, school/institute software, and education technology systems.",
+                to: "/solutions/education"
               },
               {
                 icon: <HeartPulse size={32} />,
                 title: "Healthcare & MedTech",
-                desc: "Clinical applications, hospital management systems, pharma ERPs, and healthcare SaaS."
+                desc: "Clinical applications, hospital management systems, pharma ERPs, and healthcare SaaS.",
+                to: "/solutions/healthcare"
               },
               {
                 icon: <Building2 size={32} />,
