@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import FadeUp from "../../components/animations/FadeUp";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
+import { useEmail } from "../../hooks/useEmail";
 
 const posts = [
   {
@@ -30,11 +31,13 @@ const posts = [
 ];
 
 export default function Blog() {
+  const formRef = useRef();
+  const { sendEmail, loading } = useEmail();
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState("idle"); // idle, loading, success, error
+  const [status, setStatus] = useState("idle"); // idle, success
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
@@ -48,13 +51,14 @@ export default function Blog() {
       return;
     }
 
-    setStatus("loading");
+    const result = await sendEmail(formRef);
 
-    // Simulate API
-    setTimeout(() => {
+    if (result.success) {
       setStatus("success");
       setEmail("");
-    }, 1500);
+    } else {
+      setError("Failed to subscribe. Please try again later.");
+    }
   };
 
   return (
@@ -176,11 +180,12 @@ export default function Blog() {
                     <span className="font-medium">Thanks for subscribing! Check your inbox soon.</span>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="mt-10 max-w-xl relative">
+                  <form ref={formRef} onSubmit={handleSubmit} className="mt-10 max-w-xl relative">
                     <div className="flex flex-col sm:flex-row gap-4">
                       <div className="flex-1 relative">
                         <input
                           type="email"
+                          name="email"
                           value={email}
                           onChange={(e) => {
                             setEmail(e.target.value);
@@ -196,14 +201,14 @@ export default function Blog() {
 
                       <button
                         type="submit"
-                        disabled={status === "loading"}
+                        disabled={loading}
                         className="px-8 py-4 rounded-xl bg-orange-500 
                                    text-white font-semibold
                                    hover:bg-orange-600
                                    hover:shadow-[0_0_30px_rgba(249,115,22,0.45)]
                                    transition disabled:opacity-70 disabled:cursor-wait"
                       >
-                        {status === "loading" ? "Subscribing..." : "Subscribe →"}
+                        {loading ? "Subscribing..." : "Subscribe →"}
                       </button>
                     </div>
                   </form>

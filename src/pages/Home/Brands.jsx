@@ -10,6 +10,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import { useMotionValue, useSpring, animate } from "framer-motion";
 
 /* Animation wrapper */
 const FadeUp = ({ children, delay = 0 }) => (
@@ -96,37 +97,86 @@ const brands = [
   },
 ];
 
-// duplicate for infinite loop
-const infiniteBrands = [...brands, ...brands, ...brands];
+// 5 sets to provide the largest possible buffer for fast flicks
+const infiniteBrands = [...brands, ...brands, ...brands, ...brands, ...brands];
 
 export default function Brands() {
   const trackRef = useRef(null);
-  const [x, setX] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const x = useMotionValue(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [trackWidth, setTrackWidth] = useState(0);
 
   const SPEED = 0.4;
 
+  // Handle initialization and window resizing
   useEffect(() => {
-    if (paused) return;
-
-    let raf;
-    const animate = () => {
-      setX((prev) => {
-        const width = trackRef.current.scrollWidth / 3;
-        if (Math.abs(prev) >= width) {
-          return 0;
-        }
-        return prev - SPEED;
-      });
-      raf = requestAnimationFrame(animate);
+    const updateWidth = () => {
+      if (trackRef.current) {
+        const w = trackRef.current.scrollWidth / 5;
+        setTrackWidth(w);
+        // Set initial position if it's the first time
+        if (x.get() === 0) x.set(-2 * w);
+      }
     };
 
-    raf = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(raf);
-  }, [paused]);
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
 
-  const handlePrev = () => setX((prev) => prev + 300);
-  const handleNext = () => setX((prev) => prev - 300);
+    // Fallback for dynamic content loading
+    const timer = setTimeout(updateWidth, 1000);
+
+    return () => {
+      window.removeEventListener("resize", updateWidth);
+      clearTimeout(timer);
+    };
+  }, []);
+
+  // High-performance listener for instantaneous infinite wrapping
+  useEffect(() => {
+    if (!trackWidth) return;
+
+    const unsubscribe = x.on("change", (latest) => {
+      let currentX = latest;
+      const w = trackWidth;
+
+      // Aggressive wrapping: handles any velocity/flick magnitude
+      if (currentX <= -3 * w) {
+        while (currentX <= -3 * w) currentX += w;
+        x.set(currentX);
+      } else if (currentX >= -w) {
+        while (currentX >= -w) currentX -= w;
+        x.set(currentX);
+      }
+    });
+
+    return () => unsubscribe();
+  }, [trackWidth]);
+
+  // Auto-scrolling loop
+  useEffect(() => {
+    if (isDragging) return;
+
+    let raf;
+    const animateLoop = () => {
+      x.set(x.get() - SPEED);
+      raf = requestAnimationFrame(animateLoop);
+    };
+
+    raf = requestAnimationFrame(animateLoop);
+    return () => cancelAnimationFrame(raf);
+  }, [isDragging]);
+
+  const handleDragEnd = () => {
+    setIsDragging(false);
+  };
+
+  const handlePrev = () => {
+    animate(x, x.get() + 300, { type: "spring", stiffness: 300, damping: 30 });
+  };
+
+  const handleNext = () => {
+    animate(x, x.get() - 300, { type: "spring", stiffness: 300, damping: 30 });
+  };
 
   return (
     <section
@@ -162,19 +212,21 @@ export default function Brands() {
             <ChevronRight />
           </button>
 
-          <div className="overflow-hidden">
+          <div className="overflow-hidden cursor-grab active:cursor-grabbing">
             <motion.div
               ref={trackRef}
               className="flex gap-6"
-              style={{ transform: `translateX(${x}px)` }}
+              style={{ x }}
+              drag="x"
+              dragTransition={{ power: 0.1, timeConstant: 200 }} // Controlled momentum
+              onDragStart={() => setIsDragging(true)}
+              onDragEnd={handleDragEnd}
             >
               {infiniteBrands.map((brand, i) => (
                 <motion.div
                   key={i}
                   className="flex-shrink-0 w-[calc(100%-2rem)] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] xl:w-[calc(25%-1.125rem)]"
                   whileHover={{ scale: 1.03 }}
-                  onMouseEnter={() => setPaused(true)}
-                  onMouseLeave={() => setPaused(false)}
                 >
                   <div className="h-[420px] rounded-3xl border border-white/5 bg-[#0a0a0a] overflow-hidden relative group cursor-pointer">
                     {/* Gradient Background */}

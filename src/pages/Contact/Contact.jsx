@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Mail,
   Phone,
@@ -9,6 +9,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import FadeUp from "../../components/animations/FadeUp";
+import { useEmail } from "../../hooks/useEmail";
 
 /* ---------- INPUT STYLES ---------- */
 const INPUT_CLASSES = `
@@ -23,6 +24,8 @@ const INPUT_CLASSES = `
 
 /* ---------- MAIN COMPONENT ---------- */
 export default function Contact() {
+  const formRef = useRef();
+  const { sendEmail, loading } = useEmail();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -31,7 +34,6 @@ export default function Contact() {
     message: "",
   });
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const mapEmbedUrl =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.435967072558!2d77.0366883!3d28.436341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1879c2980d23%3A0x676e2730626359d9!2sJMD%20Megapolis!5e0!3m2!1sen!2sin!4v1700000000000";
@@ -69,12 +71,11 @@ export default function Contact() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      setIsSubmitting(true);
-      setTimeout(() => {
-        setIsSubmitting(false);
+      const result = await sendEmail(formRef);
+      if (result.success) {
         alert("Enquiry submitted successfully!");
         setFormData({
           fullName: "",
@@ -83,7 +84,9 @@ export default function Contact() {
           contactNumber: "",
           message: "",
         });
-      }, 1500);
+      } else {
+        alert("Failed to send enquiry. Please try again later.");
+      }
     }
   };
 
@@ -170,6 +173,7 @@ export default function Contact() {
           <div className="lg:col-span-7">
             <FadeUp delay={0.3}>
               <form
+                ref={formRef}
                 onSubmit={handleSubmit}
                 className="bg-[#0c0c0c] border border-white/10 rounded-[2.5rem] p-8 md:p-12"
               >
@@ -246,11 +250,11 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={loading}
                     className="w-full bg-white text-black hover:bg-orange-500 hover:text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Submitting..." : "Submit Enquiry"}
-                    {!isSubmitting && <ArrowRight size={18} />}
+                    {loading ? "Submitting..." : "Submit Enquiry"}
+                    {!loading && <ArrowRight size={18} />}
                   </button>
                 </div>
               </form>

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { ArrowRight, AlertCircle } from "lucide-react";
+import { useEmail } from "../../hooks/useEmail";
 
 const countries = [
   { name: "India", flag: "https://flagcdn.com/w40/in.png" },
@@ -14,6 +15,8 @@ const INPUT =
 const ERROR_TEXT = "text-red-400 text-xs mt-1 flex items-center gap-1";
 
 export default function HeroContact() {
+  const formRef = useRef();
+  const { sendEmail, loading } = useEmail();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -23,7 +26,6 @@ export default function HeroContact() {
   });
 
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validate = () => {
     let tempErrors = {};
@@ -59,16 +61,16 @@ export default function HeroContact() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      setIsSubmitting(true);
-      // Simulate API call
-      setTimeout(() => {
+      const result = await sendEmail(formRef);
+      if (result.success) {
         alert("Message sent to sales@zryoss.com successfully!");
         setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
-        setIsSubmitting(false);
-      }, 1500);
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
     }
   };
 
@@ -95,23 +97,115 @@ export default function HeroContact() {
           </div>
 
           {/* CONTACT DETAILS */}
-          <div className="space-y-4 text-sm text-gray-300 max-w-md leading-relaxed">
-            <p>
-              Office No. 837-A, 8th Floor <br />
-              JMD Megapolis, Sohna Road <br />
-              Gurgaon, Haryana, India
-            </p>
+          {/* CONTACT DETAILS */}
+{/* CONTACT DETAILS */}
+<div className="max-w-md space-y-5">
+  {/* Address */}
+  <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-5">
+    <p className="text-sm font-bold text-white mb-2 tracking-wide">
+      Office Address
+    </p>
+    <p className="text-sm text-gray-200 font-semibold leading-relaxed">
+      Office No. 837-A, 8th Floor <br />
+      JMD Megapolis, Sohna Road <br />
+      Gurgaon, Haryana, India
+    </p>
+  </div>
 
-            <p>
-              <a href="mailto:sales@zryoss.com" className="hover:text-orange-400 transition-colors underline underline-offset-4">sales@zryoss.com</a>
-              <span className="mx-2">/</span>
-              <a href="mailto:info@zryoss.com" className="hover:text-orange-400 transition-colors underline underline-offset-4">info@zryoss.com</a>
-            </p>
+  {/* Email + Phone Cards */}
+  <div className="grid sm:grid-cols-2 gap-4">
+    
+    {/* ✅ Email Container (both emails in one) */}
+    <div className="group rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-5 hover:border-orange-400/40 hover:bg-orange-500/10 transition-all">
+      <div className="flex items-start gap-3">
+        <span className="mt-1 h-10 w-10 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 group-hover:border-orange-400/40">
+          {/* Email icon */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-orange-400"
+          >
+            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+          </svg>
+        </span>
 
-            <p>
-              <a href="tel:01169269633" className="hover:text-orange-400 transition-colors underline underline-offset-4">011 6926 9633</a>
-            </p>
+        <div className="leading-tight">
+          {/* ✅ Bigger heading */}
+          <p className="text-[13px] font-bold text-gray-200 tracking-[0.18em] uppercase mb-2">
+            Email
+          </p>
+
+          <div className="flex flex-col gap-2">
+            <a
+              href="mailto:sales@zryoss.com"
+              className="text-sm font-bold text-white hover:text-orange-400 transition-colors"
+            >
+              sales@zryoss.com
+            </a>
+
+            <a
+              href="mailto:info@zryoss.com"
+              className="text-sm font-bold text-white hover:text-orange-400 transition-colors"
+            >
+              info@zryoss.com
+            </a>
           </div>
+        </div>
+      </div>
+    </div>
+
+    {/* ✅ Phone */}
+    <a
+      href="tel:01169269633"
+      className="group rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-5 hover:border-orange-400/40 hover:bg-orange-500/10 transition-all"
+    >
+      <div className="flex items-start gap-3">
+        <span className="mt-1 h-10 w-10 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 group-hover:border-orange-400/40">
+          {/* Phone icon */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-orange-400"
+          >
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.81.3 1.6.54 2.36a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.72-1.11a2 2 0 0 1 2.11-.45c.76.24 1.55.42 2.36.54A2 2 0 0 1 22 16.92z" />
+          </svg>
+        </span>
+
+        <div className="leading-tight">
+          {/* ✅ Bigger heading */}
+          <p className="text-[13px] font-bold text-gray-200 tracking-[0.18em] uppercase mb-2">
+            Phone
+          </p>
+
+          <p className="text-sm font-bold text-white">
+            011 6926 9633
+          </p>
+
+          <p className="text-xs text-gray-400 mt-1">
+            Mon–Sat, 10AM–6PM
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+
         </div>
 
         {/* RIGHT FORM */}
@@ -125,7 +219,7 @@ export default function HeroContact() {
               Into Market-Leading Solutions.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <input
@@ -185,10 +279,10 @@ export default function HeroContact() {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={loading}
                 className="w-full mt-4 bg-orange-400 hover:bg-orange-500 text-white font-semibold py-4 rounded-xl flex items-center justify-between px-6 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? "Sending..." : "Lets Connect"}
+                {loading ? "Sending..." : "Lets Connect"}
                 <span className="rounded-lg p-2 bg-white/10">
                   <ArrowRight size={16} />
                 </span>

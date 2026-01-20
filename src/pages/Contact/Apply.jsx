@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Mail,
   Phone,
@@ -14,6 +14,7 @@ import {
   X,
   AlertCircle,
 } from "lucide-react";
+import { useEmail } from "../../hooks/useEmail";
 
 /* ================= FadeUp ================= */
 const FadeUp = ({ children, delay = 0 }) => {
@@ -36,6 +37,8 @@ const FadeUp = ({ children, delay = 0 }) => {
 
 /* ================= MAIN ================= */
 export default function ApplyPage() {
+  const formRef = useRef();
+  const { sendEmail, loading } = useEmail();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -50,7 +53,6 @@ export default function ApplyPage() {
 
   const [errors, setErrors] = useState({});
   const [file, setFile] = useState(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const validate = () => {
@@ -76,14 +78,15 @@ export default function ApplyPage() {
     return Object.keys(tempErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     if (e) e.preventDefault();
     if (validate()) {
-      setIsSubmitting(true);
-      setTimeout(() => {
-        setIsSubmitting(false);
+      const result = await sendEmail(formRef);
+      if (result.success) {
         setSubmitted(true);
-      }, 2000);
+      } else {
+        alert("Failed to submit application. Please try again later.");
+      }
     }
   };
 
@@ -248,7 +251,7 @@ export default function ApplyPage() {
                 Partner Application
               </h2>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <input
                     name="fullName"
@@ -296,9 +299,11 @@ export default function ApplyPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-orange-600 to-red-600 py-4 rounded-lg font-bold flex justify-center items-center gap-2"
+                  disabled={loading}
+                  className="w-full bg-gradient-to-r from-orange-600 to-red-600 py-4 rounded-lg font-bold flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Submit Application <Send className="w-5 h-5" />
+                  {loading ? "Submitting..." : "Submit Application"}
+                  {!loading && <Send className="w-5 h-5" />}
                 </button>
               </form>
             </div>

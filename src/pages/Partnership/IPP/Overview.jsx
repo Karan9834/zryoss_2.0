@@ -26,6 +26,7 @@ import {
   AlertCircle,
   Star
 } from 'lucide-react';
+import { useEmail } from '../../../hooks/useEmail';
 
 /* --- Hooks & Utility Components --- */
 
@@ -96,6 +97,8 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
 /* --- Main Application Component --- */
 
 export default function KryossIPP() {
+  const formRef = useRef();
+  const { sendEmail, loading } = useEmail();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState({});
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
@@ -146,14 +149,16 @@ export default function KryossIPP() {
     return Object.keys(tempErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      const btn = e.target; // Note: In form usage this might need adjustment if attached to button. 
-      // But we will fix the form attachment in the next edit.
-      // For now, assuming standard mocked submit.
-      alert("Application Submitted!");
-      setFormData({ name: '', email: '', message: '' });
+      const result = await sendEmail(formRef);
+      if (result.success) {
+        alert("Application Submitted!");
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        alert("Failed to submit. Please try again later.");
+      }
     }
   };
 
@@ -686,12 +691,13 @@ export default function KryossIPP() {
             {/* Right Side Form */}
             <div className="lg:col-span-3 p-12">
               <h3 className="text-2xl font-bold mb-8 text-white">Application Request</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide">Full Name</label>
                     <input
                       type="text"
+                      name="from_name"
                       className={`w-full bg-neutral-950 border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors ${errors.name ? 'border-red-500' : 'border-neutral-800'}`}
                       placeholder="John Doe"
                       value={formData.name}
@@ -706,6 +712,7 @@ export default function KryossIPP() {
                     <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide">Work Email</label>
                     <input
                       type="email"
+                      name="reply_to"
                       className={`w-full bg-neutral-950 border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors ${errors.email ? 'border-red-500' : 'border-neutral-800'}`}
                       placeholder="john@company.com"
                       value={formData.email}
@@ -721,6 +728,7 @@ export default function KryossIPP() {
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide">Message / Inquiry</label>
                   <textarea
+                    name="message"
                     rows={4}
                     className={`w-full bg-neutral-950 border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors resize-none ${errors.message ? 'border-red-500' : 'border-neutral-800'}`}
                     placeholder="Tell us about your business..."
@@ -735,9 +743,10 @@ export default function KryossIPP() {
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-white text-black font-bold rounded-lg hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2"
+                  disabled={loading}
+                  className="w-full py-4 bg-white text-black font-bold rounded-lg hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
                 >
-                  Submit Application
+                  {loading ? "Submitting..." : "Submit Application"}
                 </button>
               </form>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  CheckCircle2, 
+import {
+  CheckCircle2,
   ArrowRight,
   Building2,
   Target,
@@ -25,6 +25,7 @@ import {
   Quote,
   Star
 } from 'lucide-react';
+import { useEmail } from '../../hooks/useEmail';
 
 /* --- Hooks & Utility Components --- */
 
@@ -50,7 +51,7 @@ const useScrollVisibility = (threshold = 0.1) => {
 
 const AnimatedSection = ({ children, delay = 0, className = "" }) => {
   const [ref, isVisible] = useScrollVisibility(0.1);
-  
+
   return (
     <div
       ref={ref}
@@ -81,9 +82,8 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
         </div>
       </button>
       <div
-        className={`grid transition-[grid-template-rows] duration-500 ease-out ${
-          isOpen ? 'grid-rows-[1fr] opacity-100 pb-8' : 'grid-rows-[0fr] opacity-0'
-        }`}
+        className={`grid transition-[grid-template-rows] duration-500 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-8' : 'grid-rows-[0fr] opacity-0'
+          }`}
       >
         <div className="overflow-hidden">
           <p className="text-neutral-400 text-base leading-relaxed max-w-2xl">{answer}</p>
@@ -96,9 +96,11 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
 /* --- Main Application Component --- */
 
 export default function KryossIPP() {
+  const formRef = useRef();
+  const { sendEmail, loading } = useEmail();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
-  
+
   const clients = [
     'TechCorp', 'GlobalSoft', 'InnoVentures', 'DataFlow', 'CloudNine',
     'NextGen', 'SmartHub', 'ProSystems', 'FutureTech', 'Quantum'
@@ -128,12 +130,15 @@ export default function KryossIPP() {
     }
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const btn = e.target;
-    const originalText = btn.innerText;
-    btn.innerText = "Sent!";
-    setTimeout(() => btn.innerText = originalText, 2000);
+    const result = await sendEmail(formRef);
+    if (result.success) {
+      alert("Application request submitted successfully!");
+      setFormData({ name: '', email: '', message: '' });
+    } else {
+      alert("Failed to submit request. Please try again later.");
+    }
   };
 
   const industries = [
@@ -146,30 +151,30 @@ export default function KryossIPP() {
   ];
 
   const workflowSteps = [
-    { 
-      num: "01", 
-      title: "NDA & Onboard", 
+    {
+      num: "01",
+      title: "NDA & Onboard",
       desc: "Legal framework setup.",
       icon: ShieldCheck,
       detail: "24hr Processing"
     },
-    { 
-      num: "02", 
-      title: "Scope Handoff", 
+    {
+      num: "02",
+      title: "Scope Handoff",
       desc: "Send us your requirements.",
       icon: Target,
       detail: "Technical Audit"
     },
-    { 
-      num: "03", 
-      title: "White-Label Dev", 
+    {
+      num: "03",
+      title: "White-Label Dev",
       desc: "We build under your brand.",
       icon: Code2,
       detail: "Agile Sprints"
     },
-    { 
-      num: "04", 
-      title: "Silent Delivery", 
+    {
+      num: "04",
+      title: "Silent Delivery",
       desc: "Deploy to your client.",
       icon: Server,
       detail: "Full Documentation"
@@ -188,12 +193,12 @@ export default function KryossIPP() {
       <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="w-full h-full bg-[#0a0a0a] flex flex-col items-center justify-center border-b border-white/5 relative">
-             <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent z-10" />
-             <img 
-               src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000" 
-               className="w-full h-full object-cover opacity-30"
-               alt="Background"
-             />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent z-10" />
+            <img
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000"
+              className="w-full h-full object-cover opacity-30"
+              alt="Background"
+            />
           </div>
         </div>
 
@@ -204,22 +209,22 @@ export default function KryossIPP() {
                 <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                 <span className="text-xs font-semibold tracking-wide uppercase text-neutral-300">Independent Prime Partner Program</span>
               </div>
-              
+
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[0.95] tracking-tight">
                 Your Brand.<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
                   Our Technology.
                 </span>
               </h1>
-              
+
               <p className="text-xl md:text-2xl text-neutral-400 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
                 Scale your agency without the technical overhead. We provide the engine, you drive the business.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <button className="px-10 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold text-lg transition-all hover:scale-105 shadow-[0_0_30px_-10px_rgba(234,88,12,0.5)] flex items-center gap-2 group">
-                  Start Partnership 
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform"/>
+                  Start Partnership
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button className="px-10 py-4 bg-transparent border border-neutral-700 hover:border-white text-white rounded-full font-bold text-lg transition-all hover:bg-white/5">
                   View Documentation
@@ -236,9 +241,9 @@ export default function KryossIPP() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5] lg:aspect-square group shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Team collaboration" 
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200"
+                  alt="Team collaboration"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
@@ -258,7 +263,7 @@ export default function KryossIPP() {
               </h2>
               <div className="space-y-6 text-lg text-neutral-400 font-light">
                 <p>
-                  The Independent Prime Partner (IPP) program is built for visionaries who want to lead without getting bogged down by technical execution. 
+                  The Independent Prime Partner (IPP) program is built for visionaries who want to lead without getting bogged down by technical execution.
                 </p>
                 <p>
                   We act as your engine room. You own the client, the brand, and the relationship. We provide the heavy lifting—development, QA, and maintenance—completely white-labeled under your banner.
@@ -329,18 +334,18 @@ export default function KryossIPP() {
                 <div className="h-full bg-neutral-900/40 border border-white/5 rounded-3xl p-8 hover:bg-neutral-900/80 hover:border-orange-500/30 transition-all duration-500 group relative overflow-hidden flex flex-col">
                   {/* Hover Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
+
                   <div className="relative z-10">
                     <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-white/5">
                       <item.icon size={28} className={item.color} />
                     </div>
-                    
+
                     <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-orange-500 transition-colors">{item.title}</h3>
                     <p className="text-neutral-400 leading-relaxed mb-8">{item.desc}</p>
-                    
+
                     {/* Data Points Divider */}
                     <div className="w-full h-px bg-white/5 mb-6" />
-                    
+
                     {/* Data Points Grid */}
                     <div className="grid grid-cols-2 gap-4 mt-auto">
                       {item.metrics.map((metric, idx) => (
@@ -362,46 +367,46 @@ export default function KryossIPP() {
       <section className="min-h-screen flex flex-col justify-center py-20 px-6 relative z-10 bg-[#050505] overflow-hidden">
         <div className="max-w-7xl mx-auto w-full relative">
           <AnimatedSection className="text-center mb-24">
-             <h2 className="text-4xl md:text-5xl font-bold mb-6">Seamless Workflow</h2>
-             <p className="text-neutral-400 text-lg">Four distinct phases to delivery excellence.</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Seamless Workflow</h2>
+            <p className="text-neutral-400 text-lg">Four distinct phases to delivery excellence.</p>
           </AnimatedSection>
-          
-          <div className="relative">
-             {/* Connecting Line - Desktop (Horizontal) */}
-             <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-neutral-800 -translate-y-1/2 rounded-full z-0">
-                <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-neutral-800 via-orange-900/50 to-neutral-800" />
-             </div>
-             
-             {/* Connecting Line - Mobile (Vertical) */}
-             <div className="md:hidden absolute top-0 left-8 h-full w-1 bg-neutral-800 rounded-full z-0" />
 
-             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative z-10">
-                {workflowSteps.map((step, i) => (
-                   <AnimatedSection key={i} delay={i * 150} className="relative">
-                      <div className="flex flex-col md:items-center relative group">
-                         {/* Number Node */}
-                         <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#0a0a0a] border-4 border-neutral-800 text-neutral-500 font-bold text-xl mb-6 group-hover:border-orange-500 group-hover:text-orange-500 transition-all duration-500 shadow-[0_0_20px_rgba(0,0,0,1)] relative z-20 md:ml-0 ml-0">
-                            {step.num}
-                         </div>
-                         
-                         {/* Card Content */}
-                         <div className="pl-4 md:pl-0 md:text-center w-full">
-                            <div className="p-6 rounded-2xl bg-neutral-900 border border-white/5 hover:bg-neutral-800/80 transition-all duration-300 hover:-translate-y-2">
-                               <div className="mb-4 inline-flex p-3 rounded-lg bg-orange-500/10 text-orange-500">
-                                  <step.icon size={24} />
-                               </div>
-                               <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-                               <p className="text-sm text-neutral-400 mb-4 h-10">{step.desc}</p>
-                               
-                               <div className="inline-block px-3 py-1 rounded text-xs font-mono bg-white/5 text-neutral-300 border border-white/5">
-                                  {step.detail}
-                               </div>
-                            </div>
-                         </div>
+          <div className="relative">
+            {/* Connecting Line - Desktop (Horizontal) */}
+            <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-neutral-800 -translate-y-1/2 rounded-full z-0">
+              <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-neutral-800 via-orange-900/50 to-neutral-800" />
+            </div>
+
+            {/* Connecting Line - Mobile (Vertical) */}
+            <div className="md:hidden absolute top-0 left-8 h-full w-1 bg-neutral-800 rounded-full z-0" />
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative z-10">
+              {workflowSteps.map((step, i) => (
+                <AnimatedSection key={i} delay={i * 150} className="relative">
+                  <div className="flex flex-col md:items-center relative group">
+                    {/* Number Node */}
+                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#0a0a0a] border-4 border-neutral-800 text-neutral-500 font-bold text-xl mb-6 group-hover:border-orange-500 group-hover:text-orange-500 transition-all duration-500 shadow-[0_0_20px_rgba(0,0,0,1)] relative z-20 md:ml-0 ml-0">
+                      {step.num}
+                    </div>
+
+                    {/* Card Content */}
+                    <div className="pl-4 md:pl-0 md:text-center w-full">
+                      <div className="p-6 rounded-2xl bg-neutral-900 border border-white/5 hover:bg-neutral-800/80 transition-all duration-300 hover:-translate-y-2">
+                        <div className="mb-4 inline-flex p-3 rounded-lg bg-orange-500/10 text-orange-500">
+                          <step.icon size={24} />
+                        </div>
+                        <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+                        <p className="text-sm text-neutral-400 mb-4 h-10">{step.desc}</p>
+
+                        <div className="inline-block px-3 py-1 rounded text-xs font-mono bg-white/5 text-neutral-300 border border-white/5">
+                          {step.detail}
+                        </div>
                       </div>
-                   </AnimatedSection>
-                ))}
-             </div>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -411,11 +416,11 @@ export default function KryossIPP() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8">We Handle The Code.<br/>You Handle The Business.</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8">We Handle The Code.<br />You Handle The Business.</h2>
               <p className="text-neutral-400 text-lg mb-12 font-light">
                 Think of us as your elite technical co-founder. While you focus on strategy and sales, we execute with precision.
               </p>
-              
+
               <div className="grid gap-6">
                 {[
                   "Full-cycle software development & delivery",
@@ -434,47 +439,47 @@ export default function KryossIPP() {
                 ))}
               </div>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={200} className="relative">
               <div className="sticky top-32">
-                 <div className="relative rounded-2xl overflow-hidden aspect-[3/4] border border-white/10 shadow-2xl bg-neutral-900">
-                    <img 
-                      src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000" 
-                      alt="Coding Interface" 
-                      className="w-full h-full object-cover opacity-60"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                       <div className="bg-black/50 backdrop-blur-xl p-6 rounded-xl border border-white/10">
-                          <div className="flex items-center justify-between mb-4">
-                             <span className="text-xs font-mono text-orange-500">SYSTEM STATUS</span>
-                             <span className="flex items-center gap-2 text-xs font-mono text-green-400">
-                                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"/> OPERATIONAL
-                             </span>
+                <div className="relative rounded-2xl overflow-hidden aspect-[3/4] border border-white/10 shadow-2xl bg-neutral-900">
+                  <img
+                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000"
+                    alt="Coding Interface"
+                    className="w-full h-full object-cover opacity-60"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <div className="bg-black/50 backdrop-blur-xl p-6 rounded-xl border border-white/10">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-xs font-mono text-orange-500">SYSTEM STATUS</span>
+                        <span className="flex items-center gap-2 text-xs font-mono text-green-400">
+                          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" /> OPERATIONAL
+                        </span>
+                      </div>
+                      <div className="space-y-4">
+                        <div className="space-y-2">
+                          <div className="flex justify-between text-xs text-neutral-300">
+                            <span>Server Load</span>
+                            <span>24%</span>
                           </div>
-                          <div className="space-y-4">
-                             <div className="space-y-2">
-                               <div className="flex justify-between text-xs text-neutral-300">
-                                  <span>Server Load</span>
-                                  <span>24%</span>
-                               </div>
-                               <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                                  <div className="h-full w-1/4 bg-orange-500 rounded-full" />
-                               </div>
-                             </div>
-                             <div className="space-y-2">
-                               <div className="flex justify-between text-xs text-neutral-300">
-                                  <span>Project Delivery</span>
-                                  <span>98% On Time</span>
-                               </div>
-                               <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                                  <div className="h-full w-[98%] bg-green-500 rounded-full" />
-                               </div>
-                             </div>
+                          <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                            <div className="h-full w-1/4 bg-orange-500 rounded-full" />
                           </div>
-                       </div>
+                        </div>
+                        <div className="space-y-2">
+                          <div className="flex justify-between text-xs text-neutral-300">
+                            <span>Project Delivery</span>
+                            <span>98% On Time</span>
+                          </div>
+                          <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                            <div className="h-full w-[98%] bg-green-500 rounded-full" />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                 </div>
+                  </div>
+                </div>
               </div>
             </AnimatedSection>
           </div>
@@ -498,7 +503,7 @@ export default function KryossIPP() {
                 <div className="p-8 rounded-3xl bg-neutral-900/50 border border-white/5 flex flex-col h-full hover:bg-neutral-900 transition-colors group relative overflow-hidden">
                   {/* Decorative quote icon */}
                   <Quote className="absolute -top-4 -right-4 w-24 h-24 text-white/5 -rotate-12 group-hover:text-orange-500/10 transition-colors" />
-                  
+
                   <div className="flex gap-1 mb-6">
                     {[...Array(5)].map((_, j) => (
                       <Star key={j} size={14} className="fill-orange-500 text-orange-500" />
@@ -542,10 +547,10 @@ export default function KryossIPP() {
             {industries.map((industry, i) => (
               <AnimatedSection key={i} delay={i * 50}>
                 <div className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer shadow-lg">
-                  <img 
-                    src={industry.img} 
-                    alt={industry.name} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                  <img
+                    src={industry.img}
+                    alt={industry.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
@@ -564,7 +569,7 @@ export default function KryossIPP() {
       {/* Clients Scroller */}
       <section className="py-20 border-y border-white/5 bg-black overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
-           <span className="text-sm font-mono text-neutral-500 tracking-widest uppercase">Trusted By Industry Leaders</span>
+          <span className="text-sm font-mono text-neutral-500 tracking-widest uppercase">Trusted By Industry Leaders</span>
         </div>
         <div className="relative flex overflow-x-hidden group">
           <div className="animate-marquee whitespace-nowrap flex gap-16 px-6">
@@ -611,9 +616,9 @@ export default function KryossIPP() {
               }
             ].map((faq, i) => (
               <AnimatedSection key={i} delay={i * 50}>
-                <FAQItem 
-                  question={faq.question} 
-                  answer={faq.answer} 
+                <FAQItem
+                  question={faq.question}
+                  answer={faq.answer}
                   isOpen={openFaqIndex === i}
                   onClick={() => setOpenFaqIndex(openFaqIndex === i ? -1 : i)}
                 />
@@ -629,84 +634,88 @@ export default function KryossIPP() {
           <div className="grid lg:grid-cols-5 gap-12 bg-neutral-900 rounded-[2rem] overflow-hidden border border-neutral-800 shadow-2xl">
             {/* Left Side Info */}
             <div className="lg:col-span-2 bg-orange-600 p-12 text-white flex flex-col justify-between relative overflow-hidden">
-               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-               <div className="relative z-10">
-                 <h3 className="text-3xl font-bold mb-6">Ready to Scale?</h3>
-                 <p className="text-orange-100 mb-12">
-                   Join the Independent Prime Partner program today and transform your business delivery capabilities.
-                 </p>
-                 
-                 <div className="space-y-8">
-                   <div className="flex items-start gap-4">
-                     <Mail className="mt-1 opacity-80" />
-                     <div>
-                       <div className="text-xs uppercase opacity-70 mb-1">Email Us</div>
-                       <div className="font-medium">partners@kryoss.com</div>
-                     </div>
-                   </div>
-                   <div className="flex items-start gap-4">
-                     <Phone className="mt-1 opacity-80" />
-                     <div>
-                       <div className="text-xs uppercase opacity-70 mb-1">Call Us</div>
-                       <div className="font-medium">+1 (888) KRYOSS-IPP</div>
-                     </div>
-                   </div>
-                   <div className="flex items-start gap-4">
-                     <MapPin className="mt-1 opacity-80" />
-                     <div>
-                       <div className="text-xs uppercase opacity-70 mb-1">Headquarters</div>
-                       <div className="font-medium">123 Innovation Drive<br/>San Francisco, CA 94105</div>
-                     </div>
-                   </div>
-                 </div>
-               </div>
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold mb-6">Ready to Scale?</h3>
+                <p className="text-orange-100 mb-12">
+                  Join the Independent Prime Partner program today and transform your business delivery capabilities.
+                </p>
+
+                <div className="space-y-8">
+                  <div className="flex items-start gap-4">
+                    <Mail className="mt-1 opacity-80" />
+                    <div>
+                      <div className="text-xs uppercase opacity-70 mb-1">Email Us</div>
+                      <div className="font-medium">partners@kryoss.com</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <Phone className="mt-1 opacity-80" />
+                    <div>
+                      <div className="text-xs uppercase opacity-70 mb-1">Call Us</div>
+                      <div className="font-medium">+1 (888) KRYOSS-IPP</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <MapPin className="mt-1 opacity-80" />
+                    <div>
+                      <div className="text-xs uppercase opacity-70 mb-1">Headquarters</div>
+                      <div className="font-medium">123 Innovation Drive<br />San Francisco, CA 94105</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Right Side Form */}
             <div className="lg:col-span-3 p-12">
-               <h3 className="text-2xl font-bold mb-8 text-white">Application Request</h3>
-               <form className="space-y-6">
-                 <div className="grid md:grid-cols-2 gap-6">
-                   <div className="space-y-2">
-                     <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide">Full Name</label>
-                     <input 
-                       type="text" 
-                       className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors"
-                       placeholder="John Doe"
-                       value={formData.name}
-                       onChange={(e) => setFormData({...formData, name: e.target.value})}
-                     />
-                   </div>
-                   <div className="space-y-2">
-                     <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide">Work Email</label>
-                     <input 
-                       type="email" 
-                       className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors"
-                       placeholder="john@company.com"
-                       value={formData.email}
-                       onChange={(e) => setFormData({...formData, email: e.target.value})}
-                     />
-                   </div>
-                 </div>
-                 
-                 <div className="space-y-2">
-                   <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide">Message / Inquiry</label>
-                   <textarea 
-                     rows={4}
-                     className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors resize-none"
-                     placeholder="Tell us about your business..."
-                     value={formData.message}
-                     onChange={(e) => setFormData({...formData, message: e.target.value})}
-                   />
-                 </div>
-                 
-                 <button 
-                   onClick={handleSubmit}
-                   className="w-full py-4 bg-white text-black font-bold rounded-lg hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2"
-                 >
-                   Submit Application
-                 </button>
-               </form>
+              <h3 className="text-2xl font-bold mb-8 text-white">Application Request</h3>
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide">Full Name</label>
+                    <input
+                      type="text"
+                      name="from_name"
+                      className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors"
+                      placeholder="John Doe"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide">Work Email</label>
+                    <input
+                      type="email"
+                      name="reply_to"
+                      className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors"
+                      placeholder="john@company.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide">Message / Inquiry</label>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors resize-none"
+                    placeholder="Tell us about your business..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-4 bg-white text-black font-bold rounded-lg hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {loading ? "Submitting..." : "Submit Application"}
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -714,9 +723,9 @@ export default function KryossIPP() {
 
       {/* Office Location */}
       <section className="h-[400px] relative group overflow-hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" 
-          alt="Office Map View" 
+        <img
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000"
+          alt="Office Map View"
           className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
         />
         <div className="absolute inset-0 bg-black/30 pointer-events-none" />
@@ -734,19 +743,19 @@ export default function KryossIPP() {
             <div className="text-2xl font-bold tracking-tighter text-white mb-2">KRYOSS<span className="text-orange-600">.</span></div>
             <p className="text-neutral-500 text-sm">Empowering businesses through technical excellence.</p>
           </div>
-          
+
           <div className="flex gap-8 text-sm text-neutral-400">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
             <a href="#" className="hover:text-white transition-colors">Partner Agreement</a>
           </div>
-          
+
           <div className="text-neutral-600 text-xs">
             © 2024 Kryoss IPP. All rights reserved.
           </div>
         </div>
       </footer>
-      
+
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0%); }

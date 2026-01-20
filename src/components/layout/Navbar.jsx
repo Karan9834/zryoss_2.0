@@ -349,7 +349,7 @@ export default function Navbar() {
             to="/apply"
             className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-[14px] font-semibold transition shadow-[0_0_18px_rgba(234,88,12,0.25)] hover:shadow-[0_0_26px_rgba(234,88,12,0.45)]"
           >
-            Contact
+            Contact Us
           </Link>
 
           <button
