@@ -198,11 +198,11 @@ export default function ApplyPage() {
             {/* IPP */}
             <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
               <h3 className="text-xl font-bold text-orange-400 mb-2">
-                Independent Profit Partner (IPP)
+                Independent Prime Partner (IPP)
               </h3>
               <p className="text-sm text-gray-400 mb-4">
                 IPPs run their own brand and sales operations while leveraging
-                Zryoss’s centralized delivery, demo, and compliance systems.
+                Zryoss's centralized delivery, demo, and compliance systems.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>• Owns clients & sales strategy</li>
@@ -217,7 +217,7 @@ export default function ApplyPage() {
             {/* BPP */}
             <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
               <h3 className="text-xl font-bold text-orange-400 mb-2">
-                Business Promotion Partner (BPP)
+                Independent Business Prime Partner (BPP)
               </h3>
               <p className="text-sm text-gray-400 mb-4">
                 BPPs are sales-focused partners earning only on successful
