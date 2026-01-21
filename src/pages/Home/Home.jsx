@@ -5,7 +5,7 @@ import HowItWorks from "./HowItWorks";
 import PartnershipModels from "./PartnershipModels";
 import ManagementSection from "./ManagementSection";
 import Brands from "./Brands";
-import Solutions from "./Soltions";
+import Solutions from "./Solutions";
 import WhyZryoss from "./WhyZryoss";
 import DarkToDirection from "./DarkToDirection";
 // import WhatIsNot from "./WhatIsNot";

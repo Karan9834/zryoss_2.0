@@ -158,15 +158,15 @@ export default function Footer() {
 
         {/* ✅ BOTTOM */}
         <div className="pt-8 border-t border-white/5 flex flex-col xl:flex-row justify-between items-center gap-8 text-center xl:text-left">
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
-              <p className="text-sm text-gray-500">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+              <p className="text-sm text-gray-500 whitespace-nowrap">
                 © {currentYear}{" "}
                 <span className="text-gray-200 font-semibold">Zryoss</span>
               </p>
 
               {/* Powered by */}
-              <p className="text-[12px] text-gray-600 flex items-center gap-1">
+              <p className="text-[12px] text-gray-600 flex items-center gap-1 whitespace-nowrap">
                 Powered by{" "}
                 <a
                   href="https://kryosssoftech.org/"
@@ -180,14 +180,14 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="flex gap-6 text-[11px] uppercase tracking-widest text-gray-500">
-              <Link to="/privacy" className="hover:text-orange-500">
+            <div className="flex gap-8 text-[11px] uppercase tracking-widest text-gray-500 font-medium">
+              <Link to="/privacy" className="hover:text-orange-500 transition-colors">
                 Privacy
               </Link>
-              <Link to="/terms" className="hover:text-orange-500">
+              <Link to="/terms" className="hover:text-orange-500 transition-colors">
                 Terms
               </Link>
-              <Link to="/security" className="hover:text-orange-500">
+              <Link to="/security" className="hover:text-orange-500 transition-colors">
                 Compliance
               </Link>
             </div>
