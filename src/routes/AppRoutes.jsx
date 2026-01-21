@@ -26,7 +26,7 @@ import Edulinker from "../pages/Ecosystem/Brands/Edulinker";
 import Medikryoss from "../pages/Ecosystem/Brands/Medikryoss";
 
 // Partnership
-import PartnershipOverview from "../pages/Partnership/Overview";
+import PartnershipOverview from "../pages/Partnership/PartnershipOverview";
 import Philosophy from "../pages/Partnership/Philosophy";
 import BrandOwnership from "../pages/Partnership/BrandOwnership";
 import SupportScope from "../pages/Partnership/SupportScope";
