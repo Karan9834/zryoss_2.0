@@ -39,11 +39,12 @@ export default function PartnershipOverview() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1639322537228-ad7142b7f000?q=80&w=2070&auto=format&fit=crop"
+            src="/partnership-hero-final.png"
             alt="Partnership Background"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-[#050505]/60 to-[#050505]" />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-[#050505]" />
         </div>
 
         {/* Glow Effects */}
