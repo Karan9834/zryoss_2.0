@@ -191,7 +191,7 @@ export default function Brands() {
               The Ecosystem
             </span>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
-              Pillars of <span className="text-orange-500">Zryoss</span>
+              Core Execution <span className="text-orange-500">Brands</span>
             </h2>
           </FadeUp>
         </div>

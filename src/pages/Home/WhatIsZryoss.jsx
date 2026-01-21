@@ -33,11 +33,11 @@ export default function WhatIsZryoss() {
                 </span>
 
                 <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
-                  What is{" "}
+                  Your Growth {" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                    ZRYOSS
+                    Partner
                   </span>
-                  ?
+                  
                 </h2>
 
                 <div className="w-24 h-1 bg-orange-500 rounded-full mb-10" />

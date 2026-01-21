@@ -13,7 +13,6 @@ export default function DarkToDirection() {
         <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-[#050505] relative overflow-hidden">
             {/* Dynamic Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] to-[#050505]" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
 
             <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-28 xl:px-32 relative z-10">
                 <FadeUp>

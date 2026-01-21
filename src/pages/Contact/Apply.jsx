@@ -217,7 +217,7 @@ export default function ApplyPage() {
             {/* BPP */}
             <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
               <h3 className="text-xl font-bold text-orange-400 mb-2">
-                Independent Business Prime Partner (BPP)
+                Business Prime Partner (BPP)
               </h3>
               <p className="text-sm text-gray-400 mb-4">
                 BPPs are sales-focused partners earning only on successful
