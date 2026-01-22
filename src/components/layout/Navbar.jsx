@@ -268,18 +268,18 @@ export default function Navbar() {
     const containerLeft = navRect?.left || 0;
     const containerWidth = navRect?.width || window.innerWidth;
 
-    const realWidth = Math.min(desiredWidth, containerWidth - 20);
+    const realWidth = Math.min(desiredWidth, containerWidth - 40); // 20px padding on each side
 
     const desiredLeft = btnRect.left - containerLeft - realWidth / 2 + btnRect.width / 2;
 
-    const minLeft = 10;
-    const maxLeft = containerWidth - realWidth - 10;
+    const minLeft = 20;
+    const maxLeft = containerWidth - realWidth - 20;
 
     const clampedLeft = Math.max(minLeft, Math.min(desiredLeft, maxLeft));
 
     // pointer align to button center inside dropdown
     const btnCenter = btnRect.left - containerLeft + btnRect.width / 2;
-    const pX = Math.max(26, Math.min(btnCenter - clampedLeft, realWidth - 26));
+    const pX = btnCenter - clampedLeft;
 
     setDropdownWidth(realWidth);
     setDropdownX(clampedLeft);
@@ -366,56 +366,54 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Dropdown */}
+      {/* Dropdown container - Absolute to header */}
       <div
         className={`absolute top-[76px] left-0 w-full transition-all duration-150 ${activeMenu ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            ref={dropdownPanelRef}
-            className={`relative origin-top transition-all duration-150 ${activeMenu
-              ? "translate-y-0 scale-100 opacity-100"
-              : "-translate-y-2 scale-[0.98] opacity-0"
-              }`}
-            style={{
-              marginTop: DROPDOWN_GAP_TOP,
-              width: `${dropdownWidth}px`,
-              left: `${dropdownX}px`,
-            }}
-            onMouseEnter={() => closeTimeoutRef.current && clearTimeout(closeTimeoutRef.current)}
-            onMouseLeave={closeDropdownInstant} // ✅ close on cursor out
-          >
-            {/* pointer */}
-            <div className="absolute -top-2" style={{ left: `${pointerX - 10}px` }}>
-              <div className="w-5 h-5 rotate-45 bg-[#0b0b0b] border border-white/10" />
-            </div>
-
-            {/* panel */}
-            <div className="rounded-3xl border border-white/10 bg-[#0b0b0b]/96 backdrop-blur-2xl shadow-[0_35px_80px_rgba(0,0,0,0.75)] overflow-hidden">
-              <div
-                className={`grid ${activeConfig?.columns?.length === 1
-                  ? "grid-cols-1"
-                  : activeConfig?.columns?.length === 2
-                    ? "grid-cols-1 lg:grid-cols-2"
-                    : "grid-cols-1 lg:grid-cols-3"
-                  }`}
-              >
-                {activeConfig?.columns?.map((col, idx) => (
-                  <div
-                    key={col.heading}
-                    className={`p-8 ${idx !== 0 ? "border-t lg:border-t-0 lg:border-l border-white/10" : ""
-                      }`}
-                  >
-                    <MegaColumn column={col} onNavigate={() => setActiveMenu(null)} />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* glow */}
-            <div className="absolute -inset-8 -z-10 blur-3xl opacity-50 bg-gradient-to-r from-orange-500/20 via-red-500/10 to-transparent rounded-[70px]" />
+        <div
+          ref={dropdownPanelRef}
+          className={`absolute origin-top transition-all duration-150 ${activeMenu
+            ? "translate-y-0 scale-100 opacity-100"
+            : "-translate-y-2 scale-[0.98] opacity-0"
+            }`}
+          style={{
+            marginTop: DROPDOWN_GAP_TOP,
+            width: `${dropdownWidth}px`,
+            left: `${dropdownX}px`,
+          }}
+          onMouseEnter={() => closeTimeoutRef.current && clearTimeout(closeTimeoutRef.current)}
+          onMouseLeave={closeDropdownInstant}
+        >
+          {/* pointer */}
+          <div className="absolute -top-2" style={{ left: `${pointerX - 10}px` }}>
+            <div className="w-5 h-5 rotate-45 bg-[#0b0b0b] border border-white/10" />
           </div>
+
+          {/* panel */}
+          <div className="rounded-3xl border border-white/10 bg-[#0b0b0b]/96 backdrop-blur-2xl shadow-[0_35px_80px_rgba(0,0,0,0.75)] overflow-hidden">
+            <div
+              className={`grid ${activeConfig?.columns?.length === 1
+                ? "grid-cols-1"
+                : activeConfig?.columns?.length === 2
+                  ? "grid-cols-1 lg:grid-cols-2"
+                  : "grid-cols-1 lg:grid-cols-3"
+                }`}
+            >
+              {activeConfig?.columns?.map((col, idx) => (
+                <div
+                  key={col.heading}
+                  className={`p-8 ${idx !== 0 ? "border-t lg:border-t-0 lg:border-l border-white/10" : ""
+                    }`}
+                >
+                  <MegaColumn column={col} onNavigate={() => setActiveMenu(null)} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* glow */}
+          <div className="absolute -inset-8 -z-10 blur-3xl opacity-50 bg-gradient-to-r from-orange-500/20 via-red-500/10 to-transparent rounded-[70px]" />
         </div>
       </div>
 
@@ -467,7 +465,7 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-    </header>
+    </header >
   );
 }
 

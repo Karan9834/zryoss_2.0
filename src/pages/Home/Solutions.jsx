@@ -254,7 +254,7 @@ function SolutionCard({ item }) {
         className="
           absolute inset-0
           flex flex-col justify-end
-          bg-black/65
+          bg-black/90
           opacity-0
           group-hover:opacity-100
           transition-opacity duration-500 ease-out
@@ -264,61 +264,61 @@ function SolutionCard({ item }) {
           className="
             translate-y-10 group-hover:translate-y-0
             transition-transform duration-700 ease-out
-            p-6
+            p-4 sm:p-5 md:p-6
           "
         >
           {/* heading */}
-          <h3 className="text-white text-[18px] sm:text-[19px] md:text-[20px] font-semibold leading-snug">
+          <h3 className="text-white text-[16px] sm:text-[18px] md:text-[20px] font-semibold leading-snug">
             {item.fullTitle}
           </h3>
 
-          <p className="text-white/80 text-sm md:text-[14px] mt-2 leading-relaxed">
+          <p className="text-white/80 text-[12px] sm:text-[13px] md:text-[14px] mt-1.5 sm:mt-2 leading-relaxed">
             {item.subtitle}
           </p>
 
           {/* ✅ points like before */}
-          <div className="mt-3">
-            <p className="text-[10px] uppercase tracking-widest text-orange-400 font-bold mb-3">
+          <div className="mt-2 sm:mt-3">
+            <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-orange-400 font-bold mb-2 sm:mb-3">
               Highlights
             </p>
 
-            <ul className="space-y-2 text-white/90 text-xs sm:text-sm">
+            <ul className="space-y-1 sm:space-y-1.5 md:space-y-2 text-white/90 text-[11px] sm:text-[12px] md:text-sm">
               <li className="flex gap-2 items-start">
-                <span className="mt-[6px] w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0" />
+                <span className="mt-[5px] sm:mt-[6px] w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-orange-400 flex-shrink-0" />
                 <span>Execution-ready systems</span>
               </li>
               <li className="flex gap-2 items-start">
-                <span className="mt-[6px] w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0" />
+                <span className="mt-[5px] sm:mt-[6px] w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-orange-400 flex-shrink-0" />
                 <span>Scalable workflows</span>
               </li>
               <li className="flex gap-2 items-start">
-                <span className="mt-[6px] w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0" />
+                <span className="mt-[5px] sm:mt-[6px] w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-orange-400 flex-shrink-0" />
                 <span>High-performing delivery</span>
               </li>
               <li className="flex gap-2 items-start">
-                <span className="mt-[6px] w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0" />
+                <span className="mt-[5px] sm:mt-[6px] w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-orange-400 flex-shrink-0" />
                 <span>Business-first outcomes</span>
               </li>
             </ul>
           </div>
 
           {/* ✅ Explore button smaller height */}
-          <div className="pt-5">
+          <div className="pt-3 sm:pt-4 md:pt-5">
             <Link
               to={item.link}
               className="
                 inline-flex items-center gap-2
-                px-3 py-2 rounded-full
+                px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-full
                 bg-orange-500 text-white
-                text-xs font-semibold
+                text-[10px] sm:text-[11px] md:text-xs font-semibold
                 shadow-lg shadow-orange-500/15
                 hover:scale-[1.02] active:scale-[0.98]
                 transition
               "
             >
               Explore
-              <span className="w-7 h-7 rounded-full bg-gray-800 text-orange-400 flex items-center justify-center border border-white/10">
-                <ArrowUpRight className="w-3.5 h-3.5" />
+              <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gray-800 text-orange-400 flex items-center justify-center border border-white/10">
+                <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
               </span>
             </Link>
           </div>

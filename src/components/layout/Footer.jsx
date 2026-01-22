@@ -157,52 +157,58 @@ export default function Footer() {
         </div>
 
         {/* ✅ BOTTOM */}
-        <div className="pt-8 border-t border-white/5 flex flex-col xl:flex-row justify-between items-center gap-8 text-center xl:text-left">
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
-              <p className="text-sm text-gray-500 whitespace-nowrap">
-                © {currentYear}{" "}
-                <span className="text-gray-200 font-semibold">Zryoss</span>
-              </p>
+        <div className="pt-10 border-t border-white/5 flex flex-col xl:flex-row justify-between items-center gap-10">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+            {/* Copyright & Powered By Group */}
+            <div className="flex items-center gap-4 text-[13px] text-gray-500 whitespace-nowrap">
+              <span>© {currentYear} <span className="text-gray-200 font-bold">Zryoss</span></span>
 
-              {/* Powered by */}
-              <p className="text-[12px] text-gray-600 flex items-center gap-1 whitespace-nowrap">
-                Powered by{" "}
+              <div className="w-[1px] h-4 bg-white/40 hidden sm:block" />
+
+              <div className="flex items-center gap-1.5 text-gray-500 opacity-90">
+                <span className="text-[13px] uppercase tracking-wider opacity-90">Powered by</span>
                 <a
                   href="https://kryosssoftech.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-gray-300 font-semibold hover:text-orange-400 transition-colors"
+                  className="flex items-center gap-1 text-gray-200 font-bold hover:text-orange-400 transition-all"
                 >
                   Kryoss Softech
-                  <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+                  <ExternalLink className="w-3 h-3 opacity-50" />
                 </a>
-              </p>
+              </div>
             </div>
 
-            <div className="flex gap-8 text-[11px] uppercase tracking-widest text-gray-500 font-medium">
-              <Link to="/privacy" className="hover:text-orange-500 transition-colors">
-                Privacy
-              </Link>
-              <Link to="/terms" className="hover:text-orange-500 transition-colors">
-                Terms
-              </Link>
-              <Link to="/security" className="hover:text-orange-500 transition-colors">
-                Compliance
-              </Link>
+            {/* Redesigned Legal Links */}
+            <div className="flex items-center gap-6 sm:gap-10">
+              {[
+                { name: "Privacy", path: "/privacy" },
+                { name: "Terms", path: "/terms" },
+                { name: "Compliance", path: "/security" },
+              ].map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold text-gray-400 hover:text-white transition-all relative group py-1"
+                >
+                  {link.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-300 group-hover:w-full" />
+                </Link>
+              ))}
             </div>
           </div>
 
-          {/* DMCA Badge */}
-          <div>
+          {/* DMCA Badge - Centered vertically with text */}
+          <div className="flex items-center opacity-80 hover:opacity-100 transition-opacity">
             <a
               href="//www.dmca.com/Protection/Status.aspx?id=4387dfbf-3bed-4aea-a28c-47397971b242"
               title="DMCA.com Protection Status"
-              className="dmca-badge"
+              className="dmca-badge inline-block"
             >
               <img
                 src="//images.dmca.com/Badges/dmca-badge-w150-5x1-01.png?ID=//www.dmca.com/Protection/Status.aspx?id=4387dfbf-3bed-4aea-a28c-47397971b242"
                 alt="DMCA.com Protection Status"
+                className="h-6 w-auto object-contain"
               />
             </a>
           </div>
