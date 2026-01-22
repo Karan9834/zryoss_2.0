@@ -1,34 +1,21 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 import {
-  CheckCircle2,
   ArrowRight,
-  Building2,
+  CheckCircle2,
+  AlertCircle,
+  ShieldCheck,
   Target,
-  Zap,
-  Stethoscope,
-  Plane,
-  Landmark,
-  Truck,
-  Film,
-  GraduationCap,
-  Mail,
-  Phone,
-  MapPin,
-  Plus,
-  Minus,
   Globe,
+  Building2,
+  Zap,
   Code2,
   Server,
-  ShieldCheck,
-  Cpu,
   Fingerprint,
-  Quote,
-  AlertCircle,
-  Star
-} from 'lucide-react';
-import { useEmail } from '../../../hooks/useEmail';
+  Plus,
+  Minus,
+} from "lucide-react";
 
-/* --- Hooks & Utility Components --- */
+/* ---------------- Hooks & Utility Components ---------------- */
 
 const useScrollVisibility = (threshold = 0.1) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,12 +24,11 @@ const useScrollVisibility = (threshold = 0.1) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
       { threshold }
     );
+
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, [threshold]);
@@ -59,14 +45,74 @@ const AnimatedSection = ({ children, delay = 0, className = "" }) => {
       className={`transform transition-all duration-1000 ease-out ${className}`}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
-        transitionDelay: `${delay}ms`
+        transform: isVisible ? "translateY(0)" : "translateY(40px)",
+        transitionDelay: `${delay}ms`,
       }}
     >
       {children}
     </div>
   );
 };
+
+const SectionHeader = ({
+  label,
+  title,
+  subtitle,
+  align = "center", // "center" | "left"
+  variant = "default", // "default" | "alt"
+  accent = "soft", // "none" | "soft" | "strong"
+}) => {
+  const isCenter = align === "center";
+
+  const titleAccent =
+    accent === "strong"
+      ? "text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400"
+      : accent === "soft"
+      ? "text-white"
+      : "text-white";
+
+  return (
+    <div className={`${isCenter ? "text-center" : "text-left"} mb-14`}>
+      {/* label chip */}
+      <div
+        className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6`}
+      >
+        <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+        <span className="text-xs font-semibold tracking-widest uppercase text-neutral-300">
+          {label}
+        </span>
+      </div>
+
+      {/* title */}
+      <h2
+        className={`text-4xl md:text-5xl font-bold tracking-tight mb-5 ${
+          variant === "alt" ? "leading-[1.05]" : ""
+        }`}
+      >
+        <span className={titleAccent}>{title}</span>
+      </h2>
+
+      {/* subtle divider line */}
+      <div
+        className={`h-px ${
+          isCenter ? "mx-auto" : ""
+        } w-24 bg-gradient-to-r from-orange-500/40 via-white/10 to-transparent mb-6`}
+      />
+
+      {/* subtitle */}
+      {subtitle && (
+        <p
+          className={`text-neutral-400 text-lg leading-relaxed font-light ${
+            isCenter ? "max-w-3xl mx-auto" : "max-w-2xl"
+          }`}
+        >
+          {subtitle}
+        </p>
+      )}
+    </div>
+  );
+};
+
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
@@ -75,385 +121,247 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
         onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left group"
       >
-        <span className={`text-lg font-medium transition-colors ${isOpen ? 'text-orange-500' : 'text-white group-hover:text-orange-400'}`}>
+        <span
+          className={`text-lg font-medium transition-colors ${
+            isOpen
+              ? "text-orange-500"
+              : "text-white group-hover:text-orange-400"
+          }`}
+        >
           {question}
         </span>
-        <div className={`p-2 rounded-full transition-all ${isOpen ? 'bg-orange-600 rotate-180' : 'bg-white/5 group-hover:bg-white/10'}`}>
+        <div
+          className={`p-2 rounded-full transition-all ${
+            isOpen
+              ? "bg-orange-600 rotate-180"
+              : "bg-white/5 group-hover:bg-white/10"
+          }`}
+        >
           {isOpen ? <Minus size={16} /> : <Plus size={16} />}
         </div>
       </button>
+
       <div
-        className={`grid transition-[grid-template-rows] duration-500 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-8' : 'grid-rows-[0fr] opacity-0'
-          }`}
+        className={`grid transition-[grid-template-rows] duration-500 ease-out ${
+          isOpen ? "grid-rows-[1fr] opacity-100 pb-8" : "grid-rows-[0fr] opacity-0"
+        }`}
       >
         <div className="overflow-hidden">
-          <p className="text-neutral-400 text-base leading-relaxed max-w-2xl">{answer}</p>
+          <p className="text-neutral-400 text-base leading-relaxed max-w-2xl">
+            {answer}
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-/* --- Main Application Component --- */
+/* ---------------- Main Page ---------------- */
 
-export default function KryossIPP() {
-  const formRef = useRef();
-  const { sendEmail, loading } = useEmail();
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [errors, setErrors] = useState({});
+export default function Overview() {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
-  const clients = [
-    'TechCorp', 'GlobalSoft', 'InnoVentures', 'DataFlow', 'CloudNine',
-    'NextGen', 'SmartHub', 'ProSystems', 'FutureTech', 'Quantum'
+  const checklist = [
+    "Identity",
+    "Digital presence",
+    "Business positioning",
+    "Sales readiness",
+    "Operational alignment",
   ];
 
-  const testimonials = [
-    {
-      name: "David Chen",
-      role: "CEO, Chen Digital",
-      content: "The IPP model allowed me to fire my unreliable freelance network and switch to Kryoss. My agency's delivery capacity went from 2 projects a month to 15, all under my brand.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200",
-      stats: "750% Growth"
-    },
-    {
-      name: "Elena Rodriguez",
-      role: "Founder, Zenith Marketing",
-      content: "I'm a marketer, not a coder. Kryoss handles the complex backend logic while I focus on client strategy. The white-label reporting is seamless.",
-      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200",
-      stats: "Zero Tech Debt"
-    },
-    {
-      name: "Marcus Thorne",
-      role: "Director, Thorne Systems",
-      content: "The ramp-up time was incredible. We signed the NDA on Monday and had a full development team assigned by Wednesday. Best partnership decision we've made.",
-      avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200",
-      stats: "Instant Scale"
-    }
+  const failReasons = [
+    "Branding is inconsistent",
+    "Digital presence looks unprofessional",
+    "Messaging is unclear",
+    "Operations are not aligned with positioning",
   ];
 
-  const validate = () => {
-    let tempErrors = {};
-    if (!formData.name.trim()) tempErrors.name = "Full Name is required";
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!formData.email) {
-      tempErrors.email = "Email is required";
-    } else if (!emailRegex.test(formData.email)) {
-      tempErrors.email = "Invalid email format";
-    }
-
-    if (!formData.message.trim()) tempErrors.message = "Message is required";
-
-    setErrors(tempErrors);
-    return Object.keys(tempErrors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (validate()) {
-      const result = await sendEmail(formRef);
-      if (result.success) {
-        alert("Application Submitted!");
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        alert("Failed to submit. Please try again later.");
-      }
-    }
-  };
-
-  const industries = [
-    { icon: Stethoscope, name: "Healthcare IT", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600" },
-    { icon: Plane, name: "Travel Tech", img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=600" },
-    { icon: Landmark, name: "Fintech", img: "/finance image.webp" },
-    { icon: Truck, name: "Logistics", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=600" },
-    { icon: Film, name: "Media", img: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=600" },
-    { icon: GraduationCap, name: "EdTech", img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600" }
-  ];
-
-  const workflowSteps = [
+  const steps = [
     {
       num: "01",
-      title: "NDA & Onboard",
-      desc: "Legal framework setup.",
-      icon: ShieldCheck,
-      detail: "24hr Processing"
+      title: "Brand Direction & Positioning",
+      icon: Target,
+      points: [
+        "Business vertical and domain focus",
+        "Target audience and market positioning",
+        "Service offerings and scope",
+        "Brand tone and direction",
+      ],
+      note: "Clear, focused, scalable brand foundation",
     },
     {
       num: "02",
-      title: "Scope Handoff",
-      desc: "Send us your requirements.",
-      icon: Target,
-      detail: "Technical Audit"
+      title: "Brand Identity Creation",
+      icon: Fingerprint,
+      points: [
+        "Brand name (if required)",
+        "Logo and visual identity",
+        "Brand guidelines and consistency",
+        "Aligned with vertical + market expectations",
+      ],
+      note: "Identity built for long-term scalability",
     },
     {
       num: "03",
-      title: "White-Label Dev",
-      desc: "We build under your brand.",
-      icon: Code2,
-      detail: "Agile Sprints"
+      title: "Website & Digital Presence",
+      icon: Globe,
+      points: [
+        "Professional website under your brand name",
+        "Domain and hosting setup (where applicable)",
+        "Clear service pages and positioning",
+        "Contact and inquiry setup",
+      ],
+      note: "Execution-ready website, not informational only",
     },
     {
       num: "04",
-      title: "Silent Delivery",
-      desc: "Deploy to your client.",
-      icon: Server,
-      detail: "Full Documentation"
-    }
+      title: "Company Profile & Sales Collateral",
+      icon: Building2,
+      points: [
+        "Company profile / pitch deck",
+        "Service brochures or presentations",
+        "Proposal + pricing structure support",
+      ],
+      note: "Professional communication from day one",
+    },
+    {
+      num: "05",
+      title: "Social Media & Digital Setup",
+      icon: Zap,
+      points: [
+        "Official social media pages",
+        "Initial branding and positioning",
+        "Content structure and posting plan",
+      ],
+      note: "Credibility + market visibility ensured",
+    },
+  ];
+
+  const ecosystemPoints = [
+    "Connected to the Zryoss platform",
+    "Execution routing is enabled",
+    "Sales enablement and demo support are activated",
+    "Account management is assigned",
+  ];
+
+  const faqs = [
+    {
+      question: "Is IPP an employment role?",
+      answer:
+        "No. IPP is not an employment role. It is a business partnership model designed for ownership-based founders.",
+    },
+    {
+      question: "Is IPP a franchise?",
+      answer:
+        "No. IPP is not a franchise. There is no franchising structure — you operate independently under your own brand.",
+    },
+    {
+      question: "Is IPP a passive investment product?",
+      answer:
+        "No. IPP is not a passive investment model. You build your business and own clients, while Zryoss powers backend execution.",
+    },
+    {
+      question: "Who owns the brand and client relationship?",
+      answer:
+        "You own the brand fully. Your client relationships belong to you. Zryoss does not claim brand ownership.",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-orange-600/30">
-      {/* Background Ambience */}
+      {/* Ambient Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-orange-600/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[100px]" />
       </div>
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="w-full h-full bg-[#0a0a0a] flex flex-col items-center justify-center border-b border-white/5 relative">
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent z-10" />
-            <img
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000"
-              className="w-full h-full object-cover opacity-30"
-              alt="Background"
-            />
-          </div>
+      {/* ---------------- HERO ---------------- */}
+      <section className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000"
+            className="w-full h-full object-cover opacity-25"
+            alt="Background"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10 w-full">
           <AnimatedSection>
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8 hover:bg-white/10 transition-colors cursor-default">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8">
                 <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-                <span className="text-xs font-semibold tracking-wide uppercase text-neutral-300">Independent Prime Partner Program</span>
+                <span className="text-xs font-semibold tracking-wide uppercase text-neutral-300">
+                  IPP – Independent Prime Partner
+                </span>
               </div>
 
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[0.95] tracking-tight">
-                Your Brand.<br />
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight mb-6">
+                Build Your Own Brand.
+                <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
-                  Our Technology.
+                  Operate on a Proven System.
                 </span>
               </h1>
 
-              <p className="text-xl md:text-2xl text-neutral-400 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
-                Scale your agency without the technical overhead. We provide the engine, you drive the business.
+              <p className="text-lg md:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto font-light mb-10">
+                An Independent Prime Partner (IPP) is an individual or founder who
+                builds and operates their own independent business brand, while using
+                <span className="text-white font-medium"> Zryoss</span> as the backend
+                operating system.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <button className="px-10 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold text-lg transition-all hover:scale-105 shadow-[0_0_30px_-10px_rgba(234,88,12,0.5)] flex items-center gap-2 group">
-                  Start Partnership
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button className="px-8 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold text-base transition-all hover:scale-[1.03] shadow-[0_0_30px_-12px_rgba(234,88,12,0.5)] flex items-center justify-center gap-2">
+                  Start IPP Journey <ArrowRight size={18} />
                 </button>
-                <button className="px-10 py-4 bg-transparent border border-neutral-700 hover:border-white text-white rounded-full font-bold text-lg transition-all hover:bg-white/5">
-                  View Documentation
-                </button>
+
+                <a
+                  href="#brand-creation"
+                  className="px-8 py-4 bg-transparent border border-neutral-700 hover:border-white rounded-full font-bold text-base transition-all hover:bg-white/5 flex items-center justify-center gap-2"
+                >
+                  Brand Creation Process <ArrowRight size={18} />
+                </a>
               </div>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Overview Section - Split Layout */}
-      <section className="min-h-screen flex flex-col justify-center py-20 px-6 relative z-10">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* ---------------- IPP DEFINITION ---------------- */}
+      <section className="py-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+              label="Program Overview"
+              title="What Exactly Is an IPP?"
+              subtitle="Clear definition, clarity on what you get, and why this model is designed for ownership-first founders."
+              align="left"
+              variant="alt"
+              accent="soft"
+            />
+
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             <AnimatedSection>
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] lg:aspect-square group shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200"
-                  alt="Team collaboration"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                <div className="absolute bottom-8 left-8 right-8">
-                  <div className="p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl">
-                    <div className="text-3xl font-bold text-white mb-1">100+</div>
-                    <div className="text-sm text-neutral-300">Active Agencies Supported</div>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
+              <h3 className="text-2xl font-bold mb-5 text-white">What IPP Is</h3>
 
-            <AnimatedSection delay={200}>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-                The Partnership Model <br />
-                <span className="text-neutral-500">Reimagined.</span>
-              </h2>
-              <div className="space-y-6 text-lg text-neutral-400 font-light">
-                <p>
-                  The Independent Prime Partner (IPP) program is built for visionaries who want to lead without getting bogged down by technical execution.
-                </p>
-                <p>
-                  We act as your engine room. You own the client, the brand, and the relationship. We provide the heavy lifting—development, QA, and maintenance—completely white-labeled under your banner.
-                </p>
-                <div className="pt-6">
-                  <div className="flex items-center gap-4 text-white font-medium">
-                    <div className="w-12 h-12 rounded-full bg-orange-600/20 flex items-center justify-center text-orange-500">
-                      <Zap size={24} />
-                    </div>
-                    <span>No franchising fees. No hidden costs.</span>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Join Us - Beautiful Data Cards */}
-      <section className="min-h-screen flex flex-col justify-center py-20 px-6 bg-[#080808] relative">
-        <div className="max-w-7xl mx-auto w-full">
-          <AnimatedSection className="mb-20">
-            <div className="flex flex-col md:flex-row justify-between items-end gap-8 pb-8 border-b border-white/5">
-              <div className="max-w-2xl">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Become a Partner?</h2>
-                <p className="text-neutral-400 text-lg">Unlock specific advantages designed to accelerate your agency's growth with clear data-driven benefits.</p>
-              </div>
-              <a href="#contact" className="px-6 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-orange-600 hover:border-orange-600 text-white transition-all flex items-center gap-2">
-                <span>Join Program</span> <ArrowRight size={16} />
-              </a>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid lg:grid-cols-3 gap-6">
-            {[
-              {
-                icon: Fingerprint,
-                title: "Total Brand Control",
-                desc: "Your clients see only you. We operate silently in the background, ensuring your brand equity grows.",
-                metrics: [
-                  { label: "White-Label", value: "100%" },
-                  { label: "IP Ownership", value: "Yours" }
-                ],
-                color: "text-orange-400"
-              },
-              {
-                icon: Building2,
-                title: "Zero Risk Entry",
-                desc: "Start immediately without capital expenditure. No need to hire expensive technical teams.",
-                metrics: [
-                  { label: "Capex", value: "$0.00" },
-                  { label: "Hiring Time", value: "0 Days" }
-                ],
-                color: "text-blue-400"
-              },
-              {
-                icon: Globe,
-                title: "Global Infrastructure",
-                desc: "Leverage our distributed network of developers and battle-tested systems from day one.",
-                metrics: [
-                  { label: "Resources", value: "500+" },
-                  { label: "Availability", value: "24/7" }
-                ],
-                color: "text-purple-400"
-              }
-            ].map((item, i) => (
-              <AnimatedSection key={i} delay={i * 100}>
-                <div className="h-full bg-neutral-900/40 border border-white/5 rounded-3xl p-8 hover:bg-neutral-900/80 hover:border-orange-500/30 transition-all duration-500 group relative overflow-hidden flex flex-col">
-                  {/* Hover Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <div className="relative z-10">
-                    <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-white/5">
-                      <item.icon size={28} className={item.color} />
-                    </div>
-
-                    <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-orange-500 transition-colors">{item.title}</h3>
-                    <p className="text-neutral-400 leading-relaxed mb-8">{item.desc}</p>
-
-                    {/* Data Points Divider */}
-                    <div className="w-full h-px bg-white/5 mb-6" />
-
-                    {/* Data Points Grid */}
-                    <div className="grid grid-cols-2 gap-4 mt-auto">
-                      {item.metrics.map((metric, idx) => (
-                        <div key={idx} className="bg-black/20 rounded-lg p-3 border border-white/5">
-                          <div className="text-xs text-neutral-500 uppercase tracking-wider mb-1 font-semibold">{metric.label}</div>
-                          <div className="text-lg font-mono text-white font-bold">{metric.value}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Workflow Section - Pipeline Design */}
-      <section className="min-h-screen flex flex-col justify-center py-20 px-6 relative z-10 bg-[#050505] overflow-hidden">
-        <div className="max-w-7xl mx-auto w-full relative">
-          <AnimatedSection className="text-center mb-24">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Seamless Workflow</h2>
-            <p className="text-neutral-400 text-lg">Four distinct phases to delivery excellence.</p>
-          </AnimatedSection>
-
-          <div className="relative">
-            {/* Connecting Line - Desktop (Horizontal) */}
-            <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-neutral-800 -translate-y-1/2 rounded-full z-0">
-              <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-neutral-800 via-orange-900/50 to-neutral-800" />
-            </div>
-
-            {/* Connecting Line - Mobile (Vertical) */}
-            <div className="md:hidden absolute top-0 left-8 h-full w-1 bg-neutral-800 rounded-full z-0" />
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative z-10">
-              {workflowSteps.map((step, i) => (
-                <AnimatedSection key={i} delay={i * 150} className="relative">
-                  <div className="flex flex-col md:items-center relative group">
-                    {/* Number Node */}
-                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#0a0a0a] border-4 border-neutral-800 text-neutral-500 font-bold text-xl mb-6 group-hover:border-orange-500 group-hover:text-orange-500 transition-all duration-500 shadow-[0_0_20px_rgba(0,0,0,1)] relative z-20 md:ml-0 ml-0">
-                      {step.num}
-                    </div>
-
-                    {/* Card Content */}
-                    <div className="pl-4 md:pl-0 md:text-center w-full">
-                      <div className="p-6 rounded-2xl bg-neutral-900 border border-white/5 hover:bg-neutral-800/80 transition-all duration-300 hover:-translate-y-2">
-                        <div className="mb-4 inline-flex p-3 rounded-lg bg-orange-500/10 text-orange-500">
-                          <step.icon size={24} />
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-                        <p className="text-sm text-neutral-400 mb-4 h-10">{step.desc}</p>
-
-                        <div className="inline-block px-3 py-1 rounded text-xs font-mono bg-white/5 text-neutral-300 border border-white/5">
-                          {step.detail}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Capabilities / Checklist Section */}
-      <section className="py-32 px-6 relative z-10 bg-neutral-950">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <AnimatedSection>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8">We Handle The Code.<br />You Handle The Business.</h2>
-              <p className="text-neutral-400 text-lg mb-12 font-light">
-                Think of us as your elite technical co-founder. While you focus on strategy and sales, we execute with precision.
+              <p className="text-neutral-400 text-lg leading-relaxed font-light mb-8">
+                IPP is a business partnership model designed for people who want
+                ownership—without the burden of building everything from scratch.
               </p>
 
-              <div className="grid gap-6">
+              <div className="grid gap-4">
                 {[
-                  "Full-cycle software development & delivery",
-                  "Rigorous QA & automated testing",
-                  "Scalable cloud infrastructure management",
-                  "White-label technical documentation",
-                  "24/7 Maintenance & support teams",
-                  "Security & compliance audits"
+                  "You build your independent business brand",
+                  "You operate under your chosen name and positioning",
+                  "Zryoss powers backend execution as the operating system",
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-neutral-900/50 border border-white/5 hover:bg-neutral-900 hover:border-orange-500/30 transition-all group">
-                    <div className="w-8 h-8 rounded-full bg-orange-600/20 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-600 transition-colors">
-                      <CheckCircle2 className="text-orange-500 group-hover:text-white" size={16} />
+                  <div
+                    key={i}
+                    className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10"
+                  >
+                    <div className="w-9 h-9 rounded-full bg-orange-600/20 flex items-center justify-center">
+                      <CheckCircle2 className="text-orange-500" size={16} />
                     </div>
                     <span className="text-neutral-200">{item}</span>
                   </div>
@@ -461,43 +369,146 @@ export default function KryossIPP() {
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={200} className="relative">
-              <div className="sticky top-32">
-                <div className="relative rounded-2xl overflow-hidden aspect-[3/4] border border-white/10 shadow-2xl bg-neutral-900">
-                  <img
-                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000"
-                    alt="Coding Interface"
-                    className="w-full h-full object-cover opacity-60"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <div className="bg-black/50 backdrop-blur-xl p-6 rounded-xl border border-white/10">
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-xs font-mono text-orange-500">SYSTEM STATUS</span>
-                        <span className="flex items-center gap-2 text-xs font-mono text-green-400">
-                          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" /> OPERATIONAL
-                        </span>
+            <AnimatedSection delay={150}>
+              <div className="bg-neutral-900/50 border border-white/5 rounded-3xl p-8">
+                <h3 className="text-2xl font-bold mb-6">What IPP Is NOT</h3>
+
+                <div className="space-y-4">
+                  {[
+                    "IPP is not an employment role.",
+                    "IPP is not a franchise.",
+                    "IPP is not a passive investment product.",
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-4 p-4 rounded-xl bg-black/30 border border-white/5"
+                    >
+                      <div className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center mt-0.5">
+                        <AlertCircle className="text-orange-400" size={16} />
                       </div>
-                      <div className="space-y-4">
-                        <div className="space-y-2">
-                          <div className="flex justify-between text-xs text-neutral-300">
-                            <span>Server Load</span>
-                            <span>24%</span>
-                          </div>
-                          <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                            <div className="h-full w-1/4 bg-orange-500 rounded-full" />
-                          </div>
-                        </div>
-                        <div className="space-y-2">
-                          <div className="flex justify-between text-xs text-neutral-300">
-                            <span>Project Delivery</span>
-                            <span>98% On Time</span>
-                          </div>
-                          <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                            <div className="h-full w-[98%] bg-green-500 rounded-full" />
-                          </div>
-                        </div>
-                      </div>
+                      <span className="text-neutral-300 leading-relaxed">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 p-5 rounded-2xl bg-gradient-to-r from-orange-500/15 to-transparent border border-orange-500/20">
+                  <div className="flex items-center gap-3 mb-2">
+                    <ShieldCheck className="text-orange-400" size={18} />
+                    <span className="font-bold text-white">
+                      Ownership-led partnership
+                    </span>
+                  </div>
+                  <p className="text-sm text-neutral-300 leading-relaxed">
+                    IPP is built for founders who want to grow a serious business with a
+                    structured system behind execution.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- BRAND CREATION INTRO ---------------- */}
+      <section id="brand-creation" className="py-24 bg-[#0a0a0a] relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            label="Brand Creation System"
+            title="From Individual to a Fully Launched Business Brand"
+            subtitle="Zryoss builds your brand operationally, so you don’t waste time experimenting."
+          />
+
+          <div className="grid lg:grid-cols-2 gap-10">
+            <AnimatedSection>
+              <div className="p-10 rounded-3xl bg-neutral-900/40 border border-white/5 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-60" />
+                <div className="relative">
+                  <h3 className="text-2xl font-bold mb-4 text-white">
+                    You own the brand.
+                  </h3>
+                  <p className="text-neutral-300 leading-relaxed">
+                    Zryoss builds the foundation, aligns positioning with execution
+                    capability, and ensures you launch as a real business—not just a logo.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={120}>
+              <div className="p-10 rounded-3xl bg-neutral-900/40 border border-white/5">
+                <h3 className="text-2xl font-bold mb-4">Why Brand Creation Is Central</h3>
+                <ul className="space-y-3 text-neutral-300">
+                  {failReasons.map((r, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="mt-1 w-2 h-2 rounded-full bg-orange-500" />
+                      <span>{r}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-8 border-t border-white/10 pt-6">
+                  <p className="text-neutral-400 leading-relaxed">
+                    Zryoss solves this by treating brand creation as a{" "}
+                    <span className="text-white font-semibold">system process</span> —
+                    not a creative exercise alone.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- WHAT BRAND CREATION INCLUDES ---------------- */}
+      <section className="py-24 relative z-10 bg-[#050505]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            label="What You Get"
+            title="Brand Creation Means More Than Visuals"
+            subtitle="This includes everything required to operate as a real business from day one."
+          />
+
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            <AnimatedSection>
+              <div className="grid gap-4">
+                {checklist.map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-4 p-4 rounded-xl bg-neutral-900/50 border border-white/5 hover:border-orange-500/20 transition-colors"
+                  >
+                    <div className="w-9 h-9 rounded-full bg-orange-600/20 flex items-center justify-center">
+                      <CheckCircle2 className="text-orange-500" size={16} />
+                    </div>
+                    <span className="text-neutral-200">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={150}>
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-neutral-900">
+                <img
+                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=1400"
+                  alt="Brand strategy"
+                  className="w-full h-[520px] object-cover opacity-65"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <div className="bg-black/55 backdrop-blur-xl p-6 rounded-2xl border border-white/10">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-mono text-orange-500">
+                        IPP BRAND READINESS
+                      </span>
+                      <span className="text-xs font-mono text-green-400 flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                        MARKET READY
+                      </span>
+                    </div>
+                    <div className="mt-4 text-neutral-200 font-medium">
+                      Not perfection —{" "}
+                      <span className="text-white font-bold">business readiness</span>.
                     </div>
                   </div>
                 </div>
@@ -507,78 +518,49 @@ export default function KryossIPP() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="min-h-screen flex flex-col justify-center py-24 px-6 relative overflow-hidden bg-neutral-950">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        <div className="max-w-7xl mx-auto w-full relative">
-          <AnimatedSection className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Partner Success Stories</h2>
-            <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-              Hear from the agencies who are scaling their business with the Kryoss IPP model.
-            </p>
-          </AnimatedSection>
+      {/* ---------------- STEPS ---------------- */}
+      <section className="py-24 bg-[#0a0a0a] relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            label="Execution Flow"
+            title="Step-by-Step IPP Brand Creation Process"
+            subtitle="Structured. Predictable. Execution-focused. Your brand is built like a system."
+          />
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <AnimatedSection key={i} delay={i * 150} className="h-full">
-                <div className="p-8 rounded-3xl bg-neutral-900/50 border border-white/5 flex flex-col h-full hover:bg-neutral-900 transition-colors group relative overflow-hidden">
-                  {/* Decorative quote icon */}
-                  <Quote className="absolute -top-4 -right-4 w-24 h-24 text-white/5 -rotate-12 group-hover:text-orange-500/10 transition-colors" />
-
-                  <div className="flex gap-1 mb-6">
-                    {[...Array(5)].map((_, j) => (
-                      <Star key={j} size={14} className="fill-orange-500 text-orange-500" />
-                    ))}
-                  </div>
-
-                  <p className="text-lg text-neutral-300 italic mb-10 relative z-10 leading-relaxed">
-                    "{t.content}"
-                  </p>
-
-                  <div className="mt-auto flex items-center gap-4 border-t border-white/5 pt-8">
-                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-orange-500/50">
-                      <img src={t.avatar} alt={t.name} className="w-full h-full object-cover" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white">{t.name}</h4>
-                      <p className="text-xs text-neutral-500 uppercase tracking-widest mb-1">{t.role}</p>
-                      <div className="text-[10px] font-mono font-bold text-orange-500 px-2 py-0.5 bg-orange-500/10 rounded inline-block">
-                        {t.stats}
+          <div className="grid lg:grid-cols-2 gap-8">
+            {steps.map((s, i) => (
+              <AnimatedSection key={s.num} delay={i * 80}>
+                <div className="p-8 rounded-3xl bg-neutral-900/50 border border-white/5 hover:border-orange-500/20 hover:bg-neutral-900 transition-colors group">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                        <s.icon className="text-orange-500" size={26} />
+                      </div>
+                      <div>
+                        <div className="text-xs font-mono text-neutral-500">{s.num}</div>
+                        <h3 className="text-2xl font-bold text-white group-hover:text-orange-500 transition-colors">
+                          {s.title}
+                        </h3>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Industries - Image Grid */}
-      <section className="min-h-screen flex flex-col justify-center py-20 px-6 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto w-full">
-          <AnimatedSection className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Industries We Serve</h2>
-            <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-              Our expertise spans across critical sectors, delivering compliant and cutting-edge solutions.
-            </p>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {industries.map((industry, i) => (
-              <AnimatedSection key={i} delay={i * 50}>
-                <div className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer shadow-lg">
-                  <img
-                    src={industry.img}
-                    alt={industry.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                    <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mb-3 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                      <industry.icon className="text-white" size={24} />
+                    <div className="hidden sm:flex items-center gap-2 text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300">
+                      <Code2 size={14} />
+                      System Step
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white transform group-hover:-translate-y-2 transition-transform duration-300">{industry.name}</h3>
+                  </div>
+
+                  <ul className="space-y-3 text-neutral-300">
+                    {s.points.map((p, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <CheckCircle2 className="text-orange-500 mt-0.5" size={16} />
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-6 p-4 rounded-2xl bg-black/35 border border-white/5 text-sm text-neutral-400">
+                    {s.note}
                   </div>
                 </div>
               </AnimatedSection>
@@ -587,56 +569,172 @@ export default function KryossIPP() {
         </div>
       </section>
 
-      {/* Clients Scroller */}
-      <section className="py-20 border-y border-white/5 bg-black overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
-          <span className="text-sm font-mono text-neutral-500 tracking-widest uppercase">Trusted By Industry Leaders</span>
-        </div>
-        <div className="relative flex overflow-x-hidden group">
-          <div className="animate-marquee whitespace-nowrap flex gap-16 px-6">
-            {[...clients, ...clients, ...clients].map((client, i) => (
-              <span key={i} className="text-2xl md:text-4xl font-bold text-neutral-800 hover:text-white transition-colors cursor-default">
-                {client.toUpperCase()}
-              </span>
-            ))}
-          </div>
-          <div className="animate-marquee2 absolute top-0 whitespace-nowrap flex gap-16 px-6">
-            {[...clients, ...clients, ...clients].map((client, i) => (
-              <span key={i} className="text-2xl md:text-4xl font-bold text-neutral-800 hover:text-white transition-colors cursor-default">
-                {client.toUpperCase()}
-              </span>
-            ))}
+      {/* ---------------- OWNERSHIP + INTEGRATION ---------------- */}
+      <section className="py-24 relative z-10 bg-[#050505]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            label="System + Ownership"
+            title="Ownership, Control & Ecosystem Integration"
+            subtitle="You own everything client-facing. Zryoss powers the backend execution."
+          />
+
+          <div className="grid lg:grid-cols-2 gap-10">
+            <AnimatedSection>
+              <div className="p-10 rounded-3xl bg-neutral-900/45 border border-white/5">
+                <h3 className="text-2xl font-bold mb-6">Brand Ownership & Control</h3>
+                <div className="space-y-4 text-neutral-300 leading-relaxed">
+                  {[
+                    "The brand is fully owned by the IPP.",
+                    "The brand operates under the IPP’s chosen name.",
+                    "Clients belong to the IPP.",
+                    "Zryoss does not claim brand ownership.",
+                  ].map((t, i) => (
+                    <div key={i} className="flex gap-3">
+                      <CheckCircle2 size={18} className="text-orange-500 mt-0.5" />
+                      <span>{t}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 p-5 rounded-2xl bg-gradient-to-r from-orange-500/15 to-transparent border border-orange-500/20">
+                  <p className="text-neutral-200">
+                    Zryoss only provides the operating and execution backbone.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={120}>
+              <div className="p-10 rounded-3xl bg-neutral-900/45 border border-white/5">
+                <h3 className="text-2xl font-bold mb-6">Integration with Zryoss Ecosystem</h3>
+
+                <div className="space-y-4">
+                  {ecosystemPoints.map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <Server className="text-orange-500 mt-0.5" size={18} />
+                      <span className="text-neutral-300">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-10 rounded-2xl bg-black/30 border border-white/5 p-6">
+                  <div className="text-xs uppercase tracking-widest text-neutral-500 mb-2 font-semibold">
+                    Result
+                  </div>
+                  <p className="text-neutral-200 leading-relaxed">
+                    Your brand becomes operationally{" "}
+                    <span className="text-white font-bold">live</span> — not just visible.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="min-h-screen flex flex-col justify-center py-20 px-6">
-        <div className="max-w-4xl mx-auto w-full">
-          <AnimatedSection className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Common Questions</h2>
+      {/* ---------------- TIMELINE + WHY WORKS ---------------- */}
+      <section className="py-24 bg-[#0a0a0a] relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            label="Readiness + Proof"
+            title="Timeline & Why This System Works"
+            subtitle="Fast, structured, predictable — and built to reduce startup risk."
+          />
+
+          <div className="grid lg:grid-cols-2 gap-10">
+            <AnimatedSection>
+              <div className="p-10 rounded-3xl bg-neutral-900/55 border border-white/5">
+                <h3 className="text-2xl font-bold mb-6">Timeline & Readiness</h3>
+
+                <p className="text-neutral-400 leading-relaxed mb-6">
+                  Brand creation is designed to be fast, structured, and predictable.
+                </p>
+
+                <div className="p-6 rounded-2xl bg-black/35 border border-white/5">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Zap size={18} className="text-orange-500" />
+                    <span className="font-bold text-white">Goal</span>
+                  </div>
+                  <p className="text-neutral-300">
+                    The goal is not perfection — the goal is business readiness.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={120}>
+              <div className="p-10 rounded-3xl bg-neutral-900/55 border border-white/5">
+                <h3 className="text-2xl font-bold mb-6">Why This Model Works</h3>
+
+                <div className="space-y-4 text-neutral-300">
+                  {[
+                    "Eliminates early-stage confusion",
+                    "Ensures professional market entry",
+                    "Aligns brand with execution capability",
+                    "Saves time, cost, and effort",
+                    "Reduces startup risk",
+                  ].map((x, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="text-orange-500 mt-0.5" size={18} />
+                      <span>{x}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-orange-500/15 to-transparent border border-orange-500/20">
+                  <p className="text-white font-semibold">
+                    You don’t experiment. You start with a system.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- FINAL CTA ---------------- */}
+      <section className="py-24 bg-[#050505] relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            label="Final Message"
+            title="Your Brand Is the Front. Zryoss Is the Engine."
+            subtitle="Brand creation is not separate in Zryoss — it is the first step of execution."
+          />
+
+          <AnimatedSection className="text-center">
+            <p className="text-neutral-400 text-lg max-w-3xl mx-auto leading-relaxed font-light mb-10">
+              IPP brand creation ensures you don’t just look like a business — you operate like one.
+              From identity to execution, everything flows as one system.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-10 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold transition-all hover:scale-[1.03] flex items-center justify-center gap-2">
+                Apply for IPP Partnership <ArrowRight size={18} />
+              </button>
+
+              <a
+                href="#"
+                className="px-10 py-4 bg-transparent border border-neutral-700 hover:border-white rounded-full font-bold transition-all hover:bg-white/5"
+              >
+                Download IPP Overview
+              </a>
+            </div>
           </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ---------------- FAQ ---------------- */}
+      <section className="py-24 bg-[#0a0a0a] relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            label="FAQ"
+            title="Common Questions"
+            subtitle="Quick answers to help you understand the IPP model clearly."
+          />
 
           <div className="bg-white/5 rounded-3xl p-8 md:p-12 border border-white/5">
-            {[
-              {
-                question: "How does the white-label arrangement work?",
-                answer: "We sign a strict NDA. Our team effectively becomes your team. We use your email domain for communication if needed, or work strictly backend. All documentation, code repositories, and deliverables carry your branding."
-              },
-              {
-                question: "What is the typical ramp-up time?",
-                answer: "Once partnership agreements are signed, we can typically deploy a dedicated team or resources within 7-14 days, depending on the complexity of the requirements."
-              },
-              {
-                question: "Do you offer post-launch support?",
-                answer: "Yes, we provide comprehensive SLA-based support packages that you can resell to your clients, generating recurring revenue streams."
-              },
-              {
-                question: "What is the cost structure?",
-                answer: "We offer flexible models: Fixed Cost for defined scopes, or Time & Material for evolving projects. Partners receive special wholesale rates allowing for healthy margins."
-              }
-            ].map((faq, i) => (
-              <AnimatedSection key={i} delay={i * 50}>
+            {faqs.map((faq, i) => (
+              <AnimatedSection key={i} delay={i * 60}>
                 <FAQItem
                   question={faq.question}
                   answer={faq.answer}
@@ -648,163 +746,6 @@ export default function KryossIPP() {
           </div>
         </div>
       </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="min-h-screen flex flex-col justify-center py-20 px-6 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="grid lg:grid-cols-5 gap-12 bg-neutral-900 rounded-[2rem] overflow-hidden border border-neutral-800 shadow-2xl">
-            {/* Left Side Info */}
-            <div className="lg:col-span-2 bg-orange-600 p-12 text-white flex flex-col justify-between relative overflow-hidden">
-              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-              <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-6">Ready to Scale?</h3>
-                <p className="text-orange-100 mb-12">
-                  Join the Independent Prime Partner program today and transform your business delivery capabilities.
-                </p>
-
-                <div className="space-y-8">
-                  <div className="flex items-start gap-4">
-                    <Mail className="mt-1 opacity-80" />
-                    <div>
-                      <div className="text-xs uppercase opacity-70 mb-1">Email Us</div>
-                      <div className="font-medium">partners@kryoss.com</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <Phone className="mt-1 opacity-80" />
-                    <div>
-                      <div className="text-xs uppercase opacity-70 mb-1">Call Us</div>
-                      <div className="font-medium">+1 (888) KRYOSS-IPP</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <MapPin className="mt-1 opacity-80" />
-                    <div>
-                      <div className="text-xs uppercase opacity-70 mb-1">Headquarters</div>
-                      <div className="font-medium">123 Innovation Drive<br />San Francisco, CA 94105</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side Form */}
-            <div className="lg:col-span-3 p-12">
-              <h3 className="text-2xl font-bold mb-8 text-white">Application Request</h3>
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide">Full Name</label>
-                    <input
-                      type="text"
-                      name="from_name"
-                      className={`w-full bg-neutral-950 border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors ${errors.name ? 'border-red-500' : 'border-neutral-800'}`}
-                      placeholder="John Doe"
-                      value={formData.name}
-                      onChange={(e) => {
-                        setFormData({ ...formData, name: e.target.value });
-                        if (errors.name) setErrors({ ...errors, name: '' });
-                      }}
-                    />
-                    {errors.name && <span className="text-red-500 text-xs flex items-center gap-1"><AlertCircle size={10} /> {errors.name}</span>}
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide">Work Email</label>
-                    <input
-                      type="email"
-                      name="reply_to"
-                      className={`w-full bg-neutral-950 border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors ${errors.email ? 'border-red-500' : 'border-neutral-800'}`}
-                      placeholder="john@company.com"
-                      value={formData.email}
-                      onChange={(e) => {
-                        setFormData({ ...formData, email: e.target.value });
-                        if (errors.email) setErrors({ ...errors, email: '' });
-                      }}
-                    />
-                    {errors.email && <span className="text-red-500 text-xs flex items-center gap-1"><AlertCircle size={10} /> {errors.email}</span>}
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-neutral-500 uppercase tracking-wide">Message / Inquiry</label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    className={`w-full bg-neutral-950 border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors resize-none ${errors.message ? 'border-red-500' : 'border-neutral-800'}`}
-                    placeholder="Tell us about your business..."
-                    value={formData.message}
-                    onChange={(e) => {
-                      setFormData({ ...formData, message: e.target.value });
-                      if (errors.message) setErrors({ ...errors, message: '' });
-                    }}
-                  />
-                  {errors.message && <span className="text-red-500 text-xs flex items-center gap-1"><AlertCircle size={10} /> {errors.message}</span>}
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full py-4 bg-white text-black font-bold rounded-lg hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
-                >
-                  {loading ? "Submitting..." : "Submit Application"}
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Office Location */}
-      <section className="h-[400px] relative group overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000"
-          alt="Office Map View"
-          className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
-        />
-        <div className="absolute inset-0 bg-black/30 pointer-events-none" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="bg-white/10 backdrop-blur-md p-8 rounded-full border border-white/20 hover:scale-110 transition-transform cursor-pointer shadow-2xl">
-            <MapPin size={48} className="text-white drop-shadow-lg" />
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-black py-16 px-6 border-t border-neutral-900">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-center md:text-left">
-            <div className="text-2xl font-bold tracking-tighter text-white mb-2">KRYOSS<span className="text-orange-600">.</span></div>
-            <p className="text-neutral-500 text-sm">Empowering businesses through technical excellence.</p>
-          </div>
-
-          <div className="flex gap-8 text-sm text-neutral-400">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Partner Agreement</a>
-          </div>
-
-          <div className="text-neutral-600 text-xs">
-            © 2024 Kryoss IPP. All rights reserved.
-          </div>
-        </div>
-      </footer>
-
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-100%); }
-        }
-        @keyframes marquee2 {
-          0% { transform: translateX(100%); }
-          100% { transform: translateX(0%); }
-        }
-        .animate-marquee {
-          animation: marquee 25s linear infinite;
-        }
-        .animate-marquee2 {
-          animation: marquee2 25s linear infinite;
-        }
-      `}</style>
     </div>
   );
 }

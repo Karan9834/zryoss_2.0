@@ -126,7 +126,7 @@ export default function Navbar() {
             { title: "Edulinkers", to: "/ecosystem/brands/edulinker", icon: <Building2 className="w-4 h-4" /> },
             { title: "Medikryoss", to: "/ecosystem/brands/medikryoss", icon: <Building2 className="w-4 h-4" /> },
             { title: "Adkryoss", to: "/ecosystem/brands/adkryoss", icon: <Building2 className="w-4 h-4" /> },
-            { title: "Clink Admission brand", to: "/ecosystem/brands/clink-admission", icon: <Building2 className="w-4 h-4" /> },
+            { title: "Clink Admission", to: "/ecosystem/brands/clink-admission", icon: <Building2 className="w-4 h-4" /> },
             { title: "Kryoss Interiors", to: "/ecosystem/brands/kryoss-interiors", icon: <Building2 className="w-4 h-4" /> },
           ],
         },
