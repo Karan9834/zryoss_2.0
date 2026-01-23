@@ -236,7 +236,7 @@ export default function VendorCoordination() {
       <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
         <button
           onClick={scrollToArchitecture}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FF6A00] text-black font-semibold hover:brightness-110 transition"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FF6A00] text-white font-semibold hover:brightness-110 transition"
         >
           Explore Architecture <ArrowRight className="w-5 h-5" />
         </button>
@@ -396,7 +396,7 @@ export default function VendorCoordination() {
                 <div className="flex justify-center">
                   <div className="relative">
                     <div className="absolute inset-0 rounded-full blur-3xl bg-[#FF6A00]/30" />
-                    <div className="relative w-44 h-44 rounded-full bg-[#FF6A00] text-black font-extrabold flex flex-col items-center justify-center shadow-2xl">
+                    <div className="relative w-44 h-44 rounded-full bg-[#FF6A00] text-white font-extrabold flex flex-col items-center justify-center shadow-2xl">
                       <Network className="w-8 h-8" />
                       <span className="mt-2 text-sm">Zryoss Operations</span>
                       <span className="text-[11px] opacity-80">Central coordination hub</span>
@@ -1015,7 +1015,7 @@ export default function VendorCoordination() {
           </p>
 
           <div className="mt-10 flex justify-center">
-            <button className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#FF6A00] text-black font-bold hover:brightness-110 transition">
+            <button className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#FF6A00] text-white font-bold hover:brightness-110 transition">
               Start Coordinated Execution <ArrowRight className="w-5 h-5" />
             </button>
           </div>

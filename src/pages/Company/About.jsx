@@ -1,388 +1,550 @@
-import { motion } from "framer-motion";
+import React from "react";
 import {
-  ShieldCheck,
-  Globe,
-  Layers,
-  Cpu,
-  Users,
-  Briefcase,
-  Target,
   ArrowRight,
-  CheckCircle2,
+  Shield,
+  Workflow,
+  Network,
+  Settings,
+  Users,
+  Megaphone,
+  BookOpen,
+  HeartPulse,
   Building2,
+  BriefcaseBusiness,
+  BadgeCheck,
+  FileText,
+  TrendingUp,
+  Scale,
+  CheckCircle2,
+  Handshake,
+  Lightbulb,
+  Leaf,
 } from "lucide-react";
 
-/**
- * FadeUp Animation Component
- */
-const FadeUp = ({ children, delay = 0 }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.6, delay }}
-  >
-    {children}
-  </motion.div>
-);
-
 export default function About() {
-  return (
-    <main className="bg-[#050505] text-white overflow-hidden font-sans">
+  const scrollToEcosystem = () => {
+    const el = document.getElementById("ecosystem");
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
-      {/* ================= HERO SECTION ================= */}
-      <section className="relative h-screen min-h-[700px] flex items-center justify-center border-b border-white/5">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
-            alt="Zryoss Abstract Background"
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-[#050505]/60 to-[#050505]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,138,0,0.08),transparent_70%)]" />
+  return (
+    <div className="min-h-screen bg-[#121212] text-white">
+      {/* ===================================================== */}
+      {/* 1) HERO SECTION */}
+      {/* ===================================================== */}
+      <section
+        className="relative overflow-hidden min-h-screen flex items-center"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1920&auto=format&fit=crop)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* overlays */}
+        <div className="absolute inset-0 bg-[#0b0b0b]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#121212]/10 via-[#121212]/70 to-[#121212]" />
+
+        {/* orange glow */}
+        <div className="absolute -top-44 left-1/2 -translate-x-1/2 w-[980px] h-[980px] rounded-full bg-[#FF6A00]/10 blur-3xl" />
+        <div className="absolute -bottom-44 right-0 w-[640px] h-[640px] rounded-full bg-[#FF6A00]/10 blur-3xl" />
+
+        {/* watermark (workflow diagram) */}
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none">
+          <svg
+            viewBox="0 0 1200 600"
+            className="w-full h-full"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g fill="none" stroke="#FF6A00" strokeWidth="2">
+              <circle cx="240" cy="140" r="28" />
+              <circle cx="520" cy="120" r="20" />
+              <circle cx="820" cy="150" r="26" />
+              <circle cx="960" cy="360" r="18" />
+              <circle cx="580" cy="440" r="24" />
+              <circle cx="300" cy="420" r="18" />
+              <line x1="240" y1="140" x2="520" y2="120" />
+              <line x1="520" y1="120" x2="820" y2="150" />
+              <line x1="820" y1="150" x2="960" y2="360" />
+              <line x1="960" y1="360" x2="580" y2="440" />
+              <line x1="580" y1="440" x2="300" y2="420" />
+              <line x1="300" y1="420" x2="240" y2="140" />
+            </g>
+          </svg>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <FadeUp>
-            <span className="inline-block px-4 py-1.5 mb-6 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium tracking-wide">
+        <div className="relative max-w-7xl mx-auto px-6 py-28 w-full">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200">
+              <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
+              Zryoss · About
+            </div>
+
+            <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-tight">
               About Zryoss
-            </span>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-              Building Businesses Through <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                Systems, Not Chaos
-              </span>
             </h1>
-            <p className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+
+            <h2 className="mt-4 text-2xl sm:text-3xl font-extrabold text-[#FF6A00]">
+              Building Businesses Through Systems, Not Chaos
+            </h2>
+
+            <p className="mt-6 text-gray-200 leading-relaxed text-lg">
               Zryoss is a business operating platform brand developed within the
-              Kryoss group ecosystem to help individuals and organizations
-              build, run, and scale independent businesses using a structured,
+              Kryoss group ecosystem to help individuals and organizations build,
+              run, and scale independent businesses using a structured,
               system-driven approach.
             </p>
 
-            <div className="mt-12 bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl max-w-2xl mx-auto">
-              <p className="text-xl font-medium italic text-gray-200">
-                "People and businesses fail not because they lack ideas, but
-                because they lack a reliable operating system."
+            <div className="mt-8 max-w-3xl mx-auto p-6 rounded-2xl bg-white/5 border border-white/10">
+              <p className="text-gray-200 leading-relaxed">
+                Zryoss exists to solve one fundamental problem in modern business:
               </p>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
 
-      {/* ================= BRAND OWNERSHIP ================= */}
-      <section className="py-24 bg-[#080808]">
-        <div className="max-w-7xl mx-auto px-6">
-          <FadeUp>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-                Brand Ownership & Group Structure
-              </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                Zryoss operates as a platform brand supported by experienced
-                operating companies within the group.
-              </p>
-            </div>
-          </FadeUp>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Kryoss Softech */}
-            <FadeUp delay={0.1}>
-              <div className="h-full p-10 rounded-3xl bg-[#0E0F12] border border-white/10 hover:border-orange-500/30 transition-colors group">
-                <div className="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition">
-                  <Cpu className="text-blue-500 w-7 h-7" />
-                </div>
-                <h3 className="text-2xl font-bold mb-3 text-white">
-                  Kryoss Softech Private Limited
-                </h3>
-                <p className="text-gray-400 leading-relaxed">
-                  The primary technology and execution backbone of the group.
-                  Responsible for platform engineering, software delivery, IT
-                  systems, and digital infrastructure.
+              <div className="mt-4 p-5 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25">
+                <p className="text-white font-semibold">
+                  “People and businesses fail not because they lack ideas,
+                  <br />
+                  but because they lack a reliable operating system.”
                 </p>
               </div>
-            </FadeUp>
-
-            {/* Clink Consultancy */}
-            <FadeUp delay={0.2}>
-              <div className="h-full p-10 rounded-3xl bg-[#0E0F12] border border-white/10 hover:border-orange-500/30 transition-colors group">
-                <div className="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:bg-orange-500/20 transition">
-                  <Users className="text-orange-500 w-7 h-7" />
-                </div>
-                <h3 className="text-2xl font-bold mb-3 text-white">
-                  Clink Consultancy Services Private Limited
-                </h3>
-                <p className="text-gray-400 leading-relaxed">
-                  A group company focused on recruitment, HR services,
-                  consulting, and talent-driven solutions across multiple
-                  industries.
-                </p>
-              </div>
-            </FadeUp>
-          </div>
-
-          <FadeUp delay={0.3}>
-            <div className="mt-12 text-center">
-              <p className="inline-block px-6 py-3 rounded-full bg-white/5 border border-white/10 text-gray-300">
-                These companies provide legal, operational, and execution strength behind the Zryoss platform.
-              </p>
             </div>
-          </FadeUp>
-        </div>
-      </section>
 
-      {/* ================= ECOSYSTEM ================= */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,138,0,0.05),transparent_50%)]" />
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                onClick={scrollToEcosystem}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FF6A00] text-black font-semibold hover:brightness-110 transition"
+              >
+                Explore Ecosystem <ArrowRight className="w-5 h-5" />
+              </button>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <FadeUp>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Zryoss as an <br />
-                <span className="text-orange-500">Ecosystem Brand</span>
-              </h2>
-              <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                Zryoss functions as the central operating system that connects
-                and governs multiple specialized execution brands within the
-                group ecosystem.
-              </p>
-              <p className="text-gray-300 font-medium border-l-4 border-orange-500 pl-4">
-                Each brand operates in its own domain, while Zryoss ensures
-                standardized execution, quality control, and operational
-                governance.
-              </p>
-            </FadeUp>
-
-            <FadeUp delay={0.2}>
-              <div className="grid gap-4">
-                {[
-                  { name: "Kryoss Softech", desc: "IT & Software Solutions" },
-                  { name: "Adkryoss", desc: "Digital Marketing & Growth Solutions" },
-                  { name: "Clink HR", desc: "Recruitment & HR Services" },
-                  { name: "Edulinkers", desc: "Education & EdTech Platforms" },
-                  { name: "Medikryoss", desc: "Healthcare & Medical Technology" },
-                  { name: "Kryoss Interiors", desc: "Interior & Infrastructure Solutions" },
-                  { name: "Vyombiz", desc: "Business & Professional Services" },
-                ].map((brand, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-[#12141A] border border-white/5 hover:border-orange-500/30 transition-all cursor-default"
-                  >
-                    <div className="w-2 h-2 rounded-full bg-orange-500 shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-white">{brand.name}</h4>
-                      <p className="text-sm text-gray-400">{brand.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </FadeUp>
+              <a
+                href="#ownership"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 transition font-semibold"
+              >
+                Learn More
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ================= WHY STRUCTURE MATTERS ================= */}
-      <section className="py-24 bg-[#0A0A0A] border-y border-white/5">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <FadeUp>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-16">
-              Why This Group Structure Matters
+      {/* ===================================================== */}
+      {/* 2) BRAND OWNERSHIP & GROUP STRUCTURE */}
+      {/* ===================================================== */}
+      <section id="ownership" className="max-w-7xl mx-auto px-6 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="text-3xl font-bold">
+              Brand Ownership &{" "}
+              <span className="text-[#FF6A00]">Group Structure</span>
             </h2>
-          </FadeUp>
 
-          <div className="grid md:grid-cols-5 gap-6">
+            <p className="mt-4 text-gray-300 leading-relaxed">
+              Zryoss operates as a platform brand supported by experienced
+              operating companies within the group.
+            </p>
+
+            <p className="mt-6 text-gray-300 leading-relaxed">
+              <span className="text-white font-semibold">
+                These companies provide legal, operational, and execution
+                strength behind the Zryoss platform.
+              </span>
+            </p>
+
+            <div className="mt-8 p-5 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25">
+              <p className="text-white font-semibold">
+                Parent & Group Companies
+              </p>
+              <p className="mt-2 text-gray-300 text-sm">
+                Zryoss is backed by real operating companies— not assumptions.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { icon: Target, title: "Strong execution capability across domains" },
-              { icon: ShieldCheck, title: "Reduced dependency on external vendors" },
-              { icon: CheckCircle2, title: "Consistent delivery standards" },
-              { icon: Building2, title: "Legal and operational accountability" },
-              { icon: ArrowRight, title: "Long-term scalability" },
-            ].map((item, i) => (
-              <FadeUp key={i} delay={i * 0.1}>
-                <div className="p-6 h-full rounded-2xl bg-black border border-white/10 flex flex-col items-center gap-4 hover:-translate-y-2 transition-transform duration-300">
-                  <div className="p-3 rounded-full bg-orange-500/10 text-orange-500">
-                    <item.icon size={28} />
-                  </div>
-                  <p className="text-sm font-medium text-gray-300 leading-snug">
-                    {item.title}
+              {
+                title: "Kryoss Softech Private Limited",
+                icon: <Settings className="w-6 h-6" />,
+                desc: "The primary technology and execution backbone of the group. Responsible for platform engineering, software delivery, IT systems, and digital infrastructure.",
+              },
+              {
+                title: "Clink Consultancy Services Private Limited",
+                icon: <Users className="w-6 h-6" />,
+                desc: "A group company focused on recruitment, HR services, consulting, and talent-driven solutions across multiple industries.",
+              },
+            ].map((x) => (
+              <div
+                key={x.title}
+                className="p-6 rounded-2xl bg-[#1E1E1E] border border-white/10 hover:border-[#FF6A00]/40 transition"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
+                  {x.icon}
+                </div>
+
+                <h3 className="mt-4 font-bold text-lg">{x.title}</h3>
+                <p className="mt-3 text-gray-400 text-sm leading-relaxed">
+                  {x.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================================================== */}
+      {/* 3) ZRYOSS AS AN ECOSYSTEM BRAND */}
+      {/* ===================================================== */}
+      <section
+        id="ecosystem"
+        className="relative overflow-hidden bg-[#1E1E1E] border-y border-white/10"
+      >
+        {/* background */}
+        <div className="absolute inset-0 opacity-25">
+          <img
+            src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1920&auto=format&fit=crop"
+            alt="Ecosystem"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-[#0b0b0b]/70" />
+
+        {/* hub watermark */}
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none">
+          <svg viewBox="0 0 1200 600" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#FF6A00" strokeWidth="2">
+              <circle cx="600" cy="300" r="90" />
+              <circle cx="240" cy="140" r="30" />
+              <circle cx="960" cy="140" r="30" />
+              <circle cx="240" cy="460" r="30" />
+              <circle cx="960" cy="460" r="30" />
+              <line x1="600" y1="300" x2="240" y2="140" />
+              <line x1="600" y1="300" x2="960" y2="140" />
+              <line x1="600" y1="300" x2="240" y2="460" />
+              <line x1="600" y1="300" x2="960" y2="460" />
+            </g>
+          </svg>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6 py-20">
+          <h2 className="text-3xl font-bold text-center">
+            Zryoss as an{" "}
+            <span className="text-[#FF6A00]">Ecosystem Brand</span>
+          </h2>
+
+          <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
+            Zryoss functions as the central operating system that connects and
+            governs multiple specialized execution brands within the group
+            ecosystem.
+          </p>
+
+          <h3 className="mt-10 text-center font-semibold text-white">
+            Core Execution Brands Powered by Zryoss
+          </h3>
+
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { title: "Kryoss Softech – IT & Software Solutions", icon: <Settings className="w-6 h-6" /> },
+              { title: "Adkryoss – Digital Marketing & Growth Solutions", icon: <Megaphone className="w-6 h-6" /> },
+              { title: "Clink HR – Recruitment & HR Services", icon: <Users className="w-6 h-6" /> },
+              { title: "Edulinkers – Education & EdTech Platforms", icon: <BookOpen className="w-6 h-6" /> },
+              { title: "Medikryoss – Healthcare & Medical Technology", icon: <HeartPulse className="w-6 h-6" /> },
+              { title: "Kryoss Interiors – Interior & Infrastructure Solutions", icon: <Building2 className="w-6 h-6" /> },
+              { title: "Vyombiz – Business & Professional Services", icon: <BriefcaseBusiness className="w-6 h-6" /> },
+              { title: "Zryoss – Central Operating System", icon: <Network className="w-6 h-6" /> },
+            ].map((b) => (
+              <div
+                key={b.title}
+                className="p-6 rounded-2xl bg-black/20 border border-white/10 hover:border-[#FF6A00]/40 transition"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
+                  {b.icon}
+                </div>
+                <p className="mt-4 font-semibold text-gray-200">{b.title}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-10 text-center text-gray-300">
+            Each brand operates in its own domain, while Zryoss ensures{" "}
+            <span className="text-white font-semibold">
+              standardized execution, quality control, and operational governance.
+            </span>
+          </p>
+        </div>
+      </section>
+
+      {/* ===================================================== */}
+      {/* 4) WHY THIS GROUP STRUCTURE MATTERS */}
+      {/* ===================================================== */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-bold text-center">
+          Why This Group Structure{" "}
+          <span className="text-[#FF6A00]">Matters</span>
+        </h2>
+
+        <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
+          This ecosystem structure ensures long-term execution strength,
+          operational clarity, and scalable delivery discipline.
+        </p>
+
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {[
+            { title: "Strong execution capability across domains", icon: <BadgeCheck className="w-6 h-6" /> },
+            { title: "Reduced dependency on external vendors", icon: <Shield className="w-6 h-6" /> },
+            { title: "Consistent delivery standards", icon: <CheckCircle2 className="w-6 h-6" /> },
+            { title: "Legal and operational accountability", icon: <FileText className="w-6 h-6" /> },
+            { title: "Long-term scalability", icon: <TrendingUp className="w-6 h-6" /> },
+          ].map((x) => (
+            <div
+              key={x.title}
+              className="p-6 rounded-2xl bg-[#1E1E1E] border border-white/10 hover:border-[#FF6A00]/40 transition"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
+                {x.icon}
+              </div>
+              <p className="mt-4 font-semibold text-gray-200 text-sm leading-relaxed">
+                {x.title}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 p-6 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25 text-center">
+          <p className="text-white font-semibold">
+            Zryoss is not built on promises. It is built on real operating
+            companies and real execution capacity.
+          </p>
+        </div>
+      </section>
+
+      {/* ===================================================== */}
+      {/* 5) WHAT ZRYOSS DOES */}
+      {/* ===================================================== */}
+      <section className="bg-[#1E1E1E] border-y border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold">
+                What{" "}
+                <span className="text-[#FF6A00]">Zryoss</span> Does
+              </h2>
+
+              <p className="mt-4 text-gray-300">
+                Through its platform and ecosystem, Zryoss provides:
+              </p>
+
+              <ul className="mt-6 space-y-3">
+                {[
+                  "Centralized operations and delivery governance",
+                  "Account management and quality assurance",
+                  "Vendor coordination and SLA enforcement",
+                  "Reporting, performance tracking, and control",
+                  "A scalable backend engine for independent brands",
+                ].map((p) => (
+                  <li
+                    key={p}
+                    className="flex items-start gap-3 p-4 rounded-xl bg-black/20 border border-white/10"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-[#FF6A00] mt-0.5" />
+                    <span className="text-gray-200">{p}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="mt-6 text-gray-300">
+                This allows partners and clients to grow without building complex
+                internal teams.
+              </p>
+            </div>
+
+            <div className="relative">
+              <div className="absolute inset-0 rounded-3xl bg-[#FF6A00]/10 blur-2xl" />
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121212]">
+                <img
+                  alt="Centralized dashboard"
+                  className="w-full h-[420px] object-cover opacity-90"
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop"
+                />
+                <div className="p-6">
+                  <p className="text-sm text-gray-300">
+                    A centralized operating engine that provides governance,
+                    reporting, control, and scalable execution capacity.
                   </p>
                 </div>
-              </FadeUp>
-            ))}
-          </div>
-
-          <FadeUp delay={0.5}>
-            <div className="mt-16 bg-gradient-to-r from-transparent via-orange-950/30 to-transparent p-1">
-              <div className="bg-[#0A0A0A] rounded-lg p-6">
-                <p className="text-xl md:text-2xl text-gray-200">
-                  "Zryoss is not built on promises. It is built on{" "}
-                  <span className="text-orange-500 font-semibold">real operating companies</span>{" "}
-                  and{" "}
-                  <span className="text-orange-500 font-semibold">real execution capacity</span>."
-                </p>
               </div>
             </div>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* ================= WHAT ZRYOSS DOES ================= */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-          <FadeUp>
-            <div className="sticky top-24">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                What Zryoss Does
-              </h2>
-              <p className="text-gray-400 text-lg mb-8">
-                Through its platform and ecosystem, Zryoss provides a comprehensive engine for growth.
-              </p>
-              <p className="text-white text-xl font-medium">
-                This allows partners and clients to grow without building
-                complex internal teams.
-              </p>
-            </div>
-          </FadeUp>
-
-          <div className="grid gap-6">
-            {[
-              "Centralized operations and delivery governance",
-              "Account management and quality assurance",
-              "Vendor coordination and SLA enforcement",
-              "Reporting, performance tracking, and control",
-              "A scalable backend engine for independent brands",
-            ].map((item, i) => (
-              <FadeUp key={i} delay={i * 0.1}>
-                <div className="p-6 rounded-xl bg-[#12141a] border border-white/5 flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-orange-500" />
-                  </div>
-                  <p className="text-gray-200 font-medium">{item}</p>
-                </div>
-              </FadeUp>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* ================= WHO ZRYOSS IS FOR ================= */}
-      <section className="py-24 bg-[#080808]">
-        <div className="max-w-6xl mx-auto px-6">
-          <FadeUp>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-                Who Zryoss Is Built For
-              </h2>
-              <p className="text-lg text-gray-400">
-                If you want independence without operational chaos, Zryoss is
-                designed for you.
-              </p>
-            </div>
-          </FadeUp>
+      {/* ===================================================== */}
+      {/* 6) WHO ZRYOSS IS BUILT FOR */}
+      {/* ===================================================== */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-bold text-center">
+          Who Zryoss Is{" "}
+          <span className="text-[#FF6A00]">Built For</span>
+        </h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "Professionals", sub: "Seeking business ownership" },
-              { title: "Founders", sub: "Who want structured execution" },
-              { title: "Businesses", sub: "Looking for scalable systems" },
-              { title: "Partners", sub: "Who value governance and clarity" },
-            ].map((item, i) => (
-              <FadeUp key={i} delay={i * 0.1}>
-                <div className="p-8 rounded-2xl bg-[#0E0F12] border border-white/10 text-center hover:bg-[#161A22] transition-colors">
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray-400">{item.sub}</p>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
+        <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
+          If you want independence without operational chaos, Zryoss is designed
+          for you.
+        </p>
+
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { title: "Professionals seeking business ownership", icon: <Users className="w-6 h-6" /> },
+            { title: "Founders who want structured execution", icon: <Lightbulb className="w-6 h-6" /> },
+            { title: "Businesses looking for scalable systems", icon: <Building2 className="w-6 h-6" /> },
+            { title: "Partners who value governance and clarity", icon: <Handshake className="w-6 h-6" /> },
+          ].map((x) => (
+            <div
+              key={x.title}
+              className="p-6 rounded-2xl bg-[#1E1E1E] border border-white/10 hover:border-[#FF6A00]/40 transition"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
+                {x.icon}
+              </div>
+              <p className="mt-4 font-semibold text-gray-200">{x.title}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* ================= VISION & COMMITMENT ================= */}
-      <section className="py-24 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
-          {/* Vision */}
-          <FadeUp>
-            <div className="p-10 rounded-3xl bg-gradient-to-br from-[#12141A] to-black border border-white/10 h-full">
-              <h3 className="text-2xl font-bold text-orange-500 mb-6 flex items-center gap-3">
-                <Globe className="w-6 h-6" /> Long-Term Vision
-              </h3>
-              <p className="text-gray-400 mb-6">
+      {/* ===================================================== */}
+      {/* 7) LONG-TERM VISION */}
+      {/* ===================================================== */}
+      <section className="bg-[#1E1E1E] border-y border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold">
+                Long-Term{" "}
+                <span className="text-[#FF6A00]">Vision</span>
+              </h2>
+
+              <p className="mt-4 text-gray-300">
                 Backed by the Kryoss group companies, Zryoss aims to become:
               </p>
-              <ul className="space-y-4">
+
+              <ul className="mt-6 space-y-3">
                 {[
                   "A trusted business operating platform",
                   "A scalable execution backbone for independent brands",
                   "A long-term ecosystem for sustainable business growth",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-orange-500 mt-2.5" />
-                    <span className="text-gray-300">{item}</span>
+                ].map((p) => (
+                  <li
+                    key={p}
+                    className="flex items-start gap-3 p-4 rounded-xl bg-black/20 border border-white/10"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-[#FF6A00] mt-0.5" />
+                    <span className="text-gray-200">{p}</span>
                   </li>
                 ))}
               </ul>
             </div>
-          </FadeUp>
 
-          {/* Commitment */}
-          <FadeUp delay={0.2}>
-            <div className="p-10 rounded-3xl bg-gradient-to-br from-[#12141A] to-black border border-white/10 h-full">
-              <h3 className="text-2xl font-bold text-orange-500 mb-6 flex items-center gap-3">
-                <ShieldCheck className="w-6 h-6" /> Our Commitment
-              </h3>
-              <p className="text-gray-400 mb-6">
-                We are dedicated to maintaining the highest standards:
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Ethical and transparent operations",
-                  "Strong execution discipline",
-                  "Platform-level governance",
-                  "Quality-driven delivery",
-                  "Long-term partner and client trust",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-orange-500 mt-2.5" />
-                    <span className="text-gray-300">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="relative">
+              <div className="absolute inset-0 rounded-3xl bg-[#FF6A00]/10 blur-2xl" />
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121212]">
+                <img
+                  alt="Growth roadmap"
+                  className="w-full h-[420px] object-cover opacity-90"
+                  src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1600&auto=format&fit=crop"
+                />
+                <div className="p-6">
+                  <p className="text-sm text-gray-300">
+                    A roadmap built for scale, sustainability, and long-term
+                    ecosystem growth.
+                  </p>
+                </div>
+              </div>
             </div>
-          </FadeUp>
+          </div>
         </div>
       </section>
 
-      {/* ================= FINAL CTA ================= */}
-      <section className="py-32 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[#050505]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,138,0,0.1),transparent_60%)]" />
+      {/* ===================================================== */}
+      {/* 8) OUR COMMITMENT */}
+      {/* ===================================================== */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-bold text-center">
+          Our{" "}
+          <span className="text-[#FF6A00]">Commitment</span>
+        </h2>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <FadeUp>
-            <h2 className="text-5xl md:text-7xl font-bold mb-8">
-              Your Brand. <span className="text-orange-500">Our Engine.</span>
-            </h2>
-            <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-              Zryoss does not take ownership of your vision. <br />
-              It provides the system that powers it.
-            </p>
+        <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
+          Zryoss is committed to platform-level governance, ethical discipline,
+          and long-term ecosystem trust.
+        </p>
 
-            <a
-              href="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-orange-600 text-white font-semibold hover:bg-orange-500 transition-all hover:scale-105 shadow-xl shadow-orange-900/20"
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {[
+            { title: "Ethical and transparent operations", icon: <Scale className="w-6 h-6" /> },
+            { title: "Strong execution discipline", icon: <BadgeCheck className="w-6 h-6" /> },
+            { title: "Platform-level governance", icon: <Shield className="w-6 h-6" /> },
+            { title: "Quality-driven delivery", icon: <CheckCircle2 className="w-6 h-6" /> },
+            { title: "Long-term partner and client trust", icon: <Handshake className="w-6 h-6" /> },
+          ].map((x) => (
+            <div
+              key={x.title}
+              className="p-6 rounded-2xl bg-[#1E1E1E] border border-white/10 hover:border-[#FF6A00]/40 transition"
             >
-              Start Building Today
-              <ArrowRight size={20} />
-            </a>
-          </FadeUp>
+              <div className="w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
+                {x.icon}
+              </div>
+              <p className="mt-4 font-semibold text-gray-200 text-sm leading-relaxed">
+                {x.title}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
-    </main>
+      {/* ===================================================== */}
+      {/* 9) FINAL SECTION — YOUR BRAND. OUR ENGINE. */}
+      {/* ===================================================== */}
+      <section className="relative overflow-hidden">
+        {/* background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1E1E1E] via-[#121212] to-[#121212]" />
+
+        {/* glow */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[850px] h-[850px] rounded-full bg-[#FF6A00]/10 blur-3xl" />
+
+        {/* watermark (engine/workflow integration) */}
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none">
+          <svg viewBox="0 0 1200 600" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#FF6A00" strokeWidth="2">
+              <circle cx="600" cy="290" r="90" />
+              <circle cx="600" cy="290" r="45" />
+              <path d="M600 200 v-50" />
+              <path d="M600 430 v-50" />
+              <path d="M510 290 h-60" />
+              <path d="M750 290 h-60" />
+            </g>
+          </svg>
+        </div>
+
+        <div className="relative max-w-5xl mx-auto px-6 py-20 text-center">
+          <h2 className="text-3xl sm:text-4xl font-extrabold">
+            Your Brand.{" "}
+            <span className="text-[#FF6A00]">Our Engine.</span>
+          </h2>
+
+          <p className="mt-6 text-gray-300 text-lg leading-relaxed">
+            Zryoss does not take ownership of your vision.
+            <br />
+            <span className="text-white font-bold">
+              It provides the system that powers it.
+            </span>
+          </p>
+
+          <div className="mt-10 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#FF6A00] text-black font-bold">
+            Your Brand. Our Engine. <ArrowRight className="w-5 h-5" />
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

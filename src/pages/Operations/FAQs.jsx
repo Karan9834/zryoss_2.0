@@ -262,7 +262,7 @@ export default function FAQs() {
                                 Operations are not background activities at Zryoss. You focus on business growth. Zryoss ensures execution clarity, quality, and control.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <button className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#FF6A00] text-black font-bold hover:bg-[#FF6A00]/90 transition shadow-[0_0_20px_rgba(255,106,0,0.3)]">
+                                <button className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#FF6A00] text-white font-bold hover:bg-[#FF6A00]/90 transition shadow-[0_0_20px_rgba(255,106,0,0.3)]">
                                     Partner with Zryoss <ArrowRight className="w-5 h-5" />
                                 </button>
                                 <button className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition font-semibold text-white">
