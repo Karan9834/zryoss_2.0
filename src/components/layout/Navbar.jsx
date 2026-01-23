@@ -203,11 +203,12 @@ export default function Navbar() {
           links: [
             { title: "Operations Overview", to: "/operations", icon: <Settings className="w-4 h-4" /> },
             { title: "Client Onboarding Process", to: "/operations/onboarding", icon: <Workflow className="w-4 h-4" /> },
-            { title: "Delivery & Execution Management", to: "/operations/delivery", icon: <Rocket className="w-4 h-4" /> },
             { title: "Quality Assurance Framework", to: "/operations/quality-assurance", icon: <Shield className="w-4 h-4" /> },
             { title: "Account Management & Support", to: "/operations/account-management", icon: <Users className="w-4 h-4" /> },
             { title: "Vendor Coordination Model", to: "/operations/vendor-coordination", icon: <Network className="w-4 h-4" /> },
             { title: "Reporting & Performance Tracking", to: "/operations/reporting", icon: <FileText className="w-4 h-4" /> },
+            { title: "Vendor & SLA Management", to: "/operations/sla-management", icon: <Network className="w-4 h-4" /> },
+            { title: "FAQs", to: "/operations/faqs", icon: <FileText className="w-4 h-4" /> },
           ],
         },
       ],

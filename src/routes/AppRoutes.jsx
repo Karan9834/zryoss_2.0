@@ -24,6 +24,9 @@ import ClinkHR from "../pages/Ecosystem/Brands/ClinkHR";
 import Vyombiz from "../pages/Ecosystem/Brands/Vyombiz";
 import Edulinker from "../pages/Ecosystem/Brands/Edulinker";
 import Medikryoss from "../pages/Ecosystem/Brands/Medikryoss";
+import Adkryoss from "../pages/Ecosystem/Brands/Adkryoss";
+import ClinkAdmission from "../pages/Ecosystem/Brands/ClinkAdmission";
+import KryossInteriors from "../pages/Ecosystem/Brands/KryossInteriors";
 
 // Partnership
 import PartnershipOverview from "../pages/Partnership/PartnershipOverview";
@@ -63,7 +66,8 @@ import Education from "../pages/Solutions/Education";
 // Operations
 import OperationsOverview from "../pages/Operations/Overview";
 import Onboarding from "../pages/Operations/Onboarding";
-import Delivery from "../pages/Operations/Delivery";
+import SLAManagement from "../pages/Operations/SLAManagement";
+import OpsFAQs from "../pages/Operations/FAQs";
 import QualityAssurance from "../pages/Operations/QualityAssurance";
 import OpsAccountManagement from "../pages/Operations/AccountManagement";
 import VendorCoordination from "../pages/Operations/VendorCoordination";
@@ -110,6 +114,9 @@ export default function AppRoutes() {
       <Route path="/ecosystem/brands/vyombiz" element={<Vyombiz />} />
       <Route path="/ecosystem/brands/edulinker" element={<Edulinker />} />
       <Route path="/ecosystem/brands/medikryoss" element={<Medikryoss />} />
+      <Route path="/ecosystem/brands/adkryoss" element={<Adkryoss />} />
+      <Route path="/ecosystem/brands/clink-admission" element={<ClinkAdmission />} />
+      <Route path="/ecosystem/brands/kryoss-interiors" element={<KryossInteriors />} />
 
       {/* Partnership */}
       <Route path="/partnership" element={<PartnershipOverview />} />
@@ -149,7 +156,8 @@ export default function AppRoutes() {
       {/* Operations */}
       <Route path="/operations" element={<OperationsOverview />} />
       <Route path="/operations/onboarding" element={<Onboarding />} />
-      <Route path="/operations/delivery" element={<Delivery />} />
+      <Route path="/operations/sla-management" element={<SLAManagement />} />
+      <Route path="/operations/faqs" element={<OpsFAQs />} />
       <Route path="/operations/quality-assurance" element={<QualityAssurance />} />
       <Route path="/operations/account-management" element={<OpsAccountManagement />} />
       <Route path="/operations/vendor-coordination" element={<VendorCoordination />} />
