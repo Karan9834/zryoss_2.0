@@ -40,11 +40,11 @@ export default function ApplyPage() {
   const formRef = useRef();
   const { sendEmail, loading } = useEmail();
   const [formData, setFormData] = useState({
-    fullName: "",
+    first_name: "",
     email: "",
     phone: "",
-    company: "",
-    role: "",
+    companyName: "",
+    partnerRole: "",
     partnerType: "ipp",
     experience: "",
     message: "",
@@ -57,7 +57,7 @@ export default function ApplyPage() {
 
   const validate = () => {
     let tempErrors = {};
-    if (!formData.fullName.trim()) tempErrors.fullName = "Full Name is required";
+    if (!formData.first_name.trim()) tempErrors.first_name = "Full Name is required";
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email) {
@@ -148,7 +148,7 @@ export default function ApplyPage() {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* ================= HERO ================= */}
-        <div className="text-center max-w-4xl mx-auto mb-20">
+        <div className="text-center max-w-7xl mx-auto mb-20">
           <FadeUp>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
               <Sparkles className="w-4 h-4 text-orange-500" />
@@ -254,13 +254,13 @@ export default function ApplyPage() {
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <input
-                    name="fullName"
-                    value={formData.fullName}
+                    name="first_name"
+                    value={formData.first_name}
                     onChange={handleChange}
                     placeholder="Full Name"
-                    className={`w-full px-4 py-3 bg-white/5 border rounded-lg ${errors.fullName ? 'border-red-500' : 'border-white/10'}`}
+                    className={`w-full px-4 py-3 bg-white/5 border rounded-lg ${errors.first_name ? 'border-red-500' : 'border-white/10'}`}
                   />
-                  {errors.fullName && <span className="text-red-500 text-xs flex items-center gap-1 mt-1"><AlertCircle size={10} /> {errors.fullName}</span>}
+                  {errors.first_name && <span className="text-red-500 text-xs flex items-center gap-1 mt-1"><AlertCircle size={10} /> {errors.first_name}</span>}
                 </div>
                 <div>
                   <input
@@ -283,7 +283,7 @@ export default function ApplyPage() {
                   {errors.phone && <span className="text-red-500 text-xs flex items-center gap-1 mt-1"><AlertCircle size={10} /> {errors.phone}</span>}
                 </div>
 
-                <input name="company" value={formData.company} onChange={handleChange} placeholder="Company Name" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg" />
+                <input name="companyName" value={formData.companyName} onChange={handleChange} placeholder="Company Name" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg" />
 
                 <div>
                   <textarea

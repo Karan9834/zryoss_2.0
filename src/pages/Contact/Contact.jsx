@@ -3,60 +3,62 @@ import {
   Mail,
   Phone,
   MapPin,
-  Globe,
   ArrowRight,
   ShieldCheck,
   AlertCircle,
+  ExternalLink
 } from "lucide-react";
 import FadeUp from "../../components/animations/FadeUp";
 import { useEmail } from "../../hooks/useEmail";
 
-/* ---------- INPUT STYLES ---------- */
 const INPUT_CLASSES = `
-  w-full px-4 py-3.5 rounded-xl
-  bg-[#0f0f0f]
-  border border-white/10
+  w-full px-4 py-4 rounded-xl
+  bg-white/[0.03] border border-white/10
   text-white placeholder-gray-500
-  outline-none transition-all duration-200
-  focus:border-orange-500/60
-  focus:ring-1 focus:ring-orange-500/30
+  outline-none transition-all duration-300
+  focus:border-orange-500/50 focus:bg-white/[0.05]
 `;
 
-/* ---------- MAIN COMPONENT ---------- */
 export default function Contact() {
   const formRef = useRef();
   const { sendEmail, loading } = useEmail();
+
   const [formData, setFormData] = useState({
-    fullName: "",
+    first_name: "",
     email: "",
     companyName: "",
-    contactNumber: "",
+    phone: "",
     message: "",
   });
+
   const [errors, setErrors] = useState({});
 
-  const mapEmbedUrl =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.435967072558!2d77.0366883!3d28.436341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1879c2980d23%3A0x676e2730626359d9!2sJMD%20Megapolis!5e0!3m2!1sen!2sin!4v1700000000000";
+  const officeAddress =
+    "Office No. 837-A, 8th Floor, JMD Megapolis, Sohna Road, Gurgaon, Haryana";
+
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    officeAddress
+  )}`;
 
   const validate = () => {
     let tempErrors = {};
-    if (!formData.fullName.trim()) tempErrors.fullName = "Full Name is required";
+    if (!formData.first_name.trim()) tempErrors.first_name = "Full Name is required";
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email) {
       tempErrors.email = "Email is required";
     } else if (!emailRegex.test(formData.email)) {
-      tempErrors.email = "Invalid email format";
+      tempErrors.email = "Valid work email required";
     }
 
-    const phoneRegex = /^[0-9+\-\s()]*$/;
-    if (!formData.contactNumber) {
-      tempErrors.contactNumber = "Phone number is required";
-    } else if (!phoneRegex.test(formData.contactNumber) || formData.contactNumber.length < 10) {
-      tempErrors.contactNumber = "Invalid phone number";
+    if (!formData.phone) {
+      tempErrors.phone = "Phone number is required";
+    } else if (formData.phone.length !== 10) {
+      tempErrors.phone = "Enter a valid 10-digit number";
     }
 
-    if (!formData.message.trim()) tempErrors.message = "Message is required";
+    if (!formData.message.trim() || formData.message.length < 5)
+      tempErrors.message = "Message is too short";
 
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
@@ -64,10 +66,18 @@ export default function Contact() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((p) => ({ ...p, [name]: value }));
-    // Clear error
+    let finalValue = value;
+
+    if (name === "phone") {
+      finalValue = value.replace(/\D/g, "").slice(0, 10);
+    }
+
+    setFormData({ ...formData, [name]: finalValue });
+
     if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: "" }));
+      const newErrors = { ...errors };
+      delete newErrors[name];
+      setErrors(newErrors);
     }
   };
 
@@ -76,188 +86,182 @@ export default function Contact() {
     if (validate()) {
       const result = await sendEmail(formRef);
       if (result.success) {
-        alert("Enquiry submitted successfully!");
+        alert("Success! We'll be in touch.");
         setFormData({
-          fullName: "",
+          first_name: "",
           email: "",
           companyName: "",
-          contactNumber: "",
+          phone: "",
           message: "",
         });
       } else {
-        alert("Failed to send enquiry. Please try again later.");
+        alert("Failed to send message. Please try again.");
       }
     }
   };
 
-  return (
-    <section className="py-28 bg-[#050505] text-white">
-      <div className="max-w-7xl mx-auto px-6">
+  const ErrorBubble = ({ msg }) => (
+    <div className="absolute -top-10 left-0 bg-orange-600 text-white text-[10px] font-bold py-1 px-3 rounded-lg animate-bounce shadow-lg flex items-center gap-1 z-20">
+      <AlertCircle size={12} /> {msg}
+      <div className="absolute -bottom-1 left-4 w-2 h-2 bg-orange-600 rotate-45"></div>
+    </div>
+  );
 
-        {/* ---------- HEADER ---------- */}
-        <FadeUp>
-          <div className="max-w-3xl mb-20">
-            <span className="text-xs uppercase tracking-[0.25em] text-orange-500 font-bold">
-              Enterprise Contact
+  return (
+    <section className="relative py-24 bg-[#050505] text-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+        {/* TOP HEADER - SPANNING TOP */}
+        <div className="mb-16">
+          <FadeUp>
+            <span className="text-orange-500 text-xs font-bold tracking-[0.3em] uppercase">
+              Enterprise execution
             </span>
             <h1 className="text-5xl md:text-6xl font-bold mt-4 leading-tight">
-              Let’s talk about <br />
-              <span className="text-gray-400">your business execution</span>
+              Let's build <span className="text-gray-500 italic">together.</span>
             </h1>
-            <p className="mt-6 text-lg text-gray-400">
-              Reach out to Zryoss for platform demos, partnerships, or
-              enterprise-level execution support.
-            </p>
-          </div>
-        </FadeUp>
+          </FadeUp>
+        </div>
 
-        {/* ---------- GRID ---------- */}
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
+          {/* LEFT SIDE: Contact Info + Map */}
+          <div className="lg:col-span-5 space-y-6">
 
-          {/* ---------- LEFT: MAP + INFO ---------- */}
-          <div className="lg:col-span-5 space-y-10">
+            {/* 1. Office Address - NOW AT TOP */}
             <FadeUp delay={0.1}>
-              <div>
-                <h3 className="flex items-center gap-2 text-xs uppercase tracking-widest text-gray-500 mb-3 font-bold">
-                  <MapPin size={14} className="text-orange-500" />
-                  Headquarters
-                </h3>
-                <p className="text-lg font-medium leading-relaxed">
-                  Office No. 837-A, 8th Floor <br />
-                  JMD Megapolis, Sohna Road <br />
-                  Gurgaon, Haryana
-                </p>
-              </div>
+              <a
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-start gap-4 p-6 rounded-[2rem] bg-white/[0.02] border border-white/10 hover:border-orange-500/30 transition-all group"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center border border-orange-500/20 group-hover:bg-orange-500/20 transition-colors">
+                  <MapPin className="text-orange-500" size={22} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold text-orange-500 tracking-[0.2em] uppercase mb-3">Our Base</p>
+                  <p className="text-sm text-gray-300 leading-relaxed font-medium">{officeAddress}</p>
+                </div>
+              </a>
             </FadeUp>
 
-            {/* MAP – REAL & CLEAR */}
+            {/* 2. Map - ADJUSTED HEIGHT */}
             <FadeUp delay={0.2}>
-              <div className="relative aspect-square w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+              <div className="group relative w-full h-[320px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl ">
                 <iframe
-                  title="Zryoss Headquarters"
-                  src={mapEmbedUrl}
+                  title="Zryoss Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.324227092892!2d77.031915676182!3d28.409440393510515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d2380f68e0d99%3A0x6b162b7754b5df5b!2sJMD%20Megapolis!5e0!3m2!1sen!2sin!5m2!1sen!2sin"
+                  className="w-full h-full grayscale invert opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700"
                   loading="lazy"
-                  className="w-full h-full"
                 />
-                {/* Map label */}
-                <div className="absolute bottom-5 left-5 right-5 bg-black/70 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 flex justify-between items-center">
-                  <div>
-                    <p className="text-xs text-orange-500 font-bold uppercase">
-                      Gurgaon, India
-                    </p>
-                    <p className="text-[11px] text-gray-400">
-                      GMT +5:30 IST
-                    </p>
-                  </div>
-                  <Globe size={16} className="text-gray-400" />
-                </div>
+                <a
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-6 right-6 bg-orange-500 p-3.5 rounded-full hover:scale-110 transition-transform shadow-[0_10px_30px_-5px_rgba(249,115,22,0.5)] active:scale-95"
+                >
+                  <ExternalLink size={20} className="text-black" />
+                </a>
               </div>
             </FadeUp>
 
-            {/* CONTACT CARDS */}
-            <FadeUp delay={0.25}>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5">
-                  <p className="text-xs text-gray-500 mb-1">Email</p>
-                  <p className="font-semibold text-sm">info@zryoss.com</p>
+            {/* 3. Email & Phone Cards */}
+            <div className="grid sm:grid-cols-2 gap-6 mt-8">
+              <FadeUp delay={0.3}>
+                <div className="p-6 rounded-[2rem] bg-white/[0.02] border border-white/10 space-y-4 hover:border-orange-500/20 transition-all h-full">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                      <Mail className="text-orange-500" size={16} />
+                    </div>
+                    <span className="text-[10px] font-bold tracking-widest text-orange-500 uppercase">Mail Us</span>
+                  </div>
+                  <div className="space-y-2">
+                    <a href="mailto:sales@zryoss.com" className="block text-xs text-gray-400 hover:text-white transition-colors">sales@zryoss.com</a>
+                    <a href="mailto:info@zryoss.com" className="block text-xs text-gray-400 hover:text-white transition-colors">info@zryoss.com</a>
+                  </div>
                 </div>
-                <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5">
-                  <p className="text-xs text-gray-500 mb-1">Phone</p>
-                  <p className="font-semibold text-sm">+91 98765 43210</p>
+              </FadeUp>
+
+              <FadeUp delay={0.4}>
+                <div className="p-6 rounded-[2rem] bg-white/[0.02] border border-white/10 hover:border-orange-500/20 transition-all space-y-4 h-full">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                      <Phone className="text-orange-500" size={16} />
+                    </div>
+                    <span className="text-[10px] font-bold tracking-widest text-orange-500 uppercase">Call Us</span>
+                  </div>
+                  <div className="space-y-1">
+                    <a href="tel:01169269633" className="block text-sm text-white font-bold hover:text-orange-400 transition-colors">011 6926 9633</a>
+                    <p className="text-[9px] text-gray-500 uppercase font-bold">Mon–Fri, 10AM–6PM</p>
+                  </div>
                 </div>
-              </div>
-            </FadeUp>
+              </FadeUp>
+            </div>
           </div>
 
-          {/* ---------- RIGHT: FORM ---------- */}
+          {/* RIGHT SIDE: Form */}
           <div className="lg:col-span-7">
-            <FadeUp delay={0.3}>
-              <form
-                ref={formRef}
-                onSubmit={handleSubmit}
-                className="bg-[#0c0c0c] border border-white/10 rounded-[2.5rem] p-8 md:p-12"
-              >
-                <div className="flex items-center gap-3 mb-10">
-                  <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center">
-                    <ShieldCheck className="text-orange-500" size={20} />
+            <FadeUp delay={0.2}>
+              <div className="bg-[#0c0c0c] border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]">
+                <div className="flex items-center gap-4 mb-10">
+                  <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center border border-orange-500/20 shadow-inner">
+                    <ShieldCheck className="text-orange-500" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold">Secure Enquiry</h3>
-                    <p className="text-xs text-gray-500">
-                      Enterprise-grade communication
-                    </p>
+                    <h3 className="text-xl font-bold">Secure Project Inquiry</h3>
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mt-1">Response within 24 business hours</p>
                   </div>
                 </div>
 
-                <div className="space-y-6">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <input
-                        name="fullName"
-                        value={formData.fullName}
-                        placeholder="Full Name"
-                        onChange={handleInputChange}
-                        className={`${INPUT_CLASSES} ${errors.fullName ? "border-red-500/50" : ""}`}
-                      />
-                      {errors.fullName && <span className="text-red-400 text-xs mt-1 flex items-center gap-1"><AlertCircle size={10} /> {errors.fullName}</span>}
+                    <div className="relative">
+                      {errors.first_name && <ErrorBubble msg={errors.first_name} />}
+                      <input name="first_name" value={formData.first_name} placeholder="Full Name" onChange={handleInputChange} className={INPUT_CLASSES} />
                     </div>
-                    <div>
-                      <input
-                        name="email"
-                        type="text"
-                        value={formData.email}
-                        placeholder="Work Email"
-                        onChange={handleInputChange}
-                        className={`${INPUT_CLASSES} ${errors.email ? "border-red-500/50" : ""}`}
-                      />
-                      {errors.email && <span className="text-red-400 text-xs mt-1 flex items-center gap-1"><AlertCircle size={10} /> {errors.email}</span>}
+
+                    <div className="relative">
+                      {errors.email && <ErrorBubble msg={errors.email} />}
+                      <input name="email" value={formData.email} placeholder="Work Email" onChange={handleInputChange} className={INPUT_CLASSES} />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <input
-                        name="companyName"
-                        value={formData.companyName}
-                        placeholder="Company Name (Optional)"
-                        onChange={handleInputChange}
-                        className={INPUT_CLASSES}
-                      />
+                    <div className="relative">
+                      <input name="companyName" value={formData.companyName} placeholder="Company (Optional)" onChange={handleInputChange} className={INPUT_CLASSES} />
                     </div>
-                    <div>
-                      <input
-                        name="contactNumber"
-                        value={formData.contactNumber}
-                        placeholder="Phone Number"
-                        onChange={handleInputChange}
-                        className={`${INPUT_CLASSES} ${errors.contactNumber ? "border-red-500/50" : ""}`}
-                      />
-                      {errors.contactNumber && <span className="text-red-400 text-xs mt-1 flex items-center gap-1"><AlertCircle size={10} /> {errors.contactNumber}</span>}
+
+                    <div className="relative">
+                      {errors.phone && <ErrorBubble msg={errors.phone} />}
+                      <div className="relative flex items-center">
+                        <div className="absolute left-4 flex items-center gap-2 pr-3 border-r border-white/10 h-6">
+                          <img src="https://flagcdn.com/w20/in.png" alt="India" className="w-4 h-auto opacity-80" />
+                          <span className="text-orange-500 font-bold text-sm">+91</span>
+                        </div>
+                        <input name="phone" type="tel" value={formData.phone} placeholder="Phone Number" onChange={handleInputChange} className={`${INPUT_CLASSES} pl-24`} />
+                      </div>
                     </div>
                   </div>
 
-                  <div>
-                    <textarea
-                      name="message"
-                      rows={4}
-                      value={formData.message}
-                      placeholder="Briefly describe your requirement"
-                      onChange={handleInputChange}
-                      className={`${INPUT_CLASSES} resize-none ${errors.message ? "border-red-500/50" : ""}`}
-                    />
-                    {errors.message && <span className="text-red-400 text-xs mt-1 flex items-center gap-1"><AlertCircle size={10} /> {errors.message}</span>}
+                  <div className="relative">
+                    {errors.message && <ErrorBubble msg={errors.message} />}
+                    <textarea name="message" rows={5} value={formData.message} placeholder="Tell us about your requirements and goals..." onChange={handleInputChange} className={`${INPUT_CLASSES} resize-none`} />
                   </div>
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-white text-black hover:bg-orange-500 hover:text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="group w-full bg-orange-500 text-white hover:bg-orange-600 font-extrabold py-5 rounded-2xl transition-all flex items-center justify-center gap-3 shadow-[0_15px_30px_-5px_rgba(249,115,22,0.3)] hover:shadow-[0_20px_40px_-5px_rgba(249,115,22,0.4)] active:scale-[0.98] disabled:opacity-50"
                   >
-                    {loading ? "Submitting..." : "Submit Enquiry"}
-                    {!loading && <ArrowRight size={18} />}
+                    <span>{loading ? "Initializing..." : "Send Secure Message"}</span>
+                    {!loading && <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />}
                   </button>
-                </div>
-              </form>
+
+                  <p className="text-[10px] text-center text-gray-600 uppercase tracking-widest mt-6">
+                    Your data is secure and protected under NDAs by default.
+                  </p>
+                </form>
+              </div>
             </FadeUp>
           </div>
         </div>
