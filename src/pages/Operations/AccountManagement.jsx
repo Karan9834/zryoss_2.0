@@ -209,30 +209,6 @@ export default function AccountManagement() {
         <div className="absolute -top-44 left-1/2 -translate-x-1/2 w-[950px] h-[950px] rounded-full bg-[#FF6A00]/10 blur-3xl" />
         <div className="absolute -bottom-44 right-0 w-[650px] h-[650px] rounded-full bg-[#FF6A00]/10 blur-3xl" />
 
-<<<<<<< HEAD
-        {/* Content */}
-        <div className="relative z-20 max-w-5xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-8 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
-            Operations & Support
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-8">
-            One Account. <span className="text-[#FF6A00]">One Owner.</span><br />
-            Continuous Support.
-          </h1>
-
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed mb-10">
-            At Zryoss, account management is not a support function.<br />
-            It is a <span className="text-white font-medium">core operational control layer</span> that ensures execution alignment, communication clarity, and delivery accountability.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <button className="px-8 py-4 bg-[#FF6A00] text-white font-bold text-lg rounded-xl hover:bg-[#FF6A00]/90 transition shadow-[0_0_25px_rgba(255,106,0,0.4)] flex items-center justify-center gap-2">
-              Contact Support <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-=======
         {/* watermark */}
         <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
           <svg viewBox="0 0 1200 600" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -248,7 +224,6 @@ export default function AccountManagement() {
               <line x1="600" y1="300" x2="820" y2="390" />
             </g>
           </svg>
->>>>>>> ed11d59dc3576dac588ad0207c2f917481892cd9
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 py-28 w-full">
@@ -467,11 +442,10 @@ export default function AccountManagement() {
             return (
               <div
                 key={s.id}
-                className={`rounded-2xl border transition ${
-                  isOpen
+                className={`rounded-2xl border transition ${isOpen
                     ? "border-[#FF6A00]/50 bg-black/25"
                     : "border-white/10 bg-black/10 hover:border-[#FF6A00]/30"
-                }`}
+                  }`}
               >
                 <button
                   onClick={() => setOpenLife(isOpen ? "" : s.id)}

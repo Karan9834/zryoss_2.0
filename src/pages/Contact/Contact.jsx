@@ -261,11 +261,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={loading}
-<<<<<<< HEAD
-                    className="w-full bg-orange-600 text-white hover:bg-orange-500 font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
-=======
                     className="group w-full relative h-[70px] overflow-hidden rounded-[20px] bg-gradient-to-r from-orange-500 to-orange-600 font-bold text-white shadow-xl shadow-orange-500/20 transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50"
->>>>>>> ed11d59dc3576dac588ad0207c2f917481892cd9
                   >
                     <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 pointer-events-none" />
                     <div className="relative z-10 flex items-center justify-center gap-3">

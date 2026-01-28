@@ -233,7 +233,6 @@ export default function VendorCoordination() {
               </span>
             </p>
 
-<<<<<<< HEAD
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={scrollToArchitecture}
@@ -251,25 +250,6 @@ export default function VendorCoordination() {
           </div>
         </div>
       </section>
-=======
-      <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <button
-          onClick={scrollToArchitecture}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FF6A00] text-white font-semibold hover:brightness-110 transition"
-        >
-          Explore Architecture <ArrowRight className="w-5 h-5" />
-        </button>
-        <a
-          href="#roles"
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 transition font-semibold"
-        >
-          View Roles
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
->>>>>>> ed11d59dc3576dac588ad0207c2f917481892cd9
 
 
       {/* ✅ 2. WHY VENDOR COORDINATION BREAKS */}
