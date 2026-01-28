@@ -75,7 +75,11 @@ import Reporting from "../pages/Operations/Reporting";
 
 // Resources
 import Blog from "../pages/Resources/Blog";
+import BlogDetail from "../pages/Resources/BlogDetail";
 import FAQs from "../pages/Resources/FAQs";
+import KnowledgeHub from "../pages/Resources/KnowledgeHub";
+import PartnerGuidelines from "../pages/Resources/PartnerGuidelines";
+import TrainingHub from "../pages/Resources/TrainingHub";
 
 // Company
 import About from "../pages/Company/About";
@@ -165,7 +169,11 @@ export default function AppRoutes() {
 
       {/* Resources */}
       <Route path="/resources/blog" element={<Blog />} />
+      <Route path="/resources/blog/:id" element={<BlogDetail />} />
       <Route path="/resources/faqs" element={<FAQs />} />
+      <Route path="/resources/knowledge-center" element={<KnowledgeHub />} />
+      <Route path="/resources/partner-guidelines" element={<PartnerGuidelines />} />
+      <Route path="/resources/training" element={<TrainingHub />} />
 
       {/* Company */}
       <Route path="/company/about" element={<About />} />

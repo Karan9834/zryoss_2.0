@@ -60,23 +60,24 @@ export default function Footer() {
           </div>
 
           {/* NEWSLETTER */}
-          <div className="lg:col-span-8 flex flex-col md:flex-row justify-between items-center bg-white/5 p-8 rounded-2xl border border-white/10 gap-6">
-            <div className="max-w-sm">
-              <h3 className="text-xl font-bold mb-2 text-orange-500">
-                Join the ecosystem
+          <div className="lg:col-span-8 flex flex-col md:flex-row justify-between items-center bg-white/[0.03] p-10 rounded-[32px] border border-white/10 gap-8 shadow-2xl relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+            <div className="max-w-sm relative z-10 text-center md:text-left">
+              <h3 className="text-2xl font-bold mb-3 text-white">
+                Join the <span className="text-orange-500">ecosystem</span>
               </h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-gray-400 font-light leading-relaxed">
                 Monthly insights on execution, scalability & enterprise growth.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto relative z-10">
               <input
                 type="email"
                 placeholder="Work email address"
-                className="bg-black border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-500 min-w-[260px]"
+                className="bg-white/5 border border-white/10 rounded-[18px] px-6 py-4 focus:outline-none focus:border-orange-500 focus:bg-white/[0.08] transition-all min-w-[280px] text-sm font-light"
               />
-              <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-xl flex items-center justify-center gap-2 group transition-all">
+              <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:scale-[1.02] active:scale-[0.98] text-white font-bold px-8 py-4 rounded-[18px] flex items-center justify-center gap-2 transition-all shadow-xl shadow-orange-500/20">
                 Subscribe
                 <ArrowRight
                   size={18}
@@ -192,7 +193,7 @@ export default function Footer() {
                   className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold text-gray-400 hover:text-white transition-all relative group py-1"
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 group-hover:w-full" />
                 </Link>
               ))}
             </div>

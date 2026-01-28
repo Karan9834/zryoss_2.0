@@ -196,8 +196,8 @@ export default function ApplyPage() {
           <div className="lg:col-span-2 space-y-6">
 
             {/* IPP */}
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
-              <h3 className="text-xl font-bold text-orange-400 mb-2">
+            <div className="group p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-orange-500/50 hover:bg-white/[0.05] transition-all duration-500 hover:scale-[1.02]">
+              <h3 className="text-xl font-bold text-orange-400 mb-2 group-hover:text-blue-400 transition-colors">
                 Independent Prime Partner (IPP)
               </h3>
               <p className="text-sm text-gray-400 mb-4">
@@ -205,18 +205,27 @@ export default function ApplyPage() {
                 Zryoss's centralized delivery, demo, and compliance systems.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>• Owns clients & sales strategy</li>
-                <li>• Can build internal sales teams</li>
-                <li>• Full control over growth</li>
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                  Owns clients & sales strategy
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                  Can build internal sales teams
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                  Full control over growth
+                </li>
               </ul>
-              <p className="text-xs text-gray-500 mt-4">
+              <p className="text-xs text-gray-500 mt-4 italic">
                 Not a franchise · Not MLM · Not passive income
               </p>
             </div>
 
             {/* BPP */}
-            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10">
-              <h3 className="text-xl font-bold text-orange-400 mb-2">
+            <div className="group p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-orange-500/50 hover:bg-white/[0.05] transition-all duration-500 hover:scale-[1.02]">
+              <h3 className="text-xl font-bold text-orange-400 mb-2 group-hover:text-blue-400 transition-colors">
                 Business Prime Partner (BPP)
               </h3>
               <p className="text-sm text-gray-400 mb-4">
@@ -224,22 +233,57 @@ export default function ApplyPage() {
                 business closures.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>• Promotes Zryoss services</li>
-                <li>• Shares qualified leads</li>
-                <li>• Supports deal closure</li>
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                  Promotes Zryoss services
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                  Shares qualified leads
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                  Supports deal closure
+                </li>
               </ul>
-              <p className="text-xs text-gray-500 mt-4">
+              <p className="text-xs text-gray-500 mt-4 italic">
                 No recruitment · No downlines · No guaranteed income
               </p>
             </div>
 
             {/* Contact */}
-            <div className="p-6 rounded-2xl bg-orange-500/10 border border-orange-500/20">
-              <h4 className="font-bold mb-3">Need help?</h4>
-              <div className="text-sm text-gray-300 space-y-2">
-                <p className="flex gap-2"><Mail className="w-4" /> partners@zryoss.com</p>
-                <p className="flex gap-2"><Phone className="w-4" /> +91 12345 67890</p>
-                <p className="flex gap-2"><Clock className="w-4" /> Mon–Fri, 9AM–6PM IST</p>
+            <div className="p-8 rounded-2xl bg-gradient-to-br from-orange-500/20 to-transparent border border-orange-500/30 shadow-2xl shadow-orange-500/5">
+              <h4 className="font-bold text-xl mb-6">Need help?</h4>
+              <div className="space-y-4">
+                <a href="mailto:partners@zryoss.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-orange-500/50 transition-all">
+                    <Mail className="w-5 h-5 text-orange-400" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Email Us</p>
+                    <p className="text-sm font-medium">partners@zryoss.com</p>
+                  </div>
+                </a>
+
+                <a href="tel:01169269633" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-orange-500/50 transition-all">
+                    <Phone className="w-5 h-5 text-orange-400" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Call for Support</p>
+                    <p className="text-sm font-medium">011 6926 9633</p>
+                  </div>
+                </a>
+
+                <div className="flex items-center gap-4 text-gray-400">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-gray-500" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-gray-600 font-bold">Operating Hours</p>
+                    <p className="text-sm font-medium">Mon–Fri, 10AM–6PM IST</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

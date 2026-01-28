@@ -6,6 +6,7 @@ import PartnershipModels from "./PartnershipModels";
 import ManagementSection from "./ManagementSection";
 import Brands from "./Brands";
 import Solutions from "./Solutions";
+import BlogSection from "./BlogSection";
 import WhyZryoss from "./WhyZryoss";
 import DarkToDirection from "./DarkToDirection";
 // import WhatIsNot from "./WhatIsNot";
@@ -24,6 +25,7 @@ export default function Home() {
       <ManagementSection />
       <Brands />
       <Solutions />
+      <BlogSection />
       <WhyZryoss />
       {/* <WhatIsNot /> */}
       <DarkToDirection />

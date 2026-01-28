@@ -225,6 +225,13 @@ export default function Navbar() {
             { title: "FAQs", to: "/resources/faqs", icon: <FileText className="w-4 h-4" /> },
           ],
         },
+        {
+          heading: "Training Zryoss",
+          links: [
+            { title: "Training & Enablement Hub", to: "/resources/training", icon: <GraduationCap className="w-4 h-4" /> },
+            { title: "Zryoss Knowledge Hub", to: "/resources/knowledge-center", icon: <Sparkles className="w-4 h-4" /> },
+          ],
+        },
       ],
     },
 
@@ -337,7 +344,7 @@ export default function Navbar() {
 
                 {/* underline + glow */}
                 <span
-                  className={`absolute -bottom-[27px] left-0 w-full h-[2px] bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-200 ${isActive ? "opacity-100" : "opacity-0"
+                  className={`absolute -bottom-[27px] left-0 w-full h-[2px] bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-200 ${isActive ? "opacity-100" : "opacity-0"
                     }`}
                 />
                 <span
@@ -353,7 +360,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             to="/contact"
-            className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-[14px] font-semibold transition shadow-[0_0_18px_rgba(234,88,12,0.25)] hover:shadow-[0_0_26px_rgba(234,88,12,0.45)]"
+            className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 text-[14px] font-bold text-white transition shadow-[0_0_18px_rgba(234,88,12,0.25)] hover:shadow-[0_0_26px_rgba(234,88,12,0.45)]"
           >
             Contact Us
           </Link>
@@ -414,7 +421,7 @@ export default function Navbar() {
           </div>
 
           {/* glow */}
-          <div className="absolute -inset-8 -z-10 blur-3xl opacity-50 bg-gradient-to-r from-orange-500/20 via-red-500/10 to-transparent rounded-[70px]" />
+          <div className="absolute -inset-8 -z-10 blur-3xl opacity-50 bg-gradient-to-r from-orange-500/10 via-orange-400/5 to-transparent rounded-[70px]" />
         </div>
       </div>
 
