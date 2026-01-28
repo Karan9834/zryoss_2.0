@@ -3,7 +3,6 @@ import {
   Mail,
   Phone,
   MapPin,
-  ArrowRight,
   ArrowUpRight,
   ShieldCheck,
   AlertCircle,
