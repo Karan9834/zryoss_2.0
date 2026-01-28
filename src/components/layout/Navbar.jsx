@@ -187,7 +187,7 @@ export default function Navbar() {
             { title: "Digital Marketing Solutions", to: "/solutions/digital-marketing", icon: <Rocket className="w-4 h-4" /> },
             { title: "Business Consulting & Setup", to: "/solutions/business-consulting", icon: <Lightbulb className="w-4 h-4" /> },
             { title: "Healthcare & MedTech Solutions", to: "/solutions/healthcare", icon: <HeartPulse className="w-4 h-4" /> },
-            { title: "Real Estate & Interior Solutions", to: "/solutions/real-estate-interior", icon: <Building2 className="w-4 h-4" /> },
+            { title: "Interior & Infrastructure Solutions", to: "/solutions/real-estate-interior", icon: <Building2 className="w-4 h-4" /> },
             { title: "Education & EdTech Solutions", to: "/solutions/education", icon: <GraduationCap className="w-4 h-4" /> },
           ],
         },

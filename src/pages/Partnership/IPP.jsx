@@ -73,30 +73,27 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
         className="w-full py-6 flex items-center justify-between text-left group"
       >
         <span
-          className={`text-[17px] md:text-lg font-medium transition-colors ${
-            isOpen
+          className={`text-[17px] md:text-lg font-medium transition-colors ${isOpen
               ? "text-orange-500"
               : "text-white group-hover:text-orange-400"
-          }`}
+            }`}
         >
           {question}
         </span>
 
         <div
-          className={`p-2 rounded-full transition-all ${
-            isOpen
+          className={`p-2 rounded-full transition-all ${isOpen
               ? "bg-orange-600 rotate-180"
               : "bg-white/5 group-hover:bg-white/10"
-          }`}
+            }`}
         >
           {isOpen ? <Minus size={16} /> : <Plus size={16} />}
         </div>
       </button>
 
       <div
-        className={`grid transition-[grid-template-rows] duration-500 ease-out ${
-          isOpen ? "grid-rows-[1fr] opacity-100 pb-8" : "grid-rows-[0fr] opacity-0"
-        }`}
+        className={`grid transition-[grid-template-rows] duration-500 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100 pb-8" : "grid-rows-[0fr] opacity-0"
+          }`}
       >
         <div className="overflow-hidden">
           <p className="text-neutral-400 text-[15px] md:text-base leading-relaxed max-w-2xl font-light">
@@ -880,7 +877,7 @@ export default function KryossIPP() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-500 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {loading ? "Submitting..." : "Submit Application"}
                 </button>

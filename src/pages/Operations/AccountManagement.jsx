@@ -93,7 +93,7 @@ export default function AccountManagement() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <button className="px-8 py-4 bg-[#FF6A00] text-black font-bold text-lg rounded-xl hover:bg-[#FF6A00]/90 transition shadow-[0_0_25px_rgba(255,106,0,0.4)] flex items-center justify-center gap-2">
+            <button className="px-8 py-4 bg-[#FF6A00] text-white font-bold text-lg rounded-xl hover:bg-[#FF6A00]/90 transition shadow-[0_0_25px_rgba(255,106,0,0.4)] flex items-center justify-center gap-2">
               Contact Support <ArrowRight className="w-5 h-5" />
             </button>
           </div>

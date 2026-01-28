@@ -634,7 +634,7 @@ export default function App() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 bg-white text-black font-bold rounded-lg hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-orange-600 text-white font-bold rounded-lg hover:bg-orange-500 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {loading ? "Submitting..." : "Submit Application"}
                 </button>

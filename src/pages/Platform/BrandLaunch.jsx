@@ -60,7 +60,7 @@ export default function BrandLaunchSupport() {
             <div className="mt-10 flex flex-wrap justify-center gap-5">
               <Link
                 to="/platform/how-it-works"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black font-bold hover:bg-gray-100 transition shadow-[0_0_25px_rgba(255,255,255,0.15)] hover:shadow-[0_0_35px_rgba(255,255,255,0.25)] hover:scale-[1.03] transform duration-200"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-orange-600 text-white font-bold hover:bg-orange-500 transition shadow-[0_0_25px_rgba(234,88,12,0.3)] hover:shadow-[0_0_35px_rgba(234,88,12,0.4)] hover:scale-[1.03] transform duration-200"
               >
                 See How It Works <ArrowRight className="w-4 h-4" />
               </Link>
@@ -465,7 +465,7 @@ export default function BrandLaunchSupport() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link
                 to="/platform/how-it-works"
-                className="px-10 py-5 rounded-full bg-white text-black font-bold text-lg hover:bg-gray-200 transition shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                className="px-10 py-5 rounded-full bg-orange-600 text-white font-bold text-lg hover:bg-orange-500 transition shadow-[0_0_30px_rgba(234,88,12,0.3)]"
               >
                 See How Zryoss Works
               </Link>

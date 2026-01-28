@@ -251,7 +251,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-white text-black hover:bg-orange-500 hover:text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full bg-orange-600 text-white hover:bg-orange-500 font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {loading ? "Submitting..." : "Submit Enquiry"}
                     {!loading && <ArrowRight size={18} />}

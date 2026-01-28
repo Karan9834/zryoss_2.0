@@ -244,7 +244,7 @@ export default function Onboarding() {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={handleScrollToFramework}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FF6A00] text-black font-semibold hover:brightness-110 transition"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FF6A00] text-white font-semibold hover:brightness-110 transition"
               >
                 Explore Framework <ArrowRight className="w-5 h-5" />
               </button>
@@ -388,19 +388,17 @@ export default function Onboarding() {
           ].map((s, idx) => (
             <div
               key={s.title}
-              className={`p-5 rounded-2xl border transition ${
-                s.extra
+              className={`p-5 rounded-2xl border transition ${s.extra
                   ? "bg-[#FF6A00]/10 border-[#FF6A00]/30"
                   : "bg-[#1E1E1E] border-white/10 hover:border-[#FF6A00]/40"
-              }`}
+                }`}
             >
               <div className="flex items-center justify-between">
                 <div
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                    s.extra
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center ${s.extra
                       ? "bg-[#FF6A00]/20 border border-[#FF6A00]/30 text-[#FF6A00]"
                       : "bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00]"
-                  }`}
+                    }`}
                 >
                   {s.icon}
                 </div>
@@ -444,11 +442,10 @@ export default function Onboarding() {
               return (
                 <div
                   key={s.id}
-                  className={`rounded-2xl border transition ${
-                    isOpen
+                  className={`rounded-2xl border transition ${isOpen
                       ? "border-[#FF6A00]/50 bg-black/25"
                       : "border-white/10 bg-black/10 hover:border-[#FF6A00]/30"
-                  }`}
+                    }`}
                 >
                   <button
                     onClick={() => setOpenStep(isOpen ? "" : s.id)}
@@ -754,7 +751,7 @@ export default function Onboarding() {
           </p>
 
           <div className="mt-10 flex justify-center">
-            <button className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#FF6A00] text-black font-bold hover:brightness-110 transition">
+            <button className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#FF6A00] text-white font-bold hover:brightness-110 transition">
               Start Your Onboarding Journey <ArrowRight className="w-5 h-5" />
             </button>
           </div>

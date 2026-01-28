@@ -60,7 +60,7 @@ import HRRecruitment from "../pages/Solutions/HRRecruitment";
 import DigitalMarketing from "../pages/Solutions/DigitalMarketing";
 import BusinessConsulting from "../pages/Solutions/BusinessConsulting";
 import Healthcare from "../pages/Solutions/Healthcare";
-import RealEstateInterior from "../pages/Solutions/RealEstateInterior";
+import InteriorInfrastructure from "../pages/Solutions/InteriorInfrastructure";
 import Education from "../pages/Solutions/Education";
 
 // Operations
@@ -150,7 +150,7 @@ export default function AppRoutes() {
       <Route path="/solutions/digital-marketing" element={<DigitalMarketing />} />
       <Route path="/solutions/business-consulting" element={<BusinessConsulting />} />
       <Route path="/solutions/healthcare" element={<Healthcare />} />
-      <Route path="/solutions/real-estate-interior" element={<RealEstateInterior />} />
+      <Route path="/solutions/real-estate-interior" element={<InteriorInfrastructure />} /> {/* Interior Solutions */}
       <Route path="/solutions/education" element={<Education />} />
 
       {/* Operations */}

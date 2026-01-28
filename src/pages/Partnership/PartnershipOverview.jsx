@@ -437,7 +437,7 @@ export default function PartnershipOverview() {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <button className="group px-8 py-4 rounded-xl bg-orange-500 text-black font-bold flex items-center gap-2 hover:bg-orange-400 transition-all shadow-[0_0_40px_rgba(249,115,22,0.35)]">
+                <button className="group px-8 py-4 rounded-xl bg-orange-500 text-white font-bold flex items-center gap-2 hover:bg-orange-400 transition-all shadow-[0_0_40px_rgba(249,115,22,0.35)]">
                   Become a Partner
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>

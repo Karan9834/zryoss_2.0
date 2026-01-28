@@ -237,7 +237,7 @@ export default function QualityAssurance() {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={handleScrollToModel}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-[#FF6A00] text-black font-semibold hover:brightness-110 transition"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-[#FF6A00] text-white font-semibold hover:brightness-110 transition"
               >
                 Explore QA Model <ArrowRight className="w-5 h-5" />
               </button>
@@ -365,11 +365,10 @@ export default function QualityAssurance() {
                 if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
                 setOpenLayer(l.id);
               }}
-              className={`text-left p-5 rounded-2xl border transition ${
-                openLayer === l.id
+              className={`text-left p-5 rounded-2xl border transition ${openLayer === l.id
                   ? "bg-[#FF6A00]/10 border-[#FF6A00]/40"
                   : "bg-[#1E1E1E] border-white/10 hover:border-[#FF6A00]/30"
-              }`}
+                }`}
             >
               <div className="flex items-center justify-between">
                 <div className="w-10 h-10 rounded-xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
@@ -400,11 +399,10 @@ export default function QualityAssurance() {
               return (
                 <div
                   key={l.id}
-                  className={`rounded-2xl border transition ${
-                    isOpen
+                  className={`rounded-2xl border transition ${isOpen
                       ? "border-[#FF6A00]/50 bg-black/25"
                       : "border-white/10 bg-black/10 hover:border-[#FF6A00]/30"
-                  }`}
+                    }`}
                 >
                   <button
                     onClick={() => setOpenLayer(isOpen ? "" : l.id)}
@@ -869,7 +867,7 @@ export default function QualityAssurance() {
           </p>
 
           <div className="mt-10 flex justify-center">
-            <button className="inline-flex items-center gap-2 px-9 py-4 rounded-2xl bg-[#FF6A00] text-black font-bold hover:brightness-110 transition">
+            <button className="inline-flex items-center gap-2 px-9 py-4 rounded-2xl bg-[#FF6A00] text-white font-bold hover:brightness-110 transition">
               Start Your Quality Journey <ArrowRight className="w-5 h-5" />
             </button>
           </div>

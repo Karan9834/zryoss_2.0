@@ -284,7 +284,7 @@ export default function Reporting() {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={handleScrollToSystem}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FF6A00] text-black font-semibold hover:brightness-110 transition"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FF6A00] text-white font-semibold hover:brightness-110 transition"
               >
                 Explore Reporting System <ArrowRight className="w-5 h-5" />
               </button>
@@ -515,11 +515,10 @@ export default function Reporting() {
               return (
                 <div
                   key={c.id}
-                  className={`rounded-2xl border transition ${
-                    isOpen
+                  className={`rounded-2xl border transition ${isOpen
                       ? "border-[#FF6A00]/50 bg-black/25"
                       : "border-white/10 bg-black/10 hover:border-[#FF6A00]/30"
-                  }`}
+                    }`}
                 >
                   <button
                     onClick={() => setOpenCategory(isOpen ? "" : c.id)}
@@ -987,7 +986,7 @@ export default function Reporting() {
           </p>
 
           <div className="mt-10 flex justify-center">
-            <button className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#FF6A00] text-black font-bold hover:brightness-110 transition">
+            <button className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#FF6A00] text-white font-bold hover:brightness-110 transition">
               Start Transparent Execution <ArrowRight className="w-5 h-5" />
             </button>
           </div>

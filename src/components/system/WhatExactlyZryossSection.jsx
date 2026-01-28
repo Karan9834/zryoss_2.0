@@ -167,7 +167,7 @@ export default function WhatExactlyZryossSection() {
 
             {/* CTA */}
             <div className="mt-7 flex flex-col gap-3">
-              <button className="rounded-2xl bg-orange-500 px-6 py-3 font-bold text-black shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition">
+              <button className="rounded-2xl bg-orange-500 px-6 py-3 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition">
                 Explore the System
               </button>
 

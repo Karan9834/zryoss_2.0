@@ -35,7 +35,7 @@ export default function BOSFinalCTASection() {
           </p>
 
           <div className="relative mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-            <button className="rounded-2xl bg-orange-500 px-8 py-3 font-bold text-black shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition">
+            <button className="rounded-2xl bg-orange-500 px-8 py-3 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition">
               See How Zryoss Works
             </button>
 

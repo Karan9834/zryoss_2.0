@@ -91,7 +91,7 @@ export default function SLAManagement() {
                     </p>
 
                     <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#FF6A00] text-black font-bold hover:bg-[#FF6A00]/90 transition shadow-[0_0_20px_rgba(255,106,0,0.3)]">
+                        <button className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#FF6A00] text-white font-bold hover:bg-[#FF6A00]/90 transition shadow-[0_0_20px_rgba(255,106,0,0.3)]">
                             View SLA Standards <ArrowRight className="w-5 h-5" />
                         </button>
                     </div>
@@ -263,7 +263,7 @@ export default function SLAManagement() {
                         Join an ecosystem where performance is not just promised—it's contractually engineered.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="px-8 py-4 bg-[#FF6A00] text-black font-bold rounded-xl hover:bg-[#FF6A00]/90 transition shadow-lg shadow-[#FF6A00]/20">
+                        <button className="px-8 py-4 bg-[#FF6A00] text-white font-bold rounded-xl hover:bg-[#FF6A00]/90 transition shadow-lg shadow-[#FF6A00]/20">
                             Partner With Zryoss
                         </button>
                         <button className="px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-xl hover:bg-white/5 transition">

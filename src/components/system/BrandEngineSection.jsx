@@ -52,7 +52,7 @@ export default function BrandEngineSection() {
 
             {/* CTA buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <button className="rounded-2xl bg-orange-500 px-7 py-3 font-bold text-black shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition">
+              <button className="rounded-2xl bg-orange-500 px-7 py-3 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition">
                 Explore the System
               </button>
 

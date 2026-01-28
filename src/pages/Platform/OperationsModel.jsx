@@ -334,7 +334,7 @@ export default function OperationsModel() {
             <p className="text-white font-medium mb-10 uppercase tracking-widest text-sm">Ready to see how execution is managed at scale?</p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link to="/platform/how-zryoss-works" className="px-10 py-5 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+              <Link to="/platform/how-zryoss-works" className="px-10 py-5 bg-orange-600 text-white font-bold rounded-full hover:bg-orange-500 transition shadow-[0_0_20px_rgba(234,88,12,0.3)]">
                 See How Zryoss Works (End-to-End)
               </Link>
               <Link to="/ecosystem" className="px-10 py-5 border border-white/20 rounded-full font-medium hover:bg-white/5 transition flex items-center gap-2">
