@@ -1,134 +1,133 @@
 import { motion } from "framer-motion";
+import { ShieldAlert, FileText, Scale, MessageSquare, Briefcase, Info, Download, ArrowRight } from "lucide-react";
 import FadeUp from "../../components/animations/FadeUp";
+import HeroContact from "../Home/HeroContact";
+
+const guidelines = [
+  {
+    title: "Ethical Representation",
+    desc: "Partners must represent Zryoss accurately and avoid misleading claims related to income, partnerships, or outcomes.",
+    icon: <Briefcase className="w-5 h-5" />
+  },
+  {
+    title: "No Income Guarantees",
+    desc: "Partners must not promise fixed, guaranteed, or passive income to any individual or organization.",
+    icon: <Scale className="w-5 h-5" />
+  },
+  {
+    title: "No Recruitment-Based Promotion",
+    desc: "Zryoss must never be positioned as an MLM, referral, or recruitment income opportunity.",
+    icon: <ShieldAlert className="w-5 h-5" />
+  },
+  {
+    title: "Client Communication Standards",
+    desc: "All client communication must remain professional, transparent, and within approved service scope.",
+    icon: <MessageSquare className="w-5 h-5" />
+  },
+  {
+    title: "Brand Usage Policy",
+    desc: "Brand assets and references must be used strictly according to approved Zryoss brand guidelines.",
+    icon: <FileText className="w-5 h-5" />
+  },
+  {
+    title: "Compliance & Reporting",
+    desc: "Partners must comply with reporting requirements, platform policies, and operational processes.",
+    icon: <Info className="w-5 h-5" />
+  },
+  {
+    title: "Violations & Consequences",
+    desc: "Any violation may result in corrective action, suspension, or termination of partnership.",
+    icon: <ShieldAlert className="w-5 h-5" />
+  },
+];
 
 export default function PartnerGuidelines() {
   return (
-    <>
-      {/* ================= HERO SECTION ================= */}
-      <section className="relative h-screen w-full overflow-hidden">
-        {/* Background Image */}
-        <img
-          src="https://images.unsplash.com/photo-1557804506-669a67965ba0"
-          alt="Business ethics and compliance"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+    <div className="bg-[#050505] text-white min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[80vh] w-full overflow-hidden flex items-center">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2074&auto=format&fit=crop"
+            alt="Compliance"
+            className="w-full h-full object-cover opacity-30 brightness-[0.4]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/60 to-[#050505]" />
+        </div>
 
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/75" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <FadeUp>
+            <span className="inline-block mb-4 text-xs tracking-[0.2em] uppercase text-orange-400 font-bold px-4 py-1 rounded-full bg-orange-500/10 border border-orange-500/20">
+              Governance & Compliance
+            </span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight mb-8">
+              Partner <span className="text-orange-500 italic">Guidelines</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-gray-400 text-xl font-light leading-relaxed mb-10">
+              Ethical standards, communication rules, and operational
+              responsibilities required to represent and operate within the
+              Zryoss ecosystem.
+            </p>
 
-        {/* Glow */}
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 
-                        w-[700px] h-[700px] bg-orange-500/20 blur-[160px]" />
-
-        {/* Content */}
-        <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-6xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <span className="inline-block mb-4 text-sm tracking-widest uppercase 
-                               text-orange-400 font-semibold">
-                Governance & Compliance
-              </span>
-
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">
-                Partner <span className="text-orange-500">Guidelines</span>
-              </h1>
-
-              <p className="mt-6 max-w-2xl text-gray-300 text-lg leading-relaxed">
-                Ethical standards, communication rules, and operational
-                responsibilities required to represent and operate within the
-                Zryoss ecosystem.
-              </p>
-
-              {/* Meta */}
-              <div className="mt-8 flex flex-wrap gap-6 text-sm text-gray-400">
-                <span>
-                  <strong className="text-white">Last updated:</strong> January 2026
-                </span>
-
-                <a
-                  href="/docs/zryoss-partner-guidelines.pdf"
-                  download
-                  className="text-orange-400 hover:text-orange-300 transition"
-                >
-                  ⬇ Download PDF
-                </a>
+            <div className="flex flex-wrap gap-8 items-center text-sm">
+              <div className="flex items-center gap-2 text-gray-400">
+                <span className="w-2 h-2 rounded-full bg-orange-500" />
+                <strong>Last updated:</strong> <span className="font-light">January 2026</span>
               </div>
-            </motion.div>
-          </div>
+              <button className="flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-orange-500 hover:border-orange-500 transition-all font-bold">
+                <Download className="w-4 h-4" />
+                Download PDF Guidelines
+              </button>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
-      {/* ================= GUIDELINES SECTION ================= */}
-      <section className="relative py-32 bg-[#0F172A] overflow-hidden">
-        <div className="relative max-w-6xl mx-auto px-6">
-
-          <div className="space-y-8">
-            {[
-              {
-                title: "Ethical Representation",
-                desc: "Partners must represent Zryoss accurately and avoid misleading claims related to income, partnerships, or outcomes.",
-              },
-              {
-                title: "No Income Guarantees",
-                desc: "Partners must not promise fixed, guaranteed, or passive income to any individual or organization.",
-              },
-              {
-                title: "No Recruitment-Based Promotion",
-                desc: "Zryoss must never be positioned as an MLM, referral, or recruitment income opportunity.",
-              },
-              {
-                title: "Client Communication Standards",
-                desc: "All client communication must remain professional, transparent, and within approved service scope.",
-              },
-              {
-                title: "Brand Usage Policy",
-                desc: "Brand assets and references must be used strictly according to approved Zryoss brand guidelines.",
-              },
-              {
-                title: "Compliance & Reporting",
-                desc: "Partners must comply with reporting requirements, platform policies, and operational processes.",
-              },
-              {
-                title: "Violations & Consequences",
-                desc: "Any violation may result in corrective action, suspension, or termination of partnership.",
-              },
-            ].map((item, i) => (
-              <FadeUp key={i} delay={i * 0.06}>
-                <div className="border border-white/10 rounded-xl p-8 
-                                bg-white/5 backdrop-blur-md
-                                hover:border-orange-500/40 transition">
-                  <h3 className="text-xl font-semibold text-orange-400">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-4 text-gray-300 text-sm leading-relaxed">
-                    {item.desc}
-                  </p>
+      {/* Guidelines Grid */}
+      <section className="py-32 relative">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-8">
+            {guidelines.map((item, i) => (
+              <FadeUp key={i} delay={i * 0.05}>
+                <div className="group relative p-10 rounded-[35px] bg-[#0A0A0A] border border-white/10 hover:border-orange-500/30 transition-all duration-300">
+                  <div className="flex gap-6">
+                    <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-500 shrink-0 group-hover:bg-orange-500 group-hover:text-white transition-all">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-orange-500 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-400 text-base leading-relaxed font-light">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </FadeUp>
             ))}
           </div>
 
-          {/* ================= LEGAL NOTE ================= */}
+          {/* Legal Caution */}
           <FadeUp delay={0.4}>
-            <div className="mt-28 border border-red-500/30 rounded-xl p-8 
-                            bg-gradient-to-r from-red-500/10 to-transparent">
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Adherence to these guidelines is mandatory for continued
-                association with the Zryoss platform. Zryoss reserves the right
-                to modify policies to ensure compliance, integrity, and
-                long-term sustainability.
-              </p>
+            <div className="mt-32 p-12 rounded-[40px] border border-red-500/20 bg-red-500/[0.02] flex flex-col md:flex-row items-center gap-10">
+              <div className="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 shrink-0">
+                <ShieldAlert className="w-8 h-8" />
+              </div>
+              <div className="text-center md:text-left">
+                <h4 className="text-xl font-bold text-red-500 mb-2">Notice of Mandatory Adherence</h4>
+                <p className="text-gray-500 text-lg font-light leading-relaxed">
+                  Adherence to these guidelines is mandatory for continued association with the Zryoss platform.
+                  Zryoss reserves the right to modify policies to ensure compliance, integrity, and long-term sustainability.
+                </p>
+              </div>
             </div>
           </FadeUp>
-
         </div>
       </section>
-    </>
+
+      {/* HeroContact Section */}
+      <HeroContact />
+    </div>
   );
 }
