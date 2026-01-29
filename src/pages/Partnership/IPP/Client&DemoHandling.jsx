@@ -12,6 +12,7 @@ import {
     Presentation,
     PcCase
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 /* --- Hooks & Utility Components --- */
 
@@ -54,6 +55,7 @@ const AnimatedSection = ({ children, delay = 0, className = "" }) => {
 };
 
 export default function ClientHandlingDemo() {
+    const navigate = useNavigate();
     const features = [
         {
             title: "Expert Demo Assistance",
@@ -289,10 +291,16 @@ export default function ClientHandlingDemo() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="px-8 py-4 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-full transition-all">
+                            <button
+                                onClick={() => navigate('/apply')}
+                                className="px-8 py-4 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-full transition-all"
+                            >
                                 Become a Partner
                             </button>
-                            <button className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-medium rounded-full transition-all border border-white/10">
+                            <button
+                                onClick={() => navigate('/contact')}
+                                className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-medium rounded-full transition-all border border-white/10"
+                            >
                                 Contact Sales Support
                             </button>
                         </div>

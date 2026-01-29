@@ -23,7 +23,9 @@ import {
   Fingerprint,
   Quote,
   Star,
+  Star,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { useEmail } from "../../hooks/useEmail";
 
 /* --- Hooks & Utility Components --- */
@@ -74,8 +76,8 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
       >
         <span
           className={`text-[17px] md:text-lg font-medium transition-colors ${isOpen
-              ? "text-orange-500"
-              : "text-white group-hover:text-orange-400"
+            ? "text-orange-500"
+            : "text-white group-hover:text-orange-400"
             }`}
         >
           {question}
@@ -83,8 +85,8 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
 
         <div
           className={`p-2 rounded-full transition-all ${isOpen
-              ? "bg-orange-600 rotate-180"
-              : "bg-white/5 group-hover:bg-white/10"
+            ? "bg-orange-600 rotate-180"
+            : "bg-white/5 group-hover:bg-white/10"
             }`}
         >
           {isOpen ? <Minus size={16} /> : <Plus size={16} />}
@@ -108,6 +110,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
 /* --- Main Page --- */
 
 export default function KryossIPP() {
+  const navigate = useNavigate();
   const formRef = useRef();
   const { sendEmail, loading } = useEmail();
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -272,7 +275,10 @@ export default function KryossIPP() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-                <button className="px-10 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold text-base md:text-lg transition-all hover:scale-[1.03] shadow-[0_0_30px_-12px_rgba(234,88,12,0.55)] flex items-center gap-2 group">
+                <button
+                  onClick={() => navigate('/apply')}
+                  className="px-10 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold text-base md:text-lg transition-all hover:scale-[1.03] shadow-[0_0_30px_-12px_rgba(234,88,12,0.55)] flex items-center gap-2 group"
+                >
                   Start Partnership
                   <ArrowRight
                     size={20}
@@ -362,12 +368,12 @@ export default function KryossIPP() {
                 </p>
               </div>
 
-              <a
-                href="#contact"
+              <button
+                onClick={() => navigate('/apply')}
                 className="px-6 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-orange-600 hover:border-orange-600 text-white transition-all flex items-center gap-2"
               >
                 <span>Join Program</span> <ArrowRight size={16} />
-              </a>
+              </button>
             </div>
           </AnimatedSection>
 

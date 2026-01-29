@@ -13,6 +13,7 @@ import {
   Cpu,
   Sparkles
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 // Import images
 // Image paths from public directory
@@ -26,6 +27,7 @@ const heroBgImage = "/images/ecosystem/ecosystem-bg.png";
 const coreSystemImage = "/images/ecosystem/ecosystem-core.png";
 
 export default function Overview() {
+  const navigate = useNavigate();
   const [expandedLayer, setExpandedLayer] = useState(0);
 
   const layers = [
@@ -478,7 +480,10 @@ export default function Overview() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center relative">
-                  <button className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-orange-500/25">
+                  <button
+                    onClick={() => navigate('/apply')}
+                    className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-orange-500/25"
+                  >
                     Partner with Zryoss
                   </button>
                   {/* <button className="px-8 py-4 border border-white/20 hover:border-orange-500/50 hover:bg-orange-500/5 text-white rounded-xl font-bold transition-all hover:scale-105 active:scale-95">

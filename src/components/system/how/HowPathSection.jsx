@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { User, Building2, ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 const fadeUp = {
@@ -8,6 +9,7 @@ const fadeUp = {
 };
 
 export default function HowPathSection() {
+  const navigate = useNavigate();
   const ipp = [
     "Job seekers",
     "Freelancers",
@@ -74,7 +76,10 @@ export default function HowPathSection() {
                 </div>
               </div>
 
-              <button className="rounded-2xl border border-white/15 px-4 py-2 text-white/85 font-semibold hover:border-orange-500 hover:text-orange-300 transition inline-flex items-center gap-2">
+              <button
+                onClick={() => navigate('/apply')}
+                className="rounded-2xl border border-white/15 px-4 py-2 text-white/85 font-semibold hover:border-orange-500 hover:text-orange-300 transition inline-flex items-center gap-2"
+              >
                 Become IPP <ArrowUpRight size={16} />
               </button>
             </div>
@@ -120,7 +125,10 @@ export default function HowPathSection() {
                 </div>
               </div>
 
-              <button className="rounded-2xl bg-orange-500 px-4 py-2 text-white font-bold hover:bg-orange-600 transition inline-flex items-center gap-2 shadow-[0_0_18px_rgba(249,115,22,0.35)]">
+              <button
+                onClick={() => navigate('/apply')}
+                className="rounded-2xl bg-orange-500 px-4 py-2 text-white font-bold hover:bg-orange-600 transition inline-flex items-center gap-2 shadow-[0_0_18px_rgba(249,115,22,0.35)]"
+              >
                 Become BPP <ArrowUpRight size={16} />
               </button>
             </div>

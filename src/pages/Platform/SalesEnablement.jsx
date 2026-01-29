@@ -27,36 +27,58 @@ const SalesEnablement = () => {
     <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-orange-500/30">
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden border-b border-white/5">
         {/* Background */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
           <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px]" />
-          <div className="absolute inset-0 bg-[url('/sales_enablement_hero.png')] bg-cover bg-center opacity-30 mix-blend-screen"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium mb-8">
-            <Settings size={14} />
-            Centralized Sales & Demo Engine
-          </div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-            A Centralized Sales and Demo <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-white">
-              Engine That Partners Can Rely On
-            </span>
-          </h1>
+            {/* Left Content */}
+            <div className="text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5">
+                <Settings size={14} className="text-orange-500" />
+                <p className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
+                  Centralized Sales & Demo Engine
+                </p>
+              </div>
 
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Zryoss provides a centralized Sales Enablement & Demo System designed to help partners convert opportunities into clients without handling technical complexity.
-          </p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+                A Centralized Sales and Demo <br />
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-1">
+                  Engine That Partners Can Rely On
+                </span>
+              </h1>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-            <div className="p-4 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm">
-              <p className="text-gray-300 italic">"Partners focus on relationships and opportunities. <br /> <strong className="text-orange-500">Zryoss manages operations end to end.</strong>"</p>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-6">
+                Zryoss provides a centralized Sales Enablement & Demo System designed to help partners convert opportunities into clients without handling technical complexity.
+              </p>
+
+              <div className="p-4 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm mb-8 max-w-lg">
+                <p className="text-gray-300 italic text-sm">"Partners focus on relationships and opportunities. <br /> <strong className="text-orange-500">Zryoss manages operations end to end.</strong>"</p>
+              </div>
             </div>
+
+            {/* Right Image */}
+            <div className="relative">
+              <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
+
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+                <img
+                  src="/sales_enablement_hero.png"
+                  alt="Sales Enablement Dashboard"
+                  className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Decorative background - kept as per original but could be removed if strict adherence to ZryossIntroSection is desired. Kept for slight variation but matching core dimensions */}
+              {/* <div className="absolute -z-10 top-10 -right-10 w-full h-full border border-white/5 rounded-2xl" /> */}
+            </div>
+
           </div>
         </div>
       </section>

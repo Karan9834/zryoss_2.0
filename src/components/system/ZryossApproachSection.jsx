@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Sparkles, TrendingUp, ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -7,6 +8,7 @@ const fadeUp = {
 };
 
 export default function ZryossApproachSection() {
+  const navigate = useNavigate();
   const modules = [
     {
       id: "01",
@@ -122,7 +124,10 @@ export default function ZryossApproachSection() {
               </p>
             </div>
 
-            <button className="mt-7 w-full rounded-2xl bg-orange-500 px-6 py-3 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition inline-flex items-center justify-center gap-2">
+            <button
+              onClick={() => navigate('/platform/business-operating-system')}
+              className="mt-7 w-full rounded-2xl bg-orange-500 px-6 py-3 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition inline-flex items-center justify-center gap-2"
+            >
               Explore the System <ArrowUpRight size={18} />
             </button>
           </motion.aside>

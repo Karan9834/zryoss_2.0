@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -8,6 +9,7 @@ const fadeUp = {
 };
 
 export default function HowFinalCTASection() {
+  const navigate = useNavigate();
   return (
     <section className="relative bg-[#0B0F14] py-16 md:py-24 overflow-hidden">
       <div className="absolute -top-48 left-[-140px] h-[560px] w-[560px] rounded-full bg-orange-500/10 blur-3xl" />
@@ -33,11 +35,17 @@ export default function HowFinalCTASection() {
           </p>
 
           <div className="relative mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-            <button className="rounded-2xl bg-orange-500 px-8 py-3 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition">
+            <button
+              onClick={() => navigate('/apply')}
+              className="rounded-2xl bg-orange-500 px-8 py-3 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition"
+            >
               Become an IPP
             </button>
 
-            <button className="rounded-2xl border border-white/15 px-8 py-3 font-semibold text-white hover:border-orange-500 hover:text-orange-300 transition inline-flex items-center justify-center gap-2">
+            <button
+              onClick={() => navigate('/apply')}
+              className="rounded-2xl border border-white/15 px-8 py-3 font-semibold text-white hover:border-orange-500 hover:text-orange-300 transition inline-flex items-center justify-center gap-2"
+            >
               Become a BPP <ArrowUpRight size={18} />
             </button>
           </div>

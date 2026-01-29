@@ -1,7 +1,10 @@
 import React from "react";
+import React from "react";
 import { Briefcase, Users, CheckCircle2, ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Services() {
+  const navigate = useNavigate();
   return (
     <section className="relative bg-[#050505] py-24 text-white overflow-hidden">
       {/* Background Orbs */}
@@ -72,7 +75,9 @@ export default function Services() {
               ))}
             </div>
 
-            <button className="
+            <button
+              onClick={() => navigate('/apply')}
+              className="
               w-full py-3.5 rounded-xl
               bg-white/5 border border-white/10
               flex items-center justify-center gap-2
@@ -124,7 +129,9 @@ export default function Services() {
               ))}
             </div>
 
-            <button className="
+            <button
+              onClick={() => navigate('/apply')}
+              className="
               w-full py-3.5 rounded-xl
               bg-white/5 border border-white/10
               flex items-center justify-center gap-2

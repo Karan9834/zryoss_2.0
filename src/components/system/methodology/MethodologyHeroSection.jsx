@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles, Layers, ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -8,60 +9,74 @@ const fadeUp = {
 };
 
 export default function MethodologyHeroSection() {
+  const navigate = useNavigate();
   return (
-    <section className="relative bg-[#070A0F] py-16 md:py-24 overflow-hidden">
+    <section className="relative bg-[#050505] min-h-screen flex items-center py-20 md:py-32 overflow-hidden border-b border-white/5">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(249,115,22,0.12),transparent_55%)]" />
-      <div className="absolute -bottom-56 left-1/2 -translate-x-1/2 h-[820px] w-[820px] rounded-full bg-orange-500/10 blur-3xl" />
+      <div className="absolute -bottom-56 left-1/2 -translate-x-1/2 h-[820px] w-[820px] rounded-full bg-orange-500/10 blur-[120px] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="text-center max-w-4xl mx-auto"
+          className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
-            <Sparkles size={16} className="text-orange-500" />
-            <p className="text-xs tracking-widest uppercase text-white/70 font-semibold">
-              Zryoss Methodology
+          {/* Left Content */}
+          <div className="text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5">
+              <Sparkles size={16} className="text-orange-500" />
+              <p className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
+                Zryoss Methodology
+              </p>
+            </div>
+
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+              A Structured Framework for{" "}
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-1">
+                Sustainable Businesses
+              </span>
+            </h1>
+
+            <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-6">
+              Zryoss Methodology is the{" "}
+              <span className="text-white font-medium">core execution framework</span>{" "}
+              powering the entire ecosystem — defining how businesses are built, operated
+              and scaled through a repeatable system.
             </p>
+
+            <div className="flex flex-wrap gap-4 mb-10">
+              <button
+                onClick={() => navigate('/platform/how-zryoss-works')}
+                className="rounded-xl bg-orange-500 px-8 py-4 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition"
+              >
+                See How Zryoss Works
+              </button>
+
+              <button
+                onClick={() => navigate('/apply')}
+                className="rounded-xl border border-white/10 bg-white/5 px-8 py-4 font-semibold text-white hover:border-orange-500/50 hover:text-orange-300 transition inline-flex items-center justify-center gap-2"
+              >
+                Join as IPP / BPP <ArrowUpRight size={18} />
+              </button>
+            </div>
           </div>
 
-          <h1 className="mt-6 text-4xl md:text-7xl font-extrabold text-white leading-tight">
-            A Structured Framework for{" "}
-            <span className="text-orange-500">Sustainable Businesses</span>
-          </h1>
-
-          <p className="mt-6 text-white/70 text-base md:text-xl leading-relaxed">
-            Zryoss Methodology is the{" "}
-            <span className="text-white font-semibold">core execution framework</span>{" "}
-            powering the entire ecosystem — defining how businesses are built, operated
-            and scaled through a repeatable system.
-          </p>
-
-          <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-            <button className="rounded-2xl bg-orange-500 px-8 py-3 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition">
-              See How Zryoss Works
-            </button>
-
-            <button className="rounded-2xl border border-white/15 px-8 py-3 font-semibold text-white hover:border-orange-500 hover:text-orange-300 transition inline-flex items-center justify-center gap-2">
-              Join as IPP / BPP <ArrowUpRight size={18} />
-            </button>
-          </div>
-
-          <div className="mt-12 rounded-[42px] border border-orange-500/20 bg-gradient-to-b from-orange-500/10 to-transparent p-8 md:p-10 shadow-[0_0_55px_rgba(249,115,22,0.14)]">
-            <div className="flex items-center justify-center gap-3">
-              <div className="h-12 w-12 rounded-2xl border border-white/10 bg-[#0B1220]/60 flex items-center justify-center">
-                <Layers className="text-orange-400" size={22} />
+          {/* Right Content / ImageCard */}
+          <div className="rounded-[42px] border border-orange-500/20 bg-gradient-to-b from-orange-500/10 to-transparent p-8 md:p-10 shadow-[0_0_55px_rgba(249,115,22,0.14)] relative group hover:border-orange-500/40 transition-colors duration-500">
+            <div className="absolute inset-0 bg-black/20 rounded-[42px] -z-10" />
+            <div className="flex items-center justify-center gap-4 h-full flex-col text-center">
+              <div className="h-20 w-20 rounded-2xl border border-white/10 bg-[#0B1220]/60 flex items-center justify-center mb-4 shadow-lg shadow-orange-500/20">
+                <Layers className="text-orange-400" size={32} />
               </div>
-              <div className="text-left">
-                <p className="text-orange-300 text-xs font-semibold tracking-widest uppercase">
+              <div>
+                <p className="text-orange-300 text-xs font-semibold tracking-widest uppercase mb-2">
                   Z-Framework
                 </p>
-                <p className="text-white font-extrabold text-xl">
-                  Structure • Execution • Scale • Stability
+                <p className="text-white font-extrabold text-2xl md:text-3xl leading-tight">
+                  Structure • Execution <br /> Scale • Stability
                 </p>
               </div>
             </div>

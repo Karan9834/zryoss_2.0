@@ -1,7 +1,9 @@
 import FadeUp from "../../components/animations/FadeUp";
 import Button from "../../components/ui/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function IPPvsBPP() {
+  const navigate = useNavigate();
   return (
     <section className="py-32">
       <div className="max-w-7xl mx-auto px-6">
@@ -111,8 +113,8 @@ export default function IPPvsBPP() {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button primary>Apply as IPP</Button>
-              <Button outline>Apply as BPP</Button>
+              <Button primary onClick={() => navigate('/partnership/ipp')}>Apply as IPP</Button>
+              <Button outline onClick={() => navigate('/partnership/bpp')}>Apply as BPP</Button>
             </div>
           </div>
         </FadeUp>

@@ -25,6 +25,7 @@ import {
   Wallet,
   Clock
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import BenifitsSection from '../../components/ui/BenifitsSection'
 import { useEmail } from '../../hooks/useEmail';
 
@@ -93,6 +94,7 @@ const FAQItem = ({ question, answer, isOpen }) => {
 /* --- Main Application Component --- */
 
 export default function App() {
+  const navigate = useNavigate();
   const formRef = useRef();
   const { sendEmail, loading } = useEmail();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -219,7 +221,10 @@ export default function App() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <button className="px-10 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold text-lg transition-all hover:scale-105 shadow-[0_0_30px_-10px_rgba(234,88,12,0.5)] flex items-center gap-2 group">
+                <button
+                  onClick={() => navigate('/apply')}
+                  className="px-10 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold text-lg transition-all hover:scale-105 shadow-[0_0_30px_-10px_rgba(234,88,12,0.5)] flex items-center gap-2 group"
+                >
                   Become a Partner
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -288,9 +293,12 @@ export default function App() {
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Become a BPP?</h2>
                 <p className="text-neutral-400 text-lg">Unlock specific advantages designed to accelerate your professional earnings with clear data-driven benefits.</p>
               </div>
-              <a href="#contact" className="px-6 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-orange-600 hover:border-orange-600 text-white transition-all flex items-center gap-2">
+              <button
+                onClick={() => navigate('/apply')}
+                className="px-6 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-orange-600 hover:border-orange-600 text-white transition-all flex items-center gap-2"
+              >
                 Join Program <ArrowRight size={16} />
-              </a>
+              </button>
             </div>
           </AnimatedSection>
 

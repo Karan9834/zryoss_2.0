@@ -24,7 +24,7 @@ export default function TechFinalCTASection() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link to="/ecosystem" className="px-8 py-4 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold transition-all shadow-lg shadow-orange-500/25 flex items-center gap-2">
+                        <Link to="/ecosystem/overview" className="px-8 py-4 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold transition-all shadow-lg shadow-orange-500/25 flex items-center gap-2">
                             Explore the Ecosystem <Globe className="w-5 h-5" />
                         </Link>
                         <Link to="/platform/how-zryoss-works" className="px-8 py-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-semibold transition-colors flex items-center gap-2">

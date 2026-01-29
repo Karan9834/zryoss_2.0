@@ -21,59 +21,74 @@ export default function BrandLaunchSupport() {
   return (
     <div className="bg-[#050505] min-h-screen text-white overflow-hidden selection:bg-orange-500/30">
       {/* HERO */}
-      <section className="relative pt-32 pb-20">
+      {/* HERO */}
+      <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden border-b border-white/5">
         {/* Background Glows */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[520px] bg-gradient-to-b from-orange-600/20 via-red-900/10 to-transparent blur-[130px] rounded-full pointer-events-none" />
         <div className="absolute top-20 right-0 w-[420px] h-[420px] bg-blue-900/10 blur-[110px] rounded-full pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <FadeUp>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-[11px] font-bold uppercase tracking-[0.28em] mb-8 hover:bg-orange-500/20 transition-colors cursor-default">
-              <Rocket className="w-3.5 h-3.5" /> Brand Launch Framework
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            {/* Left Content */}
+            <div className="text-left">
+              <FadeUp>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5 cursor-default">
+                  <Rocket className="w-3.5 h-3.5 text-orange-400" />
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
+                    Brand Launch Framework
+                  </p>
+                </div>
+
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+                  Brand Launch & <br />
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-1">
+                    Support Framework
+                  </span>
+                </h1>
+              </FadeUp>
+
+              <FadeUp delay={0.1}>
+                <h2 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">
+                  From Zero to a Fully Operating Brand
+                </h2>
+                <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-8">
+                  Launch your own independent brand and operate professionally without building backend infrastructure. Powered by one platform.
+                </p>
+              </FadeUp>
+
+              <FadeUp delay={0.2}>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    to="/platform/how-zryoss-works"
+                    className="rounded-xl bg-orange-500 px-8 py-4 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition flex items-center justify-center gap-2 group"
+                  >
+                    See How It Works <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+
+                  <Link
+                    to="/partnership"
+                    className="rounded-xl border border-white/10 bg-white/5 px-8 py-4 font-semibold text-white hover:border-orange-500/50 hover:text-orange-300 transition flex items-center justify-center gap-2 group"
+                  >
+                    Explore Partnerships <Globe className="w-4 h-4 text-gray-500 group-hover:text-white transition-colors" />
+                  </Link>
+                </div>
+              </FadeUp>
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.08]">
-              <span className="bg-gradient-to-b from-white via-white/95 to-white/70 bg-clip-text text-transparent">
-                Brand Launch &
-              </span>
-              <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
-                {" "}
-                Support Framework
-              </span>
-            </h1>
-          </FadeUp>
+            {/* Right Image */}
+            <FadeUp delay={0.2} className="relative">
+              <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+                <img
+                  src="/Brand Layer.png"
+                  alt="Brand Launch Framework"
+                  className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            </FadeUp>
 
-          <FadeUp delay={0.1}>
-            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
-              From Zero to a Fully Operating Brand — Powered by One Platform.
-              <span className="text-gray-300">
-                {" "}
-                Launch your own independent brand
-              </span>{" "}
-              and operate professionally without building backend
-              infrastructure.
-            </p>
-          </FadeUp>
-
-          <FadeUp delay={0.2}>
-            <div className="mt-10 flex flex-wrap justify-center gap-5">
-              <Link
-                to="/platform/how-it-works"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-orange-600 text-white font-bold hover:bg-orange-500 transition shadow-[0_0_25px_rgba(234,88,12,0.3)] hover:shadow-[0_0_35px_rgba(234,88,12,0.4)] hover:scale-[1.03] transform duration-200"
-              >
-                See How It Works <ArrowRight className="w-4 h-4" />
-              </Link>
-
-              <Link
-                to="/partnership"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/[0.04] border border-white/10 text-white font-semibold hover:bg-white/5 hover:border-white/20 transition backdrop-blur-sm group"
-              >
-                Explore Partnerships{" "}
-                <Globe className="w-4 h-4 text-gray-500 group-hover:text-white transition-colors" />
-              </Link>
-            </div>
-          </FadeUp>
+          </div>
         </div>
       </section>
 
@@ -464,7 +479,7 @@ export default function BrandLaunchSupport() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link
-                to="/platform/how-it-works"
+                to="/platform/how-zryoss-works"
                 className="px-10 py-5 rounded-full bg-orange-600 text-white font-bold text-lg hover:bg-orange-500 transition shadow-[0_0_30px_rgba(234,88,12,0.3)]"
               >
                 See How Zryoss Works

@@ -23,32 +23,59 @@ export default function OperationsModel() {
     <div className="bg-[#050505] min-h-screen text-white overflow-hidden selection:bg-orange-500/30">
 
       {/* 1. Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 sm:px-8">
+      {/* 1. Hero Section */}
+      <section className="relative min-h-screen flex items-center pt-32 pb-20 px-6 sm:px-8 overflow-hidden border-b border-white/5">
         <div className="absolute top-0 right-1/2 translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-orange-900/20 via-red-900/10 to-transparent blur-[120px] rounded-full pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <FadeUp>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-widest mb-8 cursor-default">
-              <Settings className="w-3.5 h-3.5" /> Operations Engine
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-              Centralized <br />
-              <span className="bg-gradient-to-r from-orange-400 via-orange-600 to-red-600 bg-clip-text text-transparent">
-                Operations Model
-              </span>
-            </h1>
-          </FadeUp>
+        <div className="max-w-7xl mx-auto w-full relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          <FadeUp delay={0.1}>
-            <h2 className="text-2xl md:text-3xl font-medium text-white mb-6">
-              One Backend System That Runs Every Brand
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed mb-10">
-              Zryoss operates through a Centralized Operations Model that manages execution, delivery, and ongoing support for all partner-owned brands.
-              <br /><br />
-              <span className="text-gray-300">Partners focus on growth and relationships. Zryoss manages operations end to end.</span>
-            </p>
-          </FadeUp>
+            {/* Left Content */}
+            <div className="text-left">
+              <FadeUp>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5 cursor-default">
+                  <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
+                    Operations Engine
+                  </p>
+                </div>
+
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+                  Centralized <br />
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-1">
+                    Operations Model
+                  </span>
+                </h1>
+              </FadeUp>
+
+              <FadeUp delay={0.1}>
+                <h2 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">
+                  One Backend System That Runs Every Brand
+                </h2>
+                <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-8">
+                  Zryoss operates through a Centralized Operations Model that manages execution, delivery, and ongoing support for all partner-owned brands.
+                  <br /><br />
+                  <span className="text-white font-medium">Partners focus on growth and relationships. Zryoss manages operations end to end.</span>
+                </p>
+              </FadeUp>
+            </div>
+
+            {/* Right Image */}
+            <FadeUp delay={0.2} className="relative">
+              <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
+
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+                <img
+                  src="/Platform Layer.png"
+                  alt="Operations Model Diagram"
+                  className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              {/* Decorative background */}
+              {/* <div className="absolute -z-10 top-10 -right-10 w-full h-full border border-white/5 rounded-2xl" /> */}
+            </FadeUp>
+
+          </div>
         </div>
       </section>
 
@@ -337,7 +364,7 @@ export default function OperationsModel() {
               <Link to="/platform/how-zryoss-works" className="px-10 py-5 bg-orange-600 text-white font-bold rounded-full hover:bg-orange-500 transition shadow-[0_0_20px_rgba(234,88,12,0.3)]">
                 See How Zryoss Works (End-to-End)
               </Link>
-              <Link to="/ecosystem" className="px-10 py-5 border border-white/20 rounded-full font-medium hover:bg-white/5 transition flex items-center gap-2">
+              <Link to="/ecosystem/overview" className="px-10 py-5 border border-white/20 rounded-full font-medium hover:bg-white/5 transition flex items-center gap-2">
                 Explore the Ecosystem <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

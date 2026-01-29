@@ -14,6 +14,7 @@ import {
   Wallet,
   Crown,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 /* ---------------- Hooks & Utility ---------------- */
 
@@ -55,6 +56,7 @@ const AnimatedSection = ({ children, delay = 0, className = "" }) => {
 /* ---------------- Main Component ---------------- */
 
 export default function Overview() {
+  const navigate = useNavigate();
   const verticals = [
     "Technology & software",
     "Digital marketing",
@@ -109,7 +111,10 @@ export default function Overview() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button className="px-8 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold text-base transition-all hover:scale-[1.03] shadow-[0_0_30px_-12px_rgba(234,88,12,0.5)] flex items-center justify-center gap-2">
+                <button
+                  onClick={() => navigate('/apply')}
+                  className="px-8 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold text-base transition-all hover:scale-[1.03] shadow-[0_0_30px_-12px_rgba(234,88,12,0.5)] flex items-center justify-center gap-2"
+                >
                   Become a BPP <ArrowRight size={18} />
                 </button>
 
@@ -664,7 +669,10 @@ export default function Overview() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-10 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold transition-all hover:scale-[1.03] flex items-center justify-center gap-2">
+              <button
+                onClick={() => navigate('/apply')}
+                className="px-10 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold transition-all hover:scale-[1.03] flex items-center justify-center gap-2"
+              >
                 Apply for BPP <ArrowRight size={18} />
               </button>
 

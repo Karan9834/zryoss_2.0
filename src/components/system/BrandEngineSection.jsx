@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Sparkles, Cpu, Rocket, Shield } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -8,6 +9,7 @@ const fadeUp = {
 };
 
 export default function BrandEngineSection() {
+  const navigate = useNavigate();
   return (
     <section className="relative bg-[#0B0F14] py-16 md:py-24 overflow-hidden">
       {/* glows */}
@@ -52,11 +54,17 @@ export default function BrandEngineSection() {
 
             {/* CTA buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <button className="rounded-2xl bg-orange-500 px-7 py-3 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition">
+              <button
+                onClick={() => navigate('/platform/business-operating-system')}
+                className="rounded-2xl bg-orange-500 px-7 py-3 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition"
+              >
                 Explore the System
               </button>
 
-              <button className="rounded-2xl border border-white/15 px-7 py-3 font-semibold text-white hover:border-orange-500 hover:text-orange-300 transition inline-flex items-center justify-center gap-2">
+              <button
+                onClick={() => navigate('/apply')}
+                className="rounded-2xl border border-white/15 px-7 py-3 font-semibold text-white hover:border-orange-500 hover:text-orange-300 transition inline-flex items-center justify-center gap-2"
+              >
                 Join as IPP / BPP <ArrowUpRight size={18} />
               </button>
             </div>

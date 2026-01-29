@@ -10,7 +10,7 @@ export default function TechHeroSection() {
     };
 
     return (
-        <section className="relative bg-[#050505] py-20 md:py-32 overflow-hidden">
+        <section className="relative bg-[#050505] min-h-screen flex items-center py-20 md:py-32 overflow-hidden border-b border-white/5">
             {/* Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute -top-[20%] right-[10%] w-[50%] h-[50%] bg-orange-500/10 rounded-full blur-[140px]" />
@@ -27,27 +27,28 @@ export default function TechHeroSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 mb-6">
-                            <Database size={16} className="text-orange-400" />
-                            <span className="text-xs font-semibold tracking-widest text-orange-100 uppercase">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5">
+                            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+                            <p className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
                                 Technology & Automation Platform
-                            </span>
+                            </p>
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-[1.1] mb-6">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
                             The Digital Backbone That Powers <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Every Zryoss Brand</span>
                         </h1>
 
-                        <p className="text-lg text-white/70 leading-relaxed mb-8 max-w-xl">
+                        <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-8">
                             Technology at Zryoss is not an add-on. It is the foundation that enables consistency, control, and growth across multiple independent brands.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Link to="/ecosystem" className="px-8 py-4 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center gap-2 group">
+                            <Link to="/ecosystem/overview" className="rounded-xl bg-orange-500 px-8 py-4 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition flex items-center justify-center gap-2 group">
                                 Explore The Ecosystem
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </Link>
-                            <Link to="/platform/how-zryoss-works" className="px-8 py-4 rounded-xl border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold flex items-center justify-center transition-all">
+
+                            <Link to="/platform/how-zryoss-works" className="rounded-xl border border-white/10 bg-white/5 px-8 py-4 font-semibold text-white hover:border-orange-500/50 hover:text-orange-300 transition flex items-center justify-center">
                                 See How It Works
                             </Link>
                         </div>

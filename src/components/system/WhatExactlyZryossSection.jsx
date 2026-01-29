@@ -7,8 +7,10 @@ import {
   Cpu,
   Users,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function WhatExactlyZryossSection() {
+  const navigate = useNavigate();
   const modules = [
     {
       id: "01",
@@ -167,11 +169,17 @@ export default function WhatExactlyZryossSection() {
 
             {/* CTA */}
             <div className="mt-7 flex flex-col gap-3">
-              <button className="rounded-2xl bg-orange-500 px-6 py-3 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition">
+              <button
+                onClick={() => navigate('/platform/business-operating-system')}
+                className="rounded-2xl bg-orange-500 px-6 py-3 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition"
+              >
                 Explore the System
               </button>
 
-              <button className="rounded-2xl border border-white/15 px-6 py-3 font-semibold text-white hover:border-orange-500 hover:text-orange-300 transition inline-flex items-center justify-center gap-2">
+              <button
+                onClick={() => navigate('/apply')}
+                className="rounded-2xl border border-white/15 px-6 py-3 font-semibold text-white hover:border-orange-500 hover:text-orange-300 transition inline-flex items-center justify-center gap-2"
+              >
                 Join as IPP / BPP <ArrowUpRight size={18} />
               </button>
             </div>
