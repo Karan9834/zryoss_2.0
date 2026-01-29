@@ -169,83 +169,66 @@ export default function VendorCoordination() {
   return (
     <div className="min-h-screen bg-[#121212] text-white">
       {/* ✅ HERO */}
-      <section
-        className="relative overflow-hidden min-h-screen flex items-center"
-        style={{
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1920&auto=format&fit=crop)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {/* overlays */}
-        <div className="absolute inset-0 bg-[#0b0b0b]/80" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#121212]/10 via-[#121212]/70 to-[#121212]" />
-
-        {/* hub glow */}
-        <div className="absolute -top-52 left-1/2 -translate-x-1/2 w-[980px] h-[980px] rounded-full bg-[#FF6A00]/10 blur-3xl" />
-        <div className="absolute -bottom-44 right-0 w-[640px] h-[640px] rounded-full bg-[#FF6A00]/10 blur-3xl" />
-
-        {/* watermark */}
-        <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
-          <svg
-            viewBox="0 0 1200 600"
-            className="w-full h-full"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g fill="none" stroke="#FF6A00" strokeWidth="2">
-              <circle cx="600" cy="300" r="90" />
-              <circle cx="240" cy="140" r="36" />
-              <circle cx="960" cy="140" r="36" />
-              <circle cx="240" cy="460" r="36" />
-              <circle cx="960" cy="460" r="36" />
-              <line x1="600" y1="300" x2="240" y2="140" />
-              <line x1="600" y1="300" x2="960" y2="140" />
-              <line x1="600" y1="300" x2="240" y2="460" />
-              <line x1="600" y1="300" x2="960" y2="460" />
-            </g>
-          </svg>
+      {/* ✅ HERO */}
+      <section className="relative overflow-hidden min-h-screen flex items-center pt-20 pb-16">
+        {/* Background Effects */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px]" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 w-full py-0">
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200">
-              <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
-              Zryoss · Vendor Coordination Model
+        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
+                Zryoss · Vendor Coordination Model
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-4">
+                Vendor Coordination Model
+              </h1>
+
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#FF6A00] mb-6">
+                Multiple Vendors. One System. Zero Confusion.
+              </h2>
+
+              <p className="text-gray-200 leading-relaxed text-lg mb-8">
+                At Zryoss, vendor coordination is not handled through calls, follow-ups,
+                or informal alignment. It is governed through a central coordination model
+                where roles, responsibilities, timelines, and dependencies are clearly
+                defined and controlled.
+              </p>
+
+              <p className="text-white font-semibold mb-10">
+                Vendors execute tasks. Zryoss coordinates the system.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  onClick={scrollToArchitecture}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FF6A00] text-white font-semibold hover:brightness-110 transition shadow-[0_0_28px_rgba(249,115,22,0.25)]"
+                >
+                  Explore Architecture <ArrowRight className="w-5 h-5" />
+                </button>
+                <a
+                  href="#roles"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 transition font-semibold"
+                >
+                  View Roles
+                </a>
+              </div>
             </div>
 
-            <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-tight">
-              Vendor Coordination Model
-            </h1>
-
-            <h2 className="mt-4 text-2xl sm:text-3xl font-extrabold text-[#FF6A00]">
-              Multiple Vendors. One System. Zero Confusion.
-            </h2>
-
-            <p className="mt-6 text-gray-200 leading-relaxed text-lg">
-              At Zryoss, vendor coordination is not handled through calls, follow-ups,
-              or informal alignment. It is governed through a central coordination model
-              where roles, responsibilities, timelines, and dependencies are clearly
-              defined and controlled.
-              <br />
-              <span className="text-white font-semibold">
-                Vendors execute tasks. Zryoss coordinates the system.
-              </span>
-            </p>
-
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={scrollToArchitecture}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FF6A00] text-white font-semibold hover:brightness-110 transition"
-              >
-                Explore Architecture <ArrowRight className="w-5 h-5" />
-              </button>
-              <a
-                href="#roles"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 transition font-semibold"
-              >
-                View Roles
-              </a>
+            {/* Right Column: Image */}
+            <div className="relative hidden lg:block">
+              <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
+              <img
+                src="/operations-hero-images/Vendor_Coordination.png"
+                alt="Vendor Coordination"
+                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+              />
             </div>
           </div>
         </div>

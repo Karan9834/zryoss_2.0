@@ -140,36 +140,42 @@ export default function TrainingHub() {
     return (
         <div className="bg-[#050505] text-white min-h-screen">
             {/* Hero Section */}
-            <section className="relative h-screen flex items-center justify-center overflow-hidden">
-                {/* Background Image with Overlay */}
-                <div className="absolute inset-0">
-                    <img
-                        src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
-                        alt="Background"
-                        className="w-full h-full object-cover opacity-40 scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-[#050505]/40 to-[#050505]" />
+            <section className="relative overflow-hidden min-h-screen flex items-center pt-20 pb-16">
+                {/* Background Effects */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                    <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
+                    <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px]" />
                 </div>
 
-                {/* Content */}
-                <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-                    <FadeUp>
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-[0.2em] mb-8">
-                            Knowledge Powers Execution
-                        </span>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.1] tracking-tight">
-                            Training & <span className="text-orange-500 italic">Enablement</span> Hub
-                        </h1>
-                        <p className="text-xl md:text-2xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
-                            Practical training for <span className="text-white font-medium italic">real</span> business execution.
-                            Move beyond theory into market-ready readiness.
-                        </p>
-                    </FadeUp>
-                </div>
+                <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Column: Content */}
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
+                                <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
+                                Knowledge Powers Execution
+                            </div>
 
-                {/* Scroll Indicator */}
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
-                    <div className="w-px h-20 bg-gradient-to-b from-transparent via-orange-500 to-transparent" />
+                            <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
+                                Training & <span className="text-orange-500 italic">Enablement</span> Hub
+                            </h1>
+
+                            <p className="text-gray-200 leading-relaxed text-lg mb-10">
+                                Practical training for <span className="text-white font-medium italic">real</span> business execution.
+                                Move beyond theory into market-ready readiness.
+                            </p>
+                        </div>
+
+                        {/* Right Column: Image */}
+                        <div className="relative hidden lg:block">
+                            <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
+                            <img
+                                src="/Resources_pages_images/Training & Enablement Hub.png"
+                                alt="Training & Enablement Hub"
+                                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                            />
+                        </div>
+                    </div>
                 </div>
             </section>
 

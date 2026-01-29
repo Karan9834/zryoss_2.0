@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -152,6 +153,8 @@ const Callout = ({ title, children, icon: Icon }) => (
    Page
 ===================================================== */
 export default function Overview() {
+  const navigate = useNavigate();
+
   return (
     <div className="bg-[#050505] text-white overflow-hidden selection:bg-orange-500/25">
       {/* Background ambience */}
@@ -165,75 +168,64 @@ export default function Overview() {
       {/* =====================================================
           HERO ✅ keep same
       ====================================================== */}
-      <Section className="relative min-h-screen flex items-center border-b border-white/5 z-10">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=2200"
-            alt="Operations"
-            className="w-full h-full object-cover opacity-[0.38]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-[#050505]" />
-        </div>
-
-        <Wrap className="relative pt-28 pb-20 w-full">
+      <Section className="relative min-h-screen flex items-center justify-center z-10 py-16">
+        <Wrap className="w-full">
           <motion.div variants={container} initial="hidden" animate="show">
-            <motion.div variants={fadeUp} className="text-center max-w-4xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/80 text-xs uppercase tracking-[0.35em] font-semibold">
-                <span className="w-2 h-2 rounded-full bg-orange-500" />
-                Operations Overview
-              </div>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column: Content */}
+              <motion.div variants={fadeUp}>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/80 text-xs uppercase tracking-[0.35em] font-semibold mb-6">
+                  <span className="w-2 h-2 rounded-full bg-orange-500" />
+                  Operations Overview
+                </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
-                Execution Is Not an Activity.{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                  It Is a System.
-                </span>
-              </h1>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-6 text-white">
+                  Execution Is Not an Activity. <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                    It Is a System.
+                  </span>
+                </h1>
 
-              <p className="mt-7 text-white/80 text-lg md:text-xl leading-relaxed font-light">
-                At <span className="text-white font-medium">Zryoss</span>, operations are not managed
-                reactively or informally. They are governed through a{" "}
-                <span className="text-white font-medium">
-                  centralized, system-driven operational framework
-                </span>{" "}
-                designed to ensure{" "}
-                <span className="text-white font-medium">
-                  consistency, accountability, and scalability
-                </span>{" "}
-                across all businesses operating on the platform.
-              </p>
+                <p className="text-white/80 text-lg leading-relaxed font-light mb-8">
+                  At <span className="text-white font-medium">Zryoss</span>, operations are governed through a{" "}
+                  <span className="text-white font-medium">
+                    centralized, system-driven framework
+                  </span>{" "}
+                  designed to ensure{" "}
+                  <span className="text-white font-medium">
+                    consistency, accountability, and scalability
+                  </span>.
+                </p>
 
-              <p className="mt-5 text-white/75 text-lg leading-relaxed font-light">
-                Zryoss exists to remove operational chaos— and replace it with{" "}
-                <span className="text-white font-semibold">structured execution discipline</span>.
-              </p>
+                <div className="flex flex-wrap gap-3 mb-8">
+                  <Chip icon={ShieldCheck}>Centralized governance</Chip>
+                  <Chip icon={Radar}>Real-time visibility</Chip>
+                </div>
 
-              <div className="mt-10 flex flex-wrap justify-center gap-3">
-                <Chip icon={ShieldCheck}>Centralized governance</Chip>
-                <Chip icon={Radar}>Real-time visibility</Chip>
-                <Chip icon={BadgeCheck}>Quality checkpoints</Chip>
-                <Chip icon={Timer}>Timeline enforcement</Chip>
-              </div>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button
+                    onClick={() => navigate('/contact')}
+                    className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition shadow-[0_0_28px_rgba(249,115,22,0.25)] cursor-pointer"
+                  >
+                    Talk to Zryoss <ArrowRight className="w-5 h-5" />
+                  </button>
 
-              <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-                <button className="inline-flex items-center justify-center gap-3 px-9 py-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition shadow-[0_0_28px_rgba(249,115,22,0.25)]">
-                  Talk to Zryoss <ArrowRight className="w-5 h-5" />
-                </button>
+                  {/* <button className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-xl bg-white/[0.05] border border-white/10 hover:border-orange-500/30 text-white/90 font-semibold transition">
+                    View Workflow <Workflow className="w-5 h-5 text-orange-400" />
+                  </button> */}
+                </div>
+              </motion.div>
 
-                <button className="inline-flex items-center justify-center gap-3 px-9 py-4 rounded-xl bg-white/[0.05] border border-white/10 hover:border-orange-500/30 text-white/90 font-semibold transition">
-                  View Execution Workflow <Workflow className="w-5 h-5 text-orange-400" />
-                </button>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              className="mt-16 grid sm:grid-cols-3 gap-5 max-w-5xl mx-auto"
-            >
-              <Stat icon={Activity} label="Execution Visibility" value="Platform-wide tracking" />
-              <Stat icon={Lock} label="Governance Control" value="System owned workflows" />
-              <Stat icon={Sparkles} label="Quality Discipline" value="Embedded checkpoints" />
-            </motion.div>
+              {/* Right Column: Image */}
+              <motion.div variants={fadeUp} className="relative hidden lg:block">
+                <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
+                <img
+                  src="/operations-hero-images/Operations_Overview.jpg"
+                  alt="Operations Overview"
+                  className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                />
+              </motion.div>
+            </div>
           </motion.div>
         </Wrap>
       </Section>
@@ -241,7 +233,7 @@ export default function Overview() {
       {/* =====================================================
           CONTENT PAGE (SaaS Doc Style Sections)
       ====================================================== */}
-      <Section className="relative z-10">
+      <Section className="relative z-10 -mt-16">
         <Divider />
 
         {/* SECTION 1 */}

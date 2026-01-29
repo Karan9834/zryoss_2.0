@@ -379,9 +379,6 @@ export default function Overview() {
                     <p className="text-gray-500 text-sm font-light italic">
                       "Excellence is not an act, it's a system."
                     </p>
-                    <button className="flex items-center gap-2 text-orange-400 hover:text-orange-300 font-semibold transition-colors group/btn">
-                      Explore this layer <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
                   </div>
                 </div>
               </div>

@@ -192,78 +192,65 @@ export default function AccountManagement() {
   return (
     <div className="min-h-screen bg-[#121212] text-white">
       {/* ====================== HERO SECTION ====================== */}
-      <section
-        className="relative overflow-hidden min-h-screen flex items-center"
-        style={{
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1920&auto=format&fit=crop)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {/* overlays */}
-        <div className="absolute inset-0 bg-[#0b0b0b]/85" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#121212]/20 via-[#121212]/75 to-[#121212]" />
-
-        {/* glow */}
-        <div className="absolute -top-44 left-1/2 -translate-x-1/2 w-[950px] h-[950px] rounded-full bg-[#FF6A00]/10 blur-3xl" />
-        <div className="absolute -bottom-44 right-0 w-[650px] h-[650px] rounded-full bg-[#FF6A00]/10 blur-3xl" />
-
-        {/* watermark */}
-        <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
-          <svg viewBox="0 0 1200 600" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#FF6A00" strokeWidth="2">
-              <circle cx="600" cy="300" r="90" />
-              <circle cx="380" cy="230" r="40" />
-              <circle cx="820" cy="230" r="40" />
-              <circle cx="380" cy="390" r="40" />
-              <circle cx="820" cy="390" r="40" />
-              <line x1="600" y1="300" x2="380" y2="230" />
-              <line x1="600" y1="300" x2="820" y2="230" />
-              <line x1="600" y1="300" x2="380" y2="390" />
-              <line x1="600" y1="300" x2="820" y2="390" />
-            </g>
-          </svg>
+      {/* ================= HERO ================= */}
+      <section className="relative overflow-hidden min-h-screen flex items-center pt-20 pb-16">
+        {/* Background Effects */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px]" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 py-28 w-full">
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200">
-              <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
-              Zryoss · Operations Control Layer
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
+                Zryoss · Operations Control Layer
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-4">
+                Account Management & Support
+              </h1>
+
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#FF6A00] mb-6">
+                One Account. One Owner. <br /> Continuous Support.
+              </h2>
+
+              <p className="text-gray-200 leading-relaxed text-lg mb-8">
+                At Zryoss, account management is not a support function. It is a core operational control layer that ensures
+                execution alignment, communication clarity, and delivery accountability across every engagement.
+              </p>
+
+              <p className="text-white font-semibold mb-10">
+                Zryoss believes that strong execution requires clear ownership.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  onClick={scrollToSupportModel}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#FF6A00] text-white font-semibold hover:brightness-110 transition shadow-[0_0_28px_rgba(249,115,22,0.25)]"
+                >
+                  Explore Support Model <ArrowRight className="w-5 h-5" />
+                </button>
+
+                <a
+                  href="#learn"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 transition font-semibold"
+                >
+                  Learn More
+                </a>
+              </div>
             </div>
 
-            <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-tight">
-              Account Management & Support
-            </h1>
-
-            <h2 className="mt-4 text-2xl sm:text-3xl font-extrabold text-[#FF6A00]">
-              One Account. One Owner. Continuous Support.
-            </h2>
-
-            <p className="mt-6 text-gray-200 leading-relaxed text-lg">
-              At Zryoss, account management is not a support function. It is a core operational control layer that ensures
-              execution alignment, communication clarity, and delivery accountability across every engagement.
-              <br />
-              <span className="text-white font-semibold">
-                Zryoss believes that strong execution requires clear ownership.
-              </span>
-            </p>
-
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={scrollToSupportModel}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FF6A00] text-white font-semibold hover:brightness-110 transition"
-              >
-                Explore Support Model <ArrowRight className="w-5 h-5" />
-              </button>
-
-              <a
-                href="#learn"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 transition font-semibold"
-              >
-                Learn More
-              </a>
+            {/* Right Column: Image */}
+            <div className="relative hidden lg:block">
+              <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
+              <img
+                src="/operations-hero-images/Account_Management.jpeg"
+                alt="Account Management"
+                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+              />
             </div>
           </div>
         </div>
@@ -443,8 +430,8 @@ export default function AccountManagement() {
               <div
                 key={s.id}
                 className={`rounded-2xl border transition ${isOpen
-                    ? "border-[#FF6A00]/50 bg-black/25"
-                    : "border-white/10 bg-black/10 hover:border-[#FF6A00]/30"
+                  ? "border-[#FF6A00]/50 bg-black/25"
+                  : "border-white/10 bg-black/10 hover:border-[#FF6A00]/30"
                   }`}
               >
                 <button

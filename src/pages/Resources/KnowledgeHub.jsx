@@ -67,35 +67,41 @@ export default function KnowledgeHub() {
     return (
         <div className="bg-[#050505] text-white min-h-screen">
             {/* Hero Section */}
-            <section className="relative h-[95vh] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0">
-                    <img
-                        src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2070&auto=format&fit=crop"
-                        alt="Library"
-                        className="w-full h-full object-cover opacity-30 brightness-[0.6] scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/95 via-[#050505]/40 to-[#050505]" />
+            <section className="relative overflow-hidden min-h-screen flex items-center pt-20 pb-16">
+                {/* Background Effects */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                    <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
+                    <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px]" />
                 </div>
 
-                <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-                    <FadeUp>
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-[0.2em] mb-8">
-                            <Library className="w-4 h-4" />
-                            The Execution Library
+                <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Column: Content */}
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
+                                <Library className="w-4 h-4" />
+                                The Execution Library
+                            </div>
+
+                            <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
+                                Zryoss <span className="text-orange-500">Knowledge</span> Hub
+                            </h1>
+
+                            <p className="text-gray-200 leading-relaxed text-lg mb-10">
+                                Learn how real businesses are built with <span className="text-white font-medium">systems</span>.
+                                Clarity, discipline, and execution excellence.
+                            </p>
                         </div>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.1] tracking-tight">
-                            Zryoss <span className="text-orange-500">Knowledge</span> Hub
-                        </h1>
-                        <p className="text-xl md:text-2xl text-gray-400 font-light max-w-3xl mx-auto leading-relaxed">
-                            Learn how real businesses are built with <span className="text-white font-medium">systems</span>.
-                            Clarity, discipline, and execution excellence.
-                        </p>
-                    </FadeUp>
-                </div>
 
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-                    <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center p-2">
-                        <div className="w-1 h-2 bg-orange-500 rounded-full" />
+                        {/* Right Column: Image */}
+                        <div className="relative hidden lg:block">
+                            <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
+                            <img
+                                src="/Resources_pages_images/Knowledge-hub.png"
+                                alt="Knowledge Hub"
+                                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
