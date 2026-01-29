@@ -1,3 +1,4 @@
+import FadeUp from "../../../components/animations/FadeUp";
 import React, { useEffect } from "react";
 import {
   GraduationCap,
@@ -13,11 +14,14 @@ import {
   ShieldCheck,
   Zap,
   Globe,
-  Database
+  Database,
+  Sparkles
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Edulinker = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -26,81 +30,67 @@ const Edulinker = () => {
     <div className="min-h-screen bg-[#050505] text-white selection:bg-orange-500/30 font-sans">
 
       {/* Hero Section */}
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        {/* Background Effects */}
+      <section className="relative bg-[#050505] min-h-screen flex items-center py-20 md:py-32 overflow-hidden border-b border-white/5">
+        {/* Background Elements - Matching Overview/TechHeroSection */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[100px]" />
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2604&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-red-600/5 rounded-full blur-[100px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2">
-              {/* Badge - typography changed */}
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left Content - Using FadeUp component */}
+            <FadeUp>
+              {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
-                <GraduationCap size={14} className="text-orange-500" />
+                <Sparkles size={14} className="text-orange-500" />
                 <span className="text-xs uppercase tracking-[0.45em] text-orange-500 font-bold">
-                  EdTech & Education Software Execution Brand
+                  EdTech & Education Software Execution
                 </span>
               </div>
 
-              {/* H1 - typography changed */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
-                Edulinkers <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
-                  Execution
-                </span>
+              {/* H1 */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-6">
+                Edulinkers<span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500"> Execution</span>
               </h1>
 
-              {/* H2 - typography changed */}
-              <h2 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">
-                EdTech & Education Software Execution Brand of the Zryoss Ecosystem
-              </h2>
-
-              {/* Paragraph - typography changed */}
+              {/* Paragraph */}
               <p className="text-xl text-gray-400 leading-relaxed font-light mb-10">
                 Edulinkers is responsible for delivering education-focused software solutions—including ready-made SaaS platforms and custom-built systems—for schools, teachers, coaching institutes, and education organizations.
               </p>
 
-              <div className="p-6 border border-white/10 bg-white/5 rounded-2xl backdrop-blur-sm inline-block w-full max-w-lg">
-                <div className="flex items-center gap-4">
-                  <div className="h-10 w-1 bg-orange-500 rounded-full"></div>
-                  <p className="text-lg text-gray-200 italic">
-                    "Where education software is required, <span className="text-white font-bold">Edulinkers executes</span>. <br />
-                    Where governance is required, <span className="text-white font-bold">ZRYOSS governs</span>."
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:w-1/2 relative">
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
-                {/* AI generated image */}
-                <img
-                  src="/edulinker_hero_ai.png"
-                  alt="EdTech Execution"
-                  className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-80"
-                  onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2574&auto=format&fit=crop' }} // Fallback
-                />
-
-                <div className="absolute bottom-8 left-8 right-8 z-20">
-                  <div className="flex items-center justify-between">
-                    <div className="flex gap-2">
-                      <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                      <span className="text-xs font-mono text-green-500">SYSTEM ACTIVE</span>
-                    </div>
-                    <GraduationCap className="text-white/50" />
-                  </div>
-                </div>
+              {/* CTA */}
+              <div className="flex flex-wrap gap-4 mb-6">
+                <button
+                  onClick={() => navigate('/apply')}
+                  className="rounded-xl bg-gradient-to-r from-orange-500 to-red-600 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:shadow-orange-500/60 transition"
+                >
+                  Partner with Zryoss
+                </button>
+                <button className="rounded-xl border border-white/10 px-6 py-3 font-semibold text-white hover:border-orange-500/50 hover:text-orange-400 transition inline-flex items-center gap-2">
+                  View Solutions <ArrowRight size={18} />
+                </button>
               </div>
 
-              {/* Floating Elements */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-orange-500/20 rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-            </div>
+              {/* Small text */}
+              <p className="mt-6 text-xs text-white/40 tracking-wide font-light">
+                Schools Digitized: 200+ • Students Onboarded: 50k+
+              </p>
+            </FadeUp>
+
+            {/* Right Visual - Using FadeUp component */}
+            <FadeUp delay={0.2}>
+              <div className="relative">
+                <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+                  <img
+                    src="/ediulinkers.jpg"
+                    alt="Edulinkers Execution"
+                    className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>

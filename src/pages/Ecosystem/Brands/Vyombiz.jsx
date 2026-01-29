@@ -1,3 +1,4 @@
+import FadeUp from "../../../components/animations/FadeUp";
 import React, { useEffect } from "react";
 import {
   Briefcase,
@@ -11,11 +12,14 @@ import {
   Award,
   BookOpen,
   PieChart,
-  Layers
+  Layers,
+  Sparkles
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Vyombiz = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -24,76 +28,67 @@ const Vyombiz = () => {
     <div className="min-h-screen bg-[#050505] text-white selection:bg-orange-500/30 font-sans">
 
       {/* Hero Section */}
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        {/* Background Effects */}
+      <section className="relative bg-[#050505] min-h-screen flex items-center py-20 md:py-32 overflow-hidden border-b border-white/5">
+        {/* Background Elements - Matching Overview/TechHeroSection */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-orange-600/5 rounded-full blur-[100px]" />
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center opacity-5 mix-blend-overlay"></div>
+          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-red-600/5 rounded-full blur-[100px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2">
-              {/* Badge - typography changed */}
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left Content - Using FadeUp component */}
+            <FadeUp>
+              {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
-                <Briefcase size={14} className="text-orange-500" />
+                <Sparkles size={14} className="text-orange-500" />
                 <span className="text-xs uppercase tracking-[0.45em] text-orange-500 font-bold">
-                  Business & Professional Services Brand
+                  Business & Professional Services
                 </span>
               </div>
 
-              {/* H1 - typography changed */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
-                Vyombiz
+              {/* H1 */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-6">
+                Vyombiz<span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-white"> Execution</span>
               </h1>
 
-              {/* H2 - typography changed */}
-              <h2 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">
-                Business, Consulting & Professional Services Execution Brand of the Zryoss Ecosystem
-              </h2>
-
-              {/* Paragraph - typography changed */}
+              {/* Paragraph */}
               <p className="text-xl text-gray-400 leading-relaxed font-light mb-10">
                 Vyombiz is responsible for executing business-focused, advisory, consulting, and professional service engagements brought into the ecosystem by IPPs and BPPs.
               </p>
 
-              <div className="p-6 border border-white/10 bg-white/5 rounded-2xl backdrop-blur-sm inline-block w-full max-w-lg">
-                <div className="flex items-center gap-4">
-                  <div className="h-10 w-1 bg-purple-500 rounded-full"></div>
-                  <p className="text-lg text-gray-200 italic">
-                    "Whenever an IPP or BPP operates in CAS, professional services, or advisory domains, <span className="text-white font-bold">execution is managed through Vyombiz</span>."
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:w-1/2 relative">
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
-                <img
-                  src="/vyombiz_hero_ai.png"
-                  alt="AI Business Execution"
-                  className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90"
-                  onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2671&auto=format&fit=crop' }}
-                />
-
-                <div className="absolute bottom-8 left-8 right-8 z-20">
-                  <div className="flex items-center justify-between">
-                    <div className="flex gap-2">
-                      <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
-                      <span className="text-xs font-mono text-purple-500">STRATEGY ACTIVE</span>
-                    </div>
-                    <LineChart className="text-white/50" />
-                  </div>
-                </div>
+              {/* CTA */}
+              <div className="flex flex-wrap gap-4 mb-6">
+                <button
+                  onClick={() => navigate('/apply')}
+                  className="rounded-xl bg-gradient-to-r from-orange-500 to-red-600 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:shadow-orange-500/60 transition"
+                >
+                  Partner with Zryoss
+                </button>
+                <button className="rounded-xl border border-white/10 px-6 py-3 font-semibold text-white hover:border-orange-500/50 hover:text-orange-400 transition inline-flex items-center gap-2">
+                  View Solutions <ArrowRight size={18} />
+                </button>
               </div>
 
-              {/* Floating Elements */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-orange-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-            </div>
+              {/* Small text */}
+              <p className="mt-6 text-xs text-white/40 tracking-wide font-light">
+                Businesses Scaled: 100+ • Strategies Executed: 500+
+              </p>
+            </FadeUp>
+
+            {/* Right Visual - Using FadeUp component */}
+            <FadeUp delay={0.2}>
+              <div className="relative">
+                <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+                  <img
+                    src="/vyombiz.jpg"
+                    alt="Vyombiz Execution"
+                    className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -116,7 +111,7 @@ const Vyombiz = () => {
                   "Execution quality remains consistent at scale"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5">
-                    <CheckCircle2 className="text-purple-500 w-5 h-5 shrink-0" />
+                    <CheckCircle2 className="text-orange-500 w-5 h-5 shrink-0" />
                     <span className="text-gray-200 text-sm font-medium">{item}</span>
                   </div>
                 ))}
@@ -129,7 +124,7 @@ const Vyombiz = () => {
             </div>
             <div className="md:w-1/2">
               <div className="p-8 bg-[#0f0f0f] rounded-3xl border border-white/5 h-full flex flex-col justify-center relative overflow-hidden">
-                <LineChart className="text-purple-900/20 absolute -right-10 -bottom-10 w-64 h-64" />
+                <LineChart className="text-orange-900/20 absolute -right-10 -bottom-10 w-64 h-64" />
                 <h3 className="text-2xl font-bold text-white mb-6 z-10">What Vyombiz Executes</h3>
                 <ul className="space-y-4 z-10">
                   {[
@@ -140,7 +135,7 @@ const Vyombiz = () => {
                     "Process improvement and enablement services"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0"></span>
                       <span className="text-gray-300">{item}</span>
                     </li>
                   ))}
@@ -159,7 +154,7 @@ const Vyombiz = () => {
 
           <div className="relative">
             {/* Line */}
-            <div className="hidden md:block absolute top-[50%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent -translate-y-1/2 z-0"></div>
+            <div className="hidden md:block absolute top-[50%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent -translate-y-1/2 z-0"></div>
 
             <div className="grid grid-cols-1 md:grid-cols-6 gap-6 relative z-10">
               {[
@@ -171,9 +166,9 @@ const Vyombiz = () => {
                 { step: "6", title: "Delivery", desc: "Final output to client" }
               ].map((item, i) => (
                 <div key={i} className="flex flex-col items-center text-center group">
-                  <div className="w-16 h-16 rounded-2xl bg-[#111] border border-white/20 flex items-center justify-center text-xl font-bold text-white mb-6 shadow-lg relative overflow-hidden group hover:border-purple-500 transition-colors">
+                  <div className="w-16 h-16 rounded-2xl bg-[#111] border border-white/20 flex items-center justify-center text-xl font-bold text-white mb-6 shadow-lg relative overflow-hidden group hover:border-orange-500 transition-colors">
                     <span className="relative z-10">{item.step}</span>
-                    <div className="absolute inset-0 bg-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
                   <h3 className="text-sm font-bold text-white mb-1">{item.title}</h3>
                   <p className="text-xs text-gray-500">{item.desc}</p>
@@ -182,8 +177,8 @@ const Vyombiz = () => {
             </div>
           </div>
 
-          <div className="mt-12 text-center p-4 bg-purple-900/10 border border-purple-500/20 rounded-xl inline-block w-full max-w-2xl mx-auto">
-            <p className="text-purple-300 font-medium text-sm">IPP or BPP never manages consultants or experts directly.</p>
+          <div className="mt-12 text-center p-4 bg-orange-900/10 border border-orange-500/20 rounded-xl inline-block w-full max-w-2xl mx-auto">
+            <p className="text-orange-300 font-medium text-sm">IPP or BPP never manages consultants or experts directly.</p>
           </div>
         </div>
       </section>
@@ -202,19 +197,19 @@ const Vyombiz = () => {
               <p className="text-gray-400 mb-6">Vyombiz manages business consultants, domain experts, and professional service vendors.</p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="text-purple-500"><ShieldCheck size={18} /></div>
+                  <div className="text-orange-500"><ShieldCheck size={18} /></div>
                   Under Vyombiz’s supervision
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="text-purple-500"><BookOpen size={18} /></div>
+                  <div className="text-orange-500"><BookOpen size={18} /></div>
                   With defined scopes and SLAs
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <div className="text-purple-500"><Layers size={18} /></div>
+                  <div className="text-orange-500"><Layers size={18} /></div>
                   Through the ZRYOSS Operating System
                 </li>
               </ul>
-              <p className="mt-8 text-sm text-purple-400 font-medium border-t border-white/5 pt-4">This ensures accountability, confidentiality, and delivery quality.</p>
+              <p className="mt-8 text-sm text-orange-400 font-medium border-t border-white/5 pt-4">This ensures accountability, confidentiality, and delivery quality.</p>
             </div>
           </div>
 
@@ -252,7 +247,7 @@ const Vyombiz = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Relationship */}
-            <div className="border-l-4 border-purple-500 pl-8">
+            <div className="border-l-4 border-orange-500 pl-8">
               <h3 className="text-2xl font-bold mb-6 text-white">Relationship with IPP & BPP</h3>
               <div className="space-y-6">
                 <div>
@@ -260,7 +255,7 @@ const Vyombiz = () => {
                   <p className="text-gray-400">Owns the client relationship</p>
                 </div>
                 <div>
-                  <h4 className="text-purple-500 font-bold text-sm uppercase tracking-wide mb-1">Vyombiz</h4>
+                  <h4 className="text-orange-500 font-bold text-sm uppercase tracking-wide mb-1">Vyombiz</h4>
                   <p className="text-gray-400">Manages service execution</p>
                 </div>
                 <div>
@@ -276,7 +271,7 @@ const Vyombiz = () => {
               <p className="text-gray-400 mb-6">Vyombiz is designed to:</p>
               <ul className="space-y-3 mb-6 block">
                 {["Handle multiple consulting engagements", "Support different industries and domains", "Scale expert capacity without quality loss"].map((item, i) => (
-                  <li key={i} className="flex gap-2 text-gray-300"><TrendingUp size={18} className="text-purple-500" /> {item}</li>
+                  <li key={i} className="flex gap-2 text-gray-300"><TrendingUp size={18} className="text-orange-500" /> {item}</li>
                 ))}
               </ul>
             </div>
@@ -309,13 +304,13 @@ const Vyombiz = () => {
               </div>
               <div>
                 <span className="block text-gray-500 text-xs uppercase tracking-widest mb-1">Vyombiz</span>
-                <span className="text-xl font-bold text-purple-500">Delivers Outcomes</span>
+                <span className="text-xl font-bold text-orange-500">Delivers Outcomes</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-900/10 rounded-full blur-[120px] pointer-events-none"></div>
       </section>
 
     </div>

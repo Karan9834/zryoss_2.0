@@ -1,3 +1,4 @@
+import FadeUp from "../../../components/animations/FadeUp";
 import React, { useEffect } from "react";
 import {
   Cpu,
@@ -13,11 +14,14 @@ import {
   Monitor,
   Database,
   Layers,
-  Network
+  Network,
+  Sparkles
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const KryossSoftech = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -26,81 +30,67 @@ const KryossSoftech = () => {
     <div className="min-h-screen bg-[#050505] text-white selection:bg-orange-500/30 font-sans">
 
       {/* Hero Section */}
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        {/* Background Effects */}
+      <section className="relative bg-[#050505] min-h-screen flex items-center py-20 md:py-32 overflow-hidden border-b border-white/5">
+        {/* Background Elements - Matching Overview/TechHeroSection */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[100px]" />
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2">
-              {/* Badge - typography changed */}
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left Content - Using FadeUp component */}
+            <FadeUp>
+              {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
-                <Cpu size={14} className="text-orange-500" />
+                <Sparkles size={14} className="text-orange-500" />
                 <span className="text-xs uppercase tracking-[0.45em] text-orange-500 font-bold">
-                  Technology & Digital Execution Brand
+                  Technology & Digital Execution
                 </span>
               </div>
 
-              {/* H1 - typography changed */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
-                Kryoss <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">
-                  Softech
-                </span>
+              {/* H1 */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-6">
+                Kryoss<span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-white"> Softech</span>
               </h1>
 
-              {/* H2 - typography changed */}
-              <h2 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">
-                Technology & Digital Execution Brand of the Zryoss Ecosystem
-              </h2>
-
-              {/* Paragraph - typography changed */}
+              {/* Paragraph */}
               <p className="text-xl text-gray-400 leading-relaxed font-light mb-10">
                 Kryoss Softech is the dedicated execution engine responsible for delivering all technology-driven services brought by IPPs and BPPs, ensuring specialized focus and quality control.
               </p>
 
-              <div className="p-6 border border-white/10 bg-white/5 rounded-2xl backdrop-blur-sm inline-block w-full max-w-lg">
-                <div className="flex items-center gap-4">
-                  <div className="h-10 w-1 bg-orange-500 rounded-full"></div>
-                  <p className="text-lg text-gray-200 italic">
-                    "Where technology is required, <span className="text-white font-bold">Kryoss Softech executes</span>. <br />
-                    Where structure is required, <span className="text-white font-bold">ZRYOSS governs</span>."
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:w-1/2 relative">
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
-                {/* Placeholder for AI generated image - or using a suitable unsplash fallback if local file not ready */}
-                <img
-                  src="/kryoss_hero_ai.png"
-                  alt="AI Technology Execution"
-                  className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-80"
-                  onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop' }} // Fallback
-                />
-
-                <div className="absolute bottom-8 left-8 right-8 z-20">
-                  <div className="flex items-center justify-between">
-                    <div className="flex gap-2">
-                      <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                      <span className="text-xs font-mono text-green-500">SYSTEM ACTIVE</span>
-                    </div>
-                    <Cpu className="text-white/50" />
-                  </div>
-                </div>
+              {/* CTA */}
+              <div className="flex flex-wrap gap-4 mb-6">
+                <button
+                  onClick={() => navigate('/apply')}
+                  className="rounded-xl bg-gradient-to-r from-orange-500 to-white px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:shadow-orange-500/60 transition"
+                >
+                  Partner with Zryoss
+                </button>
+                <button className="rounded-xl border border-white/10 px-6 py-3 font-semibold text-white hover:border-orange-500/50 hover:text-orange-400 transition inline-flex items-center gap-2">
+                  View Solutions <ArrowRight size={18} />
+                </button>
               </div>
 
-              {/* Floating Elements */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-orange-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-            </div>
+              {/* Small text */}
+              <p className="mt-6 text-xs text-white/40 tracking-wide font-light">
+                Platforms Built: 150+ • Code Executed: 2M+ Lines
+              </p>
+            </FadeUp>
+
+            {/* Right Visual - Using FadeUp component */}
+            <FadeUp delay={0.2}>
+              <div className="relative">
+                <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+                  <img
+                    src="/kryoss softech.jpg"
+                    alt="Kryoss Softech Execution"
+                    className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -123,7 +113,7 @@ const KryossSoftech = () => {
                   "Predictable timelines"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5">
-                    <CheckCircle2 className="text-blue-500 w-5 h-5 shrink-0" />
+                    <CheckCircle2 className="text-orange-500 w-5 h-5 shrink-0" />
                     <span className="text-gray-200 text-sm font-medium">{item}</span>
                   </div>
                 ))}
@@ -137,7 +127,7 @@ const KryossSoftech = () => {
             <div className="md:w-1/2">
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-6 bg-[#0f0f0f] rounded-2xl border border-white/5 flex flex-col items-center text-center">
-                  <Globe className="text-blue-500 mb-4 h-10 w-10" />
+                  <Globe className="text-orange-500 mb-4 h-10 w-10" />
                   <h3 className="font-bold text-white mb-2">Websites</h3>
                   <p className="text-xs text-gray-400">Design & Dev</p>
                 </div>
@@ -179,11 +169,11 @@ const KryossSoftech = () => {
               { title: "Tech Consulting & Implementation", icon: <Cpu />, desc: "Expert guidance on technology adoption." },
               { title: "Digital Infrastructure Support", icon: <Server />, desc: "Robust hosting, security, and maintenance." }
             ].map((item, i) => (
-              <div key={i} className="group p-8 rounded-3xl bg-[#0a0a0a] border border-white/10 hover:border-blue-500/30 transition-all hover:bg-[#0e0e0e]">
-                <div className="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6 group-hover:scale-110 transition-transform">
+              <div key={i} className="group p-8 rounded-3xl bg-[#0a0a0a] border border-white/10 hover:border-orange-500/30 transition-all hover:bg-[#0e0e0e]">
+                <div className="w-14 h-14 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500 mb-6 group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">{item.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-orange-400 transition-colors">{item.title}</h3>
                 <p className="text-gray-400 text-sm">{item.desc}</p>
               </div>
             ))}
@@ -198,7 +188,7 @@ const KryossSoftech = () => {
 
           <div className="relative">
             {/* Line */}
-            <div className="hidden md:block absolute top-[50%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent -translate-y-1/2 z-0"></div>
+            <div className="hidden md:block absolute top-[50%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent -translate-y-1/2 z-0"></div>
 
             <div className="grid grid-cols-1 md:grid-cols-6 gap-6 relative z-10">
               {[
@@ -212,7 +202,7 @@ const KryossSoftech = () => {
                 <div key={i} className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 rounded-2xl bg-[#111] border border-white/20 flex items-center justify-center text-xl font-bold text-white mb-6 shadow-lg relative overflow-hidden group">
                     <span className="relative z-10">{item.step}</span>
-                    <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
                   <h3 className="text-sm font-bold text-white mb-1">{item.title}</h3>
                   <p className="text-xs text-gray-500">{item.desc}</p>
@@ -221,8 +211,8 @@ const KryossSoftech = () => {
             </div>
           </div>
 
-          <div className="mt-12 text-center p-4 bg-blue-900/10 border border-blue-500/20 rounded-xl inline-block w-full max-w-2xl mx-auto">
-            <p className="text-blue-300 font-medium">This flow eliminates confusion and execution risk.</p>
+          <div className="mt-12 text-center p-4 bg-orange-900/10 border border-orange-500/20 rounded-xl inline-block w-full max-w-2xl mx-auto">
+            <p className="text-orange-300 font-medium">This flow eliminates confusion and execution risk.</p>
           </div>
         </div>
       </section>
@@ -240,13 +230,13 @@ const KryossSoftech = () => {
             <div className="bg-[#0a0a0a] p-8 rounded-3xl border border-white/10 mb-8">
               <ul className="space-y-4 mb-6">
                 <li className="flex items-center gap-3 text-gray-300">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span> Internal execution teams
+                  <span className="w-2 h-2 bg-orange-500 rounded-full"></span> Internal execution teams
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span> Approved technology vendors
+                  <span className="w-2 h-2 bg-orange-500 rounded-full"></span> Approved technology vendors
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span> External specialists (when required)
+                  <span className="w-2 h-2 bg-orange-500 rounded-full"></span> External specialists (when required)
                 </li>
               </ul>
               <p className="text-sm text-gray-500 border-t border-white/5 pt-4">
@@ -302,7 +292,7 @@ const KryossSoftech = () => {
                   <p className="text-gray-400">Focus on clients and growth.</p>
                 </div>
                 <div>
-                  <h4 className="text-blue-500 font-bold text-sm uppercase tracking-wide mb-1">Kryoss Softech</h4>
+                  <h4 className="text-orange-500 font-bold text-sm uppercase tracking-wide mb-1">Kryoss Softech</h4>
                   <p className="text-gray-400">Focuses on technical delivery.</p>
                 </div>
                 <div>
@@ -314,12 +304,12 @@ const KryossSoftech = () => {
             </div>
 
             {/* Scalability */}
-            <div className="border-l-4 border-blue-500 pl-8">
+            <div className="border-l-4 border-orange-500 pl-8">
               <h3 className="text-2xl font-bold mb-6 text-white">Scalability & Long-Term Execution</h3>
               <p className="text-gray-400 mb-6">Kryoss Softech is designed to:</p>
               <ul className="space-y-3 mb-6 block">
                 {["Handle multiple brands simultaneously", "Execute across different scales", "Support long-term client relationships", "Grow with ecosystem demand"].map((item, i) => (
-                  <li key={i} className="flex gap-2 text-gray-300"><span className="text-blue-500">•</span> {item}</li>
+                  <li key={i} className="flex gap-2 text-gray-300"><span className="text-orange-500">•</span> {item}</li>
                 ))}
               </ul>
               <p className="italic text-gray-500">"As IPPs and BPPs scale, Kryoss Softech scales with them."</p>
@@ -353,13 +343,13 @@ const KryossSoftech = () => {
               </div>
               <div>
                 <span className="block text-gray-500 text-xs uppercase tracking-widest mb-1">Kryoss Softech</span>
-                <span className="text-xl font-bold text-blue-500">Delivers Tech</span>
+                <span className="text-xl font-bold text-orange-500">Delivers Tech</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-600/5 rounded-full blur-[120px] pointer-events-none"></div>
       </section>
 
       {/* Footer Navigation */}

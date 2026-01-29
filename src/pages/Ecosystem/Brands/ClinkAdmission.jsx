@@ -1,3 +1,5 @@
+import FadeUp from "../../../components/animations/FadeUp";
+import { useNavigate } from "react-router-dom";
 import React, { useEffect } from "react";
 import {
     GraduationCap,
@@ -13,10 +15,13 @@ import {
     Scale,
     Users,
     Briefcase,
-    Landmark
+    Landmark,
+    Sparkles
 } from "lucide-react";
 
 const ClinkAdmission = () => {
+    const navigate = useNavigate();
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -25,79 +30,67 @@ const ClinkAdmission = () => {
         <div className="min-h-screen bg-[#050505] text-white selection:bg-orange-500/30 font-sans">
 
             {/* Hero Section */}
-            {/* Hero Section */}
-            <section className="relative pt-32 pb-20 overflow-hidden">
-                {/* Background Effects */}
+            <section className="relative bg-[#050505] min-h-screen flex items-center py-20 md:py-32 overflow-hidden border-b border-white/5">
+                {/* Background Elements - Matching Overview/TechHeroSection */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                    <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
-                    <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[100px]" />
-                    <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+                    <div className="absolute -top-[20%] right-[10%] w-[50%] h-[50%] bg-orange-500/10 rounded-full blur-[140px]" />
+                    <div className="absolute bottom-[0%] -left-[10%] w-[40%] h-[60%] bg-blue-500/10 rounded-full blur-[140px]" />
                 </div>
 
-                <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-                    <div className="flex flex-col lg:flex-row items-center gap-16">
-                        <div className="lg:w-1/2">
-                            {/* Badge - typography changed */}
+                <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        {/* Left Content - Using FadeUp component */}
+                        <FadeUp>
+                            {/* Badge */}
                             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
-                                <GraduationCap size={14} className="text-orange-500" />
+                                <Sparkles size={14} className="text-orange-500" />
                                 <span className="text-xs uppercase tracking-[0.45em] text-orange-500 font-bold">
-                                    Admissions & Education Consultancy Brand
+                                    Admissions & Education Consultancy
                                 </span>
                             </div>
 
-                            {/* H1 - typography changed */}
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
-                                Clink <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-300">
-                                    Admission
-                                </span>
+                            {/* H1 */}
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-6">
+                                Clink<span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-white"> Admission</span>
                             </h1>
 
-                            {/* H2 - typography changed */}
-                            <h2 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">
-                                International & Domestic Admissions Execution Brand
-                            </h2>
-
-                            {/* Paragraph - typography changed */}
+                            {/* Paragraph */}
                             <p className="text-xl text-gray-400 leading-relaxed font-light mb-10">
                                 Clink Admission is the dedicated execution engine responsible for managing student admission-related services, including international & domestic admissions, counseling, documentation, and consular support.
                             </p>
 
-                            <div className="p-6 border border-white/10 bg-white/5 rounded-2xl backdrop-blur-sm inline-block w-full max-w-lg">
-                                <div className="flex items-center gap-4">
-                                    <div className="h-10 w-1 bg-orange-500 rounded-full"></div>
-                                    <p className="text-lg text-gray-200 italic">
-                                        "Whenever an IPP or BPP operates in the admissions or education consultancy vertical, <span className="text-white font-bold">execution is centrally managed by Clink Admission</span>."
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="lg:w-1/2 relative w-full">
-                            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group w-full">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
-                                {/* Hero Image */}
-                                <img
-                                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
-                                    alt="Education & Admissions"
-                                    className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90"
-                                />
-
-                                <div className="absolute bottom-8 left-8 right-8 z-20">
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex gap-2">
-                                            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-                                            <span className="text-xs font-mono text-orange-500">ADMISSIONS OPEN</span>
-                                        </div>
-                                        <Globe className="text-white/50" />
-                                    </div>
-                                </div>
+                            {/* CTA */}
+                            <div className="flex flex-wrap gap-4 mb-6">
+                                <button
+                                    onClick={() => navigate('/apply')}
+                                    className="rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:shadow-orange-500/60 transition"
+                                >
+                                    Partner with Zryoss
+                                </button>
+                                <button className="rounded-xl border border-white/10 px-6 py-3 font-semibold text-white hover:border-orange-500/50 hover:text-orange-400 transition inline-flex items-center gap-2">
+                                    View Solutions <ArrowRight size={18} />
+                                </button>
                             </div>
 
-                            {/* Floating Elements */}
-                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-orange-500/20 rounded-full blur-3xl animate-pulse"></div>
-                            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                        </div>
+                            {/* Small text */}
+                            <p className="mt-6 text-xs text-white/40 tracking-wide font-light">
+                                Students Placed: 1000+ • Universities Partnered: 50+
+                            </p>
+                        </FadeUp>
+
+                        {/* Right Visual - Using FadeUp component */}
+                        <FadeUp delay={0.2}>
+                            <div className="relative">
+                                <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
+                                <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+                                    <img
+                                        src="/clink admission.jpg"
+                                        alt="Clink Admission Execution"
+                                        className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                                    />
+                                </div>
+                            </div>
+                        </FadeUp>
                     </div>
                 </div>
             </section>

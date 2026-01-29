@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import FadeUp from "../../../components/animations/FadeUp";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import {
   HeartPulse,
   Activity,
@@ -14,94 +16,83 @@ import {
   Workflow,
   Globe,
   Pill,
-  Syringe
+  Syringe,
+  Sparkles
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Medikryoss = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white selection:bg-green-500/30 font-sans">
+    <div className="min-h-screen bg-[#050505] text-white selection:bg-orange-500/30 font-sans">
 
       {/* Hero Section */}
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        {/* Background Effects */}
+      <section className="relative bg-[#050505] min-h-screen flex items-center py-20 md:py-32 overflow-hidden border-b border-white/5">
+        {/* Background Elements - Matching Overview/TechHeroSection */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[100px]" />
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+          <div className="absolute -top-[20%] right-[10%] w-[50%] h-[50%] bg-orange-500/10 rounded-full blur-[140px]" />
+          <div className="absolute bottom-[0%] -left-[10%] w-[40%] h-[60%] bg-orange-500/10 rounded-full blur-[140px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2">
-              {/* Badge - typography changed */}
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left Content - Using FadeUp component */}
+            <FadeUp>
+              {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
-                <HeartPulse size={14} className="text-orange-500" />
+                <Sparkles size={14} className="text-orange-500" />
                 <span className="text-xs uppercase tracking-[0.45em] text-orange-500 font-bold">
-                  Healthcare & Medical Software Execution Brand
+                  Healthcare & Medical Software
                 </span>
               </div>
 
-              {/* H1 - typography changed */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
-                Medikryoss <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-400">
-                  Execution
-                </span>
+              {/* H1 */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-6">
+                Medi<span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">kryoss</span>
               </h1>
 
-              {/* H2 - typography changed */}
-              <h2 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">
-                Healthcare & Medical Software Execution Brand of the Zryoss Ecosystem
-              </h2>
-
-              {/* Paragraph - typography changed */}
+              {/* Paragraph */}
               <p className="text-xl text-gray-400 leading-relaxed font-light mb-10">
                 Medikryoss is responsible for delivering software, applications, and digital systems for the medical and healthcare industry, including ready-made SaaS platforms and custom-built solutions.
               </p>
 
-              <div className="p-6 border border-white/10 bg-white/5 rounded-2xl backdrop-blur-sm inline-block w-full max-w-lg">
-                <div className="flex items-center gap-4">
-                  <div className="h-10 w-1 bg-green-500 rounded-full"></div>
-                  <p className="text-lg text-gray-200 italic">
-                    "Where medical tech is required, <span className="text-white font-bold">Medikryoss executes</span>. <br />
-                    Where governance is required, <span className="text-white font-bold">ZRYOSS governs</span>."
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:w-1/2 relative">
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
-                {/* AI generated image */}
-                <img
-                  src="/medikryoss_hero_ai.png"
-                  alt="Healthcare Execution"
-                  className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-80"
-                  onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop' }} // Fallback
-                />
-
-                <div className="absolute bottom-8 left-8 right-8 z-20">
-                  <div className="flex items-center justify-between">
-                    <div className="flex gap-2">
-                      <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                      <span className="text-xs font-mono text-green-500">SYSTEM ACTIVE</span>
-                    </div>
-                    <Activity className="text-white/50" />
-                  </div>
-                </div>
+              {/* CTA */}
+              <div className="flex flex-wrap gap-4 mb-6">
+                <button
+                  onClick={() => navigate('/apply')}
+                  className="rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:shadow-orange-500/60 transition"
+                >
+                  Partner with Zryoss
+                </button>
+                <button className="rounded-xl border border-white/10 px-6 py-3 font-semibold text-white hover:border-orange-500/50 hover:text-orange-400 transition inline-flex items-center gap-2">
+                  View Solutions <ArrowRight size={18} />
+                </button>
               </div>
 
-              {/* Floating Elements */}
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-green-500/20 rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-            </div>
+              {/* Small text */}
+              <p className="mt-6 text-xs text-white/40 tracking-wide font-light">
+                Systems Active: 200+ • Hospitals Managed: 50+
+              </p>
+            </FadeUp>
+
+            {/* Right Visual - Using FadeUp component */}
+            <FadeUp delay={0.2}>
+              <div className="relative">
+                <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+                  <img
+                    src="/Medikryoss.jpg"
+                    alt="Medikryoss Healthcare Execution"
+                    className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -124,26 +115,26 @@ const Medikryoss = () => {
                   "IPPs and BPPs never manage medical tech execution directly"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5">
-                    <CheckCircle2 className="text-green-500 w-5 h-5 shrink-0" />
+                    <CheckCircle2 className="text-orange-500 w-5 h-5 shrink-0" />
                     <span className="text-gray-200 text-sm font-medium">{item}</span>
                   </div>
                 ))}
               </div>
 
               <p className="mt-8 text-sm text-gray-500 flex items-center gap-2">
-                <ShieldCheck size={16} className="text-blue-500" />
+                <ShieldCheck size={16} className="text-orange-500" />
                 ZRYOSS governs the system. Medikryoss executes healthcare technology.
               </p>
             </div>
             <div className="md:w-1/2">
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-6 bg-[#0f0f0f] rounded-2xl border border-white/5 flex flex-col items-center text-center">
-                  <Stethoscope className="text-green-500 mb-4 h-10 w-10" />
+                  <Stethoscope className="text-orange-500 mb-4 h-10 w-10" />
                   <h3 className="font-bold text-white mb-2">Clinical</h3>
                   <p className="text-xs text-gray-400">Doctor & Patient Apps</p>
                 </div>
                 <div className="p-6 bg-[#0f0f0f] rounded-2xl border border-white/5 flex flex-col items-center text-center">
-                  <Building2 className="text-blue-500 mb-4 h-10 w-10" />
+                  <Building2 className="text-orange-500 mb-4 h-10 w-10" />
                   <h3 className="font-bold text-white mb-2">Hospital</h3>
                   <p className="text-xs text-gray-400">HMS & Management</p>
                 </div>
@@ -173,9 +164,9 @@ const Medikryoss = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {/* Clinical & Hospital */}
-            <div className="p-8 rounded-3xl bg-[#0a0a0a] border border-white/10 hover:border-green-500/30 transition-all">
+            <div className="p-8 rounded-3xl bg-[#0a0a0a] border border-white/10 hover:border-orange-500/30 transition-all">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-500">
+                <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500">
                   <Activity />
                 </div>
                 <h3 className="text-2xl font-bold text-white">Clinical & Hospital Systems</h3>
@@ -183,7 +174,7 @@ const Medikryoss = () => {
               <ul className="space-y-4">
                 {["Clinic management systems", "Doctor appointment & patient apps", "Electronic medical records (EMR/EHR)", "Hospital management systems (HMS)", "Diagnostic & lab management software"].map((item, i) => (
                   <li key={i} className="flex gap-3 text-gray-300">
-                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2"></span>
+                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2"></span>
                     {item}
                   </li>
                 ))}
@@ -191,9 +182,9 @@ const Medikryoss = () => {
             </div>
 
             {/* Pharma & SaaS */}
-            <div className="p-8 rounded-3xl bg-[#0a0a0a] border border-white/10 hover:border-blue-500/30 transition-all">
+            <div className="p-8 rounded-3xl bg-[#0a0a0a] border border-white/10 hover:border-orange-500/30 transition-all">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
+                <div className="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center text-orange-500">
                   <Database />
                 </div>
                 <h3 className="text-2xl font-bold text-white">Pharma & Healthcare SaaS</h3>
@@ -201,7 +192,7 @@ const Medikryoss = () => {
               <ul className="space-y-4">
                 {["Pharma ERP solutions", "Inventory & supply chain systems", "Subscription-based medical software", "White-label healthcare apps", "Compliance-aligned reporting tools"].map((item, i) => (
                   <li key={i} className="flex gap-3 text-gray-300">
-                    <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></span>
+                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2"></span>
                     {item}
                   </li>
                 ))}
@@ -218,7 +209,7 @@ const Medikryoss = () => {
 
           <div className="relative">
             {/* Line */}
-            <div className="hidden md:block absolute top-[50%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-green-500/50 to-transparent -translate-y-1/2 z-0"></div>
+            <div className="hidden md:block absolute top-[50%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent -translate-y-1/2 z-0"></div>
 
             <div className="grid grid-cols-1 md:grid-cols-7 gap-4 relative z-10">
               {[
@@ -233,7 +224,7 @@ const Medikryoss = () => {
                 <div key={i} className="flex flex-col items-center text-center">
                   <div className="w-14 h-14 rounded-2xl bg-[#111] border border-white/20 flex items-center justify-center text-lg font-bold text-white mb-6 shadow-lg relative overflow-hidden group">
                     <span className="relative z-10">{item.step}</span>
-                    <div className="absolute inset-0 bg-green-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
                   <h3 className="text-sm font-bold text-white mb-1">{item.title}</h3>
                   <p className="text-[10px] text-gray-500 leading-tight px-1">{item.desc}</p>
@@ -242,8 +233,8 @@ const Medikryoss = () => {
             </div>
           </div>
 
-          <div className="mt-12 text-center p-4 bg-green-900/10 border border-green-500/20 rounded-xl inline-block w-full max-w-2xl mx-auto">
-            <p className="text-green-300 font-medium">IPP or BPP never manages developers, hosting, or deployments.</p>
+          <div className="mt-12 text-center p-4 bg-orange-900/10 border border-orange-500/20 rounded-xl inline-block w-full max-w-2xl mx-auto">
+            <p className="text-orange-300 font-medium">IPP or BPP never manages developers, hosting, or deployments.</p>
           </div>
         </div>
       </section>
@@ -255,23 +246,23 @@ const Medikryoss = () => {
           {/* Deployment Model */}
           <div>
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <Workflow className="text-blue-500" />
+              <Workflow className="text-orange-500" />
               SaaS Deployment & Custom Solutions
             </h3>
             <div className="bg-[#0a0a0a] p-8 rounded-3xl border border-white/10 h-full">
               <p className="text-gray-400 mb-6">Medikryoss supports both ready-made deployment and custom healthcare software.</p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3 text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-blue-500" /> Clinics & hospitals adopt ready SaaS systems
+                  <CheckCircle2 className="w-5 h-5 text-orange-500" /> Clinics & hospitals adopt ready SaaS systems
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-blue-500" /> Custom modules added based on workflow
+                  <CheckCircle2 className="w-5 h-5 text-orange-500" /> Custom modules added based on workflow
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-blue-500" /> Branding aligned to the institution
+                  <CheckCircle2 className="w-5 h-5 text-orange-500" /> Branding aligned to the institution
                 </li>
                 <li className="flex items-center gap-3 text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-blue-500" /> Training and onboarding supported
+                  <CheckCircle2 className="w-5 h-5 text-orange-500" /> Training and onboarding supported
                 </li>
               </ul>
             </div>
@@ -288,17 +279,17 @@ const Medikryoss = () => {
                 <div>
                   <h4 className="text-white font-bold mb-2">Medikryoss Manages:</h4>
                   <ul className="space-y-2 text-sm text-gray-400">
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div> Healthcare technology teams</li>
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div> Approved development vendors</li>
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div> Hosting & maintenance partners</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div> Healthcare technology teams</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div> Approved development vendors</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div> Hosting & maintenance partners</li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="text-white font-bold mb-2">Execution Assurance:</h4>
                   <ul className="space-y-2 text-sm text-gray-400">
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Governed centrally</li>
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Tracked through ZRYOSS OS</li>
-                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Delivered with defined SLAs</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div> Governed centrally</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div> Tracked through ZRYOSS OS</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div> Delivered with defined SLAs</li>
                   </ul>
                 </div>
               </div>
@@ -331,11 +322,11 @@ const Medikryoss = () => {
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Relationship */}
-            <div className="border-l-4 border-green-500 pl-8">
+            <div className="border-l-4 border-orange-500 pl-8">
               <h3 className="text-2xl font-bold mb-6 text-white">Relationship with IPP & BPP</h3>
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-green-500 font-bold text-sm uppercase tracking-wide mb-1">IPP / BPP</h4>
+                  <h4 className="text-orange-500 font-bold text-sm uppercase tracking-wide mb-1">IPP / BPP</h4>
                   <p className="text-gray-400">Focuses on doctors, clinics, hospitals, or pharma clients.</p>
                 </div>
                 <div>
@@ -343,7 +334,7 @@ const Medikryoss = () => {
                   <p className="text-gray-400">Manages healthcare software execution.</p>
                 </div>
                 <div>
-                  <h4 className="text-blue-500 font-bold text-sm uppercase tracking-wide mb-1">ZRYOSS</h4>
+                  <h4 className="text-orange-500 font-bold text-sm uppercase tracking-wide mb-1">ZRYOSS</h4>
                   <p className="text-gray-400">Coordinates governance, delivery, and reporting.</p>
                 </div>
               </div>
@@ -351,12 +342,12 @@ const Medikryoss = () => {
             </div>
 
             {/* Scalability */}
-            <div className="border-l-4 border-blue-500 pl-8">
+            <div className="border-l-4 border-orange-500 pl-8">
               <h3 className="text-2xl font-bold mb-6 text-white">Scalability Across Healthcare</h3>
               <p className="text-gray-400 mb-6">Medikryoss is designed to support:</p>
               <ul className="space-y-3 mb-6 block">
                 {["Clinics, hospitals, and diagnostic chains", "Pharma distributors and manufacturers", "Multiple locations and branches", "Long-term digital healthcare operations"].map((item, i) => (
-                  <li key={i} className="flex gap-2 text-gray-300"><span className="text-blue-500">•</span> {item}</li>
+                  <li key={i} className="flex gap-2 text-gray-300"><span className="text-orange-500">•</span> {item}</li>
                 ))}
               </ul>
               <p className="italic text-gray-500">"As ecosystem demand grows, Medikryoss scales execution without compromising reliability."</p>
@@ -387,17 +378,17 @@ const Medikryoss = () => {
               </div>
               <div>
                 <span className="block text-gray-500 text-xs uppercase tracking-widest mb-1">ZRYOSS</span>
-                <span className="text-xl font-bold text-blue-500">Runs the System</span>
+                <span className="text-xl font-bold text-orange-500">Runs the System</span>
               </div>
               <div>
                 <span className="block text-gray-500 text-xs uppercase tracking-widest mb-1">Medikryoss</span>
-                <span className="text-xl font-bold text-green-500">Powers Healthcare</span>
+                <span className="text-xl font-bold text-orange-500">Powers Healthcare</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-green-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-600/5 rounded-full blur-[120px] pointer-events-none"></div>
       </section>
 
       {/* Footer Navigation */}
@@ -405,7 +396,7 @@ const Medikryoss = () => {
 
         {/* Soft Green Ambient Glow */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-green-500/10 blur-[140px]" />
+          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-orange-500/10 blur-[140px]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 text-center">
@@ -425,13 +416,13 @@ const Medikryoss = () => {
             {/* Kryoss Softech */}
             <Link
               to="/ecosystem/brands/kryoss-softech"
-              className="group relative rounded-2xl bg-[#0c0c0c] border border-white/5 p-8 text-left transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
+              className="group relative rounded-2xl bg-[#0c0c0c] border border-white/5 p-8 text-left transition-all duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
             >
-              <span className="inline-block mb-3 text-xs uppercase tracking-widest text-blue-500/80">
+              <span className="inline-block mb-3 text-xs uppercase tracking-widest text-orange-500/80">
                 Technology
               </span>
 
-              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-500 transition-colors">
+              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-orange-500 transition-colors">
                 Kryoss Softech
               </h3>
 
@@ -441,7 +432,7 @@ const Medikryoss = () => {
 
               <div className="flex items-center gap-3 text-sm font-semibold text-white">
                 View Brand
-                <ArrowRight className="w-4 h-4 text-blue-500 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4 text-orange-500 transition-transform group-hover:translate-x-1" />
               </div>
             </Link>
 
