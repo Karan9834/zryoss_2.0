@@ -117,7 +117,7 @@ export default function Contact() {
             <span className="text-orange-500 text-xs font-bold tracking-[0.3em] uppercase">
               Enterprise execution
             </span>
-            <h1 className="text-5xl md:text-6xl font-bold mt-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
               Let's build <span className="text-gray-500 italic">together.</span>
             </h1>
           </FadeUp>

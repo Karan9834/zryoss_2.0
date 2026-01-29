@@ -22,7 +22,7 @@ export default function WhatIsZryoss() {
 
       {/* ✅ width aligned with navbar/footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-end">
           {/* LEFT CONTENT */}
           <FadeUp>
             <div className="space-y-10">
@@ -37,7 +37,7 @@ export default function WhatIsZryoss() {
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                     Partner
                   </span>
-                  
+
                 </h2>
 
                 <div className="w-24 h-1 bg-orange-500 rounded-full mb-10" />
@@ -68,35 +68,35 @@ export default function WhatIsZryoss() {
 
           {/* RIGHT (Image frame + Quote frame like screenshot) */}
           <FadeUp delay={0.15}>
-            <div className="space-y-10">
+            <div className="space-y-6">
               {/* ✅ TOP IMAGE FRAME (exact like screenshot - no extra inner border) */}
-                  <div className="relative rounded-[42px] border border-orange-500/25 bg-black/40 overflow-hidden">
-                    {/* padding like frame */}
-                    <div className="p-10">
-                      <div className="relative rounded-[28px] overflow-hidden shadow-[0_35px_90px_rgba(0,0,0,0.75)]">
-                        <img
-                          src="/what_imge.jpg"
-                          alt="ZRYOSS Platform"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-
-                    {/* subtle glow */}
-                    <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-70" />
+              <div className="relative rounded-[42px] border border-orange-500/25 bg-black/40 overflow-hidden">
+                {/* padding like frame */}
+                <div className="p-8">
+                  <div className="relative rounded-[28px] overflow-hidden shadow-[0_35px_90px_rgba(0,0,0,0.75)]">
+                    <img
+                      src="/what_imge.jpg"
+                      alt="ZRYOSS Platform"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
+                </div>
+
+                {/* subtle glow */}
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-70" />
+              </div>
 
 
               {/* ✅ BOTTOM QUOTE FRAME (like screenshot bottom card) */}
-              <div className="relative rounded-[32px] border border-white/10 bg-white/[0.04] backdrop-blur-xl overflow-hidden shadow-[0_18px_50px_rgba(0,0,0,0.55)]">
+              <div className="relative rounded-[24px] border border-white/10 bg-white/[0.04] backdrop-blur-xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.45)]">
                 {/* glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-60 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-50 pointer-events-none" />
 
-                <div className="relative p-8 md:p-10">
+                <div className="relative p-5 md:p-6">
                   {/* left orange bar */}
-                  <div className="absolute left-0 top-8 bottom-8 w-[3px] bg-orange-500 rounded-full" />
+                  <div className="absolute left-0 top-4 bottom-4 w-[3px] bg-orange-500 rounded-full" />
 
-                  <p className="text-white text-lg md:text-xl font-light leading-relaxed italic pl-8">
+                  <p className="text-white text-base md:text-lg font-light leading-snug italic pl-6">
                     “You focus on growth and relationships.
                     <br />
                     <span className="text-orange-400 font-semibold italic">

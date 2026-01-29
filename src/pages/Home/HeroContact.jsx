@@ -80,7 +80,7 @@ export default function HeroContact() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#050505]">
+    <section id="contact" className="relative min-h-screen flex items-center overflow-hidden bg-[#050505]">
       {/* BACKGROUND GLOW */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(251,146,60,0.18),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(249,115,22,0.18),transparent_50%)]" />

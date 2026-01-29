@@ -38,12 +38,12 @@ export default function WhyZryossWorks() {
             Zryoss · Media & Perspective
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-semibold text-white leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
             Built to{" "}
-            <span className="text-orange-500">Scale Responsibly</span>,  
-            Communicate Clearly,  
+            <span className="text-orange-500">Scale Responsibly</span>, <br />
+            Communicate Clearly, <br />
             and Operate with Trust
-          </h2>
+          </h1>
 
           <p className="mt-8 text-lg text-gray-400 leading-relaxed">
             Zryoss is not just a platform — it is a structured operating

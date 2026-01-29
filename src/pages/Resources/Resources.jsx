@@ -52,7 +52,7 @@ export default function Resources() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <FadeUp>
-            <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
               Resources <span className="text-orange-500 italic">&</span> Learning
             </h1>
             <p className="mt-6 max-w-3xl text-gray-400 text-xl font-light leading-relaxed">

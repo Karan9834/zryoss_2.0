@@ -1,25 +1,33 @@
 import React from "react";
 import FadeUp from "../../components/animations/FadeUp";
-import { X, Check } from "lucide-react";
+import { X, Check, Shield, Zap, Trophy, TrendingUp } from "lucide-react";
 
 const comparisons = [
   {
     point: "Dependability",
+    desc: "Single point of failure vs systemic resilience",
+    icon: Shield,
     traditional: "Founder-dependent & limited by personal bandwidth",
     zryoss: "System-driven & independent of any single individual",
   },
   {
     point: "Execution",
+    desc: "Fragmented chaos vs unified specialization",
+    icon: Zap,
     traditional: "Vendor chaos and fragmented coordination",
     zryoss: "Centralized execution via domain-specific specialist brands",
   },
   {
     point: "Quality Control",
+    desc: "Subjective effort vs objective protocols",
+    icon: Trophy,
     traditional: "Inconsistent results and lack of delivery standards",
     zryoss: "Platform-governed quality with protocol-based monitoring",
   },
   {
     point: "Scalability",
+    desc: "Marginal friction vs frictionless expansion",
+    icon: TrendingUp,
     traditional: "Growth creates operational friction and breakdown",
     zryoss: "Built-to-scale architecture that thrives with volume",
   },
@@ -101,9 +109,17 @@ export default function WhyZryoss() {
                       hover:bg-white/[0.035]`}
                   >
                     {/* Point */}
-                    <div className="col-span-4 p-8 border-r border-white/10 flex items-center">
-                      <p className="text-white font-semibold text-lg">
-                        {item.point}
+                    <div className="col-span-4 p-8 border-r border-white/10 flex flex-col justify-center">
+                      <div className="flex items-center gap-4 mb-2">
+                        <div className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.03] flex items-center justify-center shrink-0">
+                          <item.icon className="w-5 h-5 text-orange-500" />
+                        </div>
+                        <p className="text-white font-semibold text-lg">
+                          {item.point}
+                        </p>
+                      </div>
+                      <p className="text-gray-500 text-xs tracking-wide uppercase">
+                        {item.desc}
                       </p>
                     </div>
 
@@ -144,9 +160,19 @@ export default function WhyZryoss() {
           {comparisons.map((item, idx) => (
             <FadeUp key={idx} delay={idx * 0.08}>
               <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 relative overflow-hidden">
-                <h3 className="text-xl font-semibold text-white mb-4 pb-3 border-b border-white/10 relative">
-                  {item.point}
-                </h3>
+                <div className="flex items-center gap-4 mb-6 pb-4 border-b border-white/10">
+                  <div className="w-12 h-12 rounded-2xl border border-white/10 bg-white/[0.05] flex items-center justify-center shrink-0">
+                    <item.icon className="w-6 h-6 text-orange-500" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">
+                      {item.point}
+                    </h3>
+                    <p className="text-[10px] uppercase tracking-widest text-gray-500">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
 
                 <div className="space-y-5 relative">
                   <div className="rounded-2xl border border-white/10 bg-black/30 p-4">

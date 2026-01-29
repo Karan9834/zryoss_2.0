@@ -183,7 +183,7 @@ export default function Overview() {
                 Operations Overview
               </div>
 
-              <h1 className="mt-8 text-4xl md:text-5xl font-bold leading-tight text-white">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
                 Execution Is Not an Activity.{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                   It Is a System.

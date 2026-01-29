@@ -228,7 +228,7 @@ export default function FAQs() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-[0.25em] mb-8">
               Transparency & Trust
             </span>
-            <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
               Frequently Asked <span className="text-orange-500">Questions</span>
             </h1>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto leading-relaxed">

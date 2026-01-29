@@ -34,29 +34,44 @@ const Overview = () => {
       {/* Hero Section */}
       <section className="relative pt-40 pb-24 overflow-hidden border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="max-w-4xl">
-            <FadeUp>
-              <p className="text-orange-500 text-xs uppercase tracking-[0.45em] mb-6 font-bold">
-                Platform Solutions
-              </p>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-8">
-                Business Solutions <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                  Delivered Through a Central OS
-                </span>
-              </h1>
-              <p className="text-xl text-gray-400 leading-relaxed max-w-2xl mb-12 font-light">
-                The solutions offered under Zryoss are designed to help businesses build, run, and scale efficiently—without managing fragmented vendors, teams, or execution complexity.
-              </p>
-
-              <div className="p-8 border border-white/10 bg-white/5 rounded-[24px] backdrop-blur-sm inline-block max-w-3xl shadow-2xl relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <p className="text-lg text-gray-300 relative z-10 leading-relaxed">
-                  <span className="text-orange-500 font-bold mr-3 underline decoration-orange-500/30 underline-offset-4">Note:</span>
-                  Zryoss does not operate as a traditional service provider. It delivers solutions through a platform-governed ecosystem, ensuring quality, accountability, and scalability.
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Content */}
+            <div>
+              <FadeUp>
+                <p className="text-orange-500 text-xs uppercase tracking-[0.45em] mb-6 font-bold">
+                  Platform Solutions
                 </p>
-              </div>
-            </FadeUp>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+                  Business Solutions <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                    Delivered Through a Central OS
+                  </span>
+                </h1>
+                <p className="text-xl text-gray-400 leading-relaxed font-light mb-12">
+                  The solutions offered under Zryoss are designed to help businesses build, run, and scale efficiently—without managing fragmented vendors, teams, or execution complexity.
+                </p>
+
+                <div className="p-8 border border-white/10 bg-white/5 rounded-[24px] backdrop-blur-sm inline-block w-full shadow-2xl relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <p className="text-lg text-gray-300 relative z-10 leading-relaxed">
+                    <span className="text-orange-500 font-bold mr-3 underline decoration-orange-500/30 underline-offset-4">Note:</span>
+                    Zryoss does not operate as a traditional service provider. It delivers solutions through a platform-governed ecosystem, ensuring quality, accountability, and scalability.
+                  </p>
+                </div>
+              </FadeUp>
+            </div>
+
+            {/* Right Column: Image */}
+            <div className="relative hidden lg:block">
+              <FadeUp delay={0.2}>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-600/20 blur-3xl rounded-3xl transform rotate-3" />
+                <img
+                  src="/solution-hero-images/Solutions_Overview.jpg"
+                  alt="Business Solutions Delivered Through a Central OS"
+                  className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                />
+              </FadeUp>
+            </div>
           </div>
         </div>
       </section>

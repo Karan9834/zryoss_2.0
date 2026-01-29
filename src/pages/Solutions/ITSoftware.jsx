@@ -41,33 +41,44 @@ const ITSoftware = () => {
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                     <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
                     <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[100px]" />
-                    {/* Hero Image Overlay */}
-                    <div className="absolute inset-0 z-0 opacity-20 bg-[url('/it_software_hero.jpg')] bg-cover bg-center mix-blend-screen" />
                 </div>
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
-                    <div className="max-w-4xl">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium mb-6">
-                            <Code2 size={14} />
-                            Delivered Through Kryoss Softech & Verified Partners
-                        </div>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-8">
-                            IT & Software <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-white">
-                                Solutions
-                            </span>
-                        </h1>
-                        <h2 className="text-2xl text-white/80 font-medium mb-6">
-                            Scalable Technology Solutions Powered by a Central Operating System
-                        </h2>
-                        <p className="text-xl text-gray-400 leading-relaxed max-w-2xl mb-10">
-                            The IT & Software Solutions offered by Zryoss are designed to help businesses build, modernize, and scale technology systems—without managing developers, vendors, or delivery risk.
-                        </p>
-
-                        <div className="p-6 border border-white/10 bg-white/5 rounded-2xl backdrop-blur-sm inline-block max-w-3xl">
-                            <p className="text-lg text-gray-200">
-                                Execution is delivered through <span className="text-white font-bold">Kryoss Softech</span>, along with its verified technology partners, governed centrally by the Zryoss platform.
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Column: Content */}
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium mb-6">
+                                <Code2 size={14} />
+                                Delivered Through Kryoss Softech & Verified Partners
+                            </div>
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
+                                IT & Software <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-white">
+                                    Solutions
+                                </span>
+                            </h1>
+                            <h2 className="text-2xl text-white/80 font-medium mb-6">
+                                Scalable Technology Solutions Powered by a Central Operating System
+                            </h2>
+                            <p className="text-xl text-gray-400 leading-relaxed mb-10">
+                                The IT & Software Solutions offered by Zryoss are designed to help businesses build, modernize, and scale technology systems—without managing developers, vendors, or delivery risk.
                             </p>
+
+                            <div className="p-6 border border-white/10 bg-white/5 rounded-2xl backdrop-blur-sm inline-block w-full">
+                                <p className="text-lg text-gray-200">
+                                    Execution is delivered through <span className="text-white font-bold">Kryoss Softech</span>, along with its verified technology partners, governed centrally by the Zryoss platform.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Right Column: Image */}
+                        <div className="relative hidden lg:block">
+                            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-blue-600/20 blur-3xl rounded-3xl transform rotate-3" />
+                            <img
+                                src="/solution-hero-images/IT_Software.jpg"
+                                alt="IT & Software Solutions"
+                                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                            />
                         </div>
                     </div>
                 </div>
