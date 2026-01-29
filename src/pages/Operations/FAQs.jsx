@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import HeroContact from "../Home/HeroContact";
 
 export default function FAQs() {
     const navigate = useNavigate();
@@ -88,69 +89,54 @@ export default function FAQs() {
     return (
         <div className="min-h-screen bg-[#121212] text-white selection:bg-[#FF6A00]/30 selection:text-white">
 
-            {/* 
-        =============================================
-        HERO SECTION (Matches Vendor Coordination)
-        =============================================
-      */}
-            <section
-                className="relative overflow-hidden min-h-[60vh] flex items-center"
-                style={{
-                    backgroundImage:
-                        "url(https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2232&auto=format&fit=crop)",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-            >
-                {/* Overlays */}
-                <div className="absolute inset-0 bg-[#0b0b0b]/90" />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#121212]/30 via-[#121212]/80 to-[#121212]" />
-
-                {/* Glow Effects */}
-                <div className="absolute -top-52 left-1/2 -translate-x-1/2 w-[980px] h-[980px] rounded-full bg-[#FF6A00]/10 blur-[120px]" />
-                <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-blue-500/5 blur-[100px]" />
-
-                {/* Brand Pattern Overlay */}
-                <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
-                    <svg
-                        viewBox="0 0 1200 600"
-                        className="w-full h-full"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <g fill="none" stroke="#FF6A00" strokeWidth="1">
-                            <path d="M0 0 L1200 600" opacity="0.5" />
-                            <path d="M1200 0 L0 600" opacity="0.5" />
-                            <circle cx="600" cy="300" r="150" opacity="0.3" />
-                            <circle cx="600" cy="300" r="250" opacity="0.2" />
-                        </g>
-                    </svg>
+            {/* HERO SECTION */}
+            <section className="relative overflow-hidden min-h-screen flex items-center pt-20 pb-16">
+                {/* Background Effects */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                    <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
+                    <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px]" />
                 </div>
 
-                <div className="relative max-w-7xl mx-auto px-6 w-full py-20 text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200">
-                        <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
-                        Operations · Help & Clarity
-                    </div>
+                <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Column: Content */}
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
+                                <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
+                                Operations · Help & Clarity
+                            </div>
 
-                    <h1 className="mt-8 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
-                        Operations <span className="text-[#FF6A00]">FAQ</span>s
-                    </h1>
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+                                Operations <span className="text-[#FF6A00]">FAQ</span>s
+                            </h1>
 
-                    <p className="mt-6 text-gray-200 leading-relaxed text-lg sm:text-xl max-w-2xl mx-auto text-gray-300">
-                        Clear answers about how Zryoss operations work. execution designed to remove confusion, reduce risk, and ensure predictable outcomes.
-                    </p>
+                            <p className="text-gray-200 leading-relaxed text-lg sm:text-xl mb-10">
+                                Clear answers about how Zryoss operations work. Execution designed to remove confusion, reduce risk, and ensure predictable outcomes.
+                            </p>
 
-                    {/* Search Bar */}
-                    <div className="mt-10 max-w-xl mx-auto relative group">
-                        <div className="absolute inset-0 bg-[#FF6A00]/20 blur-xl opacity-0 group-hover:opacity-100 transition duration-500 rounded-full" />
-                        <div className="relative flex items-center bg-[#1E1E1E] border border-white/10 rounded-full px-6 py-4 shadow-2xl focus-within:border-[#FF6A00]/50 transition-colors">
-                            <Search className="w-5 h-5 text-gray-400 mr-4" />
-                            <input
-                                type="text"
-                                placeholder="Search questions about operations..."
-                                className="bg-transparent border-none outline-none text-white w-full placeholder:text-gray-500"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
+                            {/* Search Bar */}
+                            <div className="max-w-xl relative group">
+                                <div className="absolute inset-0 bg-[#FF6A00]/20 blur-xl opacity-0 group-hover:opacity-100 transition duration-500 rounded-full" />
+                                <div className="relative flex items-center bg-[#1E1E1E] border border-white/10 rounded-full px-6 py-4 shadow-2xl focus-within:border-[#FF6A00]/50 transition-colors">
+                                    <Search className="w-5 h-5 text-gray-400 mr-4" />
+                                    <input
+                                        type="text"
+                                        placeholder="Search questions about operations..."
+                                        className="bg-transparent border-none outline-none text-white w-full placeholder:text-gray-500"
+                                        value={searchQuery}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Column: Image */}
+                        <div className="relative hidden lg:block">
+                            <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
+                            <img
+                                src="/operations-hero-images/Operations_FAQs.jpg"
+                                alt="Operations FAQs"
+                                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
                             />
                         </div>
                     </div>
@@ -270,9 +256,9 @@ export default function FAQs() {
                                 >
                                     Partner with Zryoss <ArrowRight className="w-5 h-5" />
                                 </button>
-                                <button className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition font-semibold text-white">
+                                {/* <button className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition font-semibold text-white">
                                     Explore Models
-                                </button>
+                                </button> */}
                             </div>
                         </div>
 
@@ -307,6 +293,9 @@ export default function FAQs() {
                     </div>
                 </div>
             </section>
+
+            {/* HERO CONTACT SECTION */}
+            <HeroContact />
 
         </div>
     );

@@ -40,36 +40,41 @@ export default function Blog() {
   return (
     <div className="bg-[#050505] min-h-screen">
       {/* ================= HERO SECTION ================= */}
-      <section className="relative h-[95vh] w-full overflow-hidden border-b border-white/5">
-        <img
-          src="https://images.unsplash.com/photo-1552664730-d307ca884978"
-          alt="Business insights"
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        />
+      <section className="relative overflow-hidden min-h-screen flex items-center pt-20 pb-16">
+        {/* Background Effects */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px]" />
+        </div>
 
-        <div className="absolute inset-0 bg-[#050505]/60" />
-
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 
-                        w-[700px] h-[700px] bg-orange-500/20 blur-[180px]" />
-
-        <div className="relative z-10 h-full flex items-center justify-center text-center">
-          <div className="max-w-7xl mx-auto px-6">
-            <FadeUp>
-              <p className="text-orange-500 text-xs uppercase tracking-[0.45em] mb-6 font-bold">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
                 Knowledge Hub
-              </p>
+              </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
+              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
                 Our Blog & <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Insights</span>
               </h1>
 
-              <div className="w-24 h-1 bg-orange-500 mt-8 mb-8 rounded-full mx-auto" />
-
-              <p className="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl font-light leading-relaxed">
+              <p className="text-gray-200 leading-relaxed text-lg mb-10">
                 Thought leadership on business platforms, execution systems,
                 and scalable growth models.
               </p>
-            </FadeUp>
+            </div>
+
+            {/* Right Column: Image */}
+            <div className="relative hidden lg:block">
+              <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
+              <img
+                src="/Resources_pages_images/Blog  Insights.png"
+                alt="Blog & Insights"
+                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+              />
+            </div>
           </div>
         </div>
       </section>

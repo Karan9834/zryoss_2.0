@@ -215,27 +215,42 @@ export default function FAQs() {
   return (
     <div className="bg-[#050505] text-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070"
-          alt="Support"
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/20 via-[#050505]/60 to-[#050505]" />
+      <section className="relative overflow-hidden min-h-screen flex items-center pt-20 pb-16">
+        {/* Background Effects */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px]" />
+        </div>
 
-        <div className="relative z-10 text-center max-w-4xl px-6">
-          <FadeUp>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-[0.25em] mb-8">
-              Transparency & Trust
-            </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
-              Frequently Asked <span className="text-orange-500">Questions</span>
-            </h1>
-            <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto leading-relaxed">
-              Clear Answers. Transparent System. Real Structure. <br />
-              <span className="text-white/60">At Zryoss, we believe that clarity creates trust.</span>
-            </p>
-          </FadeUp>
+        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
+                Transparency & Trust
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
+                Frequently Asked <span className="text-orange-500">Questions</span>
+              </h1>
+
+              <p className="text-gray-200 leading-relaxed text-lg mb-10">
+                Clear Answers. Transparent System. Real Structure. <br />
+                At Zryoss, we believe that clarity creates trust.
+              </p>
+            </div>
+
+            {/* Right Column: Image */}
+            <div className="relative hidden lg:block">
+              <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
+              <img
+                src="/Resources_pages_images/What-is-an-FAQ-Page.jpg"
+                alt="FAQs"
+                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

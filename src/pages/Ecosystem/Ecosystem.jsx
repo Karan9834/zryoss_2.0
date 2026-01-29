@@ -102,14 +102,14 @@ export default function Ecosystem() {
             <div className="relative group">
               {/* 3D Card effect for overview */}
               <div className="absolute -inset-6 bg-gradient-to-r from-orange-500/10 via-orange-400/5 to-orange-300/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-              
+
               <div className="relative bg-gradient-to-br from-white/5 via-orange-500/3 to-transparent border border-orange-500/20 rounded-2xl p-10 backdrop-blur-sm overflow-hidden">
                 {/* Corner accents */}
                 <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-orange-400/30 rounded-tl-xl"></div>
                 <div className="absolute top-4 right-4 w-8 h-8 border-t border-r border-orange-400/30 rounded-tr-xl"></div>
                 <div className="absolute bottom-4 left-4 w-8 h-8 border-b border-l border-orange-400/30 rounded-bl-xl"></div>
                 <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-orange-400/30 rounded-br-xl"></div>
-                
+
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 mb-8">
@@ -127,12 +127,12 @@ export default function Ecosystem() {
                       <div className="mt-2 h-1 w-16 bg-gradient-to-r from-orange-400 to-orange-300 rounded-full"></div>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-6">
                     <p className="text-xl text-[var(--text-muted)] leading-relaxed">
                       The Zryoss Ecosystem is a structured, multi-layer business operating system designed to scale service businesses efficiently.
                     </p>
-                    
+
                     <div className="grid md:grid-cols-3 gap-6 mt-8">
                       <div className="bg-gradient-to-br from-orange-500/5 to-transparent border border-orange-500/20 rounded-xl p-6">
                         <div className="flex items-center gap-3 mb-4">
@@ -147,7 +147,7 @@ export default function Ecosystem() {
                           Each layer has defined responsibilities ensuring clear ownership and accountability across the ecosystem.
                         </p>
                       </div>
-                      
+
                       <div className="bg-gradient-to-br from-orange-500/5 to-transparent border border-orange-500/20 rounded-xl p-6">
                         <div className="flex items-center gap-3 mb-4">
                           <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-300 rounded-lg flex items-center justify-center">
@@ -161,7 +161,7 @@ export default function Ecosystem() {
                           Systematic processes and governance ensure quality delivery without operational chaos or compromises.
                         </p>
                       </div>
-                      
+
                       <div className="bg-gradient-to-br from-orange-500/5 to-transparent border border-orange-500/20 rounded-xl p-6">
                         <div className="flex items-center gap-3 mb-4">
                           <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-300 rounded-lg flex items-center justify-center">
@@ -176,7 +176,7 @@ export default function Ecosystem() {
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="mt-8 pt-8 border-t border-orange-500/10">
                       <p className="text-lg text-orange-300 font-semibold text-center">
                         Zryoss centralizes control, while partners focus on growth and client relationships.
@@ -211,12 +211,12 @@ export default function Ecosystem() {
               <div className={`relative group transition-all duration-500 ${expandedLayer === index ? 'mb-12' : ''}`}>
                 {/* 3D Card shadow effect */}
                 <div className="absolute inset-0 bg-gradient-to-br via-orange-500/10 to-transparent rounded-xl blur-xl transform translate-y-4 opacity-0 group-hover:opacity-50 transition-all duration-300"></div>
-                
+
                 {/* Main Card Container */}
-                <div 
+                <div
                   className={`relative border border-[var(--border)] rounded-xl bg-[var(--bg-card)] transform transition-all duration-500 overflow-hidden cursor-pointer
-                    ${expandedLayer === index ? 
-                      '-translate-y-4 shadow-2xl shadow-orange-500/20' : 
+                    ${expandedLayer === index ?
+                      '-translate-y-4 shadow-2xl shadow-orange-500/20' :
                       'hover:-translate-y-2 hover:shadow-xl hover:shadow-orange-500/10'
                     }`}
                   onClick={() => toggleLayer(index)}
@@ -224,20 +224,20 @@ export default function Ecosystem() {
                   {/* 3D edge highlight */}
                   <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-400/50 to-transparent"></div>
                   <div className="absolute top-0 right-0 bottom-0 w-px bg-gradient-to-b from-transparent via-orange-400/50 to-transparent"></div>
-                  
+
                   {/* Background gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${layer.gradient} transition-opacity duration-500 ${expandedLayer === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}></div>
-                  
+
                   {/* Floating orb */}
                   <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-orange-500/30 to-transparent rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
+
                   {/* Collapsed State */}
                   <div className="relative z-10 p-8">
                     <div className="flex items-center gap-6">
                       {/* Image */}
                       <div className="relative flex-shrink-0">
                         <div className="w-24 h-24 bg-gradient-to-br from-orange-500/10 to-orange-300/5 rounded-2xl overflow-hidden border border-orange-500/20">
-                          <img 
+                          <img
                             src={layer.image}
                             alt={layer.title}
                             className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
@@ -263,13 +263,13 @@ export default function Ecosystem() {
                               {layer.shortDesc}
                             </p>
                           </div>
-                          
+
                           {/* Expand/Collapse Button */}
                           <button className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-orange-500/20 to-orange-300/10 rounded-full flex items-center justify-center border border-orange-500/30 transition-transform duration-300 hover:scale-110">
-                            <svg 
+                            <svg
                               className={`w-5 h-5 text-orange-400 transition-transform duration-500 ${expandedLayer === index ? 'rotate-180' : ''}`}
-                              fill="none" 
-                              stroke="currentColor" 
+                              fill="none"
+                              stroke="currentColor"
                               viewBox="0 0 24 24"
                             >
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
