@@ -844,10 +844,10 @@ export default function Overview() {
                     Talk to Zryoss <ArrowRight className="w-5 h-5" />
                   </button>
 
-                  <button className="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-white/[0.05] border border-white/10 hover:border-orange-500/30 text-white/90 font-semibold transition">
+                  {/* <button className="inline-flex items-center gap-3 px-10 py-4 rounded-xl bg-white/[0.05] border border-white/10 hover:border-orange-500/30 text-white/90 font-semibold transition">
                     Explore Operations Roadmap{" "}
                     <ArrowRight className="w-5 h-5 text-orange-400" />
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

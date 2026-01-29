@@ -4,7 +4,8 @@ import WhatIsZryoss from "./WhatIsZryoss";
 import HowItWorks from "./HowItWorks";
 import PartnershipModels from "./PartnershipModels";
 import ManagementSection from "./ManagementSection";
-import Brands from "./Brands";
+// import Brands from "./Brands";
+import CoreBrands from "./CoreBrands";
 import Solutions from "./Solutions";
 import BlogSection from "./BlogSection";
 import WhyZryoss from "./WhyZryoss";
@@ -23,7 +24,8 @@ export default function Home() {
       <HowItWorks />
       <PartnershipModels />
       <ManagementSection />
-      <Brands />
+      {/* <Brands /> */}
+      <CoreBrands />
       <Solutions />
       <BlogSection />
       <WhyZryoss />

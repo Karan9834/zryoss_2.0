@@ -1,5 +1,6 @@
 import React from "react";
 import FadeUp from "../../components/animations/FadeUp";
+import { Link } from "react-router-dom";
 import {
   BarChart3,
   ShieldCheck,
@@ -14,37 +15,37 @@ const services = [
   {
     title: "Brand & Business Setup",
     desc: "Complete infrastructure for your brand launch, from legal frameworks to operational setup.",
-    icon: <PenTool className="w-8 h-8" />, 
+    icon: <PenTool className="w-8 h-8" />,
   },
   {
     title: "Sales & Demo Enablement",
     desc: "Domain experts handle your technical pitches and product demos, ensuring professional closure.",
-    icon: <Presentation className="w-8 h-8" />, 
+    icon: <Presentation className="w-8 h-8" />,
   },
   {
     title: "Execution & Delivery",
     desc: "End-to-end fulfillment handled by specialist brands, guaranteeing technical excellence.",
-    icon: <FileCheck className="w-8 h-8" />, 
+    icon: <FileCheck className="w-8 h-8" />,
   },
   {
     title: "Vendor Coordination",
     desc: "Management of all external partners and technical teams so you never have to chase execution.",
-    icon: <Users2 className="w-8 h-8" />, 
+    icon: <Users2 className="w-8 h-8" />,
   },
   {
     title: "Quality Governance",
     desc: "Strict protocol-driven quality control at every stage of the project lifecycle.",
-    icon: <ShieldCheck className="w-8 h-8" />, 
+    icon: <ShieldCheck className="w-8 h-8" />,
   },
   {
     title: "Account Management",
     desc: "A dedicated lead coordinates all backend activities, serving as your internal primary contact.",
-    icon: <Headphones className="w-8 h-8" />, 
+    icon: <Headphones className="w-8 h-8" />,
   },
   {
     title: "Reporting & Escalation",
     desc: "Transparent real-time visibility into project health, performance metrics, and rapid resolution.",
-    icon: <BarChart3 className="w-8 h-8" />, 
+    icon: <BarChart3 className="w-8 h-8" />,
   },
 ];
 
@@ -87,7 +88,7 @@ export default function ManagementSection() {
                 hover:shadow-[0_20px_40px_rgba(249,115,22,0.12)] 
                 hover:bg-[#1a1a1a] hover:-translate-y-2 hover:rotate-1 
                 transition-all duration-500 ease-out h-full flex flex-col cursor-default">
-                
+
                 <div className="w-14 h-14 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 mb-6 shrink-0 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500">
                   {svc.icon}
                 </div>
@@ -115,9 +116,11 @@ export default function ManagementSection() {
               <p className="text-white/80 text-sm mb-6 font-light">
                 Ready to delegate your operations to a proven system?
               </p>
-              <button className="px-6 py-2 bg-white text-orange-600 rounded-full font-bold text-sm hover:scale-105 transition-transform">
-                Apply as Partner
-              </button>
+              <Link to="/apply">
+                <button className="px-6 py-2 bg-white text-orange-600 rounded-full font-bold text-sm hover:scale-105 transition-transform">
+                  Apply as Partner
+                </button>
+              </Link>
             </div>
           </FadeUp>
         </div>

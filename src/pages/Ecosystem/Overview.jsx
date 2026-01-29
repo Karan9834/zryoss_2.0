@@ -481,9 +481,9 @@ export default function Overview() {
                   <button className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-orange-500/25">
                     Partner with Zryoss
                   </button>
-                  <button className="px-8 py-4 border border-white/20 hover:border-orange-500/50 hover:bg-orange-500/5 text-white rounded-xl font-bold transition-all hover:scale-105 active:scale-95">
+                  {/* <button className="px-8 py-4 border border-white/20 hover:border-orange-500/50 hover:bg-orange-500/5 text-white rounded-xl font-bold transition-all hover:scale-105 active:scale-95">
                     View Network
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

@@ -23,7 +23,7 @@ export default function BlogSection() {
                 <div className="text-center mb-16">
                     <FadeUp>
                         <p className="text-orange-500 text-xs uppercase tracking-[0.45em] mb-5 font-bold">
-                            Insights
+                            Blog & Insights
                         </p>
                         <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
                             Latest Articles &
