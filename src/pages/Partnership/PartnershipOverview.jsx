@@ -60,7 +60,7 @@ export default function PartnershipOverview() {
             <span className="inline-block py-1 px-3 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm font-semibold tracking-widest uppercase mb-6">
               Partnership Overview
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
               Build Independent Businesses <br />
               on a <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Central Operating System</span>
             </h1>

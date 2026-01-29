@@ -12,7 +12,7 @@ export default function VisionMission() {
         {/* ================= HEADER ================= */}
         <div className="max-w-4xl mx-auto text-center">
           <FadeUp>
-            <h1 className="text-5xl md:text-6xl font-bold text-white">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
               Vision{" "}
               <span className="text-orange-500">
                 & Mission

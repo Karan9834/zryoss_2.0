@@ -30,7 +30,7 @@ const CoreBrands = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-orange-500 text-xs font-bold tracking-[0.4em] uppercase block mb-6">
-                            Platform Synergy
+                            The Ecosystem
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
                             Core Execution <span className="text-orange-500">Brands</span>

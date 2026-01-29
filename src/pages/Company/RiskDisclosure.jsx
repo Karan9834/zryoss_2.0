@@ -44,7 +44,7 @@ export default function RiskDisclosure() {
                         <span className="inline-block px-4 py-1.5 mb-6 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium tracking-wide">
                             Transparency Builds Trust
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
                             Risk Disclosure
                         </h1>
                         <p className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">

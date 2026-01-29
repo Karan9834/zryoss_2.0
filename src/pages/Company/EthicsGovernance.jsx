@@ -49,7 +49,7 @@ export default function EthicsGovernance() {
                         <span className="inline-block px-4 py-1.5 mb-6 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium tracking-wide">
                             Ethics & Governance
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
                             Responsible Systems. <br className="hidden md:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                                 Transparent Operations.

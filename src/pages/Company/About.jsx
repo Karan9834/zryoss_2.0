@@ -80,7 +80,7 @@ export default function About() {
               Zryoss · About
             </div>
 
-            <h1 className="mt-6 text-4xl sm:text-5xl font-extrabold leading-tight">
+            <h1 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
               About Zryoss
             </h1>
 

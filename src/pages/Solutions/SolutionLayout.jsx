@@ -26,7 +26,7 @@ export default function SolutionLayout({
             </FadeUp>
 
             <FadeUp delay={0.05}>
-              <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
                 {hero.title}
               </h1>
             </FadeUp>

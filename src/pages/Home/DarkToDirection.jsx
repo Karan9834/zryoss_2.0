@@ -32,12 +32,14 @@ export default function DarkToDirection() {
                 <div className="space-y-8 sm:space-y-10 md:space-y-12">
                     {transitions.map((item, idx) => (
                         <FadeUp key={idx} delay={idx * 0.2}>
-                            <div className="flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-20 group">
+                            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-6 sm:gap-8 md:gap-12 lg:gap-20 group">
                                 <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extralight text-gray-700 group-hover:text-gray-500 transition-colors uppercase tracking-widest text-center md:text-right">
                                     {item.from}
                                 </div>
-                                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-orange-500/30 flex items-center justify-center text-orange-500 transform group-hover:rotate-45 transition-transform duration-500 flex-shrink-0">
-                                    <ArrowRight size={20} className="sm:w-6 sm:h-6" />
+                                <div className="flex justify-center">
+                                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-orange-500/30 flex items-center justify-center text-orange-500 transform group-hover:rotate-45 transition-transform duration-500 flex-shrink-0">
+                                        <ArrowRight size={20} className="sm:w-6 sm:h-6" />
+                                    </div>
                                 </div>
                                 <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white group-hover:text-orange-400 transition-colors uppercase tracking-widest text-center md:text-left">
                                     {item.to}

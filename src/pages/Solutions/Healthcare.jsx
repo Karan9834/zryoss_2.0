@@ -38,28 +38,41 @@ const Healthcare = () => {
                 </div>
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
-                    <div className="max-w-4xl">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium mb-6">
-                            <HeartPulse size={14} />
-                            Powered by Medikryoss & Verified Partners
-                        </div>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-8">
-                            Healthcare & <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
-                                Medical Technology
-                            </span>  Solutions
-                        </h1>
-                        <h2 className="text-2xl text-white/80 font-medium mb-6">
-                            Reliable Healthcare Technology Built for Real-World Operations
-                        </h2>
-                        <p className="text-xl text-gray-400 leading-relaxed max-w-2xl mb-10">
-                            The Healthcare & Medical Technology Solutions offered by Zryoss are designed to help healthcare organizations digitize, streamline, and scale clinical and operational workflows—without managing fragmented vendors, risky deployments, or non-compliant systems.
-                        </p>
-
-                        <div className="p-6 border border-white/10 bg-white/5 rounded-2xl backdrop-blur-sm inline-block max-w-3xl">
-                            <p className="text-lg text-gray-200">
-                                Execution is delivered through <span className="text-white font-bold">Medikryoss</span>, a specialized healthcare technology brand within the Zryoss ecosystem.
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Column: Content */}
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium mb-6">
+                                <HeartPulse size={14} />
+                                Powered by Medikryoss & Verified Partners
+                            </div>
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
+                                Healthcare & <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
+                                    Medical Technology
+                                </span>  Solutions
+                            </h1>
+                            <h2 className="text-2xl text-white/80 font-medium mb-6">
+                                Reliable Healthcare Technology Built for Real-World Operations
+                            </h2>
+                            <p className="text-xl text-gray-400 leading-relaxed mb-10">
+                                The Healthcare & Medical Technology Solutions offered by Zryoss are designed to help healthcare organizations digitize, streamline, and scale clinical and operational workflows—without managing fragmented vendors, risky deployments, or non-compliant systems.
                             </p>
+
+                            <div className="p-6 border border-white/10 bg-white/5 rounded-2xl backdrop-blur-sm inline-block w-full">
+                                <p className="text-lg text-gray-200">
+                                    Execution is delivered through <span className="text-white font-bold">Medikryoss</span>, a specialized healthcare technology brand within the Zryoss ecosystem.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Right Column: Image */}
+                        <div className="relative hidden lg:block">
+                            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 blur-3xl rounded-3xl transform rotate-3" />
+                            <img
+                                src="/solution-hero-images/Healthcare.jpg"
+                                alt="Healthcare & Medical Technology Solutions"
+                                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                            />
                         </div>
                     </div>
                 </div>

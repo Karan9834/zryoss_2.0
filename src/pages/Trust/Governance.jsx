@@ -7,7 +7,7 @@ export default function Governance() {
 
         {/* HEADER */}
         <FadeUp>
-          <h1 className="text-5xl md:text-6xl font-bold max-w-5xl">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white max-w-5xl">
             Governance Model
           </h1>
         </FadeUp>

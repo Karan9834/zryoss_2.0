@@ -125,11 +125,14 @@ export default function Hero() {
             </div>
 
             {/* Demo Link */}
-            <button className="text-xs text-gray-400 hover:text-orange-400 transition-all duration-300 flex items-center gap-2 group">
+            <a
+              href="#contact"
+              className="text-xs text-gray-400 hover:text-orange-400 transition-all duration-300 flex items-center gap-2 group cursor-pointer w-fit"
+            >
               <span className="w-8 h-px bg-gray-600 group-hover:w-12 group-hover:bg-orange-500 transition-all duration-300" />
               <Play size={12} className="group-hover:text-orange-400" />
               <span className="font-medium">Request a Solution Demo</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
