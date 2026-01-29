@@ -17,7 +17,7 @@ export default function ZryossIntroSection() {
             {/* badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5">
               <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-              <p className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
+              <p className="text-orange-500 text-xs uppercase tracking-[0.45em] font-bold">
                 Business Operating System
               </p>
             </div>
@@ -33,7 +33,7 @@ export default function ZryossIntroSection() {
             </h2>
 
             {/* content */}
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-6">
+            <p className="text-xl text-gray-400 leading-relaxed font-light mb-6">
               Zryoss is a system-driven business ecosystem designed to help individuals and
               organizations{" "}
               <span className="text-white font-semibold">
@@ -42,7 +42,7 @@ export default function ZryossIntroSection() {
               in a structured and sustainable way.
             </p>
 
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-8">
+            <p className="text-xl text-gray-400 leading-relaxed font-light mb-8">
               In a world where jobs are limited and businesses often fail due to lack of execution,
               Zryoss exists to provide{" "}
               <span className="text-orange-300 font-semibold">
@@ -78,7 +78,7 @@ export default function ZryossIntroSection() {
             <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
               <img
                 className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl"
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+                src="/what is zyross.jpg"
                 alt="Business Dashboard"
               />
             </div>

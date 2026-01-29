@@ -28,7 +28,7 @@ export default function MethodologyHeroSection() {
           <div className="text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5">
               <Sparkles size={16} className="text-orange-500" />
-              <p className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
+              <p className="text-orange-500 text-xs uppercase tracking-[0.45em] font-bold">
                 Zryoss Methodology
               </p>
             </div>
@@ -40,7 +40,7 @@ export default function MethodologyHeroSection() {
               </span>
             </h1>
 
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-6">
+            <p className="text-xl text-gray-400 leading-relaxed font-light mb-6">
               Zryoss Methodology is the{" "}
               <span className="text-white font-medium">core execution framework</span>{" "}
               powering the entire ecosystem — defining how businesses are built, operated
@@ -64,21 +64,15 @@ export default function MethodologyHeroSection() {
             </div>
           </div>
 
-          {/* Right Content / ImageCard */}
-          <div className="rounded-[42px] border border-orange-500/20 bg-gradient-to-b from-orange-500/10 to-transparent p-8 md:p-10 shadow-[0_0_55px_rgba(249,115,22,0.14)] relative group hover:border-orange-500/40 transition-colors duration-500">
-            <div className="absolute inset-0 bg-black/20 rounded-[42px] -z-10" />
-            <div className="flex items-center justify-center gap-4 h-full flex-col text-center">
-              <div className="h-20 w-20 rounded-2xl border border-white/10 bg-[#0B1220]/60 flex items-center justify-center mb-4 shadow-lg shadow-orange-500/20">
-                <Layers className="text-orange-400" size={32} />
-              </div>
-              <div>
-                <p className="text-orange-300 text-xs font-semibold tracking-widest uppercase mb-2">
-                  Z-Framework
-                </p>
-                <p className="text-white font-extrabold text-2xl md:text-3xl leading-tight">
-                  Structure • Execution <br /> Scale • Stability
-                </p>
-              </div>
+          {/* Right Image */}
+          <div className="relative">
+            <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+              <img
+                src="/AZryous Mathodology.jpg"
+                alt="Zryoss Methodology"
+                className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+              />
             </div>
           </div>
         </motion.div>

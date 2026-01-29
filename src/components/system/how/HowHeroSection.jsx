@@ -28,16 +28,16 @@ export default function HowHeroSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-left"
           >
-            {/* Badge - Matches Home/Hero.jsx */}
+            {/* Badge - Matching Overview.jsx typography */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5">
               <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-              <span className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
+              <span className="text-orange-500 text-xs uppercase tracking-[0.45em] font-bold">
                 How Zryoss Works
               </span>
             </div>
 
-            {/* Heading - Matches Home/Hero.jsx */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5">
+            {/* Heading - Matching Overview.jsx typography */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
               A Clear System. <br />
               <span className="block mt-1">A Structured Path.</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-1">
@@ -45,14 +45,14 @@ export default function HowHeroSection() {
               </span>
             </h1>
 
-            {/* Paragraph 1 - Matches Home/Hero.jsx */}
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-6">
+            {/* Paragraph 1 - Matching Overview.jsx typography */}
+            <p className="text-xl text-gray-400 leading-relaxed font-light mb-6">
               Zryoss is designed to remove confusion from business building. It does not rely
               on motivation, guesswork, or individual effort alone.
             </p>
 
-            {/* Paragraph 2 - Matches Home/Hero.jsx (using the same styling) */}
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-8">
+            {/* Paragraph 2 - Matching Overview.jsx typography */}
+            <p className="text-xl text-gray-400 leading-relaxed font-light mb-8">
               It works through a{" "}
               <span className="text-white font-medium">step-by-step operating system</span>{" "}
               that guides individuals and businesses to a structured, scalable brand.
@@ -96,9 +96,9 @@ export default function HowHeroSection() {
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
               <img
-                src="/partnership-hero-final.png"
-                alt="How Zryoss Works System"
-                className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                src="/How yoss Works End-to End.jpg"
+                alt="How Zryoss Works"
+                className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
               />
             </div>
             {/* Decorative element behind */}

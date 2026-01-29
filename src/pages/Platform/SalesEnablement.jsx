@@ -42,7 +42,7 @@ const SalesEnablement = () => {
             <div className="text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5">
                 <Settings size={14} className="text-orange-500" />
-                <p className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
+                <p className="text-orange-500 text-xs uppercase tracking-[0.45em] font-bold">
                   Centralized Sales & Demo Engine
                 </p>
               </div>
@@ -54,7 +54,7 @@ const SalesEnablement = () => {
                 </span>
               </h1>
 
-              <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-6">
+              <p className="text-xl text-gray-400 leading-relaxed font-light mb-6">
                 Zryoss provides a centralized Sales Enablement & Demo System designed to help partners convert opportunities into clients without handling technical complexity.
               </p>
 
@@ -69,7 +69,7 @@ const SalesEnablement = () => {
 
               <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
                 <img
-                  src="/sales_enablement_hero.png"
+                  src="/Sales trablement & Deme System.jpg"
                   alt="Sales Enablement Dashboard"
                   className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
                 />

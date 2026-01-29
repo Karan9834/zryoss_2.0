@@ -35,7 +35,7 @@ export default function OperationsModel() {
               <FadeUp>
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5 cursor-default">
                   <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
+                  <p className="text-orange-500 text-xs uppercase tracking-[0.45em] font-bold">
                     Operations Engine
                   </p>
                 </div>
@@ -49,10 +49,11 @@ export default function OperationsModel() {
               </FadeUp>
 
               <FadeUp delay={0.1}>
+                {/* Updated Subheading and Paragraph Typography */}
                 <h2 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">
                   One Backend System That Runs Every Brand
                 </h2>
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-8">
+                <p className="text-xl text-gray-400 leading-relaxed font-light mb-8">
                   Zryoss operates through a Centralized Operations Model that manages execution, delivery, and ongoing support for all partner-owned brands.
                   <br /><br />
                   <span className="text-white font-medium">Partners focus on growth and relationships. Zryoss manages operations end to end.</span>
@@ -66,8 +67,8 @@ export default function OperationsModel() {
 
               <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
                 <img
-                  src="/Platform Layer.png"
-                  alt="Operations Model Diagram"
+                  src="/Centralzed Operations Madel.jpg"
+                  alt="Operations Model Dashboard"
                   className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
                 />
               </div>

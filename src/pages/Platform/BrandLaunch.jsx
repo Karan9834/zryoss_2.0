@@ -35,7 +35,7 @@ export default function BrandLaunchSupport() {
               <FadeUp>
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5 cursor-default">
                   <Rocket className="w-3.5 h-3.5 text-orange-400" />
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
+                  <p className="text-orange-500 text-xs uppercase tracking-[0.45em] font-bold">
                     Brand Launch Framework
                   </p>
                 </div>
@@ -49,10 +49,11 @@ export default function BrandLaunchSupport() {
               </FadeUp>
 
               <FadeUp delay={0.1}>
+                {/* Updated Typography */}
                 <h2 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">
                   From Zero to a Fully Operating Brand
                 </h2>
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-8">
+                <p className="text-xl text-gray-400 leading-relaxed font-light mb-8">
                   Launch your own independent brand and operate professionally without building backend infrastructure. Powered by one platform.
                 </p>
               </FadeUp>
@@ -81,7 +82,7 @@ export default function BrandLaunchSupport() {
               <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
               <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
                 <img
-                  src="/Brand Layer.png"
+                  src="/support and framwork.jpg"
                   alt="Brand Launch Framework"
                   className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
                 />

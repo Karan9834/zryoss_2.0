@@ -28,7 +28,7 @@ export default function BOSHeroSection() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5">
               <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-              <p className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
+              <p className="text-orange-500 text-xs uppercase tracking-[0.45em] font-bold">
                 Business Operating System
               </p>
             </div>
@@ -40,12 +40,12 @@ export default function BOSHeroSection() {
               </span>
             </h1>
 
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-6">
+            <p className="text-xl text-gray-400 leading-relaxed font-light mb-6">
               A Business Operating System (Business OS) is the foundation that allows a
               business to function consistently, scale efficiently, and grow sustainably.
             </p>
 
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-8">
+            <p className="text-xl text-gray-400 leading-relaxed font-light mb-8">
               Zryoss is built as a{" "}
               <span className="text-white font-medium">Business Operating System</span>, not
               a service provider.
