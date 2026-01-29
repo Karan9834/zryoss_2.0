@@ -4,7 +4,7 @@ import WhatExactlyZryossSection from "../../components/system/WhatExactlyZryossS
 import HowZryossDifferentSection from "../../components/system/HowZryossDifferentSection";
 import ZryossApproachSection from "../../components/system/ZryossApproachSection";
 import HeroContact from "../Home/HeroContact";
-import LogosMarquee from "../../components/system/LogosMarquee";
+import CoreBrands from "../Home/CoreBrands";
 import ZryossEcosystemSection from "../../components/system/ZryossEcosystemSection";
 import ZryossPhilosophySection from "../../components/system/ZryossPhilosophySection";
 import BrandEngineSection from "../../components/system/BrandEngineSection";
@@ -21,7 +21,7 @@ export default function WhatIsZryossPage() {
       <ZryossEcosystemSection />
       <ZryossPhilosophySection />
       <BrandEngineSection />
-      <LogosMarquee />
+      <CoreBrands />
       <HeroContact />
     </>
   );
