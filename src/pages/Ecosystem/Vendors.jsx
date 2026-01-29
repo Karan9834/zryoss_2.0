@@ -1,5 +1,5 @@
 import FadeUp from "../../components/animations/FadeUp";
-
+import { motion } from "framer-motion";
 import {
     Network as NetworkIcon,
     Users as UsersIcon,
@@ -19,6 +19,12 @@ import {
     ChevronDown,
     MapPin
 } from "lucide-react";
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0 },
+};
+
 
 const vendorHubImage = "/images/ecosystem/vendor-network-hub.png";
 const heroBgImage = "/images/ecosystem/vendor-bg.png";
@@ -54,45 +60,53 @@ export default function Vendors() {
 
     return (
         <div className="bg-[#050505] text-white selection:bg-orange-500/30 min-h-screen">
-            {/* HERO */}
-            <section className="relative pt-32 pb-24 overflow-hidden">
-                <div className="absolute inset-0">
-                    <img src={heroBgImage} alt="Network Background" className="w-full h-full object-cover opacity-20" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/90 to-[#050505]" />
+            <section className="relative bg-[#050505] min-h-screen flex items-center py-20 md:py-32 overflow-hidden border-b border-white/5">
+                {/* Background Elements - Matching TechHeroSection */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                    <div className="absolute -top-[20%] right-[10%] w-[50%] h-[50%] bg-orange-500/10 rounded-full blur-[140px]" />
+                    <div className="absolute bottom-[0%] -left-[10%] w-[40%] h-[60%] bg-red-500/10 rounded-full blur-[140px]" />
                 </div>
-                <div className="absolute top-0 left-0 w-full h-[600px] bg-orange-600/5 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none" />
 
-                <div className="max-w-7xl mx-auto px-6 relative z-10">
-                    <FadeUp>
-                        <div className="flex flex-col md:flex-row items-center gap-12">
-                            <div className="md:w-3/5">
-                                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
-                                    <NetworkIcon size={14} className="text-orange-500" />
-                                    <span className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
-                                        Global Network
-                                    </span>
-                                </div>
-
-                                <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
-                                    Partner & <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                                        Vendor Network.
-                                    </span>
-                                </h1>
-
-                                <p className="text-gray-400 text-lg md:text-xl max-w-2xl font-light leading-relaxed mb-10">
-                                    A vetted ecosystem of specialists and service providers, unified under the Zryoss Operating System to deliver excellence at scale.
-                                </p>
+                <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        {/* Left Content - All content remains exactly the same */}
+                        <FadeUp>
+                            {/* Badge */}
+                            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
+                                <NetworkIcon size={14} className="text-orange-500" />
+                                <span className="text-xs uppercase tracking-[0.45em] text-orange-500 font-bold">
+                                    Global Network
+                                </span>
                             </div>
 
-                            <div className="md:w-2/5 relative flex justify-center">
-                                <div className="relative z-10 transform md:rotate-6 transition-transform hover:rotate-0 duration-500">
-                                    <div className="absolute inset-0 bg-orange-500/20 blur-3xl rounded-full" />
-                                    <img src={vendorAppImage} alt="Vendor App" className="relative w-[280px] rounded-[2.5rem] border-8 border-neutral-900 shadow-2xl" />
+                            {/* H1 */}
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+                                Partner & <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                                    Vendor Network.
+                                </span>
+                            </h1>
+
+                            {/* Paragraph */}
+                            <p className="text-xl text-gray-400 leading-relaxed font-light mb-8">
+                                A vetted ecosystem of specialists and service providers, unified under the Zryoss Operating System to deliver excellence at scale.
+                            </p>
+                        </FadeUp>
+
+                        {/* Right Visual - Matching TechHeroSection exactly */}
+                        <FadeUp delay={0.2}>
+                            <div className="relative">
+                                <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
+                                <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+                                    <img
+                                        src="/partner and vendors.png"
+                                        alt="Partner and Vendor Network"
+                                        className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                                    />
                                 </div>
                             </div>
-                        </div>
-                    </FadeUp>
+                        </FadeUp>
+                    </div>
                 </div>
             </section>
 

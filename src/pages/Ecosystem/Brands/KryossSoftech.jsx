@@ -26,6 +26,7 @@ const KryossSoftech = () => {
     <div className="min-h-screen bg-[#050505] text-white selection:bg-orange-500/30 font-sans">
 
       {/* Hero Section */}
+      {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         {/* Background Effects */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -37,20 +38,29 @@ const KryossSoftech = () => {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-6">
-                <Cpu size={14} />
-                Technology & Digital Execution Brand
+              {/* Badge - typography changed */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
+                <Cpu size={14} className="text-orange-500" />
+                <span className="text-xs uppercase tracking-[0.45em] text-orange-500 font-bold">
+                  Technology & Digital Execution Brand
+                </span>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-8">
+
+              {/* H1 - typography changed */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
                 Kryoss <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">
                   Softech
                 </span>
               </h1>
-              <h2 className="text-2xl text-white/80 font-medium mb-6">
+
+              {/* H2 - typography changed */}
+              <h2 className="text-xl md:text-2xl font-semibold text-white/90 mb-6">
                 Technology & Digital Execution Brand of the Zryoss Ecosystem
               </h2>
-              <p className="text-xl text-gray-400 leading-relaxed max-w-xl mb-10">
+
+              {/* Paragraph - typography changed */}
+              <p className="text-xl text-gray-400 leading-relaxed font-light mb-10">
                 Kryoss Softech is the dedicated execution engine responsible for delivering all technology-driven services brought by IPPs and BPPs, ensuring specialized focus and quality control.
               </p>
 

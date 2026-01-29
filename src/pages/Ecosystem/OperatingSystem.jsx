@@ -1,4 +1,5 @@
 import FadeUp from "../../components/animations/FadeUp";
+import { motion } from "framer-motion";
 import {
   Settings,
   Workflow,
@@ -20,6 +21,12 @@ import {
   TrendingDown,
   Users
 } from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0 },
+};
+
 
 const governanceFlowImage = "/images/ecosystem/os-governance-flow.png";
 const dashboardMockupImage = "/images/ecosystem/os-dashboard-mockup.png";
@@ -50,53 +57,60 @@ export default function OperatingSystem() {
 
   return (
     <div className="bg-[#050505] text-white selection:bg-orange-500/30 min-h-screen">
-      {/* HERO SECTION */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroBgImage} alt="OS Background" className="w-full h-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/90 to-[#050505]" />
+      <section className="relative bg-[#050505] min-h-screen flex items-center py-20 md:py-32 overflow-hidden border-b border-white/5">
+        {/* Background Elements - Matching TechHeroSection */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute -top-[20%] right-[10%] w-[50%] h-[50%] bg-orange-500/10 rounded-full blur-[140px]" />
+          <div className="absolute bottom-[0%] -left-[10%] w-[40%] h-[60%] bg-red-500/10 rounded-full blur-[140px]" />
         </div>
-        <div className="absolute top-0 right-0 w-1/2 h-[800px] bg-orange-600/5 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <FadeUp>
-            <div className="flex flex-col md:flex-row gap-12 items-center">
-              <div className="md:w-3/5">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
-                  <Zap size={14} className="text-orange-500" />
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
-                    Business Engine
-                  </span>
-                </div>
-                <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
-                  The OS for <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                    Modern Commerce.
-                  </span>
-                </h1>
-                <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-10">
-                  Zryoss OS is more than software. It's an integrated set of protocols, governance, and technology that bridges the gap between vision and execution.
-                </p>
-                <div className="flex gap-4">
-                  <button className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-orange-500/25 flex items-center gap-2">
-                    Request Demo <ArrowRight size={18} />
-                  </button>
-                </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left Content - All content remains exactly the same */}
+            <FadeUp>
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
+                <Zap size={14} className="text-orange-500" />
+                <span className="text-xs uppercase tracking-[0.45em] text-orange-500 font-bold">
+                  Business Engine
+                </span>
               </div>
 
-              <div className="md:w-2/5 relative">
-                <div className="relative z-10 p-1 rounded-[2.5rem] bg-gradient-to-br from-orange-500/20 to-transparent border border-white/10 backdrop-blur-md">
-                  <div className="bg-[#0a0a0a] rounded-[2.4rem] p-0 aspect-square flex flex-col justify-center items-center text-center overflow-hidden relative group">
-                    <img src={dashboardMockupImage} alt="Zryoss OS Dashboard" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black to-transparent">
-                      <h3 className="text-2xl font-bold mb-2 text-white">Systemic Accuracy</h3>
-                      <p className="text-gray-400 text-sm">Automated protocol monitoring active in real-time.</p>
-                    </div>
-                  </div>
+              {/* H1 */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+                The OS for <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                  Modern Commerce.
+                </span>
+              </h1>
+
+              {/* Paragraph */}
+              <p className="text-xl text-gray-400 leading-relaxed font-light mb-6">
+                Zryoss OS is more than software. It's an integrated set of protocols, governance, and technology that bridges the gap between vision and execution.
+              </p>
+
+              {/* CTA */}
+              <div className="flex flex-wrap gap-4 mb-6">
+                <button className="rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:shadow-orange-500/60 transition inline-flex items-center gap-2">
+                  Request Demo <ArrowRight size={18} />
+                </button>
+              </div>
+            </FadeUp>
+
+            {/* Right Visual - Matching TechHeroSection exactly */}
+            <FadeUp delay={0.2}>
+              <div className="relative">
+                <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+                  <img
+                    src="/zryoss operating.png"
+                    alt="Zryoss Operating System"
+                    className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
               </div>
-            </div>
-          </FadeUp>
+            </FadeUp>
+          </div>
         </div>
       </section>
 

@@ -86,8 +86,8 @@ export default function Ecosystem() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <FadeUp>
           <div className="relative">
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full blur-xl"></div>
-            <h1 className="text-5xl md:text-6xl font-bold relative">
+            {/* H1 - typography changed */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
                 Zryoss Ecosystem
               </span>
@@ -102,14 +102,14 @@ export default function Ecosystem() {
             <div className="relative group">
               {/* 3D Card effect for overview */}
               <div className="absolute -inset-6 bg-gradient-to-r from-orange-500/10 via-orange-400/5 to-orange-300/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-700"></div>
-              
+
               <div className="relative bg-gradient-to-br from-white/5 via-orange-500/3 to-transparent border border-orange-500/20 rounded-2xl p-10 backdrop-blur-sm overflow-hidden">
                 {/* Corner accents */}
                 <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-orange-400/30 rounded-tl-xl"></div>
                 <div className="absolute top-4 right-4 w-8 h-8 border-t border-r border-orange-400/30 rounded-tr-xl"></div>
                 <div className="absolute bottom-4 left-4 w-8 h-8 border-b border-l border-orange-400/30 rounded-bl-xl"></div>
                 <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-orange-400/30 rounded-br-xl"></div>
-                
+
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 mb-8">
@@ -120,19 +120,21 @@ export default function Ecosystem() {
                         </svg>
                       </div>
                     </div>
+                    {/* H2 - typography changed */}
                     <div>
-                      <h2 className="text-3xl font-bold text-orange-300">
+                      <h2 className="text-xl md:text-2xl font-semibold text-orange-300 text-white/90">
                         Ecosystem Overview
                       </h2>
                       <div className="mt-2 h-1 w-16 bg-gradient-to-r from-orange-400 to-orange-300 rounded-full"></div>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-6">
-                    <p className="text-xl text-[var(--text-muted)] leading-relaxed">
+                    {/* Paragraph - typography changed */}
+                    <p className="text-xl text-gray-400 leading-relaxed font-light">
                       The Zryoss Ecosystem is a structured, multi-layer business operating system designed to scale service businesses efficiently.
                     </p>
-                    
+
                     <div className="grid md:grid-cols-3 gap-6 mt-8">
                       <div className="bg-gradient-to-br from-orange-500/5 to-transparent border border-orange-500/20 rounded-xl p-6">
                         <div className="flex items-center gap-3 mb-4">
@@ -141,13 +143,14 @@ export default function Ecosystem() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                             </svg>
                           </div>
-                          <h3 className="text-lg font-semibold text-orange-300">Clear Accountability</h3>
+                          {/* Subheading - typography changed */}
+                          <h3 className="text-lg font-semibold text-orange-300 text-white/90">Clear Accountability</h3>
                         </div>
-                        <p className="text-[var(--text-muted)] text-sm">
+                        <p className="text-gray-400 text-sm">
                           Each layer has defined responsibilities ensuring clear ownership and accountability across the ecosystem.
                         </p>
                       </div>
-                      
+
                       <div className="bg-gradient-to-br from-orange-500/5 to-transparent border border-orange-500/20 rounded-xl p-6">
                         <div className="flex items-center gap-3 mb-4">
                           <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-300 rounded-lg flex items-center justify-center">
@@ -155,13 +158,13 @@ export default function Ecosystem() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                           </div>
-                          <h3 className="text-lg font-semibold text-orange-300">Controlled Execution</h3>
+                          <h3 className="text-lg font-semibold text-orange-300 text-white/90">Controlled Execution</h3>
                         </div>
-                        <p className="text-[var(--text-muted)] text-sm">
+                        <p className="text-gray-400 text-sm">
                           Systematic processes and governance ensure quality delivery without operational chaos or compromises.
                         </p>
                       </div>
-                      
+
                       <div className="bg-gradient-to-br from-orange-500/5 to-transparent border border-orange-500/20 rounded-xl p-6">
                         <div className="flex items-center gap-3 mb-4">
                           <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-300 rounded-lg flex items-center justify-center">
@@ -169,16 +172,17 @@ export default function Ecosystem() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                           </div>
-                          <h3 className="text-lg font-semibold text-orange-300">Sustainable Growth</h3>
+                          <h3 className="text-lg font-semibold text-orange-300 text-white/90">Sustainable Growth</h3>
                         </div>
-                        <p className="text-[var(--text-muted)] text-sm">
+                        <p className="text-gray-400 text-sm">
                           Partners focus on growth while Zryoss manages execution, creating scalable and sustainable business expansion.
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="mt-8 pt-8 border-t border-orange-500/10">
-                      <p className="text-lg text-orange-300 font-semibold text-center">
+                      {/* Bold paragraph - typography changed */}
+                      <p className="text-xl text-orange-300 font-semibold text-center text-white font-semibold">
                         Zryoss centralizes control, while partners focus on growth and client relationships.
                       </p>
                     </div>
@@ -192,12 +196,14 @@ export default function Ecosystem() {
         {/* Layer Architecture Title */}
         <FadeUp delay={0.2}>
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
+            {/* H2 - typography changed */}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-4">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-300 via-orange-200 to-orange-100">
                 Layer Architecture
               </span>
             </h2>
-            <p className="text-lg text-[var(--text-muted)] max-w-3xl mx-auto">
+            {/* Paragraph - typography changed */}
+            <p className="text-xl text-gray-400 leading-relaxed font-light max-w-3xl mx-auto">
               Four interconnected layers working in harmony to deliver exceptional service experiences
             </p>
             <div className="mt-6 h-1 w-32 bg-gradient-to-r from-orange-500 via-orange-400 to-orange-300 rounded-full mx-auto"></div>
@@ -211,12 +217,12 @@ export default function Ecosystem() {
               <div className={`relative group transition-all duration-500 ${expandedLayer === index ? 'mb-12' : ''}`}>
                 {/* 3D Card shadow effect */}
                 <div className="absolute inset-0 bg-gradient-to-br via-orange-500/10 to-transparent rounded-xl blur-xl transform translate-y-4 opacity-0 group-hover:opacity-50 transition-all duration-300"></div>
-                
+
                 {/* Main Card Container */}
-                <div 
+                <div
                   className={`relative border border-[var(--border)] rounded-xl bg-[var(--bg-card)] transform transition-all duration-500 overflow-hidden cursor-pointer
-                    ${expandedLayer === index ? 
-                      '-translate-y-4 shadow-2xl shadow-orange-500/20' : 
+                    ${expandedLayer === index ?
+                      '-translate-y-4 shadow-2xl shadow-orange-500/20' :
                       'hover:-translate-y-2 hover:shadow-xl hover:shadow-orange-500/10'
                     }`}
                   onClick={() => toggleLayer(index)}
@@ -224,20 +230,20 @@ export default function Ecosystem() {
                   {/* 3D edge highlight */}
                   <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-400/50 to-transparent"></div>
                   <div className="absolute top-0 right-0 bottom-0 w-px bg-gradient-to-b from-transparent via-orange-400/50 to-transparent"></div>
-                  
+
                   {/* Background gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${layer.gradient} transition-opacity duration-500 ${expandedLayer === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}></div>
-                  
+
                   {/* Floating orb */}
                   <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-orange-500/30 to-transparent rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
+
                   {/* Collapsed State */}
                   <div className="relative z-10 p-8">
                     <div className="flex items-center gap-6">
                       {/* Image */}
                       <div className="relative flex-shrink-0">
                         <div className="w-24 h-24 bg-gradient-to-br from-orange-500/10 to-orange-300/5 rounded-2xl overflow-hidden border border-orange-500/20">
-                          <img 
+                          <img
                             src={layer.image}
                             alt={layer.title}
                             className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
@@ -263,13 +269,13 @@ export default function Ecosystem() {
                               {layer.shortDesc}
                             </p>
                           </div>
-                          
+
                           {/* Expand/Collapse Button */}
                           <button className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-orange-500/20 to-orange-300/10 rounded-full flex items-center justify-center border border-orange-500/30 transition-transform duration-300 hover:scale-110">
-                            <svg 
+                            <svg
                               className={`w-5 h-5 text-orange-400 transition-transform duration-500 ${expandedLayer === index ? 'rotate-180' : ''}`}
-                              fill="none" 
-                              stroke="currentColor" 
+                              fill="none"
+                              stroke="currentColor"
                               viewBox="0 0 24 24"
                             >
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

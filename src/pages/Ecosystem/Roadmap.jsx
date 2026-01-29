@@ -1,4 +1,5 @@
 import FadeUp from "../../components/animations/FadeUp";
+import { motion } from "framer-motion";
 import {
     Milestone,
     Flag,
@@ -13,6 +14,12 @@ import {
     Microscope,
     Bot
 } from "lucide-react";
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0 },
+};
+
 
 const roadmapImage = "/images/ecosystem/roadmap-timeline.png";
 const techImage = "/images/ecosystem/tech-enablers.png";
@@ -57,42 +64,59 @@ export default function Roadmap() {
 
     return (
         <div className="bg-[#050505] text-white selection:bg-orange-500/30 min-h-screen">
-            {/* HERO */}
-            <section className="relative pt-32 pb-20 overflow-hidden">
-                <div className="absolute inset-0">
-                    <img src={heroBgImage} alt="Roadmap Background" className="w-full h-full object-cover opacity-20" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/90 to-[#050505]" />
+            <section className="relative bg-[#050505] min-h-screen flex items-center py-20 md:py-32 overflow-hidden border-b border-white/5">
+                {/* Background Elements - Matching TechHeroSection */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                    <div className="absolute -top-[20%] right-[10%] w-[50%] h-[50%] bg-orange-500/10 rounded-full blur-[140px]" />
+                    <div className="absolute bottom-[0%] -left-[10%] w-[40%] h-[60%] bg-red-500/10 rounded-full blur-[140px]" />
                 </div>
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.05),transparent_70%)] pointer-events-none" />
 
-                <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-                    <FadeUp>
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
-                            <Milestone size={14} className="text-orange-500" />
-                            <span className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
-                                Strategic Path
-                            </span>
-                        </div>
-
-                        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">
-                            The Ecosystem <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                                Scale Roadmap.
-                            </span>
-                        </h1>
-
-                        <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-12">
-                            Our strategic progression from a centralized engine to a global autonomous commerce ecosystem.
-                        </p>
-
-                        <div className="rounded-3xl overflow-hidden border border-white/10 relative h-[400px] group">
-                            <img src={roadmapImage} alt="Future Roadmap" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
-                            <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
-                            <div className="absolute bottom-10 left-0 right-0">
-                                <p className="text-center font-mono text-xs text-orange-500 uppercase tracking-widest animate-pulse">Navigating the Future</p>
+                <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        {/* Left Content - All content remains exactly the same */}
+                        <FadeUp>
+                            {/* Badge */}
+                            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
+                                <Milestone size={14} className="text-orange-500" />
+                                <span className="text-xs uppercase tracking-[0.45em] text-orange-500 font-bold">
+                                    Strategic Path
+                                </span>
                             </div>
-                        </div>
-                    </FadeUp>
+
+                            {/* H1 */}
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+                                The Ecosystem <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                                    Scale Roadmap.
+                                </span>
+                            </h1>
+
+                            {/* Paragraph */}
+                            <p className="text-xl text-gray-400 leading-relaxed font-light mb-6">
+                                Our strategic progression from a centralized engine to a global autonomous commerce ecosystem.
+                            </p>
+
+                            {/* Optional: Add a CTA button if needed */}
+                            <div className="flex items-center gap-3 text-orange-500 font-medium mt-10">
+                                <span className="text-sm uppercase tracking-widest">Explore the Timeline</span>
+                                <ArrowRight size={18} className="animate-pulse" />
+                            </div>
+                        </FadeUp>
+
+                        {/* Right Visual - Matching TechHeroSection exactly */}
+                        <FadeUp delay={0.2}>
+                            <div className="relative">
+                                <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
+                                <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+                                    <img
+                                        src="/eco system scale.png"
+                                        alt="Ecosystem Scale Roadmap"
+                                        className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                                    />
+                                </div>
+                            </div>
+                        </FadeUp>
+                    </div>
                 </div>
             </section>
 
@@ -167,8 +191,6 @@ export default function Roadmap() {
                     </FadeUp>
                 </div>
             </section>
-
-
 
             {/* R&D LABS (VISION NOTE) */}
             <section className="py-24 bg-[#0a0a0a]">

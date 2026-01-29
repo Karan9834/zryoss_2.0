@@ -27,7 +27,6 @@ const SalesEnablement = () => {
     <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-orange-500/30">
 
       {/* Hero Section */}
-      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-32 pb-24 overflow-hidden border-b border-white/5">
         {/* Background */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
