@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   BarChart3,
   Users,
@@ -71,6 +72,7 @@ const problems = [
 ================================ */
 
 export default function Platform() {
+  const navigate = useNavigate();
   const [activeSystem, setActiveSystem] = useState(systems[0]);
 
   return (
@@ -101,7 +103,9 @@ export default function Platform() {
               </FadeUp>
 
               <FadeUp delay={600}>
-                <button className="mt-12 px-8 py-4 bg-orange-600 hover:bg-orange-500 rounded-full
+                <button
+                  onClick={() => navigate("/contact")}
+                  className="mt-12 px-8 py-4 bg-orange-600 hover:bg-orange-500 rounded-full
                   text-white font-bold transition-all hover:scale-105
                   shadow-[0_0_30px_rgba(234,88,12,0.35)]
                   flex items-center gap-2">

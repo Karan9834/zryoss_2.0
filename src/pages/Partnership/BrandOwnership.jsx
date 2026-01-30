@@ -18,6 +18,7 @@ import {
   Power
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import FadeUp from "../../components/animations/FadeUp";
 
 const BrandOwnership = () => {
   useEffect(() => {
@@ -27,37 +28,53 @@ const BrandOwnership = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-orange-500/30">
 
+      {/* Background Glows */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute middle-0 left-0 w-[500px] h-[500px] bg-orange-500/5 blur-[130px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
-        {/* Background */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-[-20%] right-[10%] w-[500px] h-[500px] bg-orange-600/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-[0%] left-[0%] w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px]" />
-          <div className="absolute inset-0 bg-[url('/brand_ownership_hero.png')] bg-cover bg-center opacity-30 mix-blend-screen"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]"></div>
-        </div>
+      <section className="relative pt-40 pb-24 overflow-hidden border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Content */}
+            <div>
+              <FadeUp>
+                <div className="inline-flex items-center gap-2 text-orange-500 text-xs uppercase tracking-[0.45em] mb-6 font-bold">
+                  <ShieldCheck size={14} />
+                  Brand Ownership Model
+                </div>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+                  Your Brand Is Yours. <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                    Zryoss Is the Operating Engine.
+                  </span>
+                </h1>
+                <p className="text-xl text-gray-400 leading-relaxed font-light mb-8">
+                  At Zryoss, brand ownership is non-negotiable. Zryoss provides the system that runs the business, not the identity that represents it.
+                </p>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium mb-8">
-            <ShieldCheck size={14} />
-            Brand Ownership Model
-          </div>
+                <div className="p-8 border border-white/10 bg-white/5 rounded-[24px] backdrop-blur-sm inline-block w-full shadow-2xl relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <div className="flex items-start gap-4 text-left relative z-10">
+                    <div className="w-1 bg-orange-500 h-10 rounded-full mt-1 hidden md:block flex-shrink-0"></div>
+                    <p className="text-lg text-gray-300 leading-relaxed italic">
+                      "Every partner—IPP or BPP—builds and operates their own independent brand. Zryoss does not own partner brands or claim client ownership."
+                    </p>
+                  </div>
+                </div>
+              </FadeUp>
+            </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-            Your Brand Is Yours. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-white">
-              Zryoss Is the Operating Engine.
-            </span>
-          </h1>
-
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-            At Zryoss, brand ownership is non-negotiable. Zryoss provides the system that runs the business, not the identity that represents it.
-          </p>
-
-          <div className="p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm inline-block max-w-2xl">
-            <div className="flex items-center gap-4 text-left">
-              <div className="w-1 bg-orange-500 h-12 rounded-full hidden md:block"></div>
-              <p className="text-gray-300 italic">"Every partner—IPP or BPP—builds and operates their own independent brand. Zryoss does not own partner brands or claim client ownership."</p>
+            {/* Right Column: Image */}
+            <div className="relative hidden lg:block">
+              <FadeUp delay={0.2}>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-600/20 blur-3xl rounded-3xl transform rotate-3" />
+                <img
+                  src="/Brand-Ownership-Model.png"
+                  alt="Brand Ownership Model"
+                  className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                />
+              </FadeUp>
             </div>
           </div>
         </div>

@@ -34,58 +34,66 @@ export default function PartnershipOverview() {
   const navigate = useNavigate();
   return (
     <div className="bg-[#050505] text-white overflow-hidden font-sans">
-      {/* =====================================================
-          HERO SECTION
-      ====================================================== */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden border-b border-white/5">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/partnership-hero-final.png"
-            alt="Partnership Background"
-            className="w-full h-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-[#050505]" />
-        </div>
+      <section className="relative pt-40 pb-24 overflow-hidden border-b border-white/5">
 
-        {/* Glow Effects */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-orange-500/10 blur-[150px] rounded-full pointer-events-none" />
+        {/* Background Glows (Matching Solutions Layout) */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <div className="absolute middle-0 left-0 w-[500px] h-[500px] bg-orange-500/5 blur-[130px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center pt-20">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
-            className="flex flex-col items-center"
-          >
-            <span className="inline-block py-1 px-3 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm font-semibold tracking-widest uppercase mb-6">
-              Partnership Overview
-            </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
-              Build Independent Businesses <br />
-              on a <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Central Operating System</span>
-            </h1>
-            <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-              The partnership models under Zryoss are designed for individuals and organizations who want to build real, independent businesses—without creating execution teams, managing vendors, or building systems from scratch.
-            </p>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-            <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base text-white/80">
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10">
-                <XCircle className="w-4 h-4 text-red-500" /> No Jobs
+            {/* Left Column: Content */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+            >
+              <p className="text-orange-500 text-[10px] uppercase tracking-[0.45em] mb-6 font-bold">
+                Partnership Overview
+              </p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+                Build Independent Businesses <br />
+                on a <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Central Operating System</span>
+              </h1>
+              <p className="text-xl text-gray-400 leading-relaxed font-light mb-10">
+                The partnership models under Zryoss are designed for individuals and organizations who want to build real, independent businesses—without creating execution teams, managing vendors, or building systems from scratch.
+              </p>
+
+              {/* Feature Pills aligned with new layout */}
+              <div className="flex flex-wrap gap-4 text-sm font-medium text-white/80">
+                <div className="flex items-center gap-2 px-5 py-2.5 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
+                  <XCircle className="w-4 h-4 text-red-500" /> No Jobs
+                </div>
+                <div className="flex items-center gap-2 px-5 py-2.5 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
+                  <XCircle className="w-4 h-4 text-red-500" /> No Franchises
+                </div>
+                <div className="flex items-center gap-2 px-5 py-2.5 bg-white/5 rounded-full border border-white/10 backdrop-blur-sm">
+                  <XCircle className="w-4 h-4 text-red-500" /> No Schemes
+                </div>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10">
-                <XCircle className="w-4 h-4 text-red-500" /> No Franchises
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10">
-                <XCircle className="w-4 h-4 text-red-500" /> No Schemes
-              </div>
-            </div>
 
-            <p className="mt-8 text-white font-medium text-lg">
-              Zryoss offers structured business partnerships, powered by a centralized operating system.
-            </p>
-          </motion.div>
+              <p className="mt-8 text-lg font-medium text-white/90">
+                Zryoss offers structured business partnerships, powered by a centralized operating system.
+              </p>
+            </motion.div>
+
+            {/* Right Column: Image */}
+            <motion.div
+              className="relative hidden lg:block"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-600/20 blur-3xl rounded-3xl transform rotate-3" />
+              <img
+                src="/partnership1.jpg"
+                alt="build independent businesses"
+                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+              />
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
@@ -447,9 +455,9 @@ export default function PartnershipOverview() {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
 
-                <button className="px-8 py-4 rounded-xl border border-white/20 text-white font-semibold hover:border-orange-500/50 hover:text-orange-400 transition-all">
+                {/* <button className="px-8 py-4 rounded-xl border border-white/20 text-white font-semibold hover:border-orange-500/50 hover:text-orange-400 transition-all">
                   Compare Models
-                </button>
+                </button> */}
               </div>
             </div>
 

@@ -97,10 +97,10 @@ export default function Roadmap() {
                             </p>
 
                             {/* Optional: Add a CTA button if needed */}
-                            <div className="flex items-center gap-3 text-orange-500 font-medium mt-10">
+                            {/* <div className="flex items-center gap-3 text-orange-500 font-medium mt-10">
                                 <span className="text-sm uppercase tracking-widest">Explore the Timeline</span>
                                 <ArrowRight size={18} className="animate-pulse" />
-                            </div>
+                            </div> */}
                         </FadeUp>
 
                         {/* Right Visual - Matching TechHeroSection exactly */}

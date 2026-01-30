@@ -66,9 +66,9 @@ const ClinkHR = () => {
                 >
                   Partner with Zryoss
                 </button>
-                <button className="rounded-xl border border-white/10 px-6 py-3 font-semibold text-white hover:border-orange-500/50 hover:text-orange-400 transition inline-flex items-center gap-2">
+                {/* <button className="rounded-xl border border-white/10 px-6 py-3 font-semibold text-white hover:border-orange-500/50 hover:text-orange-400 transition inline-flex items-center gap-2">
                   View Solutions <ArrowRight size={18} />
-                </button>
+                </button> */}
               </div>
 
               {/* Small text */}

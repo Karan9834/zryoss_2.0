@@ -18,6 +18,7 @@ import {
     ArrowRightCircle,
     PlayCircle
 } from 'lucide-react';
+import FadeUp from "../../../components/animations/FadeUp";
 
 /* --- Hooks & Utility Components --- */
 
@@ -62,45 +63,58 @@ const AnimatedSection = ({ children, delay = 0, className = "" }) => {
 export default function OperationAndDemo() {
     return (
         <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-orange-600/30">
-            {/* Background Ambience */}
-            <div className="fixed inset-0 pointer-events-none z-0">
-                <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-orange-600/5 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-cyan-600/5 rounded-full blur-[100px]" />
-            </div>
+            {/* Background Glows */}
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+            <div className="absolute middle-0 left-0 w-[500px] h-[500px] bg-orange-500/5 blur-[130px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
             {/* Hero Section */}
-            <section className="relative min-h-[85vh] flex items-center justify-center px-6 overflow-hidden pt-20">
-                <div className="max-w-7xl mx-auto relative z-10 w-full text-center">
-                    <AnimatedSection>
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8 hover:bg-white/10 transition-colors cursor-default">
-                            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-                            <span className="text-xs font-semibold tracking-wide uppercase text-neutral-300">Operational Integrity</span>
-                        </div>
-
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[0.95] tracking-tight">
-                            BPP Operations & <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
-                                Demo Authority
-                            </span>
-                        </h1>
-
-                        <p className="text-xl md:text-2xl text-neutral-400 mb-10 leading-relaxed max-w-3xl mx-auto font-light">
-                            Scale With Authority. Operate With Control.
-                        </p>
-
-                        <div className="flex flex-wrap justify-center gap-4">
-                            {[
-                                "BPP leads expansion",
-                                "Zryoss governs execution",
-                                "Clear Boundaries"
-                            ].map((item, i) => (
-                                <div key={i} className="px-6 py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm text-neutral-300 flex items-center gap-2">
-                                    <ShieldCheck size={16} className="text-orange-500" />
-                                    {item}
+            <section className="relative pt-40 pb-24 overflow-hidden border-b border-white/5">
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Column: Content */}
+                        <div>
+                            <FadeUp>
+                                <div className="inline-flex items-center gap-2 text-orange-500 text-xs uppercase tracking-[0.45em] mb-6 font-bold">
+                                    <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+                                    Operational Integrity
                                 </div>
-                            ))}
+                                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+                                    BPP Operations & <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                                        Demo Authority
+                                    </span>
+                                </h1>
+                                <p className="text-xl text-gray-400 leading-relaxed font-light mb-8">
+                                    Scale With Authority. Operate With Control.
+                                </p>
+
+                                <div className="flex flex-wrap gap-4">
+                                    {[
+                                        "BPP leads expansion",
+                                        "Zryoss governs execution",
+                                        "Clear Boundaries"
+                                    ].map((item, i) => (
+                                        <div key={i} className="px-6 py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm text-neutral-300 flex items-center gap-2">
+                                            <ShieldCheck size={16} className="text-orange-500" />
+                                            {item}
+                                        </div>
+                                    ))}
+                                </div>
+                            </FadeUp>
                         </div>
-                    </AnimatedSection>
+
+                        {/* Right Column: Image */}
+                        <div className="relative hidden lg:block">
+                            <FadeUp delay={0.2}>
+                                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-600/20 blur-3xl rounded-3xl transform rotate-3" />
+                                <img
+                                    src="/BPP Operations & Demo Authority.png"
+                                    alt="BPP Operations & Demo Authority"
+                                    className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                                />
+                            </FadeUp>
+                        </div>
+                    </div>
                 </div>
             </section>
 

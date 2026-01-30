@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
   Layers,
   ShieldCheck,
@@ -31,6 +32,7 @@ const audiences = [
 ];
 
 export default function Overview() {
+  const navigate = useNavigate();
   return (
     <div className="bg-[#050505] text-white overflow-hidden">
       {/* =====================================================
@@ -368,7 +370,9 @@ export default function Overview() {
               Talk to Zryoss about structured execution for your business.
             </p>
 
-            <button className="relative inline-flex items-center gap-2 px-10 py-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg transition shadow-[0_0_26px_rgba(249,115,22,0.28)]">
+            <button
+              onClick={() => navigate("/contact")}
+              className="relative inline-flex items-center gap-2 px-10 py-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg transition shadow-[0_0_26px_rgba(249,115,22,0.28)]">
               Talk to Zryoss <ArrowRight className="w-5 h-5" />
             </button>
           </div>

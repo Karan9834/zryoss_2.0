@@ -1,5 +1,6 @@
 import FadeUp from "../../components/animations/FadeUp";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
     Network as NetworkIcon,
     Users as UsersIcon,
@@ -31,6 +32,7 @@ const heroBgImage = "/images/ecosystem/vendor-bg.png";
 const vendorAppImage = "/images/ecosystem/vendor-app.png";
 
 export default function Vendors() {
+    const navigate = useNavigate();
     const categories = [
         {
             name: "Technology & Software",
@@ -351,7 +353,9 @@ export default function Vendors() {
                         <p className="text-gray-400 text-lg mb-12 font-light max-w-2xl mx-auto">
                             Are you a specialized service provider? Plug into the Zryoss engine and scale your business with professional execution and governance.
                         </p>
-                        <button className="px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold transition-all hover:scale-105 shadow-xl shadow-orange-500/20 flex items-center gap-2 mx-auto">
+                        <button
+                            onClick={() => navigate("/contact")}
+                            className="px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold transition-all hover:scale-105 shadow-xl shadow-orange-500/20 flex items-center gap-2 mx-auto">
                             Partner Application <ArrowIcon size={20} />
                         </button>
                     </FadeUp>

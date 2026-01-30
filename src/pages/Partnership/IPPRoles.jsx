@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import FadeUp from "../../components/animations/FadeUp";
 import Button from "../../components/ui/Button";
 
 export default function IPPRoles() {
+  const navigate = useNavigate();
   return (
     <section className="py-32">
       <div className="max-w-7xl mx-auto px-6">
@@ -20,7 +22,7 @@ export default function IPPRoles() {
             and how Zryoss supports them operationally.
           </p>
         </FadeUp>
-        
+
 
         {/* CORE RESPONSIBILITIES */}
         <div className="mt-24 grid md:grid-cols-3 gap-8">
@@ -112,8 +114,8 @@ export default function IPPRoles() {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button primary>Apply as IPP</Button>
-              <Button outline>Talk to Zryoss Team</Button>
+              <Button primary onClick={() => navigate("/contact")}>Apply as IPP</Button>
+              <Button outline onClick={() => navigate("/contact")}>Talk to Zryoss Team</Button>
             </div>
           </div>
         </FadeUp>

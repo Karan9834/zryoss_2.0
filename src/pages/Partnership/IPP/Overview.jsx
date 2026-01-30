@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowRight,
   CheckCircle2,
@@ -14,6 +15,7 @@ import {
   Plus,
   Minus,
 } from "lucide-react";
+import FadeUp from "../../../components/animations/FadeUp";
 
 /* ---------------- Hooks & Utility Components ---------------- */
 
@@ -68,8 +70,8 @@ const SectionHeader = ({
     accent === "strong"
       ? "text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400"
       : accent === "soft"
-      ? "text-white"
-      : "text-white";
+        ? "text-white"
+        : "text-white";
 
   return (
     <div className={`${isCenter ? "text-center" : "text-left"} mb-14`}>
@@ -85,26 +87,23 @@ const SectionHeader = ({
 
       {/* title */}
       <h2
-        className={`text-4xl md:text-5xl font-bold tracking-tight mb-5 ${
-          variant === "alt" ? "leading-[1.05]" : ""
-        }`}
+        className={`text-4xl md:text-5xl font-bold tracking-tight mb-5 ${variant === "alt" ? "leading-[1.05]" : ""
+          }`}
       >
         <span className={titleAccent}>{title}</span>
       </h2>
 
       {/* subtle divider line */}
       <div
-        className={`h-px ${
-          isCenter ? "mx-auto" : ""
-        } w-24 bg-gradient-to-r from-orange-500/40 via-white/10 to-transparent mb-6`}
+        className={`h-px ${isCenter ? "mx-auto" : ""
+          } w-24 bg-gradient-to-r from-orange-500/40 via-white/10 to-transparent mb-6`}
       />
 
       {/* subtitle */}
       {subtitle && (
         <p
-          className={`text-neutral-400 text-lg leading-relaxed font-light ${
-            isCenter ? "max-w-3xl mx-auto" : "max-w-2xl"
-          }`}
+          className={`text-neutral-400 text-lg leading-relaxed font-light ${isCenter ? "max-w-3xl mx-auto" : "max-w-2xl"
+            }`}
         >
           {subtitle}
         </p>
@@ -122,29 +121,26 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
         className="w-full py-6 flex items-center justify-between text-left group"
       >
         <span
-          className={`text-lg font-medium transition-colors ${
-            isOpen
-              ? "text-orange-500"
-              : "text-white group-hover:text-orange-400"
-          }`}
+          className={`text-lg font-medium transition-colors ${isOpen
+            ? "text-orange-500"
+            : "text-white group-hover:text-orange-400"
+            }`}
         >
           {question}
         </span>
         <div
-          className={`p-2 rounded-full transition-all ${
-            isOpen
-              ? "bg-orange-600 rotate-180"
-              : "bg-white/5 group-hover:bg-white/10"
-          }`}
+          className={`p-2 rounded-full transition-all ${isOpen
+            ? "bg-orange-600 rotate-180"
+            : "bg-white/5 group-hover:bg-white/10"
+            }`}
         >
           {isOpen ? <Minus size={16} /> : <Plus size={16} />}
         </div>
       </button>
 
       <div
-        className={`grid transition-[grid-template-rows] duration-500 ease-out ${
-          isOpen ? "grid-rows-[1fr] opacity-100 pb-8" : "grid-rows-[0fr] opacity-0"
-        }`}
+        className={`grid transition-[grid-template-rows] duration-500 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100 pb-8" : "grid-rows-[0fr] opacity-0"
+          }`}
       >
         <div className="overflow-hidden">
           <p className="text-neutral-400 text-base leading-relaxed max-w-2xl">
@@ -159,6 +155,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
 /* ---------------- Main Page ---------------- */
 
 export default function Overview() {
+  const navigate = useNavigate();
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
   const checklist = [
@@ -269,62 +266,65 @@ export default function Overview() {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-orange-600/30">
-      {/* Ambient Background */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-orange-600/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[100px]" />
-      </div>
+      {/* Background Glows */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute middle-0 left-0 w-[500px] h-[500px] bg-orange-500/5 blur-[130px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
-      {/* ---------------- HERO ---------------- */}
-      <section className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000"
-            className="w-full h-full object-cover opacity-25"
-            alt="Background"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10 w-full">
-          <AnimatedSection>
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8">
-                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-                <span className="text-xs font-semibold tracking-wide uppercase text-neutral-300">
+      {/* Hero Section */}
+      <section className="relative pt-40 pb-24 overflow-hidden border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Content */}
+            <div>
+              <FadeUp>
+                <div className="inline-flex items-center gap-2 text-orange-500 text-xs uppercase tracking-[0.45em] mb-6 font-bold">
+                  <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                   IPP – Independent Prime Partner
-                </span>
-              </div>
+                </div>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+                  Build Your Own Brand. <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                    Operate on a Proven System.
+                  </span>
+                </h1>
+                <p className="text-xl text-gray-400 leading-relaxed font-light mb-8">
+                  An Independent Prime Partner (IPP) is an individual or founder who builds and operates their own independent business brand, while using <span className="text-white font-medium">Zryoss</span> as the backend operating system.
+                </p>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight mb-6">
-                Build Your Own Brand.
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
-                  Operate on a Proven System.
-                </span>
-              </h1>
-
-              <p className="text-lg md:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto font-light mb-10">
-                An Independent Prime Partner (IPP) is an individual or founder who
-                builds and operates their own independent business brand, while using
-                <span className="text-white font-medium"> Zryoss</span> as the backend
-                operating system.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button className="px-8 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold text-base transition-all hover:scale-[1.03] shadow-[0_0_30px_-12px_rgba(234,88,12,0.5)] flex items-center justify-center gap-2">
-                  Start IPP Journey <ArrowRight size={18} />
-                </button>
-
-                <a
-                  href="#brand-creation"
-                  className="px-8 py-4 bg-transparent border border-neutral-700 hover:border-white rounded-full font-bold text-base transition-all hover:bg-white/5 flex items-center justify-center gap-2"
-                >
-                  Brand Creation Process <ArrowRight size={18} />
-                </a>
-              </div>
+                <div className="p-8 border border-white/10 bg-white/5 rounded-[24px] backdrop-blur-sm inline-block w-full shadow-2xl relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <p className="text-lg text-gray-300 relative z-10 leading-relaxed italic">
+                    "Ownership without chaos. <strong className="text-white">Growth without operational burnout.</strong>"
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                  <button
+                    onClick={() => navigate("/apply")}
+                    className="px-8 py-4 bg-orange-600 hover:bg-orange-500 text-white rounded-full font-bold text-base transition-all hover:scale-[1.03] shadow-[0_0_30px_-12px_rgba(234,88,12,0.5)] flex items-center justify-center gap-2">
+                    Start IPP Journey <ArrowRight size={18} />
+                  </button>
+                  <a
+                    href="#brand-creation"
+                    className="px-8 py-4 bg-transparent border border-white/10 hover:border-white text-white rounded-full font-bold text-base transition-all hover:bg-white/5 flex items-center justify-center gap-2"
+                  >
+                    Brand Creation Process <ArrowRight size={18} />
+                  </a>
+                </div>
+              </FadeUp>
             </div>
-          </AnimatedSection>
+
+            {/* Right Column: Image */}
+            <div className="relative hidden lg:block">
+              <FadeUp delay={0.2}>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-600/20 blur-3xl rounded-3xl transform rotate-3" />
+                <img
+                  src="/Independent Prime Partner.jpg"
+                  alt="IPP - Independent Prime Partner"
+                  className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                />
+              </FadeUp>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -332,13 +332,13 @@ export default function Overview() {
       <section className="py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-              label="Program Overview"
-              title="What Exactly Is an IPP?"
-              subtitle="Clear definition, clarity on what you get, and why this model is designed for ownership-first founders."
-              align="left"
-              variant="alt"
-              accent="soft"
-            />
+            label="Program Overview"
+            title="What Exactly Is an IPP?"
+            subtitle="Clear definition, clarity on what you get, and why this model is designed for ownership-first founders."
+            align="left"
+            variant="alt"
+            accent="soft"
+          />
 
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -708,16 +708,18 @@ export default function Overview() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-10 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold transition-all hover:scale-[1.03] flex items-center justify-center gap-2">
+              <button
+                onClick={() => navigate("/apply")}
+                className="px-10 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold transition-all hover:scale-[1.03] flex items-center justify-center gap-2">
                 Apply for IPP Partnership <ArrowRight size={18} />
               </button>
 
-              <a
+              {/* <a
                 href="#"
                 className="px-10 py-4 bg-transparent border border-neutral-700 hover:border-white rounded-full font-bold transition-all hover:bg-white/5"
               >
                 Download IPP Overview
-              </a>
+              </a> */}
             </div>
           </AnimatedSection>
         </div>

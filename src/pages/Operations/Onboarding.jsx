@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowRight,
   CheckCircle2,
@@ -28,6 +29,7 @@ import {
 } from "lucide-react";
 
 export default function Onboarding() {
+  const navigate = useNavigate();
   const [openStep, setOpenStep] = useState("step-1");
 
   // ✅ 7 real onboarding steps (NO CONTENT LOSS)
@@ -757,7 +759,9 @@ export default function Onboarding() {
           </p>
 
           <div className="mt-10 flex justify-center">
-            <button className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#FF6A00] text-white font-bold hover:brightness-110 transition">
+            <button
+              onClick={() => navigate("/contact")}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#FF6A00] text-white font-bold hover:brightness-110 transition">
               Start Your Onboarding Journey <ArrowRight className="w-5 h-5" />
             </button>
           </div>

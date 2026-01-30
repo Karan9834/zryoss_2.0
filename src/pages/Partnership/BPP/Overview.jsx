@@ -14,6 +14,7 @@ import {
   Wallet,
   Crown,
 } from "lucide-react";
+import FadeUp from "../../../components/animations/FadeUp";
 import { useNavigate } from "react-router-dom";
 
 /* ---------------- Hooks & Utility ---------------- */
@@ -69,64 +70,61 @@ export default function Overview() {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-orange-600/30">
-      {/* Ambient Background */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-orange-600/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[100px]" />
-      </div>
+      {/* Background Glows */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute middle-0 left-0 w-[500px] h-[500px] bg-orange-500/5 blur-[130px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
-      {/* ---------------- HERO ---------------- */}
-      <section className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2200"
-            className="w-full h-full object-cover opacity-25"
-            alt="Background"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10 w-full">
-          <AnimatedSection>
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8">
-                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-                <span className="text-xs font-semibold tracking-wide uppercase text-neutral-300">
+      {/* Hero Section */}
+      <section className="relative pt-40 pb-24 overflow-hidden border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Content */}
+            <div>
+              <FadeUp>
+                <div className="inline-flex items-center gap-2 text-orange-500 text-xs uppercase tracking-[0.45em] mb-6 font-bold">
+                  <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                   BPP – Independent Business Partner
-                </span>
-              </div>
+                </div>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+                  Build Multiple Businesses at Scale <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                    on One Operating System
+                  </span>
+                </h1>
+                <p className="text-xl text-gray-400 leading-relaxed font-light mb-8">
+                  An Independent Business Partner (BPP) is a scale-focused business partner who operates multiple business verticals under their own independent business identity—powered by <span className="text-white font-medium">Zryoss</span> as the centralized backend operating system.
+                </p>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight mb-6">
-                Build Multiple Businesses at Scale
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
-                  on One Operating System
-                </span>
-              </h1>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button
+                    onClick={() => navigate('/apply')}
+                    className="px-8 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold text-base transition-all hover:scale-[1.03] shadow-[0_0_30px_-12px_rgba(234,88,12,0.5)] flex items-center justify-center gap-2 text-white"
+                  >
+                    Become a BPP <ArrowRight size={18} />
+                  </button>
 
-              <p className="text-lg md:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto font-light mb-10">
-                An Independent Business Partner (BPP) is a scale-focused business partner
-                who operates multiple business verticals under their own independent
-                business identity—powered by <span className="text-white font-medium">Zryoss</span> as the centralized backend operating system.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button
-                  onClick={() => navigate('/apply')}
-                  className="px-8 py-4 bg-orange-600 hover:bg-orange-500 rounded-full font-bold text-base transition-all hover:scale-[1.03] shadow-[0_0_30px_-12px_rgba(234,88,12,0.5)] flex items-center justify-center gap-2"
-                >
-                  Become a BPP <ArrowRight size={18} />
-                </button>
-
-                <a
-                  href="#charges"
-                  className="px-8 py-4 bg-transparent border border-neutral-700 hover:border-white rounded-full font-bold text-base transition-all hover:bg-white/5 flex items-center justify-center gap-2"
-                >
-                  View Charges <ArrowRight size={18} />
-                </a>
-              </div>
+                  <a
+                    href="#charges"
+                    className="px-8 py-4 bg-transparent border border-white/10 hover:border-white rounded-full font-bold text-base transition-all hover:bg-white/5 flex items-center justify-center gap-2 text-white"
+                  >
+                    View Charges <ArrowRight size={18} />
+                  </a>
+                </div>
+              </FadeUp>
             </div>
-          </AnimatedSection>
+
+            {/* Right Column: Image */}
+            <div className="relative hidden lg:block">
+              <FadeUp delay={0.2}>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-600/20 blur-3xl rounded-3xl transform rotate-3" />
+                <img
+                  src="/BPP Overview.png"
+                  alt="Build Multiple Businesses at Scale"
+                  className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                />
+              </FadeUp>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -676,9 +674,9 @@ export default function Overview() {
                 Apply for BPP <ArrowRight size={18} />
               </button>
 
-              <button className="px-10 py-4 bg-transparent border border-neutral-700 hover:border-white rounded-full font-bold transition-all hover:bg-white/5">
+              {/* <button className="px-10 py-4 bg-transparent border border-neutral-700 hover:border-white rounded-full font-bold transition-all hover:bg-white/5">
                 Download Overview
-              </button>
+              </button> */}
             </div>
           </AnimatedSection>
         </div>

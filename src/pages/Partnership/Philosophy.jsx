@@ -14,6 +14,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import FadeUp from "../../components/animations/FadeUp";
 
 const Philosophy = () => {
   useEffect(() => {
@@ -23,41 +24,57 @@ const Philosophy = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-orange-500/30">
 
+      {/* Background Glows */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute middle-0 left-0 w-[500px] h-[500px] bg-orange-500/5 blur-[130px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
-        {/* Background */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-[-20%] left-[10%] w-[500px] h-[500px] bg-orange-600/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-[0%] right-[0%] w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px]" />
-          <div className="absolute inset-0 bg-[url('/philosophy_hero.png')] bg-cover bg-center opacity-30 mix-blend-screen"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]"></div>
-        </div>
+      <section className="relative pt-40 pb-24 overflow-hidden border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Content */}
+            <div>
+              <FadeUp>
+                <div className="inline-flex items-center gap-2 text-orange-500 text-xs uppercase tracking-[0.45em] mb-6 font-bold">
+                  <Scale size={14} />
+                  Partnership Philosophy
+                </div>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
+                  Building Businesses With <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                    Structure, Not Shortcuts
+                  </span>
+                </h1>
+                <p className="text-xl text-gray-400 leading-relaxed font-light mb-8">
+                  At Zryoss, partnership is not about expansion for numbers. It is about building sustainable businesses through systems.
+                </p>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium mb-8">
-            <Scale size={14} />
-            Partnership Philosophy
-          </div>
+                <div className="flex flex-col gap-3 text-sm text-gray-400 mb-10 font-light">
+                  <span className="flex items-center gap-3"><AlertTriangle size={16} className="text-orange-500" /> No fast growth without control</span>
+                  <span className="flex items-center gap-3"><AlertTriangle size={16} className="text-orange-500" /> No income promises without execution</span>
+                  <span className="flex items-center gap-3"><AlertTriangle size={16} className="text-orange-500" /> No recruitment without responsibility</span>
+                </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-            Building Businesses With <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-white">
-              Structure, Not Shortcuts
-            </span>
-          </h1>
+                <div className="p-8 border border-white/10 bg-white/5 rounded-[24px] backdrop-blur-sm inline-block w-full shadow-2xl relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <p className="text-lg text-gray-300 relative z-10 leading-relaxed italic">
+                    "Zryoss believes in <strong className="text-white">long-term value creation</strong>, backed by a strong operating foundation."
+                  </p>
+                </div>
+              </FadeUp>
+            </div>
 
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-            At Zryoss, partnership is not about expansion for numbers. It is about building sustainable businesses through systems.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500 mb-12">
-            <span className="flex items-center gap-2"><AlertTriangle size={16} className="text-red-500" /> No fast growth without control</span>
-            <span className="flex items-center gap-2"><AlertTriangle size={16} className="text-red-500" /> No income promises without execution</span>
-            <span className="flex items-center gap-2"><AlertTriangle size={16} className="text-red-500" /> No recruitment without responsibility</span>
-          </div>
-
-          <div className="p-4 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm inline-block">
-            <p className="text-gray-300 italic">"Zryoss believes in <strong className="text-white">long-term value creation</strong>, backed by a strong operating foundation."</p>
+            {/* Right Column: Image */}
+            <div className="relative hidden lg:block">
+              <FadeUp delay={0.2}>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-600/20 blur-3xl rounded-3xl transform rotate-3" />
+                <img
+                  src="/Partnership Philosophy.jpg"
+                  alt="Partnership Philosophy"
+                  className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                />
+              </FadeUp>
+            </div>
           </div>
         </div>
       </section>

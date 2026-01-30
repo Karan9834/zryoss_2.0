@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowRight,
   AlertTriangle,
@@ -27,6 +28,7 @@ import {
 } from "lucide-react";
 
 export default function SLAManagement() {
+  const navigate = useNavigate();
   const [openLayer, setOpenLayer] = useState("qa-1");
 
   const scrollToSlaFramework = () => {
@@ -841,7 +843,9 @@ export default function SLAManagement() {
           </p>
 
           <div className="mt-10 flex justify-center">
-            <button className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#FF6A00] text-white font-bold hover:brightness-110 transition">
+            <button
+              onClick={() => navigate("/contact")}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#FF6A00] text-white font-bold hover:brightness-110 transition">
               Start Quality-Driven Execution <ArrowRight className="w-5 h-5" />
             </button>
           </div>

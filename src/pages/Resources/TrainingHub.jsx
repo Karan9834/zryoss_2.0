@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
     GraduationCap,
@@ -137,6 +138,7 @@ const verticals = [
 ];
 
 export default function TrainingHub() {
+    const navigate = useNavigate();
     return (
         <div className="bg-[#050505] text-white min-h-screen">
             {/* Hero Section */}
@@ -381,7 +383,9 @@ export default function TrainingHub() {
                             <button className="px-10 py-5 bg-orange-500 text-white font-bold rounded-2xl hover:bg-orange-600 transition-all shadow-xl shadow-orange-500/20 hover:scale-105">
                                 Explore Training Documents
                             </button>
-                            <button className="px-10 py-5 bg-white/5 border border-white/10 text-white font-bold rounded-2xl hover:bg-white/10 transition-all">
+                            <button
+                                onClick={() => navigate("/contact")}
+                                className="px-10 py-5 bg-white/5 border border-white/10 text-white font-bold rounded-2xl hover:bg-white/10 transition-all">
                                 Request Live Webinar
                             </button>
                         </div>

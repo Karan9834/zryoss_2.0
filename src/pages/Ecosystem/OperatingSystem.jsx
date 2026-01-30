@@ -1,5 +1,6 @@
 import FadeUp from "../../components/animations/FadeUp";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
   Settings,
   Workflow,
@@ -34,6 +35,7 @@ const heroBgImage = "/images/ecosystem/os-bg.png";
 const velocityImage = "/images/ecosystem/os-velocity.png";
 
 export default function OperatingSystem() {
+  const navigate = useNavigate();
   const coreModules = [
     {
       title: "Control Center",
@@ -91,7 +93,9 @@ export default function OperatingSystem() {
 
               {/* CTA */}
               <div className="flex flex-wrap gap-4 mb-6">
-                <button className="rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:shadow-orange-500/60 transition inline-flex items-center gap-2">
+                <button
+                  onClick={() => navigate("/apply")}
+                  className="rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:shadow-orange-500/60 transition inline-flex items-center gap-2">
                   Request Demo <ArrowRight size={18} />
                 </button>
               </div>
@@ -177,9 +181,9 @@ export default function OperatingSystem() {
                       <p className="text-gray-300 text-lg font-light leading-relaxed mb-8">
                         {item.desc}
                       </p>
-                      <button className="flex items-center gap-2 text-orange-400 font-bold group">
+                      {/* <button className="flex items-center gap-2 text-orange-400 font-bold group">
                         Learn Detail <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                   <div className="md:w-1/2">
@@ -333,7 +337,9 @@ export default function OperatingSystem() {
             <p className="text-gray-400 text-lg mb-12 font-light">
               Become part of a structured business environment where your focus is 100% on results, while we manage the operational baseline.
             </p>
-            <button className="px-12 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold transition-all hover:scale-105 shadow-xl shadow-orange-500/20">
+            <button
+              onClick={() => navigate("/contact")}
+              className="px-12 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold transition-all hover:scale-105 shadow-xl shadow-orange-500/20">
               Get Started Today
             </button>
           </FadeUp>

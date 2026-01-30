@@ -1,5 +1,6 @@
 import FadeUp from "../../components/animations/FadeUp";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
     Users,
     ShieldCheck,
@@ -29,6 +30,7 @@ const heroBgImage = "/images/ecosystem/account-bg.png";
 const sentimentImage = "/images/ecosystem/account-sentiment.png";
 
 export default function AccountManagement() {
+    const navigate = useNavigate();
     const pillars = [
         {
             title: "Success Ownership",
@@ -349,8 +351,10 @@ export default function AccountManagement() {
                         <p className="text-gray-400 text-lg mb-12 font-light">
                             Focus on the relationship, while the Zryoss engine handles the complexity of delivery and governance.
                         </p>
-                        <button className="px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold transition-all hover:scale-105 shadow-xl shadow-orange-500/20">
-                            Explore Integration
+                        <button
+                            onClick={() => navigate("/contact")}
+                            className="px-10 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold transition-all hover:scale-105 shadow-xl shadow-orange-500/20">
+                            Get Started Today
                         </button>
                     </FadeUp>
                 </div>
