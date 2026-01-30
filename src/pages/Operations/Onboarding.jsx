@@ -251,7 +251,7 @@ export default function Onboarding() {
             </div>
 
             {/* Right Column: Image with Black Background Container */}
-            <div className="relative hidden lg:block">
+            <div className="relative mt-10 lg:mt-0">
               <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
               <div className="relative bg-black rounded-3xl shadow-2xl border border-white/10 py-16 px-8 min-h-[500px] flex items-center justify-center">
                 <img

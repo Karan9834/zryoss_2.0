@@ -71,6 +71,7 @@ import OpsFAQs from "../pages/Operations/FAQs";
 import QualityAssurance from "../pages/Operations/QualityAssurance";
 import OpsAccountManagement from "../pages/Operations/AccountManagement";
 import VendorCoordination from "../pages/Operations/VendorCoordination";
+import Delivery from "../pages/Operations/Delivery";
 import Reporting from "../pages/Operations/Reporting";
 
 // Resources
@@ -165,6 +166,7 @@ export default function AppRoutes() {
       <Route path="/operations/quality-assurance" element={<QualityAssurance />} />
       <Route path="/operations/account-management" element={<OpsAccountManagement />} />
       <Route path="/operations/vendor-coordination" element={<VendorCoordination />} />
+      <Route path="/operations/delivery" element={<Delivery />} />
       <Route path="/operations/reporting" element={<Reporting />} />
 
       {/* Resources */}

@@ -72,7 +72,7 @@ const ITSoftware = () => {
                         </div>
 
                         {/* Right Column: Image */}
-                        <div className="relative hidden lg:block">
+                        <div className="relative mt-10 lg:mt-0">
                             <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-blue-600/20 blur-3xl rounded-3xl transform rotate-3" />
                             <img
                                 src="/solution-hero-images/IT_Software.jpg"

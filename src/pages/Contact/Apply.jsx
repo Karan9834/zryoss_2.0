@@ -35,6 +35,17 @@ const FadeUp = ({ children, delay = 0 }) => {
   );
 };
 
+/* ================= CONSTANTS ================= */
+const INPUT =
+  "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 outline-none focus:border-orange-400/60 focus:ring-1 focus:ring-orange-400/20 transition-all duration-300";
+
+const ErrorBubble = ({ msg }) => (
+  <div className="absolute -top-10 left-0 bg-orange-600 text-white text-[10px] font-bold py-1.5 px-3 rounded-lg animate-in fade-in slide-in-from-bottom-1 z-50 flex items-center gap-1.5 shadow-xl">
+    <AlertCircle size={12} /> {msg}
+    <div className="absolute -bottom-1 left-4 w-2 h-2 bg-orange-600 rotate-45" />
+  </div>
+);
+
 /* ================= MAIN ================= */
 export default function ApplyPage() {
   const formRef = useRef();
@@ -45,16 +56,16 @@ export default function ApplyPage() {
     phone: "",
     companyName: "",
     partnerRole: "",
-    partnerType: "ipp",
+    partnerType: "ipp", // default
     experience: "",
     message: "",
     heardFrom: "website",
   });
 
   const [errors, setErrors] = useState({});
-  const [file, setFile] = useState(null);
   const [submitted, setSubmitted] = useState(false);
 
+  // Validation Logic
   const validate = () => {
     let tempErrors = {};
     if (!formData.first_name.trim()) tempErrors.first_name = "Full Name is required";
@@ -66,10 +77,10 @@ export default function ApplyPage() {
       tempErrors.email = "Invalid email format";
     }
 
-    if (!formData.phone.trim()) {
+    if (!formData.phone) {
       tempErrors.phone = "Phone number is required";
-    } else if (formData.phone.length < 10) {
-      tempErrors.phone = "Invalid phone number";
+    } else if (formData.phone.length !== 10) {
+      tempErrors.phone = "Enter a valid 10-digit number";
     }
 
     if (!formData.message.trim()) tempErrors.message = "Message is required";
@@ -79,7 +90,7 @@ export default function ApplyPage() {
   };
 
   const handleSubmit = async (e) => {
-    if (e) e.preventDefault();
+    e.preventDefault();
     if (validate()) {
       const result = await sendEmail(formRef);
       if (result.success) {
@@ -92,17 +103,27 @@ export default function ApplyPage() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    let finalValue = value;
+
+    // Phone: only digits, max 10
+    if (name === "phone") {
+      finalValue = value.replace(/\D/g, "").slice(0, 10);
+    }
+
+    setFormData({ ...formData, [name]: finalValue });
+
+    // Clear error
     if (errors[name]) {
-      setErrors({ ...errors, [name]: "" });
+      const newErrors = { ...errors };
+      delete newErrors[name];
+      setErrors(newErrors);
     }
   };
 
-  const handleFileChange = (e) => {
-    if (e.target.files && e.target.files[0]) setFile(e.target.files[0]);
-  };
+  // ... (rest of the component)
 
   const benefits = [
+    // ... benefits array
     {
       icon: <TrendingUp className="w-6 h-6" />,
       title: "Performance-Based Earnings",
@@ -134,7 +155,7 @@ export default function ApplyPage() {
           </p>
           <button
             onClick={() => setSubmitted(false)}
-            className="px-6 py-3 bg-white/10 rounded-lg"
+            className="px-6 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
           >
             Submit Another Application
           </button>
@@ -197,7 +218,7 @@ export default function ApplyPage() {
 
             {/* IPP */}
             <div className="group p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-orange-500/50 hover:bg-white/[0.05] transition-all duration-500 hover:scale-[1.02]">
-              <h3 className="text-xl font-bold text-orange-400 mb-2 group-hover:text-blue-400 transition-colors">
+              <h3 className="text-xl font-bold text-orange-400 mb-2 transition-colors">
                 Independent Prime Partner (IPP)
               </h3>
               <p className="text-sm text-gray-400 mb-4">
@@ -225,7 +246,7 @@ export default function ApplyPage() {
 
             {/* BPP */}
             <div className="group p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-orange-500/50 hover:bg-white/[0.05] transition-all duration-500 hover:scale-[1.02]">
-              <h3 className="text-xl font-bold text-orange-400 mb-2 group-hover:text-blue-400 transition-colors">
+              <h3 className="text-xl font-bold text-orange-400 mb-2 transition-colors">
                 Business Prime Partner (BPP)
               </h3>
               <p className="text-sm text-gray-400 mb-4">
@@ -275,12 +296,12 @@ export default function ApplyPage() {
                   </div>
                 </a>
 
-                <div className="flex items-center gap-4 text-gray-400">
+                <div className="flex items-center gap-4 text-gray-300">
                   <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-gray-500" />
+                    <Clock className="w-5 h-5 text-orange-400" />
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-gray-600 font-bold">Operating Hours</p>
+                    <p className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Operating Hours</p>
                     <p className="text-sm font-medium">Mon–Fri, 10AM–6PM IST</p>
                   </div>
                 </div>
@@ -296,55 +317,72 @@ export default function ApplyPage() {
               </h2>
 
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                <div>
+                <div className="relative">
+                  {errors.first_name && <ErrorBubble msg={errors.first_name} />}
                   <input
                     name="first_name"
                     value={formData.first_name}
                     onChange={handleChange}
                     placeholder="Full Name"
-                    className={`w-full px-4 py-3 bg-white/5 border rounded-lg ${errors.first_name ? 'border-red-500' : 'border-white/10'}`}
+                    className={INPUT}
                   />
-                  {errors.first_name && <span className="text-red-500 text-xs flex items-center gap-1 mt-1"><AlertCircle size={10} /> {errors.first_name}</span>}
                 </div>
-                <div>
+
+                <div className="relative">
+                  {errors.email && <ErrorBubble msg={errors.email} />}
                   <input
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Email"
-                    className={`w-full px-4 py-3 bg-white/5 border rounded-lg ${errors.email ? 'border-red-500' : 'border-white/10'}`}
+                    className={INPUT}
                   />
-                  {errors.email && <span className="text-red-500 text-xs flex items-center gap-1 mt-1"><AlertCircle size={10} /> {errors.email}</span>}
                 </div>
-                <div>
+
+                <div className="relative">
+                  {errors.phone && <ErrorBubble msg={errors.phone} />}
+                  <div className="relative flex items-center">
+                    <div className="absolute left-4 flex items-center gap-2 pr-3 border-r border-white/10 h-6">
+                      <img src="https://flagcdn.com/w20/in.png" alt="India" className="w-4 h-auto opacity-80" />
+                      <span className="text-orange-500 font-bold text-sm">+91</span>
+                    </div>
+                    <input
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="Phone Number"
+                      className={`${INPUT} pl-24`}
+                    />
+                  </div>
+                </div>
+
+                <div className="relative">
                   <input
-                    name="phone"
-                    value={formData.phone}
+                    name="companyName"
+                    value={formData.companyName}
                     onChange={handleChange}
-                    placeholder="Phone"
-                    className={`w-full px-4 py-3 bg-white/5 border rounded-lg ${errors.phone ? 'border-red-500' : 'border-white/10'}`}
+                    placeholder="Company Name"
+                    className={INPUT}
                   />
-                  {errors.phone && <span className="text-red-500 text-xs flex items-center gap-1 mt-1"><AlertCircle size={10} /> {errors.phone}</span>}
                 </div>
 
-                <input name="companyName" value={formData.companyName} onChange={handleChange} placeholder="Company Name" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg" />
-
-                <div>
+                <div className="relative">
+                  {errors.message && <ErrorBubble msg={errors.message} />}
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows="4"
                     placeholder="Tell us about your business"
-                    className={`w-full px-4 py-3 bg-white/5 border rounded-lg ${errors.message ? 'border-red-500' : 'border-white/10'}`}
+                    className={`${INPUT} resize-none`}
                   />
-                  {errors.message && <span className="text-red-500 text-xs flex items-center gap-1 mt-1"><AlertCircle size={10} /> {errors.message}</span>}
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-gradient-to-r from-orange-600 to-red-600 py-4 rounded-lg font-bold flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-orange-600 to-red-600 py-4 rounded-lg font-bold flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed transform hover:scale-[1.01] transition-all"
                 >
                   {loading ? "Submitting..." : "Submit Application"}
                   {!loading && <Send className="w-5 h-5" />}

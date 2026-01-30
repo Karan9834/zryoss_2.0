@@ -62,7 +62,7 @@ const Overview = () => {
             </div>
 
             {/* Right Column: Image */}
-            <div className="relative hidden lg:block">
+            <div className="relative mt-10 lg:mt-0">
               <FadeUp delay={0.2}>
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-600/20 blur-3xl rounded-3xl transform rotate-3" />
                 <img
