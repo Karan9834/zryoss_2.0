@@ -1,14 +1,14 @@
 import React from "react";
 
 const FadeUp = ({ children, delay = 0 }) => {
-  return (
-    <div 
-      className="opacity-0 animate-fadeUp"
-      style={{ animationDelay: `${delay}s`, animationFillMode: 'forwards' }}
-    >
-      {children}
-    </div>
-  );
+    return (
+        <div
+            className="opacity-0 animate-fadeUp"
+            style={{ animationDelay: `${delay}s`, animationFillMode: 'forwards' }}
+        >
+            {children}
+        </div>
+    );
 };
 
 const problems = [
@@ -82,7 +82,7 @@ export default function ProblemSection() {
                             <div className="relative p-8 rounded-3xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 hover:border-orange-500/40 transition-all duration-500 group h-full hover:shadow-2xl hover:shadow-orange-500/10 hover:-translate-y-2">
                                 {/* Hover Glow Effect */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                                
+
                                 <div className="relative z-10">
                                     <div className="text-5xl mb-6 grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6">
                                         {prob.icon}
@@ -103,32 +103,46 @@ export default function ProblemSection() {
                 </div>
 
                 <FadeUp delay={0.5}>
-                    <div className="max-w-4xl mx-auto p-10 md:p-12 rounded-3xl bg-gradient-to-br from-orange-500/10 via-orange-500/5 to-transparent border border-orange-500/30 text-center relative overflow-hidden group hover:border-orange-500/50 transition-all duration-500">
+                    <div className="max-w-3xl mx-auto p-8 md:p-10 rounded-[2rem] bg-[#0A0A0A] border border-white/10 text-center relative overflow-hidden group transition-all duration-500 shadow-xl shadow-black/40 hover:-translate-y-[2px] hover:border-orange-500/30">
+
                         {/* Background Pattern */}
-                        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:20px_20px]" />
-                        
+                        <div className="absolute inset-0 opacity-[0.025] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:28px_28px]" />
+
+                        {/* Subtle Top Gradient */}
+                        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-orange-500/25 to-transparent" />
+
+                        {/* Content */}
                         <div className="relative z-10">
-                            <h3 className="text-2xl md:text-3xl font-light text-white leading-relaxed mb-2">
-                                "People do not fail because they lack ideas.
+
+                            <h3 className="text-xl md:text-3xl font-light text-white/90 leading-tight mb-2">
+                                “People do not fail because they lack ideas.
                             </h3>
-                            <h3 className="text-2xl md:text-3xl leading-relaxed">
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 font-bold">
+
+                            <h3 className="text-xl md:text-3xl leading-tight mb-6">
+                                <span className="text-orange-500 font-semibold">
                                     They fail because they lack systems.
-                                </span>"
+                                </span>
+                                <span className="text-orange-500/50">”</span>
                             </h3>
-                            <div className="mt-8 flex justify-center">
-                                <div className="w-16 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent rounded-full" />
+
+                            {/* Divider */}
+                            <div className="flex justify-center mb-6">
+                                <div className="w-16 h-[1.5px] bg-gradient-to-r from-transparent via-orange-500 to-transparent rounded-full shadow-[0_0_12px_rgba(249,115,22,0.5)] group-hover:w-24 transition-all duration-500" />
                             </div>
-                            <p className="mt-6 text-gray-400 uppercase tracking-[0.25em] text-xs font-bold">
-                                ZRYOSS replaces confusion with structure
+
+                            {/* Zryoss Tagline */}
+                            <p className="text-white/40 uppercase tracking-[0.3em] text-[11px] md:text-[13px] font-semibold">
+                                Business execution, unified under one operating system
                             </p>
                         </div>
 
-                        {/* Decorative Corner Elements */}
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 blur-3xl rounded-full group-hover:bg-orange-500/20 transition-all duration-500" />
-                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-orange-500/10 blur-3xl rounded-full group-hover:bg-orange-500/20 transition-all duration-500" />
+                        {/* Decorative Glows */}
+                        <div className="absolute -top-32 -right-32 w-56 h-56 bg-orange-500/10 blur-[100px] rounded-full pointer-events-none" />
+                        <div className="absolute -bottom-32 -left-32 w-56 h-56 bg-orange-500/10 blur-[100px] rounded-full pointer-events-none" />
+
                     </div>
                 </FadeUp>
+
             </div>
         </section>
     );

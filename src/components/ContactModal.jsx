@@ -134,12 +134,12 @@ export default function ContactModal({ open, onClose }) {
                         <div className="space-y-3">
                             <p className="text-white font-bold text-xl">Global Operating Platform</p>
                             <div className="flex flex-col gap-2">
-                                <span className="text-gray-400 text-sm flex items-center gap-3 group-hover:text-white transition-colors">
+                                <a href="mailto:sales@zryoss.com" className="text-gray-400 text-sm flex items-center gap-3 hover:text-orange-400 transition-colors">
                                     <Mail size={16} className="text-orange-500" /> sales@zryoss.com
-                                </span>
-                                <span className="text-gray-400 text-sm flex items-center gap-3">
+                                </a>
+                                <a href="tel:01169269633" className="text-gray-400 text-sm flex items-center gap-3 hover:text-orange-400 transition-colors">
                                     <Phone size={16} className="text-orange-500" /> +91 011 6926 9633
-                                </span>
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -217,7 +217,7 @@ export default function Overview() {
               </motion.div>
 
               {/* Right Column: Image */}
-              <motion.div variants={fadeUp} className="relative hidden lg:block">
+              <motion.div variants={fadeUp} className="relative mt-10 lg:mt-0">
                 <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
                 <img
                   src="/operations-hero-images/Operations_Overview.jpg"

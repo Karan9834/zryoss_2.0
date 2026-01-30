@@ -240,7 +240,7 @@ export default function QualityAssurance() {
             </div>
 
             {/* Right Column: Image */}
-            <div className="relative hidden lg:block">
+            <div className="relative mt-10 lg:mt-0">
               <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
               <img
                 src="/operations-hero-images/Quality_Assurance.jpg"

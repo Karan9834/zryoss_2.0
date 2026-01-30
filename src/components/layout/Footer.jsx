@@ -93,10 +93,10 @@ export default function Footer() {
           {/* PLATFORM */}
           <FooterSection title="Platform">
             <FooterLink to="/platform/what-is-zryoss">What is Zryoss</FooterLink>
-            <FooterLink to="/platform/business-platform">
+            <FooterLink to="/platform/business-operating-system">
               Business Platform
             </FooterLink>
-            <FooterLink to="/platform/methodology">Methodology</FooterLink>
+            <FooterLink to="/platform/zryoss-methodology">Methodology</FooterLink>
             <FooterLink to="/platform/technology">Technology</FooterLink>
           </FooterSection>
 
