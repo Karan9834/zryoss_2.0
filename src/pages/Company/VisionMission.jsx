@@ -150,7 +150,7 @@ export default function VisionMission() {
 
             <button
               className="
-                px-10 py-4 bg-orange-500 text-black font-semibold rounded-xl
+                px-10 py-4 bg-orange-500 text-white font-semibold rounded-xl
                 hover:bg-orange-600
                 hover:shadow-[0_0_30px_rgba(249,115,22,0.5)]
                 transition-all

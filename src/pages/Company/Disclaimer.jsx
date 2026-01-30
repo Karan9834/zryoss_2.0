@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import FadeUp from "../../components/animations/FadeUp";
 import {
   AlertTriangle,
   ShieldAlert,
@@ -15,48 +15,47 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-/**
- * FadeUp Animation Component
- */
-const FadeUp = ({ children, delay = 0 }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.6, delay }}
-  >
-    {children}
-  </motion.div>
-);
-
 export default function Disclaimer() {
   return (
     <main className="bg-[#050505] text-white overflow-hidden font-sans">
       {/* ================= HERO SECTION ================= */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center border-b border-white/5 pt-20">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/disclaimer_hero_bg.png"
-            alt="Disclaimer Background"
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/70 to-[#050505]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,138,0,0.05),transparent_70%)]" />
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[100px]" />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <FadeUp>
-            <span className="inline-block px-4 py-1.5 mb-6 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium tracking-wide">
-              Legal & Compliance
-            </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
-              Disclaimer
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              Please read this disclaimer carefully. By accessing or using this website,
-              you acknowledge and agree to the terms outlined below.
-            </p>
-          </FadeUp>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Content */}
+            <div>
+              <FadeUp>
+                <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium tracking-wide">
+                  Legal & Compliance
+                </div>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
+                  Disclaimer
+                </h1>
+                <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-lg">
+                  Please read this disclaimer carefully. By accessing or using this website,
+                  you acknowledge and agree to the terms outlined below.
+                </p>
+              </FadeUp>
+            </div>
+
+            {/* Right Column: Image */}
+            <div className="relative mt-10 lg:mt-0">
+              <FadeUp delay={0.2}>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-blue-600/20 blur-3xl rounded-3xl transform rotate-3" />
+                <img
+                  src="/company-hero-images/5.png"
+                  alt="Disclaimer"
+                  className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                />
+              </FadeUp>
+            </div>
+          </div>
         </div>
       </section>
 

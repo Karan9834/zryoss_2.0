@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Quote, ArrowRight } from "lucide-react";
 import FadeUp from "../../components/animations/FadeUp";
+import { Link } from "react-router-dom";
 
 export default function FounderNote() {
   return (
@@ -14,39 +15,35 @@ export default function FounderNote() {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* ================= HEADER ================= */}
         <div className="max-w-3xl mb-20">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center gap-3 mb-6"
-          >
-            <span className="h-[1px] w-10 bg-orange-500" />
-            <span className="text-orange-500 font-bold uppercase tracking-[0.25em] text-xs">
-              Leadership Vision
-            </span>
-          </motion.div>
+          <FadeUp>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="h-[1px] w-10 bg-orange-500" />
+              <span className="text-orange-500 font-bold uppercase tracking-[0.25em] text-xs">
+                Leadership Vision
+              </span>
+            </div>
+          </FadeUp>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5"
-          >
-            A Message from <br />
-            <span className="text-orange-500">Our Founder</span>
-          </motion.h1>
+          <FadeUp delay={0.1}>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
+              A Message from <br />
+              <span className="text-orange-500">Our Founder</span>
+            </h1>
+          </FadeUp>
 
-          <p className="mt-6 text-gray-400 text-lg md:text-xl font-light max-w-2xl">
-            Building the infrastructure for sustainable, execution-driven
-            enterprises.
-          </p>
+          <FadeUp delay={0.2}>
+            <p className="mt-6 text-gray-400 text-lg md:text-xl font-light max-w-2xl">
+              Building the infrastructure for sustainable, execution-driven
+              enterprises.
+            </p>
+          </FadeUp>
         </div>
 
         {/* ================= CONTENT ================= */}
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           {/* LEFT — NOTE */}
           <div className="lg:col-span-7">
-            <FadeUp>
+            <FadeUp delay={0.3}>
               <div className="space-y-10">
                 {/* Highlight Quote */}
                 <div className="relative pl-10">
@@ -94,7 +91,7 @@ export default function FounderNote() {
 
           {/* RIGHT — FOUNDER CARD */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
-            <FadeUp delay={0.2}>
+            <FadeUp delay={0.5}>
               <div className="relative rounded-3xl border border-white/10 bg-[#0F172A]/60 backdrop-blur-xl p-10 text-center">
                 {/* Avatar */}
                 <div className="mx-auto mb-8 w-24 h-24 rounded-2xl bg-orange-500/20 flex items-center justify-center">
@@ -110,10 +107,13 @@ export default function FounderNote() {
                   long-term thinking — not shortcuts.
                 </p>
 
-                <button className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-orange-500 hover:text-white transition">
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-orange-500 hover:text-white transition"
+                >
                   Read Company Story
                   <ArrowRight size={14} />
-                </button>
+                </Link>
               </div>
             </FadeUp>
           </div>

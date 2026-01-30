@@ -1,7 +1,7 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { blogsData } from "./blogsData";
 import FadeUp from "../../components/animations/FadeUp";
-import { ArrowLeft, Calendar, Share2, Clock, User, Bookmark, ArrowRight } from "lucide-react";
+import { ArrowLeft, Calendar, Share2, Clock, User, Bookmark, ArrowRight, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { useEffect } from "react";
 
 export default function BlogDetail() {
@@ -108,10 +108,33 @@ export default function BlogDetail() {
                         <div className="flex items-center gap-6">
                             <span className="text-gray-400 font-medium uppercase tracking-widest text-sm">Share:</span>
                             <div className="flex gap-4">
-                                {['Twitter', 'LinkedIn', 'Facebook'].map((platform) => (
-                                    <button key={platform} className="p-4 bg-white/5 border border-white/10 rounded-2xl text-gray-400 hover:text-orange-400 hover:border-orange-500/50 hover:bg-orange-500/5 transition-all">
-                                        <Share2 className="w-5 h-5" />
-                                    </button>
+                                {[
+                                    {
+                                        name: 'Facebook',
+                                        icon: <Facebook className="w-5 h-5" />,
+                                        link: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`
+                                    },
+                                    {
+                                        name: 'Instagram',
+                                        icon: <Instagram className="w-5 h-5" />,
+                                        link: `https://www.instagram.com/zryoss_dc/`
+                                    },
+                                    {
+                                        name: 'WhatsApp',
+                                        icon: <MessageCircle className="w-5 h-5" />,
+                                        link: `https://api.whatsapp.com/send?text=${encodeURIComponent(blog.title + " - " + window.location.href)}`
+                                    }
+                                ].map((platform) => (
+                                    <a
+                                        key={platform.name}
+                                        href={platform.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-4 bg-white/5 border border-white/10 rounded-2xl text-gray-400 hover:text-orange-400 hover:border-orange-500/50 hover:bg-orange-500/5 transition-all"
+                                        title={`Share on ${platform.name}`}
+                                    >
+                                        {platform.icon}
+                                    </a>
                                 ))}
                             </div>
                         </div>

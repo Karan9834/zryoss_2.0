@@ -153,29 +153,33 @@ export default function TrainingHub() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left Column: Content */}
                         <div>
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
-                                <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
-                                Knowledge Powers Execution
-                            </div>
+                            <FadeUp>
+                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
+                                    <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
+                                    Knowledge Powers Execution
+                                </div>
 
-                            <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
-                                Training & <span className="text-orange-500 italic">Enablement</span> Hub
-                            </h1>
+                                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
+                                    Training & <span className="text-orange-500 italic">Enablement</span> Hub
+                                </h1>
 
-                            <p className="text-gray-200 leading-relaxed text-lg mb-10">
-                                Practical training for <span className="text-white font-medium italic">real</span> business execution.
-                                Move beyond theory into market-ready readiness.
-                            </p>
+                                <p className="text-gray-200 leading-relaxed text-lg mb-10">
+                                    Practical training for <span className="text-white font-medium italic">real</span> business execution.
+                                    Move beyond theory into market-ready readiness.
+                                </p>
+                            </FadeUp>
                         </div>
 
                         {/* Right Column: Image */}
                         <div className="relative hidden lg:block">
-                            <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
-                            <img
-                                src="/Resources_pages_images/Training & Enablement Hub.png"
-                                alt="Training & Enablement Hub"
-                                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
-                            />
+                            <FadeUp delay={0.2}>
+                                <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
+                                <img
+                                    src="/Resources_pages_images/Training & Enablement Hub.png"
+                                    alt="Training & Enablement Hub"
+                                    className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                                />
+                            </FadeUp>
                         </div>
                     </div>
                 </div>

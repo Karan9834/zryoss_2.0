@@ -38,7 +38,7 @@ export default function FloatingActions() {
                 {/* GET IN TOUCH */}
                 <button
                     onClick={() => setOpenContact(true)}
-                    className="group relative flex items-center justify-center p-4 rounded-2xl bg-orange-500 text-black shadow-[0_10px_30px_-5px_rgba(249,115,22,0.4)] transition-all duration-300 hover:bg-orange-600 hover:scale-110 active:scale-95 animate-pulse cursor-pointer"
+                    className="group relative flex items-center justify-center p-4 rounded-2xl bg-orange-500 text-white shadow-[0_10px_30px_-5px_rgba(249,115,22,0.4)] transition-all duration-300 hover:bg-orange-600 hover:scale-110 active:scale-95 animate-pulse cursor-pointer"
                 >
                     <MessageSquare size={24} />
 

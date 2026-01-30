@@ -161,7 +161,7 @@ export default function WhyZryossWorks() {
               </p>
 
               <button
-                className="px-16 py-4 bg-orange-500 text-black font-semibold rounded-xl
+                className="px-16 py-4 bg-orange-500 text-white font-semibold rounded-xl
                            hover:bg-orange-600
                            hover:shadow-[0_0_45px_rgba(249,115,22,0.6)]
                            transition-all duration-300"

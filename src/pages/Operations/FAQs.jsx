@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FadeUp from "../../components/animations/FadeUp";
 import {
     HelpCircle,
     Plus,
@@ -100,45 +101,49 @@ export default function FAQs() {
                 <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left Column: Content */}
-                        <div>
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
-                                <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
-                                Operations · Help & Clarity
-                            </div>
+                        <FadeUp>
+                            <div>
+                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
+                                    <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
+                                    Operations · Help & Clarity
+                                </div>
 
-                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-                                Operations <span className="text-[#FF6A00]">FAQ</span>s
-                            </h1>
+                                <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+                                    Operations <span className="text-[#FF6A00]">FAQ</span>s
+                                </h1>
 
-                            <p className="text-gray-200 leading-relaxed text-lg sm:text-xl mb-10">
-                                Clear answers about how Zryoss operations work. Execution designed to remove confusion, reduce risk, and ensure predictable outcomes.
-                            </p>
+                                <p className="text-gray-200 leading-relaxed text-lg sm:text-xl mb-10">
+                                    Clear answers about how Zryoss operations work. Execution designed to remove confusion, reduce risk, and ensure predictable outcomes.
+                                </p>
 
-                            {/* Search Bar */}
-                            <div className="max-w-xl relative group">
-                                <div className="absolute inset-0 bg-[#FF6A00]/20 blur-xl opacity-0 group-hover:opacity-100 transition duration-500 rounded-full" />
-                                <div className="relative flex items-center bg-[#1E1E1E] border border-white/10 rounded-full px-6 py-4 shadow-2xl focus-within:border-[#FF6A00]/50 transition-colors">
-                                    <Search className="w-5 h-5 text-gray-400 mr-4" />
-                                    <input
-                                        type="text"
-                                        placeholder="Search questions about operations..."
-                                        className="bg-transparent border-none outline-none text-white w-full placeholder:text-gray-500"
-                                        value={searchQuery}
-                                        onChange={(e) => setSearchQuery(e.target.value)}
-                                    />
+                                {/* Search Bar */}
+                                <div className="max-w-xl relative group">
+                                    <div className="absolute inset-0 bg-[#FF6A00]/20 blur-xl opacity-0 group-hover:opacity-100 transition duration-500 rounded-full" />
+                                    <div className="relative flex items-center bg-[#1E1E1E] border border-white/10 rounded-full px-6 py-4 shadow-2xl focus-within:border-[#FF6A00]/50 transition-colors">
+                                        <Search className="w-5 h-5 text-gray-400 mr-4" />
+                                        <input
+                                            type="text"
+                                            placeholder="Search questions about operations..."
+                                            className="bg-transparent border-none outline-none text-white w-full placeholder:text-gray-500"
+                                            value={searchQuery}
+                                            onChange={(e) => setSearchQuery(e.target.value)}
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </FadeUp>
 
                         {/* Right Column: Image */}
-                        <div className="relative hidden lg:block">
-                            <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
-                            <img
-                                src="/operations-hero-images/Operations_FAQs.jpg"
-                                alt="Operations FAQs"
-                                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
-                            />
-                        </div>
+                        <FadeUp delay={0.2}>
+                            <div className="relative hidden lg:block">
+                                <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
+                                <img
+                                    src="/operations-hero-images/Operations_FAQs.jpg"
+                                    alt="Operations FAQs"
+                                    className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                                />
+                            </div>
+                        </FadeUp>
                     </div>
                 </div>
             </section>

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   Facebook,
@@ -8,10 +8,43 @@ import {
   ArrowRight,
   ShieldCheck,
   ExternalLink,
+  CheckCircle2,
+  AlertCircle,
 } from "lucide-react";
+import { useEmail } from "../../hooks/useEmail";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const formRef = useRef();
+  const { sendEmail, loading } = useEmail();
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("idle"); // idle, success
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+
+    const result = await sendEmail(formRef);
+
+    if (result.success) {
+      setStatus("success");
+      setEmail("");
+      setTimeout(() => setStatus("idle"), 5000);
+    } else {
+      setError("Failed to subscribe. Please try again later.");
+    }
+  };
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -71,20 +104,51 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto relative z-10">
-              <input
-                type="email"
-                placeholder="Work email address"
-                className="bg-white/5 border border-white/10 rounded-[18px] px-6 py-4 focus:outline-none focus:border-orange-500 focus:bg-white/[0.08] transition-all min-w-[280px] text-sm font-light"
-              />
-              <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:scale-[1.02] active:scale-[0.98] text-white font-bold px-8 py-4 rounded-[18px] flex items-center justify-center gap-2 transition-all shadow-xl shadow-orange-500/20">
-                Subscribe
-                <ArrowRight
-                  size={18}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </button>
-            </div>
+            {status === "success" ? (
+              <div className="flex bg-green-500/10 border border-green-500/20 px-6 py-4 rounded-2xl items-center gap-3 text-green-400 backdrop-blur-sm animate-pulse">
+                <CheckCircle2 size={20} />
+                <span className="text-sm font-medium">Successfully subscribed!</span>
+              </div>
+            ) : (
+              <form
+                ref={formRef}
+                onSubmit={handleSubmit}
+                className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto relative z-10"
+              >
+                <div className="relative">
+                  <input
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      setError("");
+                    }}
+                    placeholder="Work email address"
+                    className={`bg-white/5 border ${error ? "border-red-500" : "border-white/10"
+                      } rounded-[18px] px-6 py-4 focus:outline-none focus:border-orange-500 focus:bg-white/[0.08] transition-all min-w-[280px] text-sm font-light`}
+                  />
+                  {error && (
+                    <div className="absolute -bottom-6 left-2 flex items-center gap-1 text-red-500 text-[10px] font-medium animate-bounce">
+                      <AlertCircle size={12} /> {error}
+                    </div>
+                  )}
+                </div>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:scale-[1.02] active:scale-[0.98] text-white font-bold px-8 py-4 rounded-[18px] flex items-center justify-center gap-2 transition-all shadow-xl shadow-orange-500/20 disabled:opacity-70"
+                >
+                  {loading ? "..." : "Subscribe"}
+                  {!loading && (
+                    <ArrowRight
+                      size={18}
+                      className="group-hover:translate-x-1 transition-transform"
+                    />
+                  )}
+                </button>
+              </form>
+            )}
           </div>
         </div>
 

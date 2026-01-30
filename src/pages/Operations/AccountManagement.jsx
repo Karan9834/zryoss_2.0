@@ -1,3 +1,4 @@
+import FadeUp from "../../components/animations/FadeUp";
 import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -205,55 +206,59 @@ export default function AccountManagement() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column: Content */}
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
-                <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
-                Zryoss · Operations Control Layer
+            <FadeUp>
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
+                  <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
+                  Zryoss · Operations Control Layer
+                </div>
+
+                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-4">
+                  Account Management & Support
+                </h1>
+
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#FF6A00] mb-6">
+                  One Account. One Owner. <br /> Continuous Support.
+                </h2>
+
+                <p className="text-gray-200 leading-relaxed text-lg mb-8">
+                  At Zryoss, account management is not a support function. It is a core operational control layer that ensures
+                  execution alignment, communication clarity, and delivery accountability across every engagement.
+                </p>
+
+                <p className="text-white font-semibold mb-10">
+                  Zryoss believes that strong execution requires clear ownership.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button
+                    onClick={scrollToSupportModel}
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#FF6A00] text-white font-semibold hover:brightness-110 transition shadow-[0_0_28px_rgba(249,115,22,0.25)]"
+                  >
+                    Explore Support Model <ArrowRight className="w-5 h-5" />
+                  </button>
+
+                  <a
+                    href="#learn"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 transition font-semibold"
+                  >
+                    Learn More
+                  </a>
+                </div>
               </div>
-
-              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-4">
-                Account Management & Support
-              </h1>
-
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#FF6A00] mb-6">
-                One Account. One Owner. <br /> Continuous Support.
-              </h2>
-
-              <p className="text-gray-200 leading-relaxed text-lg mb-8">
-                At Zryoss, account management is not a support function. It is a core operational control layer that ensures
-                execution alignment, communication clarity, and delivery accountability across every engagement.
-              </p>
-
-              <p className="text-white font-semibold mb-10">
-                Zryoss believes that strong execution requires clear ownership.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={scrollToSupportModel}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#FF6A00] text-white font-semibold hover:brightness-110 transition shadow-[0_0_28px_rgba(249,115,22,0.25)]"
-                >
-                  Explore Support Model <ArrowRight className="w-5 h-5" />
-                </button>
-
-                <a
-                  href="#learn"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 transition font-semibold"
-                >
-                  Learn More
-                </a>
-              </div>
-            </div>
+            </FadeUp>
 
             {/* Right Column: Image */}
-            <div className="relative mt-10 lg:mt-0">
-              <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
-              <img
-                src="/operations-hero-images/Account_Management.jpeg"
-                alt="Account Management"
-                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
-              />
-            </div>
+            <FadeUp delay={0.2}>
+              <div className="relative mt-10 lg:mt-0">
+                <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
+                <img
+                  src="/operations-hero-images/Account_Management.jpeg"
+                  alt="Account Management"
+                  className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                />
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -262,212 +267,236 @@ export default function AccountManagement() {
       <section id="learn" className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* LEFT */}
-          <div>
-            <h2 className="text-3xl font-bold">
-              Why Account Management <span className="text-[#FF6A00]">Matters</span>
-            </h2>
+          <FadeUp>
+            <div>
+              <h2 className="text-3xl font-bold">
+                Why Account Management <span className="text-[#FF6A00]">Matters</span>
+              </h2>
 
-            <p className="mt-4 text-gray-300">
-              Most execution failures happen because:
-            </p>
+              <p className="mt-4 text-gray-300">
+                Most execution failures happen because:
+              </p>
 
-            <ul className="mt-6 space-y-3">
-              {risks.map((r) => (
-                <li key={r} className="flex items-start gap-3 p-4 rounded-xl bg-[#1E1E1E] border border-white/10">
-                  <AlertTriangle className="w-5 h-5 text-[#FF6A00] mt-0.5" />
-                  <span className="text-gray-200">{r}</span>
-                </li>
-              ))}
-            </ul>
+              <ul className="mt-6 space-y-3">
+                {risks.map((r, i) => (
+                  <FadeUp key={r} delay={i * 0.05}>
+                    <li className="flex items-start gap-3 p-4 rounded-xl bg-[#1E1E1E] border border-white/10">
+                      <AlertTriangle className="w-5 h-5 text-[#FF6A00] mt-0.5" />
+                      <span className="text-gray-200">{r}</span>
+                    </li>
+                  </FadeUp>
+                ))}
+              </ul>
 
-            <p className="mt-6 text-gray-300">
-              Zryoss eliminates these risks by assigning{" "}
-              <span className="text-white font-semibold">dedicated account ownership</span> from day one.
-            </p>
-          </div>
+              <p className="mt-6 text-gray-300">
+                Zryoss eliminates these risks by assigning{" "}
+                <span className="text-white font-semibold">dedicated account ownership</span> from day one.
+              </p>
+            </div>
+          </FadeUp>
 
           {/* RIGHT */}
-          <div className="relative">
-            <div className="absolute inset-0 rounded-3xl bg-[#FF6A00]/10 blur-2xl" />
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121212]">
-              <img
-                alt="Fragmented communication"
-                className="w-full h-[420px] object-cover opacity-90"
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop"
-              />
-              <div className="p-6">
-                <p className="text-sm text-gray-300">
-                  Fragmented communication creates delays, missed accountability, and operational confusion.
-                </p>
+          <FadeUp delay={0.2}>
+            <div className="relative">
+              <div className="absolute inset-0 rounded-3xl bg-[#FF6A00]/10 blur-2xl" />
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121212]">
+                <img
+                  alt="Fragmented communication"
+                  className="w-full h-[420px] object-cover opacity-90"
+                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop"
+                />
+                <div className="p-6">
+                  <p className="text-sm text-gray-300">
+                    Fragmented communication creates delays, missed accountability, and operational confusion.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* ====================== WHAT IT MEANS ====================== */}
       <section className="bg-[#1E1E1E] border-y border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-20 text-center">
-          <h2 className="text-3xl font-bold">
-            What Account Management Means at{" "}
-            <span className="text-[#FF6A00]">Zryoss</span>
-          </h2>
+          <FadeUp>
+            <h2 className="text-3xl font-bold">
+              What Account Management Means at{" "}
+              <span className="text-[#FF6A00]">Zryoss</span>
+            </h2>
 
-          <p className="mt-4 text-gray-300">
-            Account Management & Support at Zryoss includes:
-          </p>
+            <p className="mt-4 text-gray-300">
+              Account Management & Support at Zryoss includes:
+            </p>
+          </FadeUp>
 
           <div className="mt-10 max-w-4xl mx-auto grid sm:grid-cols-2 gap-4">
-            {whatItMeans.map((p) => (
-              <div key={p} className="flex items-start gap-3 p-5 rounded-2xl bg-black/20 border border-white/10">
-                <CheckCircle2 className="w-5 h-5 text-[#FF6A00] mt-0.5" />
-                <p className="text-gray-200">{p}</p>
-              </div>
+            {whatItMeans.map((p, i) => (
+              <FadeUp key={p} delay={i * 0.05}>
+                <div className="flex items-start gap-3 p-5 rounded-2xl bg-black/20 border border-white/10 h-full">
+                  <CheckCircle2 className="w-5 h-5 text-[#FF6A00] mt-0.5" />
+                  <p className="text-gray-200 text-left">{p}</p>
+                </div>
+              </FadeUp>
             ))}
           </div>
 
-          <div className="mt-10 p-6 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25 max-w-4xl mx-auto">
-            <p className="text-white font-semibold">
-              The Account Manager represents the system, not an individual team.
-            </p>
-          </div>
+          <FadeUp delay={0.3}>
+            <div className="mt-10 p-6 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25 max-w-4xl mx-auto">
+              <p className="text-white font-semibold text-center">
+                The Account Manager represents the system, not an individual team.
+              </p>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* ====================== DEDICATED ACCOUNT MANAGER MODEL ====================== */}
       <section id="account-model" className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-bold">
-              Dedicated Account Manager{" "}
-              <span className="text-[#FF6A00]">Model</span>
-            </h2>
+          <FadeUp>
+            <div>
+              <h2 className="text-3xl font-bold">
+                Dedicated Account Manager{" "}
+                <span className="text-[#FF6A00]">Model</span>
+              </h2>
 
-            <p className="mt-4 text-gray-300">
-              Every IPP, BPP, and client engagement receives:
-            </p>
-
-            <ul className="mt-6 space-y-3">
-              {dedicatedModel.map((p) => (
-                <li key={p} className="flex items-start gap-3 p-4 rounded-xl bg-[#1E1E1E] border border-white/10">
-                  <CheckCircle2 className="w-5 h-5 text-[#FF6A00] mt-0.5" />
-                  <span className="text-gray-200">{p}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-8 p-5 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25">
-              <p className="text-white font-semibold">
-                This ensures no confusion and no duplication.
+              <p className="mt-4 text-gray-300">
+                Every IPP, BPP, and client engagement receives:
               </p>
-            </div>
-          </div>
 
-          <div className="relative">
-            <div className="absolute inset-0 rounded-3xl bg-[#FF6A00]/10 blur-2xl" />
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121212]">
-              <img
-                alt="Single manager coordination"
-                className="w-full h-[420px] object-cover opacity-90"
-                src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?q=80&w=1600&auto=format&fit=crop"
-              />
-              <div className="p-6">
-                <p className="text-sm text-gray-300">
-                  One owner connected to teams, vendors, and delivery — controlled communication and alignment.
+              <ul className="mt-6 space-y-3">
+                {dedicatedModel.map((p, i) => (
+                  <FadeUp key={p} delay={i * 0.05}>
+                    <li className="flex items-start gap-3 p-4 rounded-xl bg-[#1E1E1E] border border-white/10">
+                      <CheckCircle2 className="w-5 h-5 text-[#FF6A00] mt-0.5" />
+                      <span className="text-gray-200">{p}</span>
+                    </li>
+                  </FadeUp>
+                ))}
+              </ul>
+
+              <div className="mt-8 p-5 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25">
+                <p className="text-white font-semibold">
+                  This ensures no confusion and no duplication.
                 </p>
               </div>
             </div>
-          </div>
+          </FadeUp>
+
+          <FadeUp delay={0.2}>
+            <div className="relative">
+              <div className="absolute inset-0 rounded-3xl bg-[#FF6A00]/10 blur-2xl" />
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121212]">
+                <img
+                  alt="Single manager coordination"
+                  className="w-full h-[420px] object-cover opacity-90"
+                  src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?q=80&w=1600&auto=format&fit=crop"
+                />
+                <div className="p-6">
+                  <p className="text-sm text-gray-300">
+                    One owner connected to teams, vendors, and delivery — controlled communication and alignment.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* ====================== ROLE OF ACCOUNT MANAGER ====================== */}
       <section className="bg-[#1E1E1E] border-y border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-20">
-          <h2 className="text-3xl font-bold text-center">
-            Role of the <span className="text-[#FF6A00]">Account Manager</span>
-          </h2>
+          <FadeUp>
+            <h2 className="text-3xl font-bold text-center">
+              Role of the <span className="text-[#FF6A00]">Account Manager</span>
+            </h2>
 
-          <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
-            The Account Manager is responsible for:
-          </p>
+            <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
+              The Account Manager is responsible for:
+            </p>
+          </FadeUp>
 
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {roleCards.map((c) => (
-              <div
-                key={c.title}
-                className="p-6 rounded-2xl bg-black/15 border border-white/10 hover:border-[#FF6A00]/40 transition"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
-                  {c.icon}
+            {roleCards.map((c, i) => (
+              <FadeUp key={c.title} delay={i * 0.05}>
+                <div className="p-6 rounded-2xl bg-black/15 border border-white/10 hover:border-[#FF6A00]/40 transition h-full">
+                  <div className="w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
+                    {c.icon}
+                  </div>
+                  <h3 className="mt-4 font-bold text-lg">{c.title}</h3>
+                  <p className="mt-2 text-gray-400 text-sm leading-relaxed">{c.desc}</p>
                 </div>
-                <h3 className="mt-4 font-bold text-lg">{c.title}</h3>
-                <p className="mt-2 text-gray-400 text-sm leading-relaxed">{c.desc}</p>
-              </div>
+              </FadeUp>
             ))}
           </div>
 
-          <div className="mt-10 text-center">
-            <p className="text-gray-300 font-semibold">
-              They do not execute work.
-              <br />
-              <span className="text-white font-bold">They control execution flow.</span>
-            </p>
-          </div>
+          <FadeUp delay={0.3}>
+            <div className="mt-10 text-center">
+              <p className="text-gray-300 font-semibold text-center">
+                They do not execute work.
+                <br />
+                <span className="text-white font-bold">They control execution flow.</span>
+              </p>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* ====================== LIFECYCLE (STEPPER / ACCORDION) ====================== */}
       <section className="max-w-7xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold text-center">
-          Account Management During the{" "}
-          <span className="text-[#FF6A00]">Lifecycle</span>
-        </h2>
+        <FadeUp>
+          <h2 className="text-3xl font-bold text-center">
+            Account Management During the{" "}
+            <span className="text-[#FF6A00]">Lifecycle</span>
+          </h2>
+        </FadeUp>
 
         <div className="mt-12 space-y-4 max-w-4xl mx-auto">
-          {lifecycle.map((s) => {
+          {lifecycle.map((s, i) => {
             const isOpen = openLife === s.id;
 
             return (
-              <div
-                key={s.id}
-                className={`rounded-2xl border transition ${isOpen
-                  ? "border-[#FF6A00]/50 bg-black/25"
-                  : "border-white/10 bg-black/10 hover:border-[#FF6A00]/30"
-                  }`}
-              >
-                <button
-                  onClick={() => setOpenLife(isOpen ? "" : s.id)}
-                  className="w-full flex items-center justify-between gap-4 p-5 text-left"
+              <FadeUp key={s.id} delay={i * 0.05}>
+                <div
+                  className={`rounded-2xl border transition ${isOpen
+                    ? "border-[#FF6A00]/50 bg-black/25"
+                    : "border-white/10 bg-black/10 hover:border-[#FF6A00]/30"
+                    }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
-                      {s.icon}
+                  <button
+                    onClick={() => setOpenLife(isOpen ? "" : s.id)}
+                    className="w-full flex items-center justify-between gap-4 p-5 text-left"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
+                        {s.icon}
+                      </div>
+                      <div>
+                        <p className="text-gray-400 text-sm">{s.number}</p>
+                        <h3 className="font-bold">{s.title}</h3>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-gray-400 text-sm">{s.number}</p>
-                      <h3 className="font-bold">{s.title}</h3>
+
+                    <div className="text-[#FF6A00]">
+                      {isOpen ? <ChevronUp /> : <ChevronDown />}
                     </div>
-                  </div>
+                  </button>
 
-                  <div className="text-[#FF6A00]">
-                    {isOpen ? <ChevronUp /> : <ChevronDown />}
-                  </div>
-                </button>
-
-                {isOpen && (
-                  <div className="px-5 pb-6">
-                    <ul className="space-y-3">
-                      {s.points.map((p) => (
-                        <li key={p} className="flex items-start gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-[#FF6A00] mt-0.5" />
-                          <span className="text-gray-200">{p}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
+                  {isOpen && (
+                    <div className="px-5 pb-6">
+                      <ul className="space-y-3">
+                        {s.points.map((p) => (
+                          <li key={p} className="flex items-start gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-[#FF6A00] mt-0.5" />
+                            <span className="text-gray-200">{p}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </FadeUp>
             );
           })}
         </div>
@@ -476,205 +505,226 @@ export default function AccountManagement() {
       {/* ====================== SUPPORT MODEL ====================== */}
       <section id="support-model" className="bg-[#1E1E1E] border-y border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-20">
-          <h2 className="text-3xl font-bold text-center">
-            Support Model at{" "}
-            <span className="text-[#FF6A00]">Zryoss</span>
-          </h2>
+          <FadeUp>
+            <h2 className="text-3xl font-bold text-center">
+              Support Model at{" "}
+              <span className="text-[#FF6A00]">Zryoss</span>
+            </h2>
 
-          <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
-            Support is provided through a structured, tiered approach:
-          </p>
+            <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
+              Support is provided through a structured, tiered approach:
+            </p>
+          </FadeUp>
 
           <div className="mt-12 grid md:grid-cols-3 gap-4">
-            {supportModel.map((s) => (
-              <div
-                key={s.title}
-                className="p-6 rounded-2xl bg-black/15 border border-white/10 hover:border-[#FF6A00]/40 transition"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
-                  {s.icon}
+            {supportModel.map((s, i) => (
+              <FadeUp key={s.title} delay={i * 0.05}>
+                <div className="p-6 rounded-2xl bg-black/15 border border-white/10 hover:border-[#FF6A00]/40 transition h-full">
+                  <div className="w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
+                    {s.icon}
+                  </div>
+                  <h3 className="mt-4 font-bold text-lg">{s.title}</h3>
+                  <p className="mt-2 text-gray-400 text-sm leading-relaxed">
+                    → {s.desc}
+                  </p>
                 </div>
-                <h3 className="mt-4 font-bold text-lg">{s.title}</h3>
-                <p className="mt-2 text-gray-400 text-sm leading-relaxed">
-                  → {s.desc}
-                </p>
-              </div>
+              </FadeUp>
             ))}
           </div>
 
-          <div className="mt-10 text-center">
-            <p className="text-white font-semibold">
+          <FadeUp delay={0.3}>
+            <div className="mt-10 text-center text-white font-semibold">
               Support is process-driven, not ad-hoc.
-            </p>
-          </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* ====================== COMMUNICATION & UPDATE FRAMEWORK ====================== */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-bold">
-              Communication & Update{" "}
-              <span className="text-[#FF6A00]">Framework</span>
-            </h2>
+          <FadeUp>
+            <div>
+              <h2 className="text-3xl font-bold">
+                Communication & Update{" "}
+                <span className="text-[#FF6A00]">Framework</span>
+              </h2>
 
-            <p className="mt-4 text-gray-300">
-              Zryoss ensures:
-            </p>
-
-            <ul className="mt-6 space-y-3">
-              {commsFramework.map((p) => (
-                <li key={p} className="flex items-start gap-3 p-4 rounded-xl bg-[#1E1E1E] border border-white/10">
-                  <CheckCircle2 className="w-5 h-5 text-[#FF6A00] mt-0.5" />
-                  <span className="text-gray-200">{p}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-8 p-5 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25">
-              <p className="text-white font-semibold">
-                Communication is consistent, documented, and transparent.
+              <p className="mt-4 text-gray-300">
+                Zryoss ensures:
               </p>
-            </div>
-          </div>
 
-          <div className="relative">
-            <div className="absolute inset-0 rounded-3xl bg-[#FF6A00]/10 blur-2xl" />
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121212]">
-              <img
-                alt="Central communication dashboard"
-                className="w-full h-[420px] object-cover opacity-90"
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop"
-              />
-              <div className="p-6">
-                <p className="text-sm text-gray-300">
-                  Centralized updates + structured timelines ensure zero communication chaos.
+              <ul className="mt-6 space-y-3">
+                {commsFramework.map((p, i) => (
+                  <FadeUp key={p} delay={i * 0.05}>
+                    <li className="flex items-start gap-3 p-4 rounded-xl bg-[#1E1E1E] border border-white/10">
+                      <CheckCircle2 className="w-5 h-5 text-[#FF6A00] mt-0.5" />
+                      <span className="text-gray-200">{p}</span>
+                    </li>
+                  </FadeUp>
+                ))}
+              </ul>
+
+              <div className="mt-8 p-5 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25">
+                <p className="text-white font-semibold text-center">
+                  Communication is consistent, documented, and transparent.
                 </p>
               </div>
             </div>
-          </div>
+          </FadeUp>
+
+          <FadeUp delay={0.2}>
+            <div className="relative">
+              <div className="absolute inset-0 rounded-3xl bg-[#FF6A00]/10 blur-2xl" />
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121212]">
+                <img
+                  alt="Central communication dashboard"
+                  className="w-full h-[420px] object-cover opacity-90"
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop"
+                />
+                <div className="p-6">
+                  <p className="text-sm text-gray-300">
+                    Centralized updates + structured timelines ensure zero communication chaos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* ====================== ISSUE HANDLING & ESCALATION ====================== */}
       <section className="bg-[#1E1E1E] border-y border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-20">
-          <h2 className="text-3xl font-bold text-center">
-            Issue Handling &{" "}
-            <span className="text-[#FF6A00]">Escalation</span>
-          </h2>
+          <FadeUp>
+            <h2 className="text-3xl font-bold text-center">
+              Issue Handling &{" "}
+              <span className="text-[#FF6A00]">Escalation</span>
+            </h2>
 
-          <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
-            When issues arise:
-          </p>
+            <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
+              When issues arise:
+            </p>
+          </FadeUp>
 
           <div className="mt-10 max-w-4xl mx-auto">
             <div className="space-y-4">
               {escalationSteps.map((s, i) => (
-                <div
-                  key={s}
-                  className="flex items-start gap-4 p-5 rounded-2xl bg-black/15 border border-white/10"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 flex items-center justify-center text-[#FF6A00] font-extrabold">
-                    {i + 1}
+                <FadeUp key={s} delay={i * 0.05}>
+                  <div className="flex items-start gap-4 p-5 rounded-2xl bg-black/15 border border-white/10">
+                    <div className="w-10 h-10 rounded-xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 flex items-center justify-center text-[#FF6A00] font-extrabold shrink-0">
+                      {i + 1}
+                    </div>
+                    <div>
+                      <p className="font-semibold">{s}</p>
+                      <p className="text-sm text-gray-400 mt-1">
+                        Escalation ensures resolution, not delay.
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold">{s}</p>
-                    <p className="text-sm text-gray-400 mt-1">
-                      Escalation ensures resolution, not delay.
-                    </p>
-                  </div>
-                </div>
+                </FadeUp>
               ))}
             </div>
 
-            <div className="mt-8 p-6 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25">
-              <p className="text-white font-semibold">
-                No issue depends on personal availability.
-              </p>
-            </div>
+            <FadeUp delay={0.3}>
+              <div className="mt-8 p-6 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25">
+                <p className="text-white font-semibold text-center">
+                  No issue depends on personal availability.
+                </p>
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
 
       {/* ====================== VISIBILITY & REPORTING ====================== */}
       <section className="max-w-7xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold text-center">
-          Visibility &{" "}
-          <span className="text-[#FF6A00]">Reporting</span>
-        </h2>
+        <FadeUp>
+          <h2 className="text-3xl font-bold text-center">
+            Visibility &{" "}
+            <span className="text-[#FF6A00]">Reporting</span>
+          </h2>
 
-        <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
-          Account Managers provide visibility on:
-        </p>
+          <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
+            Account Managers provide visibility on:
+          </p>
+        </FadeUp>
 
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {visibilityCards.map((v) => (
-            <div
-              key={v.title}
-              className="p-6 rounded-2xl bg-[#1E1E1E] border border-white/10 hover:border-[#FF6A00]/40 transition text-center"
-            >
-              <div className="mx-auto w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
-                {v.icon}
+          {visibilityCards.map((v, i) => (
+            <FadeUp key={v.title} delay={i * 0.05}>
+              <div
+                className="p-6 rounded-2xl bg-[#1E1E1E] border border-white/10 hover:border-[#FF6A00]/40 transition text-center h-full"
+              >
+                <div className="mx-auto w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
+                  {v.icon}
+                </div>
+                <p className="mt-4 font-semibold text-gray-200">{v.title}</p>
               </div>
-              <p className="mt-4 font-semibold text-gray-200">{v.title}</p>
-            </div>
+            </FadeUp>
           ))}
         </div>
 
-        <p className="mt-10 text-center font-semibold text-white">
-          This allows partners and clients to stay informed and confident.
-        </p>
+        <FadeUp delay={0.3}>
+          <p className="mt-10 text-center font-semibold text-white">
+            This allows partners and clients to stay informed and confident.
+          </p>
+        </FadeUp>
       </section>
 
       {/* ====================== CONTINUITY & LONG TERM SUPPORT ====================== */}
       <section className="bg-[#1E1E1E] border-y border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold">
-                Continuity & Long-Term{" "}
-                <span className="text-[#FF6A00]">Support</span>
-              </h2>
+            <FadeUp>
+              <div>
+                <h2 className="text-3xl font-bold">
+                  Continuity & Long-Term{" "}
+                  <span className="text-[#FF6A00]">Support</span>
+                </h2>
 
-              <p className="mt-6 text-gray-300">Zryoss ensures:</p>
+                <p className="mt-6 text-gray-300">Zryoss ensures:</p>
 
-              <ul className="mt-6 space-y-3">
-                {[
-                  "Account continuity even if teams change",
-                  "Historical context is preserved",
-                  "Long-term relationships are supported",
-                ].map((p) => (
-                  <li key={p} className="flex items-start gap-3 p-4 rounded-xl bg-black/15 border border-white/10">
-                    <CheckCircle2 className="w-5 h-5 text-[#FF6A00] mt-0.5" />
-                    <span className="text-gray-200">{p}</span>
-                  </li>
-                ))}
-              </ul>
+                <ul className="mt-6 space-y-3">
+                  {[
+                    "Account continuity even if teams change",
+                    "Historical context is preserved",
+                    "Long-term relationships are supported",
+                  ].map((p, i) => (
+                    <FadeUp key={p} delay={i * 0.05}>
+                      <li className="flex items-start gap-3 p-4 rounded-xl bg-black/15 border border-white/10">
+                        <CheckCircle2 className="w-5 h-5 text-[#FF6A00] mt-0.5" />
+                        <span className="text-gray-200">{p}</span>
+                      </li>
+                    </FadeUp>
+                  ))}
+                </ul>
 
-              <div className="mt-8 p-6 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25">
-                <p className="text-white font-semibold">
-                  The system remembers— <span className="text-white font-bold">not just people.</span>
-                </p>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute inset-0 rounded-3xl bg-[#FF6A00]/10 blur-2xl" />
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121212]">
-                <img
-                  alt="System continuity"
-                  className="w-full h-[420px] object-cover opacity-90"
-                  src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1600&auto=format&fit=crop"
-                />
-                <div className="p-6">
-                  <p className="text-sm text-gray-300">
-                    Historical records + continuity loops ensure long-term account stability and trust.
+                <div className="mt-8 p-6 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25">
+                  <p className="text-white font-semibold">
+                    The system remembers— <span className="text-white font-bold">not just people.</span>
                   </p>
                 </div>
               </div>
-            </div>
+            </FadeUp>
+
+            <FadeUp delay={0.2}>
+              <div className="relative">
+                <div className="absolute inset-0 rounded-3xl bg-[#FF6A00]/10 blur-2xl" />
+                <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121212]">
+                  <img
+                    alt="System continuity"
+                    className="w-full h-[420px] object-cover opacity-90"
+                    src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1600&auto=format&fit=crop"
+                  />
+                  <div className="p-6">
+                    <p className="text-sm text-gray-300">
+                      Historical records + continuity loops ensure long-term account stability and trust.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -682,72 +732,79 @@ export default function AccountManagement() {
       {/* ====================== PROTECTS IPP & BPP ====================== */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-3xl font-bold">
-              How This Model Protects{" "}
-              <span className="text-[#FF6A00]">IPP & BPP</span>
-            </h2>
+          <FadeUp>
+            <div>
+              <h2 className="text-3xl font-bold">
+                How This Model Protects{" "}
+                <span className="text-[#FF6A00]">IPP & BPP</span>
+              </h2>
 
-            <p className="mt-4 text-gray-300">
-              For IPPs and BPPs:
-            </p>
-
-            <ul className="mt-6 space-y-3">
-              {ippProtections.map((p) => (
-                <li key={p} className="flex items-start gap-3 p-4 rounded-xl bg-[#1E1E1E] border border-white/10">
-                  <XCircle className="w-5 h-5 text-[#FF6A00] mt-0.5" />
-                  <span className="text-gray-200">{p}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-8 p-6 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25">
-              <p className="text-white font-semibold">
-                You focus on business growth.
-                <br />
-                <span className="text-white font-bold">Zryoss manages operations and support.</span>
+              <p className="mt-4 text-gray-300">
+                For IPPs and BPPs:
               </p>
-            </div>
-          </div>
 
-          <div className="relative">
-            <div className="absolute inset-0 rounded-3xl bg-[#FF6A00]/10 blur-2xl" />
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121212]">
-              <img
-                alt="Growth protected by system"
-                className="w-full h-[420px] object-cover opacity-90"
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1600&auto=format&fit=crop"
-              />
-              <div className="p-6">
-                <p className="text-sm text-gray-300">
-                  Business growth stays protected when execution ownership stays centralized.
+              <ul className="mt-6 space-y-3">
+                {ippProtections.map((p, i) => (
+                  <FadeUp key={p} delay={i * 0.05}>
+                    <li className="flex items-start gap-3 p-4 rounded-xl bg-[#1E1E1E] border border-white/10">
+                      <XCircle className="w-5 h-5 text-[#FF6A00] mt-0.5" />
+                      <span className="text-gray-200">{p}</span>
+                    </li>
+                  </FadeUp>
+                ))}
+              </ul>
+
+              <div className="mt-8 p-6 rounded-2xl bg-[#FF6A00]/10 border border-[#FF6A00]/25">
+                <p className="text-white font-semibold">
+                  You focus on business growth.
+                  <br />
+                  <span className="text-white font-bold">Zryoss manages operations and support.</span>
                 </p>
               </div>
             </div>
-          </div>
+          </FadeUp>
+
+          <FadeUp delay={0.2}>
+            <div className="relative">
+              <div className="absolute inset-0 rounded-3xl bg-[#FF6A00]/10 blur-2xl" />
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#121212]">
+                <img
+                  alt="Growth protected by system"
+                  className="w-full h-[420px] object-cover opacity-90"
+                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1600&auto=format&fit=crop"
+                />
+                <div className="p-6">
+                  <p className="text-sm text-gray-300">
+                    Business growth stays protected when execution ownership stays centralized.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* ====================== WHO BENEFITS ====================== */}
       <section className="bg-[#1E1E1E] border-y border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-20">
-          <h2 className="text-3xl font-bold text-center">
-            Who Benefits From Account Management{" "}
-            <span className="text-[#FF6A00]">& Support</span>
-          </h2>
+          <FadeUp>
+            <h2 className="text-3xl font-bold text-center">
+              Who Benefits From Account Management{" "}
+              <span className="text-[#FF6A00]">& Support</span>
+            </h2>
+          </FadeUp>
 
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {whoBenefits.map((x) => (
-              <div
-                key={x.title}
-                className="p-6 rounded-2xl bg-black/15 border border-white/10 hover:border-[#FF6A00]/40 transition"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
-                  {x.icon}
+            {whoBenefits.map((x, i) => (
+              <FadeUp key={x.title} delay={i * 0.05}>
+                <div className="p-6 rounded-2xl bg-black/15 border border-white/10 hover:border-[#FF6A00]/40 transition h-full">
+                  <div className="w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
+                    {x.icon}
+                  </div>
+                  <h3 className="mt-4 font-bold text-lg">{x.title}</h3>
+                  <p className="mt-2 text-gray-400 text-sm">{x.text}</p>
                 </div>
-                <h3 className="mt-4 font-bold text-lg">{x.title}</h3>
-                <p className="mt-2 text-gray-400 text-sm">{x.text}</p>
-              </div>
+              </FadeUp>
             ))}
           </div>
         </div>
@@ -759,24 +816,26 @@ export default function AccountManagement() {
         <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[850px] h-[850px] rounded-full bg-[#FF6A00]/10 blur-3xl" />
 
         <div className="relative max-w-5xl mx-auto px-6 py-20 text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold">
-            Account Management Is the{" "}
-            <span className="text-[#FF6A00]">Glue of the System</span>
-          </h2>
+          <FadeUp>
+            <h2 className="text-3xl sm:text-4xl font-extrabold">
+              Account Management Is the{" "}
+              <span className="text-[#FF6A00]">Glue of the System</span>
+            </h2>
 
-          <p className="mt-6 text-gray-300 text-lg">
-            Without account management:
-            <br />
-            <span className="text-white font-bold">Systems break</span>
-            <br />
-            <span className="text-white font-bold">Execution fragments</span>
-            <br />
-            <span className="text-white font-bold">Scale becomes risky</span>
-          </p>
+            <div className="mt-6 text-gray-300 text-lg">
+              Without account management:
+              <br />
+              <span className="text-white font-bold">Systems break</span>
+              <br />
+              <span className="text-white font-bold">Execution fragments</span>
+              <br />
+              <span className="text-white font-bold">Scale becomes risky</span>
+            </div>
 
-          <p className="mt-4 text-gray-400">
-            Zryoss treats account management as a core operating function, not a support desk.
-          </p>
+            <p className="mt-4 text-gray-400">
+              Zryoss treats account management as a core operating function, not a support desk.
+            </p>
+          </FadeUp>
         </div>
       </section>
 
@@ -787,33 +846,37 @@ export default function AccountManagement() {
         <div className="absolute -bottom-40 right-0 w-[650px] h-[650px] rounded-full bg-[#FF6A00]/10 blur-3xl" />
 
         <div className="relative max-w-5xl mx-auto px-6 py-20 text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold">
-            Final Thought
-          </h2>
+          <FadeUp>
+            <h2 className="text-3xl sm:text-4xl font-extrabold">
+              Final Thought
+            </h2>
 
-          <p className="mt-6 text-gray-200 text-lg font-semibold">
-            Execution does not fail due to lack of effort.
-            <br />
-            <span className="text-[#FF6A00]">It fails due to lack of ownership.</span>
-          </p>
+            <p className="mt-6 text-gray-200 text-lg font-semibold">
+              Execution does not fail due to lack of effort.
+              <br />
+              <span className="text-[#FF6A00]">It fails due to lack of ownership.</span>
+            </p>
 
-          <p className="mt-6 text-gray-300">
-            Zryoss ensures every account has one owner and full system support.
-          </p>
+            <p className="mt-6 text-gray-300">
+              Zryoss ensures every account has one owner and full system support.
+            </p>
 
-          <p className="mt-3 text-white font-bold">
-            You build relationships.
-            <br />
-            Zryoss manages execution and support.
-          </p>
+            <p className="mt-3 text-white font-bold">
+              You build relationships.
+              <br />
+              Zryoss manages execution and support.
+            </p>
 
-          <div className="mt-10 flex justify-center">
-            <button
-              onClick={() => navigate("/contact")}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#FF6A00] text-white font-bold hover:brightness-110 transition">
-              Start Managed Execution <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
+            <FadeUp>
+              <div className="mt-10 flex justify-center">
+                <button
+                  onClick={() => navigate("/contact")}
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#FF6A00] text-white font-bold hover:brightness-110 transition">
+                  Start Managed Execution <ArrowRight className="w-5 h-5" />
+                </button>
+              </div>
+            </FadeUp>
+          </FadeUp>
         </div>
       </section>
     </div>

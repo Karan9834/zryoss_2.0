@@ -51,29 +51,33 @@ export default function Blog() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column: Content */}
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
-                <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
-                Knowledge Hub
-              </div>
+              <FadeUp>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-200 mb-6">
+                  <span className="w-2 h-2 rounded-full bg-[#FF6A00]" />
+                  Knowledge Hub
+                </div>
 
-              <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
-                Our Blog & <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Insights</span>
-              </h1>
+                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
+                  Our Blog & <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Insights</span>
+                </h1>
 
-              <p className="text-gray-200 leading-relaxed text-lg mb-10">
-                Thought leadership on business platforms, execution systems,
-                and scalable growth models.
-              </p>
+                <p className="text-gray-200 leading-relaxed text-lg mb-10">
+                  Thought leadership on business platforms, execution systems,
+                  and scalable growth models.
+                </p>
+              </FadeUp>
             </div>
 
             {/* Right Column: Image */}
             <div className="relative hidden lg:block">
-              <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
-              <img
-                src="/Resources_pages_images/Blog  Insights.png"
-                alt="Blog & Insights"
-                className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
-              />
+              <FadeUp delay={0.2}>
+                <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
+                <img
+                  src="/Resources_pages_images/Blog  Insights.png"
+                  alt="Blog & Insights"
+                  className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                />
+              </FadeUp>
             </div>
           </div>
         </div>

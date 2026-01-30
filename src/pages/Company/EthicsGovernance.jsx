@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import FadeUp from "../../components/animations/FadeUp";
 import {
     ShieldCheck,
     Scale,
@@ -15,52 +15,51 @@ import {
     BookOpen,
 } from "lucide-react";
 
-/**
- * FadeUp Animation Component
- */
-const FadeUp = ({ children, delay = 0 }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay }}
-    >
-        {children}
-    </motion.div>
-);
-
 export default function EthicsGovernance() {
     return (
         <main className="bg-[#050505] text-white overflow-hidden font-sans">
             {/* ================= HERO SECTION ================= */}
-            <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center border-b border-white/5 pt-20">
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
-                        alt="Ethics and Governance Background"
-                        className="w-full h-full object-cover opacity-20"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/70 to-[#050505]" />
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,138,0,0.08),transparent_70%)]" />
+            <section className="relative pt-32 pb-20 overflow-hidden">
+                {/* Background Effects */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                    <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
+                    <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[100px]" />
                 </div>
 
-                <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-                    <FadeUp>
-                        <span className="inline-block px-4 py-1.5 mb-6 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium tracking-wide">
-                            Ethics & Governance
-                        </span>
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
-                            Responsible Systems. <br className="hidden md:block" />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                                Transparent Operations.
-                            </span>
-                        </h1>
-                        <p className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                            Trusted Growth. At Zryoss, ethics and governance are core operating
-                            principles embedded into how the platform is designed, managed, and
-                            scaled.
-                        </p>
-                    </FadeUp>
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Column: Content */}
+                        <div>
+                            <FadeUp>
+                                <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium tracking-wide">
+                                    Ethics & Governance
+                                </div>
+                                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight mb-5">
+                                    Responsible Systems. <br className="hidden md:block" />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                                        Transparent Operations.
+                                    </span>
+                                </h1>
+                                <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-lg">
+                                    Trusted Growth. At Zryoss, ethics and governance are core operating
+                                    principles embedded into how the platform is designed, managed, and
+                                    scaled.
+                                </p>
+                            </FadeUp>
+                        </div>
+
+                        {/* Right Column: Image */}
+                        <div className="relative mt-10 lg:mt-0">
+                            <FadeUp delay={0.2}>
+                                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-blue-600/20 blur-3xl rounded-3xl transform rotate-3" />
+                                <img
+                                    src="/company-hero-images/3.png"
+                                    alt="Ethics and Governance"
+                                    className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                                />
+                            </FadeUp>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -192,11 +191,13 @@ export default function EthicsGovernance() {
             <section className="py-24">
                 <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
                     {/* Ethical Business Conduct */}
-                    <FadeUp>
-                        <h3 className="text-3xl font-bold mb-8 flex items-center gap-3">
-                            <Scale className="w-8 h-8 text-orange-500" />
-                            Ethical Business Conduct
-                        </h3>
+                    <div>
+                        <FadeUp>
+                            <h3 className="text-3xl font-bold mb-8 flex items-center gap-3">
+                                <Scale className="w-8 h-8 text-orange-500" />
+                                Ethical Business Conduct
+                            </h3>
+                        </FadeUp>
                         <div className="space-y-6">
                             {[
                                 "Honest representation of capabilities",
@@ -204,27 +205,32 @@ export default function EthicsGovernance() {
                                 "Ethical partner and client relationships",
                                 "Fair treatment of vendors and service partners",
                             ].map((item, i) => (
-                                <div
-                                    key={i}
-                                    className="flex items-start gap-4 p-4 rounded-xl bg-[#0E0F12] border border-white/5 hover:border-orange-500/30 transition-colors"
-                                >
-                                    <CheckCircle2 className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
-                                    <p className="text-gray-300">{item}</p>
-                                </div>
+                                <FadeUp key={i} delay={i * 0.05}>
+                                    <div
+                                        className="flex items-start gap-4 p-4 rounded-xl bg-[#0E0F12] border border-white/5 hover:border-orange-500/30 transition-colors"
+                                    >
+                                        <CheckCircle2 className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
+                                        <p className="text-gray-300">{item}</p>
+                                    </div>
+                                </FadeUp>
                             ))}
                         </div>
-                        <p className="mt-8 text-red-400 text-sm flex items-center gap-2">
-                            <AlertTriangle size={16} />
-                            No tolerance for misleading commitments or unethical practices.
-                        </p>
-                    </FadeUp>
+                        <FadeUp delay={0.3}>
+                            <p className="mt-8 text-red-400 text-sm flex items-center gap-2">
+                                <AlertTriangle size={16} />
+                                No tolerance for misleading commitments or unethical practices.
+                            </p>
+                        </FadeUp>
+                    </div>
 
                     {/* Transparency in Operations */}
-                    <FadeUp delay={0.2}>
-                        <h3 className="text-3xl font-bold mb-8 flex items-center gap-3">
-                            <Eye className="w-8 h-8 text-orange-500" />
-                            Transparency in Operations
-                        </h3>
+                    <div>
+                        <FadeUp delay={0.2}>
+                            <h3 className="text-3xl font-bold mb-8 flex items-center gap-3">
+                                <Eye className="w-8 h-8 text-orange-500" />
+                                Transparency in Operations
+                            </h3>
+                        </FadeUp>
                         <div className="space-y-6">
                             {[
                                 "Documented scopes and approvals",
@@ -232,19 +238,22 @@ export default function EthicsGovernance() {
                                 "Clear reporting and performance tracking",
                                 "Defined escalation and resolution paths",
                             ].map((item, i) => (
-                                <div
-                                    key={i}
-                                    className="flex items-start gap-4 p-4 rounded-xl bg-[#0E0F12] border border-white/5 hover:border-orange-500/30 transition-colors"
-                                >
-                                    <CheckCircle2 className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
-                                    <p className="text-gray-300">{item}</p>
-                                </div>
+                                <FadeUp key={i} delay={0.2 + i * 0.05}>
+                                    <div
+                                        className="flex items-start gap-4 p-4 rounded-xl bg-[#0E0F12] border border-white/5 hover:border-orange-500/30 transition-colors"
+                                    >
+                                        <CheckCircle2 className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
+                                        <p className="text-gray-300">{item}</p>
+                                    </div>
+                                </FadeUp>
                             ))}
                         </div>
-                        <p className="mt-8 text-gray-400 text-sm">
-                            All stakeholders operate with visibility and clarity.
-                        </p>
-                    </FadeUp>
+                        <FadeUp delay={0.5}>
+                            <p className="mt-8 text-gray-400 text-sm">
+                                All stakeholders operate with visibility and clarity.
+                            </p>
+                        </FadeUp>
+                    </div>
                 </div>
             </section>
 
@@ -400,9 +409,11 @@ export default function EthicsGovernance() {
                                 "Controls strengthened with scale",
                                 "Learnings incorporated into system",
                             ].map((item, i) => (
-                                <div key={i} className="p-6 bg-black rounded-xl border border-white/5">
-                                    <p className="text-gray-300 font-medium">{item}</p>
-                                </div>
+                                <FadeUp key={i} delay={i * 0.1}>
+                                    <div className="p-6 bg-black rounded-xl border border-white/5 h-full">
+                                        <p className="text-gray-300 font-medium">{item}</p>
+                                    </div>
+                                </FadeUp>
                             ))}
                         </div>
                         <p className="text-gray-400">
@@ -415,8 +426,10 @@ export default function EthicsGovernance() {
             {/* ================= WHAT ETHICS PROTECT & COMMITMENT ================= */}
             <section className="py-24">
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-                    <FadeUp>
-                        <h3 className="text-2xl font-bold mb-8">What This Framework Protects</h3>
+                    <div>
+                        <FadeUp>
+                            <h3 className="text-2xl font-bold mb-8">What This Framework Protects</h3>
+                        </FadeUp>
                         <div className="grid grid-cols-2 gap-4">
                             {[
                                 "Client Trust",
@@ -424,19 +437,22 @@ export default function EthicsGovernance() {
                                 "Platform Credibility",
                                 "Long-term Health",
                             ].map((item, i) => (
-                                <div
-                                    key={i}
-                                    className="p-6 rounded-xl bg-[#0E0F12] border border-white/10 text-center hover:bg-[#15171B] transition-colors"
-                                >
-                                    <p className="text-orange-400 font-semibold">{item}</p>
-                                </div>
+                                <FadeUp key={i} delay={i * 0.1}>
+                                    <div
+                                        className="p-6 rounded-xl bg-[#0E0F12] border border-white/10 text-center hover:bg-[#15171B] transition-colors h-full flex items-center justify-center"
+                                    >
+                                        <p className="text-orange-400 font-semibold">{item}</p>
+                                    </div>
+                                </FadeUp>
                             ))}
                         </div>
-                        <p className="mt-8 text-gray-400 italic">
-                            "Ethics are not restrictive. They are enablers of sustainable
-                            growth."
-                        </p>
-                    </FadeUp>
+                        <FadeUp delay={0.4}>
+                            <p className="mt-8 text-gray-400 italic">
+                                "Ethics are not restrictive. They are enablers of sustainable
+                                growth."
+                            </p>
+                        </FadeUp>
+                    </div>
 
                     <FadeUp delay={0.2}>
                         <div className="p-8 rounded-3xl bg-gradient-to-br from-orange-500/10 to-transparent border border-orange-500/20 h-full flex flex-col justify-center">
