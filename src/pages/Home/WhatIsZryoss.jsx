@@ -22,11 +22,10 @@ export default function WhatIsZryoss() {
 
       {/* ✅ width aligned with navbar/footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-end">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* LEFT CONTENT */}
-          <FadeUp>
-            <div className="space-y-10">
-              {/* Header */}
+          <div className="flex flex-col justify-between h-full gap-8 lg:gap-12">
+            <FadeUp>
               <div>
                 <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-4 block">
                   A Business Operating System
@@ -37,7 +36,6 @@ export default function WhatIsZryoss() {
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                     Partner
                   </span>
-
                 </h2>
 
                 <div className="w-24 h-1 bg-orange-500 rounded-full mb-10" />
@@ -48,9 +46,11 @@ export default function WhatIsZryoss() {
                   complex execution behind the scenes.
                 </p>
               </div>
+            </FadeUp>
 
-              {/* Bullet Points */}
-              <div className="space-y-5 pt-4">
+            {/* Bullet Points */}
+            <FadeUp delay={0.2}>
+              <div className="space-y-5">
                 {points.map((point, idx) => (
                   <div key={idx} className="flex items-start gap-4">
                     <div className="mt-0.5">
@@ -63,15 +63,14 @@ export default function WhatIsZryoss() {
                   </div>
                 ))}
               </div>
-            </div>
-          </FadeUp>
+            </FadeUp>
+          </div>
 
-          {/* RIGHT (Image frame + Quote frame like screenshot) */}
-          <FadeUp delay={0.15}>
-            <div className="space-y-6">
-              {/* ✅ TOP IMAGE FRAME (exact like screenshot - no extra inner border) */}
-              <div className="relative rounded-[42px] border border-orange-500/25 bg-black/40 overflow-hidden">
-                {/* padding like frame */}
+          {/* RIGHT (Image frame + Quote frame) */}
+          <div className="flex flex-col justify-between h-full gap-6">
+            <FadeUp delay={0.15}>
+              {/* ✅ TOP IMAGE FRAME */}
+              <div className="relative rounded-[42px] border border-orange-500/25 bg-black/40 overflow-hidden h-full">
                 <div className="p-8">
                   <div className="relative rounded-[28px] overflow-hidden shadow-[0_35px_90px_rgba(0,0,0,0.75)]">
                     <img
@@ -82,18 +81,16 @@ export default function WhatIsZryoss() {
                   </div>
                 </div>
 
-                {/* subtle glow */}
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-70" />
               </div>
+            </FadeUp>
 
-
-              {/* ✅ BOTTOM QUOTE FRAME (like screenshot bottom card) */}
+            {/* ✅ BOTTOM QUOTE FRAME */}
+            <FadeUp delay={0.3}>
               <div className="relative rounded-[24px] border border-white/10 bg-white/[0.04] backdrop-blur-xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.45)]">
-                {/* glow */}
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-50 pointer-events-none" />
 
                 <div className="relative p-5 md:p-6">
-                  {/* left orange bar */}
                   <div className="absolute left-0 top-4 bottom-4 w-[3px] bg-orange-500 rounded-full" />
 
                   <p className="text-white text-base md:text-lg font-light leading-snug italic pl-6">
@@ -106,8 +103,8 @@ export default function WhatIsZryoss() {
                   </p>
                 </div>
               </div>
-            </div>
-          </FadeUp>
+            </FadeUp>
+          </div>
         </div>
       </div>
     </section>

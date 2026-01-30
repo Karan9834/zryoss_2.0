@@ -70,12 +70,9 @@ export default function BlogSection() {
                                     <div className="mt-auto">
                                         <Link
                                             to={`/resources/blog/${blog.id}`}
-                                            className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-orange-500 text-white text-[11px] font-semibold shadow-lg shadow-orange-500/15 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                                            className="block w-full py-3 rounded-full bg-orange-500 text-white text-sm font-semibold shadow-lg shadow-orange-500/15 hover:scale-[1.02] active:scale-[0.98] transition-all text-center"
                                         >
                                             Explore
-                                            <span className="w-7 h-7 rounded-full bg-gray-800 text-orange-400 flex items-center justify-center border border-white/10">
-                                                <ArrowUpRight className="w-3.5 h-3.5" />
-                                            </span>
                                         </Link>
                                     </div>
                                 </div>

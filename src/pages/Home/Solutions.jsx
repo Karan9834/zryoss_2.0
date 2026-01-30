@@ -77,6 +77,7 @@ export default function SolutionsMarquee() {
   // ✅ REAL infinite loop: use scrollLeft trick
   const speedRef = useRef(0.55); // slow smooth
   const isDraggingRef = useRef(false);
+  const isPausedRef = useRef(false); // ✅ Pause state
   const startXRef = useRef(0);
   const startScrollLeftRef = useRef(0);
 
@@ -96,7 +97,7 @@ export default function SolutionsMarquee() {
     const tick = () => {
       if (!rootRef.current) return;
 
-      if (!isDraggingRef.current) {
+      if (!isDraggingRef.current && !isPausedRef.current) {
         root.scrollLeft += speedRef.current;
       }
 
@@ -196,7 +197,12 @@ export default function SolutionsMarquee() {
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
           onPointerCancel={onPointerUp}
-          onPointerLeave={onPointerUp}
+          // ✅ Hover handling: stop marquee
+          onMouseEnter={() => (isPausedRef.current = true)}
+          onMouseLeave={() => {
+            isPausedRef.current = false;
+            onPointerUp(); // also ensure drag stops if mouse leaves
+          }}
         >
           <div
             ref={trackRef}
@@ -307,19 +313,16 @@ function SolutionCard({ item }) {
             <Link
               to={item.link}
               className="
-                inline-flex items-center gap-2
-                px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-full
+                block w-full
+                py-2 sm:py-2.5 rounded-full
                 bg-orange-500 text-white
-                text-[10px] sm:text-[11px] md:text-xs font-semibold
+                text-xs sm:text-sm font-semibold
                 shadow-lg shadow-orange-500/15
                 hover:scale-[1.02] active:scale-[0.98]
-                transition
+                transition text-center
               "
             >
               Explore
-              <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-gray-800 text-orange-400 flex items-center justify-center border border-white/10">
-                <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-              </span>
             </Link>
           </div>
 

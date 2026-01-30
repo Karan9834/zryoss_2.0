@@ -39,39 +39,37 @@ const CoreBrands = () => {
                     </motion.div>
                 </div>
 
-                <div className="relative flex overflow-hidden -mx-4">
-                    <motion.div
-                        className="flex whitespace-nowrap py-12"
-                        style={{ willChange: "transform" }}
-                        animate={{
-                            x: ["0%", "-25%"],
-                        }}
-                        transition={{
-                            x: {
-                                repeat: Infinity,
-                                repeatType: "loop",
-                                duration: 40, // Elegant pace
-                                ease: "linear",
-                            },
-                        }}
-                        whileHover={{ animationPlayState: "paused" }}
-                    >
+                <div className="relative flex overflow-hidden -mx-4 group/track">
+                    <style>{`
+                        @keyframes slide {
+                            0% { transform: translateX(0); }
+                            100% { transform: translateX(-25%); }
+                        }
+                        .animate-slide {
+                            animation: slide 40s linear infinite;
+                        }
+                        /* Pause only when a card (.group) inside is hovered */
+                        .animate-slide:has(.group:hover) {
+                            animation-play-state: paused;
+                        }
+                    `}</style>
+                    <div className="flex whitespace-nowrap py-12 animate-slide w-max">
                         {allLogos.map((logo, index) => (
                             <motion.div
                                 key={`${logo.id}-${index}`}
                                 whileHover={{ y: -5, scale: 1.02 }}
-                                className="flex-shrink-0 mx-4 w-44 h-20 md:w-60 md:h-24 bg-white rounded-2xl md:rounded-[2rem] flex items-center justify-center p-2 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] border border-white/10 group transition-all duration-500"
+                                className="flex-shrink-0 mx-4 w-44 h-20 md:w-60 md:h-24 bg-white rounded-2xl md:rounded-[2rem] flex items-center justify-center p-2 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] border border-white/10 group transition-all duration-500 hover:shadow-[0_10px_40px_-5px_rgba(249,115,22,0.4)] hover:border-orange-500/30"
                             >
                                 <img
                                     src={logo.src}
                                     alt={logo.alt}
-                                    className="w-[90%] h-[90%] object-contain filter grayscale-0 opacity-100 group-hover:grayscale group-hover:opacity-80 transition-all duration-700 pointer-events-none"
+                                    className="w-[90%] h-[90%] object-contain transition-all duration-500 pointer-events-none"
                                 />
                             </motion.div>
                         ))}
-                    </motion.div>
+                    </div>
 
-                    {/* Premium Gradient Fades - Reduced width and intensity */}
+                    {/* Premium Gradient Fades */}
                     <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
                     <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
                 </div>
