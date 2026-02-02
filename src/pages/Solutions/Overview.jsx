@@ -59,7 +59,7 @@ const SolutionsOverview = () => {
                   </span>
                 </h1>
                 <p className="text-xl text-gray-400 leading-relaxed mb-10 max-w-xl">
-                  The Zryoss platform provides a range of domain-specific solutions—from Tech and Marketing to HR and Business Consulting—governed by one central system for predictable execution.
+                  Our platform provides a range of domain-specific solutions—from Tech and Marketing to HR and Business Consulting—governed by one central system for predictable execution.
                 </p>
 
                 <div className="flex flex-wrap gap-4">
@@ -100,7 +100,7 @@ const SolutionsOverview = () => {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">The Zryoss <span className="text-orange-500">Solutions Framework</span></h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                All Zryoss solutions follow a three-tier delivery model to ensure quality, accountability, and scalability.
+                All our solutions follow a three-tier delivery model to ensure quality, accountability, and scalability.
               </p>
             </div>
           </FadeUp>
@@ -109,7 +109,7 @@ const SolutionsOverview = () => {
             {[
               {
                 title: "Tier 1: Validation",
-                desc: "Every requirement is validated by the Zryoss platform for feasibility and business alignment.",
+                desc: "Every requirement is validated by our platform for feasibility and business alignment.",
                 icon: <Target size={30} />
               },
               {
@@ -119,7 +119,7 @@ const SolutionsOverview = () => {
               },
               {
                 title: "Tier 3: Execution",
-                desc: "Delivery is governed by Zryoss systems to enforce timelines, quality benchmarks, and security.",
+                desc: "Delivery is governed by our systems to enforce timelines, quality benchmarks, and security.",
                 icon: <ShieldCheck size={30} />
               }
             ].map((tier, i) => (
@@ -145,7 +145,7 @@ const SolutionsOverview = () => {
               <div className="max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-bold mb-6">Core Solution <span className="text-orange-500">Domains</span></h2>
                 <p className="text-xl text-gray-400">
-                  Select a domain to see how Zryoss systematizes delivery in that specific area.
+                  Select a domain to see how we systematize delivery in that specific area.
                 </p>
               </div>
             </div>
@@ -236,7 +236,7 @@ const SolutionsOverview = () => {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">Why Zryoss for <span className="text-orange-500">Your Solutions?</span></h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Fragmentation is the enemy of growth. Zryoss brings order to the delivery process.
+                Fragmentation is the enemy of growth. We bring order to the delivery process.
               </p>
             </div>
           </FadeUp>
@@ -245,7 +245,7 @@ const SolutionsOverview = () => {
             {[
               {
                 title: "Accountability",
-                desc: "You deal with Zryoss platform, not disconnected vendors. We own the delivery result.",
+                desc: "You deal with our platform, not disconnected vendors. We own the delivery result.",
                 icon: <ShieldCheck className="text-orange-500" />
               },
               {
@@ -318,7 +318,7 @@ const SolutionsOverview = () => {
                     <Rocket className="text-orange-500" /> Ready to Scale?
                   </h3>
                   <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-                    Don't let fragmented execution slow you down. Bring your business vision to life with the Zryoss solutions ecosystem.
+                    Don't let fragmented execution slow you down. Bring your business vision to life with our solutions ecosystem.
                   </p>
                   <Link to="/contact" className="w-full py-4 bg-white text-black font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors">
                     Start Your Project <ArrowRight size={20} />
@@ -339,7 +339,7 @@ const SolutionsOverview = () => {
           <FadeUp>
             <h2 className="text-3xl md:text-5xl font-bold mb-8">Ready to Build the <span className="text-orange-500">Future?</span></h2>
             <p className="text-xl text-gray-400 mb-12">
-              Whether you need software development, market growth, or talent acquisition, Zryoss is your one-stop operating system.
+              Whether you need software development, market growth, or talent acquisition, we're your one-stop operating system.
             </p>
           </FadeUp>
 

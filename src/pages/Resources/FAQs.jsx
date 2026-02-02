@@ -215,7 +215,7 @@ export default function FAQs() {
   return (
     <div className="bg-[#050505] text-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-screen flex items-center pt-20 pb-16">
+      <section className="relative overflow-hidden min-h-screen flex items-center pt-16 pb-16">
         {/* Background Effects */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[120px]" />
@@ -232,19 +232,36 @@ export default function FAQs() {
                   Transparency & Trust
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
                   Frequently Asked <span className="text-orange-500">Questions</span>
                 </h1>
 
-                <p className="text-gray-200 leading-relaxed text-lg mb-10">
+                <p className="text-gray-200 leading-relaxed text-lg mb-8 max-w-2xl">
                   Clear Answers. Transparent System. Real Structure. <br />
-                  At Zryoss, we believe that clarity creates trust.
+                  We believe that clarity creates trust. Explore comprehensive
+                  answers to the most common questions about our business operating system,
+                  partnership models, execution framework, and how we empower independent
+                  professionals to build scalable brands with complete operational support.
                 </p>
+
+
+                {/* <div className="flex flex-wrap gap-4 items-center">
+                  <div className="flex -space-x-3">
+                    {[5, 6, 7, 8].map((i) => (
+                      <div key={i} className="w-10 h-10 rounded-full border-2 border-[#050505] bg-gray-800 flex items-center justify-center overflow-hidden">
+                        <img src={`https://i.pravatar.cc/100?img=${i + 15}`} alt="Partner" className="w-full h-full object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-sm text-gray-400">
+                    <span className="text-white font-semibold">500+</span> partners trust our system
+                  </div>
+                </div> */}
               </FadeUp>
             </div>
 
             {/* Right Column: Image */}
-            <div className="relative hidden lg:block">
+            <div className="relative block">
               <FadeUp delay={0.2}>
                 <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
                 <img
