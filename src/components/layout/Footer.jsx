@@ -249,7 +249,7 @@ export default function Footer() {
               {[
                 { name: "Privacy", path: "/privacy" },
                 { name: "Terms", path: "/terms" },
-                { name: "Compliance", path: "/security" },
+                { name: "Compliance", path: "/compliance" },
               ].map((link) => (
                 <Link
                   key={link.name}

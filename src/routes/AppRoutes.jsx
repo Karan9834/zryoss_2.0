@@ -88,6 +88,9 @@ import VisionLeadership from "../pages/Company/VisionLeadership";
 import EthicsGovernance from "../pages/Company/EthicsGovernance";
 import RiskDisclosure from "../pages/Company/RiskDisclosure";
 import Disclaimer from "../pages/Company/Disclaimer";
+import TermsCondition from "../pages/TermsCondition";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import Compliance from "../pages/Compliance";
 
 export default function AppRoutes() {
   return (
@@ -183,6 +186,9 @@ export default function AppRoutes() {
       <Route path="/company/ethics-governance" element={<EthicsGovernance />} />
       <Route path="/company/risk-disclosure" element={<RiskDisclosure />} />
       <Route path="/company/disclaimer" element={<Disclaimer />} />
+      <Route path="/terms" element={<TermsCondition />} />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/compliance" element={<Compliance />} />
 
     </Routes>
   );
