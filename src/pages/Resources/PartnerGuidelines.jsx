@@ -6,7 +6,7 @@ import HeroContact from "../Home/HeroContact";
 const guidelines = [
   {
     title: "Ethical Representation",
-    desc: "Partners must represent Zryoss accurately and avoid misleading claims related to income, partnerships, or outcomes.",
+    desc: "Partners must represent ZRYOSS accurately and avoid misleading claims related to income, partnerships, or outcomes.",
     icon: <Briefcase className="w-5 h-5" />
   },
   {
@@ -16,7 +16,7 @@ const guidelines = [
   },
   {
     title: "No Recruitment-Based Promotion",
-    desc: "Zryoss must never be positioned as an MLM, referral, or recruitment income opportunity.",
+    desc: "ZRYOSS must never be positioned as an MLM, referral, or recruitment income opportunity.",
     icon: <ShieldAlert className="w-5 h-5" />
   },
   {
@@ -26,7 +26,7 @@ const guidelines = [
   },
   {
     title: "Brand Usage Policy",
-    desc: "Brand assets and references must be used strictly according to approved Zryoss brand guidelines.",
+    desc: "Brand assets and references must be used strictly according to approved ZRYOSS brand guidelines.",
     icon: <FileText className="w-5 h-5" />
   },
   {
@@ -60,13 +60,13 @@ export default function PartnerGuidelines() {
             <span className="inline-block mb-4 text-xs tracking-[0.2em] uppercase text-orange-400 font-bold px-4 py-1 rounded-full bg-orange-500/10 border border-orange-500/20">
               Governance & Compliance
             </span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight mb-8">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight mb-8 font-['Playfair_Display']">
               Partner <span className="text-orange-500 italic">Guidelines</span>
             </h1>
             <p className="mt-6 max-w-2xl text-gray-400 text-xl font-light leading-relaxed mb-10">
               Ethical standards, communication rules, and operational
               responsibilities required to represent and operate within the
-              Zryoss ecosystem.
+              ZRYOSS ecosystem.
             </p>
 
             <div className="flex flex-wrap gap-8 items-center text-sm">
@@ -117,8 +117,8 @@ export default function PartnerGuidelines() {
               <div className="text-center md:text-left">
                 <h4 className="text-xl font-bold text-red-500 mb-2">Notice of Mandatory Adherence</h4>
                 <p className="text-gray-500 text-lg font-light leading-relaxed">
-                  Adherence to these guidelines is mandatory for continued association with the Zryoss platform.
-                  Zryoss reserves the right to modify policies to ensure compliance, integrity, and long-term sustainability.
+                  Adherence to these guidelines is mandatory for continued association with the ZRYOSS platform.
+                  ZRYOSS reserves the right to modify policies to ensure compliance, integrity, and long-term sustainability.
                 </p>
               </div>
             </div>

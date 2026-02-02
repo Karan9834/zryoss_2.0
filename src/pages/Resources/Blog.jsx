@@ -57,7 +57,7 @@ export default function Blog() {
                   Knowledge Hub
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
+                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6 font-['Playfair_Display']">
                   Our Blog & <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Insights</span>
                 </h1>
 
@@ -160,14 +160,14 @@ export default function Blog() {
                   Weekly Insights
                 </p>
 
-                <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight font-['Playfair_Display']">
                   Get Stories in Your Inbox <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Twice a Month</span>
                 </h2>
 
                 <p className="mt-8 max-w-xl text-gray-400 text-lg font-light leading-relaxed">
                   Curated insights, platform updates, and execution-focused
-                  perspectives from the Zryoss ecosystem.
+                  perspectives from the ZRYOSS ecosystem.
                 </p>
 
                 {status === "success" ? (

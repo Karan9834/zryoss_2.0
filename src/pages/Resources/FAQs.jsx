@@ -9,11 +9,11 @@ const faqsData = [
     icon: <HelpCircle className="w-5 h-5" />,
     questions: [
       {
-        q: "1. What exactly is Zryoss?",
-        a: `Zryoss is a Business Operating System — not just a company. 
+        q: "1. What exactly is ZRYOSS?",
+        a: `ZRYOSS is a Business Operating System — not just a company. 
         It helps individuals and organizations build, operate, and scale independent brands using a structured backend system managed by Kryoss Softech Private Limited and its ecosystem brands.
         <br/><br/>
-        Zryoss provides:
+        ZRYOSS provides:
         <ul class="list-disc pl-5 mt-2 space-y-1">
           <li>Execution frameworks</li>
           <li>Technology platforms</li>
@@ -22,19 +22,19 @@ const faqsData = [
           <li>Quality governance</li>
         </ul>
         <br/>
-        You focus on business growth — Zryoss manages operations.`
+        You focus on business growth — ZRYOSS manages operations.`
       },
       {
-        q: "2. Is Zryoss a franchise or investment program?",
-        a: "No. Zryoss is not a franchise, MLM, or investment-based system. It’s a business enablement platform where IPPs and BPPs operate independently under their own brand names using Zryoss’s system and support."
+        q: "2. Is ZRYOSS a franchise or investment program?",
+        a: "No. ZRYOSS is not a franchise, MLM, or investment-based system. It’s a business enablement platform where IPPs and BPPs operate independently under their own brand names using ZRYOSS’s system and support."
       },
       {
-        q: "3. Who owns Zryoss?",
-        a: "Zryoss is a brand developed and operated by <strong>Kryoss Softech Private Limited</strong>, and supported by group companies like <strong>Clink Consultancy Services Private Limited</strong>. These companies manage technology, HR, operations, and service execution within the ecosystem."
+        q: "3. Who owns ZRYOSS?",
+        a: "ZRYOSS is a brand developed and operated by <strong>Kryoss Softech Private Limited</strong>, and supported by group companies like <strong>Clink Consultancy Services Private Limited</strong>. These companies manage technology, HR, operations, and service execution within the ecosystem."
       },
       {
-        q: "4. What makes Zryoss different from other business platforms?",
-        a: `Unlike traditional platforms, Zryoss focuses on:
+        q: "4. What makes ZRYOSS different from other business platforms?",
+        a: `Unlike traditional platforms, ZRYOSS focuses on:
         <ul class="list-disc pl-5 mt-2 space-y-1">
           <li>Execution, not just training</li>
           <li>Systems, not people dependency</li>
@@ -54,12 +54,12 @@ const faqsData = [
         q: "5. What is an IPP (Independent Prime Partner)?",
         a: `An IPP is an individual or small team who wants to build their own brand under a supported structure.
         <br/><br/>
-        Zryoss provides:
+        ZRYOSS provides:
         <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-400">
           <li><strong>Brand setup</strong> (logo, website, profiles)</li>
           <li><strong>6 months</strong> of backend and marketing support</li>
           <li>Client demo, delivery, and account management</li>
-          <li>Operational handling by Zryoss teams</li>
+          <li>Operational handling by ZRYOSS teams</li>
         </ul>
         <br/>
         <strong>Cost:</strong> ₹50,000 (one-time setup)`
@@ -68,7 +68,7 @@ const faqsData = [
         q: "6. What is a BPP (Independent Business Partner)?",
         a: `A BPP is a larger-scale business partner who can handle multiple verticals and manage their own IPPs under them.
         <br/><br/>
-        Zryoss provides:
+        ZRYOSS provides:
         <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-400">
           <li>Multi-vertical brand setup</li>
           <li>Dedicated Account Manager</li>
@@ -80,11 +80,11 @@ const faqsData = [
       },
       {
         q: "7. Can IPPs and BPPs create their own sub-partners?",
-        a: "Yes. IPP and BPP models allow limited-level sub-partnerships (up to Level 3) for local expansion and passive income — but all demos, execution, and delivery remain managed by Zryoss to maintain quality and control."
+        a: "Yes. IPP and BPP models allow limited-level sub-partnerships (up to Level 3) for local expansion and passive income — but all demos, execution, and delivery remain managed by ZRYOSS to maintain quality and control."
       },
       {
-        q: "8. Who handles client delivery — IPP/BPP or Zryoss?",
-        a: `All client deliveries are handled by Zryoss backend teams and execution brands like:
+        q: "8. Who handles client delivery — IPP/BPP or ZRYOSS?",
+        a: `All client deliveries are handled by ZRYOSS backend teams and execution brands like:
         <ul class="grid grid-cols-2 gap-2 mt-2 text-sm text-orange-400 font-medium">
           <li>• Kryoss Softech</li>
           <li>• Clink HR</li>
@@ -95,7 +95,7 @@ const faqsData = [
           <li>• Vyombiz</li>
         </ul>
         <br/>
-        Partners manage relationships and growth; Zryoss manages execution.`
+        Partners manage relationships and growth; ZRYOSS manages execution.`
       }
     ]
   },
@@ -104,7 +104,7 @@ const faqsData = [
     icon: <Workflow className="w-5 h-5" />,
     questions: [
       {
-        q: "9. How does Zryoss ensure delivery quality?",
+        q: "9. How does ZRYOSS ensure delivery quality?",
         a: `Quality is controlled through a four-layer quality framework:
         <ol class="list-decimal pl-5 mt-2 space-y-2 text-gray-400">
           <li><strong>Pre-execution</strong> validation</li>
@@ -113,7 +113,7 @@ const faqsData = [
           <li><strong>Post-delivery</strong> feedback</li>
         </ol>
         <br/>
-        Zryoss has dedicated quality and account teams that monitor every stage.`
+        ZRYOSS has dedicated quality and account teams that monitor every stage.`
       },
       {
         q: "10. How are vendors managed?",
@@ -125,7 +125,7 @@ const faqsData = [
           <li>Replaced if standards drop</li>
         </ul>
         <br/>
-        Vendors never operate independently — they work within the Zryoss system.`
+        Vendors never operate independently — they work within the ZRYOSS system.`
       },
       {
         q: "11. Who do clients and partners talk to for support?",
@@ -133,7 +133,7 @@ const faqsData = [
       },
       {
         q: "12. What happens if a delay or issue occurs?",
-        a: "Delays are managed through: Central tracking, Escalation management, Alternate resource planning. Zryoss ensures delivery continuity and transparent communication during issues."
+        a: "Delays are managed through: Central tracking, Escalation management, Alternate resource planning. ZRYOSS ensures delivery continuity and transparent communication during issues."
       }
     ]
   },
@@ -142,8 +142,8 @@ const faqsData = [
     icon: <Building2 className="w-5 h-5" />,
     questions: [
       {
-        q: "13. What are Zryoss’s core execution brands?",
-        a: `Zryoss powers multiple brands across industries:
+        q: "13. What are ZRYOSS’s core execution brands?",
+        a: `ZRYOSS powers multiple brands across industries:
         <br/><br/>
         <div class="overflow-x-auto">
           <table class="w-full border-collapse border border-white/10 text-sm">
@@ -165,15 +165,15 @@ const faqsData = [
           </table>
         </div>
         <br/>
-        Each brand executes in its domain while Zryoss governs quality and timelines.`
+        Each brand executes in its domain while ZRYOSS governs quality and timelines.`
       },
       {
         q: "14. Can an IPP choose any business domain?",
         a: "Yes. IPP can select their preferred domain like IT, HR, Marketing, etc. BPPs can select multiple verticals and manage multiple IPPs."
       },
       {
-        q: "15. How does Zryoss handle multi-brand coordination?",
-        a: "All brands operate through one backend platform — Zryoss coordinates dependencies, reporting, and delivery timelines centrally."
+        q: "15. How does ZRYOSS handle multi-brand coordination?",
+        a: "All brands operate through one backend platform — ZRYOSS coordinates dependencies, reporting, and delivery timelines centrally."
       }
     ]
   },
@@ -182,24 +182,24 @@ const faqsData = [
     icon: <Scale className="w-5 h-5" />,
     questions: [
       {
-        q: "16. Is Zryoss a legally registered company?",
-        a: "Yes. Zryoss operates under Kryoss Softech Private Limited (a legally registered company in India) and works with its group companies for domain-specific operations like Clink Consultancy Services Private Limited."
+        q: "16. Is ZRYOSS a legally registered company?",
+        a: "Yes. ZRYOSS operates under Kryoss Softech Private Limited (a legally registered company in India) and works with its group companies for domain-specific operations like Clink Consultancy Services Private Limited."
       },
       {
         q: "17. Are there written agreements or terms for partners?",
         a: "Yes. Every IPP/BPP onboarding includes a formal agreement defining: Scope of services, Roles and responsibilities, Commercial terms, Platform usage policies."
       },
       {
-        q: "18. Does Zryoss comply with data protection and confidentiality?",
+        q: "18. Does ZRYOSS comply with data protection and confidentiality?",
         a: "Yes. All client and partner data are handled under access-controlled systems, NDA and confidentiality terms, and role-based visibility only. Data is used strictly for operational purposes."
       },
       {
-        q: "19. Can Zryoss operations change over time?",
+        q: "19. Can ZRYOSS operations change over time?",
         a: "Yes — systems evolve as the platform scales. Updates are always announced transparently, designed for better stability, and integrated into existing operations smoothly."
       },
       {
-        q: "20. What kind of businesses benefit the most from Zryoss?",
-        a: "Zryoss is ideal for: Professionals looking to start a business with structure, Agencies wanting backend execution support, Consultants aiming to scale without chaos, Businesses seeking operational clarity."
+        q: "20. What kind of businesses benefit the most from ZRYOSS?",
+        a: "ZRYOSS is ideal for: Professionals looking to start a business with structure, Agencies wanting backend execution support, Consultants aiming to scale without chaos, Businesses seeking operational clarity."
       }
     ]
   }
@@ -232,13 +232,13 @@ export default function FAQs() {
                   Transparency & Trust
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
+                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6 font-['Playfair_Display']">
                   Frequently Asked <span className="text-orange-500">Questions</span>
                 </h1>
 
                 <p className="text-gray-200 leading-relaxed text-lg mb-10">
                   Clear Answers. Transparent System. Real Structure. <br />
-                  At Zryoss, we believe that clarity creates trust.
+                  At ZRYOSS, we believe that clarity creates trust.
                 </p>
               </FadeUp>
             </div>
@@ -322,9 +322,9 @@ export default function FAQs() {
           <FadeUp delay={0.4}>
             <div className="mt-32 text-center relative">
               <div className="absolute inset-0 bg-orange-500/5 blur-[100px] -z-10" />
-              <h3 className="text-3xl md:text-5xl font-black mb-8 italic tracking-tight">Final <span className="text-orange-500">Insight</span></h3>
+              <h3 className="text-3xl md:text-5xl font-black mb-8 italic tracking-tight font-['Playfair_Display']">Final <span className="text-orange-500">Insight</span></h3>
               <p className="text-2xl text-gray-400 font-light mb-12 leading-relaxed italic max-w-4xl mx-auto">
-                "Zryoss is not a shortcut. It’s a system for serious professionals who want to build brands with structure, discipline, and real delivery power."
+                "ZRYOSS is not a shortcut. It’s a system for serious professionals who want to build brands with structure, discipline, and real delivery power."
               </p>
 
               <div className="inline-block p-12 rounded-[50px] border border-white/5 bg-white/[0.02] backdrop-blur-3xl">

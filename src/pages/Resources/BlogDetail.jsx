@@ -22,6 +22,7 @@ export default function BlogDetail() {
         <div className="bg-[#050505] min-h-screen pt-32 pb-24 relative overflow-hidden">
             {/* Background Glows */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-orange-500/[0.02] blur-[180px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/5 blur-[150px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
             <div className="max-w-4xl mx-auto px-6 relative z-10">
@@ -56,7 +57,7 @@ export default function BlogDetail() {
                             </span>
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-10 leading-[1.15]">
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-10 leading-[1.15] font-['Playfair_Display']">
                             {blog.title}
                         </h1>
 
@@ -92,12 +93,20 @@ export default function BlogDetail() {
                 <FadeUp delay={0.3}>
                     <article
                         className="prose prose-invert prose-orange max-w-none 
-                       prose-h2:text-white prose-h2:text-4xl prose-h2:mt-16 prose-h2:mb-8 prose-h2:font-bold prose-h2:tracking-tight
-                       prose-h3:text-orange-400 prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-6 prose-h3:font-semibold
-                       prose-p:text-gray-300 prose-p:text-lg prose-p:leading-[1.8] prose-p:font-light prose-p:mb-8
-                       prose-ul:text-gray-300 prose-ul:space-y-4 prose-li:text-lg prose-li:font-light
-                       prose-strong:text-white prose-strong:font-semibold
-                       prose-table:border-white/10 prose-th:text-orange-400 prose-td:text-gray-300 prose-td:border-white/5"
+                       prose-h1:font-['Playfair_Display'] prose-h1:font-bold prose-h1:text-5xl lg:prose-h1:text-6xl prose-h1:mb-12 lg:prose-h1:mb-20 prose-h1:leading-tight
+                       prose-h2:text-white prose-h2:text-3xl lg:prose-h2:text-4xl prose-h2:mt-24 lg:prose-h2:mt-40 prose-h2:mb-10 lg:prose-h2:mb-16 prose-h2:font-bold prose-h2:tracking-tight prose-h2:font-['Playfair_Display'] prose-h2:border-b prose-h2:border-white/10 prose-h2:pb-6
+                       
+                       prose-h3:text-white prose-h3:text-2xl lg:prose-h3:text-3xl prose-h3:mt-20 lg:prose-h3:mt-40 prose-h3:mb-10 lg:prose-h3:mb-16 prose-h3:font-bold 
+                       prose-h3:bg-gradient-to-br prose-h3:from-orange-600/40 prose-h3:to-orange-950/10
+                       prose-h3:p-8 lg:prose-h3:p-12 prose-h3:rounded-[32px] lg:prose-h3:rounded-[40px] prose-h3:border-l-8 prose-h3:border-orange-500 
+                       prose-h3:shadow-[0_20px_40px_rgba(249,115,22,0.1)] lg:prose-h3:shadow-[0_30px_60px_rgba(249,115,22,0.15)] prose-h3:relative
+                       prose-h3:before:content-['QUESTION'] prose-h3:before:block prose-h3:before:text-[10px] prose-h3:before:tracking-[0.5em] prose-h3:before:text-orange-500 prose-h3:before:mb-4 lg:prose-h3:before:mb-6 prose-h3:before:font-black
+                       
+                       prose-p:text-gray-300 prose-p:text-lg lg:prose-p:text-xl prose-p:leading-[1.8] lg:prose-p:leading-[2.2] prose-p:font-light prose-p:mt-8 lg:prose-p:mt-14 prose-p:mb-12 lg:prose-p:mb-20 prose-p:tracking-wide
+                       prose-ul:text-gray-300 prose-ul:space-y-6 lg:prose-ul:space-y-10 prose-ul:my-12 lg:prose-ul:my-20 prose-li:text-lg lg:prose-li:text-xl prose-li:font-light prose-li:leading-relaxed
+                       prose-strong:text-orange-400 prose-strong:font-bold prose-strong:bg-orange-400/10 prose-strong:px-2 prose-strong:py-0.5 lg:prose-strong:px-2.5 lg:prose-strong:py-1 prose-strong:rounded-lg
+                       prose-blockquote:border-l-orange-500 prose-blockquote:bg-white/5 prose-blockquote:py-10 lg:prose-blockquote:py-16 prose-blockquote:px-10 lg:prose-blockquote:px-16 prose-blockquote:rounded-[32px] lg:prose-blockquote:rounded-[50px] prose-blockquote:italic prose-blockquote:text-2xl lg:prose-blockquote:text-3xl prose-blockquote:text-gray-200 prose-blockquote:my-20 lg:prose-blockquote:my-32 prose-blockquote:shadow-2xl prose-blockquote:border-white/5
+                       prose-table:border-white/10 prose-table:my-16 lg:prose-table:my-24 prose-th:text-orange-400 prose-th:text-lg lg:prose-th:text-xl prose-th:py-6 lg:prose-th:py-10 prose-td:text-gray-300 prose-td:border-white/5 prose-td:py-6 lg:prose-td:py-10 prose-td:text-base lg:prose-td:text-lg"
                         dangerouslySetInnerHTML={{ __html: blog.content }}
                     />
                 </FadeUp>

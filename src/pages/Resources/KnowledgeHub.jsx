@@ -27,7 +27,7 @@ const items = [
     },
     {
         icon: <Workflow className="w-6 h-6" />,
-        title: "2. How Zryoss Works (Deep Dives)",
+        title: "2. How ZRYOSS Works (Deep Dives)",
         desc: "Detailed technical breakdowns of our end-to-end execution flow, from onboarding to quality assurance.",
         points: ["Delivery management", "Vendor coordination", "Reporting frameworks"]
     },
@@ -85,11 +85,11 @@ export default function KnowledgeHub() {
                                 </div>
 
                                 <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
-                                    Zryoss <span className="text-orange-500">Knowledge</span> Hub
+                                    ZRYOSS <span className="text-orange-500">Knowledge</span> Hub
                                 </h1>
 
-                                <p className="text-gray-200 leading-relaxed text-lg mb-10">
-                                    Learn how real businesses are built with <span className="text-white font-medium">systems</span>.
+                                <p className="text-gray-200 leading-relaxed text-lg mb-10 font-light">
+                                    Learn how real businesses are built with <span className="text-orange-400 font-bold">systems</span>.
                                     Clarity, discipline, and execution excellence.
                                 </p>
                             </FadeUp>
@@ -123,7 +123,7 @@ export default function KnowledgeHub() {
                                     Most business content online focuses on ideas without execution or growth hacks without systems.
                                 </p>
                                 <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
-                                    <h3 className="text-orange-500 font-bold mb-4 uppercase tracking-widest text-sm">The Zryoss Mission</h3>
+                                    <h3 className="text-orange-500 font-bold mb-4 uppercase tracking-widest text-sm">The ZRYOSS Mission</h3>
                                     <p className="text-gray-300 text-lg font-light leading-relaxed">
                                         "To explain how businesses actually operate, break down execution frameworks, and share real operational insights."
                                     </p>
@@ -264,7 +264,7 @@ export default function KnowledgeHub() {
                             Clarity creates <span className="text-green-500 not-italic font-bold">confidence</span>."
                         </h2>
                         <p className="text-gray-500 text-lg font-light leading-relaxed max-w-2xl mx-auto">
-                            The Hub evolves as Zryoss grows. New processes, learnings, and frameworks are added constantly to ensure you always lead with knowledge.
+                            The Hub evolves as ZRYOSS grows. New processes, learnings, and frameworks are added constantly to ensure you always lead with knowledge.
                         </p>
                     </FadeUp>
                 </div>
