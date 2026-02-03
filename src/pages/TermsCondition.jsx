@@ -30,7 +30,7 @@ const TermsCondition = () => {
             icon: <Info size={24} />,
             content: [
                 {
-                    text: "We are a Business Operating System designed to enable individuals and organizations to build, operate, and scale independent brands using a structured backend ecosystem. We are: Not a franchise, Not an investment scheme, Not a guaranteed income program. We provide business setup, operational support, execution management, and platform enablement services."
+                    text: "We are a Business Operating System designed to enable individuals and organizations to build, operate, and scale independent brands using a structured backend ecosystem. We are: Not a franchise, Not an investment scheme, Not a guaranteed income program. We provide business setup, operational support, execution management, and platform enablement services. (Ref: Companies Act, 2013 - Section 447 & 448 regarding transparency and prevention of fraud)."
                 }
             ]
         },
@@ -70,7 +70,7 @@ const TermsCondition = () => {
             icon: <CreditCard size={24} />,
             content: [
                 {
-                    text: "We charge service-based fees for: Business setup, Platform enablement, Operational and execution support. Fees are linked to defined services, not participation or recruitment. No income, profit, or business success is guaranteed. All payment terms are communicated transparently during onboarding."
+                    text: "We charge service-based fees for: Business setup, Platform enablement, Operational and execution support. Fees are linked to defined services, not participation or recruitment. No income, profit, or business success is guaranteed. All payment terms are communicated transparently during onboarding. (Ref: Companies Act, 2013 - Section 134 regarding financial accountability)."
                 }
             ]
         },
@@ -90,7 +90,7 @@ const TermsCondition = () => {
             icon: <FileBadge size={24} />,
             content: [
                 {
-                    text: "All platform-related intellectual property including: Systems, Frameworks, Content, Processes, Training materials remain the property of Zryoss or its licensors. Users may not copy, reproduce, resell, or misuse any platform of assets without written permission."
+                    text: "All platform-related intellectual property including: Systems, Frameworks, Content, Processes, Training materials remain the property of Zryoss or its licensors. Users may not copy, reproduce, resell, or misuse any platform of assets without written permission. (Ref: Trade Marks Act, 1999 & Copyright Act, 1957; Information Technology Act, 2000)."
                 }
             ]
         },
@@ -100,7 +100,7 @@ const TermsCondition = () => {
             icon: <Lock size={24} />,
             content: [
                 {
-                    text: "Users agree to maintain confidentiality of: Platform processes, Pricing structures, Vendor or partner details, Internal documentation. Confidential information must not be disclosed to third parties during or after association with Zryoss."
+                    text: "Users agree to maintain confidentiality of: Platform processes, Pricing structures, Vendor or partner details, Internal documentation. Confidential information must not be disclosed to third parties during or after association with Zryoss. (Ref: Indian Contract Act, 1872 - Section 27 regarding reasonable non-disclosure)."
                 }
             ]
         },
@@ -120,7 +120,7 @@ const TermsCondition = () => {
             icon: <AlertTriangle size={24} />,
             content: [
                 {
-                    text: "We shall not be liable for: Business losses, Revenue shortfall, Indirect or consequential damages, Market or economic risks. Use of the platform is at the user’s own business risk."
+                    text: "We shall not be liable for: Business losses, Revenue shortfall, Indirect or consequential damages, Market or economic risks. Use of the platform is at the user’s own business risk. (Ref: Indian Contract Act, 1872 - Section 73 & 74 regarding damages and liability)."
                 }
             ]
         },
@@ -140,7 +140,7 @@ const TermsCondition = () => {
             icon: <Briefcase size={24} />, // Reusing icon or finding a better one like FileX or Ban but sticking to lucide-react consistent imports
             content: [
                 {
-                    text: "We may suspend or terminate access if: Terms are violated, Misrepresentation occurs, Platform reputation is harmed, Legal or compliance risks arise. Termination does not waive outstanding obligations."
+                    text: "We may suspend or terminate access if: Terms are violated, Misrepresentation occurs, Platform reputation is harmed, Legal or compliance risks arise. Termination does not waive outstanding obligations. (Ref: Information Technology Act, 2000 - Section 43A & Section 79)."
                 }
             ]
         },
@@ -150,7 +150,7 @@ const TermsCondition = () => {
             icon: <Scale size={24} />,
             content: [
                 {
-                    text: "These Terms shall be governed by and interpreted in accordance with the laws of India. Any disputes shall be subject to the jurisdiction of Indian courts. You are at least 18 years of age and legally capable of entering into binding agreements. You will use the platform only for lawful and legitimate business purposes. All information provided by you is accurate, complete, and up to date. You understand that we provide system-driven business setup and operational support services, not guaranteed outcomes. You will comply with all applicable laws, regulations, and platform policies. You will not misuse, copy, or attempt to reverse-engineer any part of the platform or its systems. You accept responsibility for all activities conducted through your account."
+                    text: "These Terms shall be governed by and interpreted in accordance with the laws of India. Any disputes shall be subject to the jurisdiction of Indian courts. (Ref: Indian Contract Act, 1872 - Section 10 regarding valid contracts). You are at least 18 years of age and legally capable of entering into binding agreements. You will use the platform only for lawful and legitimate business purposes."
                 }
             ]
         },
@@ -160,7 +160,7 @@ const TermsCondition = () => {
             icon: <AlertTriangle size={24} />,
             content: [
                 {
-                    text: "We provide systems, support, and execution frameworks. Business outcomes depend on individual effort, market demand, and external factors. We do not guarantee revenue, profitability, or business success. Results may vary based on industry conditions, client acquisition, and execution volume. Users are responsible for their own business decisions and associated risks. We do not assure: Fixed income, Guaranteed profits, Business success."
+                    text: "We provide systems, support, and execution frameworks. Business outcomes depend on individual effort, market demand, and external factors. We do not guarantee revenue, profitability, or business success. Results may vary based on industry conditions, client acquisition, and execution volume. Users are responsible for their own business decisions and associated risks. We do not assure: Fixed income, Guaranteed profits, Business success. (Ref: Consumer Protection Act, 2019 - Section 2(47) regarding unfair trade practices)."
                 }
             ]
         },
@@ -241,8 +241,11 @@ const TermsCondition = () => {
                             <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto mb-6">
                                 By using Our Services, you acknowledge that you have read, understood, and agreed to these Terms & Conditions.
                             </p>
-                            <p className="text-lg font-bold text-white">
+                            <p className="text-lg font-bold text-white mb-2">
                                 Your Brand. Our Engine. Governed by Clarity. Built on Trust.
+                            </p>
+                            <p className="text-sm text-gray-500 font-medium opacity-80">
+                                Powered by Kryoss Softech Pvt Ltd
                             </p>
                         </div>
                     </FadeUp>

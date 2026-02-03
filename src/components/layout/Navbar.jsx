@@ -157,6 +157,7 @@ export default function Navbar() {
             { title: "IPP Client Handling & Demo Support", to: "/partnership/ipp/support", icon: <Users className="w-4 h-4" /> },
             { title: "IPP Sub-Partner Model (Limited Levels)", to: "/partnership/ipp/sub-partner", icon: <Network className="w-4 h-4" /> },
             { title: "IPP Account Management (6 Months)", to: "/partnership/ipp/account-management", icon: <Shield className="w-4 h-4" /> },
+            { title: "Funding Support for IPPs", to: "/partnership/ipp/funding-support", icon: <FileText className="w-4 h-4" /> },
           ],
         },
         {
@@ -169,6 +170,7 @@ export default function Navbar() {
             { title: "BPP IPP Creation & Management", to: "/partnership/bpp/ipp-management", icon: <Network className="w-4 h-4" /> },
             { title: "BPP Revenue & Scale Model", to: "/partnership/bpp/revenue-model", icon: <Shield className="w-4 h-4" /> },
             { title: "BPP Dedicated Account Manager", to: "/partnership/bpp/account-manager", icon: <Users className="w-4 h-4" /> },
+            { title: "Funding Support for BPPs", to: "/partnership/bpp/funding-support", icon: <FileText className="w-4 h-4" /> },
           ],
         },
       ],

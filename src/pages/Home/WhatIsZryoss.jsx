@@ -9,6 +9,7 @@ export default function WhatIsZryoss() {
     "Deliver services professionally via specialist brands",
     "Scale without the burden of building internal teams",
     "Operate with absolute clarity and systemized control",
+    "Access Government Funding & Startup Enablement Support",
   ];
 
   return (
@@ -41,7 +42,7 @@ export default function WhatIsZryoss() {
                 <div className="w-24 h-1 bg-orange-500 rounded-full mb-10" />
 
                 <p className="text-gray-300 text-lg leading-relaxed font-light max-w-xl">
-                  ZRYOSS provides a ready-to-use business operating backbone that
+                  We provide a ready-to-use business operating backbone that
                   lets you focus on growth and relationships — while we handle the
                   complex execution behind the scenes.
                 </p>
@@ -97,7 +98,7 @@ export default function WhatIsZryoss() {
                     “You focus on growth and relationships.
                     <br />
                     <span className="text-orange-400 font-semibold italic">
-                      ZRYOSS handles execution and operations.
+                      We handle execution and operations.
                     </span>
                     ”
                   </p>

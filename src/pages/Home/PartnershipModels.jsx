@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { User, Users, Globe, Target, Briefcase, Zap, ArrowRight } from "lucide-react";
+import { User, Users, Globe, Target, Briefcase, Zap, ArrowRight, Landmark, TrendingUp } from "lucide-react";
 
 const FadeUp = ({ children, delay = 0 }) => {
   return (
@@ -42,10 +42,12 @@ const models = [
     focus: "Best for individuals and focused founders",
     icon: <User className="w-8 h-8 text-orange-500" />,
     features: [
-      { icon: <Target size={18} />, text: "Single business vertical focus" },
-      { icon: <Briefcase size={18} />, text: "Own your brand and your clients" },
-      { icon: <Zap size={18} />, text: "Execution fully managed by ZRYOSS" },
-      { icon: <Globe size={18} />, text: "Ideal for professionals & first-time founders" },
+      { icon: <Target size={18} />, text: "Operate in one selected domain" },
+      { icon: <Zap size={18} />, text: "Backend, brand & operations managed by us" },
+      { icon: <Briefcase size={18} />, text: "Sales & business framework provided" },
+      { icon: <Globe size={18} />, text: "Central CRM and routing system" },
+      { icon: <TrendingUp size={18} />, text: "Recurring income model" },
+      { icon: <Landmark size={18} />, text: "Government Funding & Startup Enablement Support" },
     ],
     cta: "Join as IPP",
     color: "from-orange-500/20 to-transparent",
@@ -56,10 +58,12 @@ const models = [
     focus: "Best for leaders and scale builders",
     icon: <Users className="w-8 h-8 text-green-500" />,
     features: [
-      { icon: <Target size={18} />, text: "Multiple business verticals" },
-      { icon: <Users size={18} />, text: "Enable and support multiple IPPs" },
-      { icon: <Zap size={18} />, text: "Strategic and expansion-focused" },
-      { icon: <Globe size={18} />, text: "Larger business footprint and reach" },
+      { icon: <Target size={18} />, text: "Access up to 3 business domains" },
+      { icon: <Users size={18} />, text: "Create & manage multiple IPPs under you" },
+      { icon: <Globe size={18} />, text: "Central routing & tracking system" },
+      { icon: <TrendingUp size={18} />, text: "Recurring income from network performance" },
+      { icon: <Zap size={18} />, text: "Complete backend management by us" },
+      { icon: <Landmark size={18} />, text: "Government Funding Enablement for Your IPPs" },
     ],
     cta: "Join as BPP",
     color: "from-green-500/10 to-transparent",

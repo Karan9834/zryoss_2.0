@@ -17,7 +17,7 @@ export default function HowItWorks() {
     {
       label: "Step 01",
       title: "Brand Ownership",
-      desc: "You create and own your brand. ZRYOSS provides the underlying structure, but your business identity remains entirely yours.",
+      desc: "You create and own your brand. We provide the underlying structure, but your business identity remains entirely yours.",
       points: ["Full Brand Identity", "Independent Ownership", "Legal Independence"],
     },
     {
@@ -29,7 +29,7 @@ export default function HowItWorks() {
     {
       label: "Step 03",
       title: "Central Validation",
-      desc: "Requirements are validated centrally by ZRYOSS to ensure technical feasibility and commercial viability before moving to the next stage.",
+      desc: "Requirements are validated centrally by us to ensure technical feasibility and commercial viability before moving to the next stage.",
       points: ["Technical Auditing", "Feasibility Check", "Commercial Alignment"],
     },
     {
@@ -47,7 +47,7 @@ export default function HowItWorks() {
     {
       label: "Step 06",
       title: "Governance & Quality",
-      desc: "Quality and timelines are strictly governed by ZRYOSS. We monitor every stage of the lifecycle to ensure delivery excellence.",
+      desc: "Quality and timelines are strictly governed by us. We monitor every stage of the lifecycle to ensure delivery excellence.",
       points: ["SLA Monitoring", "Quality Control", "Timeline Governance"],
     },
     {
@@ -55,6 +55,17 @@ export default function HowItWorks() {
       title: "Seamless Coordination",
       desc: "A dedicated account manager coordinates everything. You stay client-facing while the system runs everything behind you.",
       points: ["Single Point of Contact", "Resource Management", "Unified Reporting"],
+    },
+    {
+      label: "Step 08",
+      title: "Funding Support",
+      desc: "Starting a business should never stop because of finance. Through our Funding Enablement Program, we ensure you have access to professional guidance for funding readiness. We don’t promise funding — we prepare you for it.",
+      points: [
+        "MSME / Udyam registration",
+        "Startup India (DPIIT) recognition",
+        "MUDRA, PMEGP & Stand-Up India schemes",
+        "Documentation & consultant support",
+      ],
     },
   ];
 
@@ -90,7 +101,7 @@ export default function HowItWorks() {
             <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-6" />
 
             <p className="text-gray-400 text-lg max-w-3xl mx-auto font-light">
-              Seven systematic steps that transform your business idea into a professionally executed reality
+              Eight systematic steps that transform your business idea into a professionally executed reality
             </p>
           </div>
         </FadeUp>

@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
             icon: <ShieldCheck size={24} />,
             content: [
                 {
-                    text: "Information is processed on one or more of the following legal grounds: User consent, contractual necessity, legitimate business interests, legal or regulatory compliance. Processing is limited strictly to defined and lawful purposes."
+                    text: "Information is processed on one or more of the following legal grounds: User consent, contractual necessity, legitimate business interests, legal or regulatory compliance. Processing is limited strictly to defined and lawful purposes, ensuring alignment with the Information Technology Act, 2000 (Section 43A) and the Digital Personal Data Protection (DPDP) Act, 2023."
                 }
             ]
         },
@@ -214,6 +214,9 @@ const PrivacyPolicy = () => {
                                 Privacy is treated as a matter of trust, responsibility, and governance.
                                 Information is handled with care, purpose, and transparency—aligned with ethical
                                 business standards and legal obligations.
+                            </p>
+                            <p className="text-sm text-gray-500 font-medium opacity-80 mt-4">
+                                Powered by Kryoss Softech Pvt Ltd
                             </p>
                         </div>
                     </FadeUp>

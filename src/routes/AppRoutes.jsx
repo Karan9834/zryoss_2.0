@@ -43,6 +43,7 @@ import IPPOperations from "../pages/Partnership/IPP/Operations";
 import ClientHandlingDemo from "../pages/Partnership/IPP/Client&DemoHandling";
 import IPPSubPartner from "../pages/Partnership/IPP/SubPartner";
 import IPPAccountManagement from "../pages/Partnership/IPP/AccountManagement";
+import IPPFundingSupport from "../pages/Partnership/IPP/FundingSupport";
 
 // BPP
 import BPPOverview from "../pages/Partnership/BPP/Overview";
@@ -52,6 +53,7 @@ import BPPOperations from "../pages/Partnership/BPP/Operations";
 import BPPIPPManagement from "../pages/Partnership/BPP/IPPManagement";
 import BPPRevenueModel from "../pages/Partnership/BPP/RevenueModel";
 import BPPAccountManager from "../pages/Partnership/BPP/AccountManager";
+import BPPFundingSupport from "../pages/Partnership/BPP/FundingSupport";
 
 // Solutions
 import SolutionsOverview from "../pages/Solutions/Overview";
@@ -141,6 +143,7 @@ export default function AppRoutes() {
       <Route path="/partnership/ipp/support" element={<ClientHandlingDemo />} />
       <Route path="/partnership/ipp/sub-partner" element={<IPPSubPartner />} />
       <Route path="/partnership/ipp/account-management" element={<IPPAccountManagement />} />
+      <Route path="/partnership/ipp/funding-support" element={<IPPFundingSupport />} />
 
       {/* BPP */}
       <Route path="/partnership/bpp" element={<BPPOverview />} />
@@ -150,6 +153,7 @@ export default function AppRoutes() {
       <Route path="/partnership/bpp/ipp-management" element={<BPPIPPManagement />} />
       <Route path="/partnership/bpp/revenue-model" element={<BPPRevenueModel />} />
       <Route path="/partnership/bpp/account-manager" element={<BPPAccountManager />} />
+      <Route path="/partnership/bpp/funding-support" element={<BPPFundingSupport />} />
 
       {/* Solutions */}
       <Route path="/solutions" element={<SolutionsOverview />} />

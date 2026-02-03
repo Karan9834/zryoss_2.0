@@ -120,6 +120,16 @@ const Compliance = () => {
                     text: "Compliance policies may be updated to reflect: Regulatory changes, Operational enhancements, Governance improvements. Continued engagement with the platform indicates acceptance of updated policies."
                 }
             ]
+        },
+        {
+            id: "11",
+            title: "11. Applicable Legal Frameworks",
+            icon: <Gavel size={24} />,
+            content: [
+                {
+                    text: "Zryoss operates in alignment with key Indian statutes including: The Indian Contract Act, 1872 (governing agreements), Companies Act, 2013 (corporate governance & transparency), Consumer Protection Act, 2019 (fair trade practices), Information Technology Act, 2000 & DPDP Act, 2023 (data processing & digital compliance), and Intellectual Property Laws (Trade Marks Act, 1999 & Copyright Act, 1957)."
+                }
+            ]
         }
     ];
 
@@ -188,6 +198,9 @@ const Compliance = () => {
                             <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto">
                                 Compliance is not treated as a formality, but as an ongoing responsibility.
                                 Governance, accountability, and ethical conduct remain integral to sustainable operations and long-term trust.
+                            </p>
+                            <p className="text-sm text-gray-500 font-medium opacity-80 mt-4">
+                                Powered by Kryoss Softech Pvt Ltd
                             </p>
                         </div>
                     </FadeUp>

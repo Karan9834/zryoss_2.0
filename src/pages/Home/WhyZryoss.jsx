@@ -59,7 +59,7 @@ export default function WhyZryoss() {
 
             <p className="text-gray-400 text-lg max-w-3xl mx-auto font-light">
               Traditional models break at scale because they rely on human effort
-              over systemic structure. ZRYOSS flips the script.
+              over systemic structure. We flip the script.
             </p>
           </div>
         </FadeUp>
@@ -94,7 +94,7 @@ export default function WhyZryoss() {
 
               <div className="col-span-4 p-8 relative">
                 <p className="text-xs uppercase tracking-[0.3em] text-orange-400 font-bold">
-                  ZRYOSS System
+                  Our System
                 </p>
               </div>
             </div>
@@ -191,7 +191,7 @@ export default function WhyZryoss() {
                     <div className="flex items-center gap-2 mb-2">
                       <Check className="w-4 h-4 text-green-500 shrink-0" />
                       <span className="text-xs uppercase tracking-[0.3em] text-orange-400 font-bold">
-                        ZRYOSS
+                        Our System
                       </span>
                     </div>
 
@@ -209,9 +209,9 @@ export default function WhyZryoss() {
         <FadeUp delay={0.45}>
           <div className="mt-14 md:mt-20 text-center px-4">
             <p className="text-2xl md:text-3xl font-light text-white leading-relaxed italic">
-              "ZRYOSS does not sell services. <br className="hidden sm:block" />
+              "We do not sell services. <br className="hidden sm:block" />
               <span className="text-orange-400 font-semibold italic">
-                It runs businesses through systems.
+                We run businesses through systems.
               </span>"
             </p>
           </div>

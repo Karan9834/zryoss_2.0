@@ -71,11 +71,11 @@ export default function BlogDetail() {
 
                 {/* Featured Image */}
                 <FadeUp delay={0.2}>
-                    <div className="relative rounded-[40px] overflow-hidden mb-20 shadow-2xl shadow-black/50 border border-white/5 group">
+                    <div className="relative rounded-[40px] overflow-hidden mb-20 shadow-2xl shadow-black/50 border border-white/5 group bg-black/20">
                         <img
                             src={blog.image}
                             alt={blog.title}
-                            className="w-full h-auto object-cover max-h-[600px] transition-transform duration-1000 group-hover:scale-105"
+                            className="w-full h-auto transition-transform duration-1000 group-hover:scale-[1.01]"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 to-transparent" />
 

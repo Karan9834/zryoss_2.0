@@ -187,7 +187,7 @@ export default function WhatIsNot() {
         <FadeUp delay={0.8}>
           <div className="mt-12 sm:mt-16 md:mt-20 text-center px-4">
             <p className="text-xs sm:text-sm text-gray-500 italic max-w-2xl mx-auto leading-relaxed">
-              ZRYOSS is a structured business operating system designed for real execution, not passive income or speculative returns.
+              We are a structured business operating system designed for real execution, not passive income or speculative returns.
             </p>
           </div>
         </FadeUp>

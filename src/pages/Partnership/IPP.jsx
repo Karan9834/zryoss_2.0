@@ -24,6 +24,7 @@ import {
   Quote,
   Star,
   Star,
+  Banknote,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEmail } from "../../hooks/useEmail";
@@ -448,6 +449,57 @@ export default function KryossIPP() {
                 </div>
               </AnimatedSection>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FUNDING SUPPORT */}
+      <section className="py-24 relative z-10 bg-gradient-to-b from-[#0a0a0a] to-[#050505]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="relative rounded-[2.5rem] overflow-hidden border border-amber-500/20 bg-gradient-to-br from-amber-950/20 to-black p-8 md:p-16">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-500/30 bg-amber-500/10 mb-8">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                  <span className="text-xs font-bold tracking-widest uppercase text-amber-300">
+                    New Initiative
+                  </span>
+                </div>
+
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+                  Get Funding Ready with <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600">
+                    Government Support
+                  </span>
+                </h2>
+
+                <p className="text-lg text-neutral-400 mb-8 leading-relaxed font-light max-w-xl">
+                  We don't just provide technology — we help you secure the capital to grow.
+                  Leverage our dedicated support to access schemes like <span className="text-white">MUDRA, Startup India, and MSME benefits</span>.
+                </p>
+
+                <button
+                  onClick={() => navigate('/partnership/ipp/funding-support')}
+                  className="px-8 py-4 bg-white text-black hover:bg-amber-400 transition-colors rounded-full font-bold flex items-center gap-2 group"
+                >
+                  Explore Funding Support
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+
+              <div className="relative">
+                <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black/50 aspect-video group cursor-pointer hover:border-amber-500/40 transition-all duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 to-transparent opacity-50" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full bg-white/5 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                      <Banknote size={32} className="text-amber-400" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

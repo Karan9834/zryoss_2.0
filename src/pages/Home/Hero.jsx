@@ -102,7 +102,7 @@ export default function Hero() {
             {/* Description */}
             <div className="space-y-3 mb-8">
               <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light">
-                ZRYOSS is a Business Operating System designed to help individuals and organizations build independent brands, while we manage execution, operations, and delivery behind the scenes.
+                We are a Business Operating System designed to help individuals and organizations build independent brands, while we manage execution, operations, and delivery behind the scenes.
               </p>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed font-normal border-l-2 border-orange-500/30 pl-3 italic">
                 We're not a company you work for. We're the system that works for your business.
@@ -113,7 +113,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6">
               <Link to="/platform/how-zryoss-works">
                 <Button primary>
-                  Explore How ZRYOSS Works
+                  Explore How We Works
                   <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
               </Link>

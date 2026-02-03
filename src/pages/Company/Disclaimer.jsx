@@ -308,6 +308,15 @@ export default function Disclaimer() {
                     Zryoss maintains compliance discipline but does not replace individual legal responsibility.
                   </p>
                 </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                    <Building2 className="text-orange-500" /> Funding & Subsidy Disclaimer
+                  </h3>
+                  <p className="text-gray-400 mb-4 text-sm leading-relaxed">
+                    We provide facilitation and guidance only. All funding approvals, disbursements, and scheme-related decisions are made by respective government & banking authorities.
+                    ZRYOSS does not guarantee funding or subsidy approvals.
+                  </p>
+                </div>
               </div>
             </FadeUp>
 
