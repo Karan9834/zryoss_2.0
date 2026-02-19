@@ -1,0 +1,351 @@
+import FadeUp from "../../../components/animations/FadeUp";
+import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+    GraduationCap,
+    Globe,
+    FileCheck,
+    Building2,
+    Workflow,
+    Network,
+    Plane,
+    Stamp,
+    ArrowRight,
+    BookOpen,
+    Scale,
+    Users,
+    Briefcase,
+    Landmark,
+    Sparkles
+} from "lucide-react";
+
+const ClinkAdmission = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    return (
+        <div className="min-h-screen bg-[#050505] text-white selection:bg-orange-500/30 font-sans">
+
+            {/* Hero Section */}
+            <section className="relative bg-[#050505] min-h-screen flex items-center py-20 md:py-32 overflow-hidden border-b border-white/5">
+                {/* Background Elements - Matching Overview/TechHeroSection */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                    <div className="absolute -top-[20%] right-[10%] w-[50%] h-[50%] bg-orange-500/10 rounded-full blur-[140px]" />
+                    <div className="absolute bottom-[0%] -left-[10%] w-[40%] h-[60%] bg-blue-500/10 rounded-full blur-[140px]" />
+                </div>
+
+                <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        {/* Left Content - Using FadeUp component */}
+                        <FadeUp>
+                            {/* Badge */}
+                            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-6">
+                                <Sparkles size={14} className="text-orange-500" />
+                                <span className="text-xs uppercase tracking-[0.45em] text-orange-500 font-bold">
+                                    Admissions & Education Consultancy
+                                </span>
+                            </div>
+
+                            {/* H1 */}
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-6">
+                                Clink<span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-white"> Admission</span>
+                            </h1>
+
+                            {/* Paragraph */}
+                            <p className="text-xl text-gray-400 leading-relaxed font-light mb-10">
+                                Clink Admission is the dedicated execution engine responsible for managing student admission-related services, including international & domestic admissions, counseling, documentation, and consular support.
+                            </p>
+
+                            {/* CTA */}
+                            <div className="flex flex-wrap gap-4 mb-6">
+                                <button
+                                    onClick={() => navigate('/apply')}
+                                    className="rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:shadow-orange-500/60 transition"
+                                >
+                                    Partner with Zryoss
+                                </button>
+                                <button className="rounded-xl border border-white/10 px-6 py-3 font-semibold text-white hover:border-orange-500/50 hover:text-orange-400 transition inline-flex items-center gap-2">
+                                    View Solutions <ArrowRight size={18} />
+                                </button>
+                            </div>
+
+                            {/* Small text */}
+                            <p className="mt-6 text-xs text-white/40 tracking-wide font-light">
+                                Students Placed: 1000+ • Universities Partnered: 50+
+                            </p>
+                        </FadeUp>
+
+                        {/* Right Visual - Using FadeUp component */}
+                        <FadeUp delay={0.2}>
+                            <div className="relative">
+                                <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
+                                <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+                                    <img
+                                        src="/clink admission.jpg"
+                                        alt="Clink Admission Execution"
+                                        className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                                    />
+                                </div>
+                            </div>
+                        </FadeUp>
+                    </div>
+                </div>
+            </section>
+
+            {/* Role Section */}
+            <section className="py-24 bg-[#0a0a0a]">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="flex flex-col md:flex-row gap-16 items-center">
+                        <div className="md:w-1/2">
+                            <h2 className="text-3xl md:text-4xl font-bold mb-6">Role of Clink Admission <br /> in the Ecosystem</h2>
+                            <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+                                Clink Admission functions as the central admissions execution engine. Its role is to ensure structured, compliant, and professional admission processing.
+                            </p>
+
+                            <div className="grid grid-cols-1 gap-4">
+                                {[
+                                    "Student admissions are structured and compliant",
+                                    "Counseling and documentation handling",
+                                    "University and institute coordination",
+                                    "IPPs and IBPs never handle admission complexity"
+                                ].map((item, i) => (
+                                    <div key={i} className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/5">
+                                        <Stamp className="text-orange-500 w-5 h-5 shrink-0" />
+                                        <span className="text-gray-200 text-sm font-medium">{item}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <p className="mt-8 text-sm text-gray-500 flex items-center gap-2">
+                                <Workflow size={16} className="text-white" />
+                                ZRYOSS governs the system. Clink Admission executes admissions.
+                            </p>
+                        </div>
+                        <div className="md:w-1/2 w-full">
+                            <div className="p-8 bg-[#0f0f0f] rounded-3xl border border-white/5 h-full flex flex-col justify-center relative overflow-hidden">
+                                <Plane className="text-orange-900/20 absolute -right-10 -bottom-10 w-64 h-64" />
+                                <h3 className="text-2xl font-bold text-white mb-6 z-10">What Clink Admission Executes</h3>
+                                <div className="space-y-6 z-10">
+                                    <div>
+                                        <h4 className="text-orange-400 font-bold mb-3 text-sm uppercase tracking-wider">International Admissions</h4>
+                                        <ul className="space-y-2">
+                                            {[
+                                                "Study abroad counseling",
+                                                "University selection",
+                                                "Application processing",
+                                                "Visa & Consular support"
+                                            ].map((item, i) => (
+                                                <li key={i} className="flex items-start gap-2 text-sm text-gray-300">
+                                                    <span className="mt-1.5 w-1 h-1 rounded-full bg-orange-500 shrink-0"></span>
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 className="text-blue-400 font-bold mb-3 text-sm uppercase tracking-wider">Domestic Admissions</h4>
+                                        <ul className="space-y-2">
+                                            {[
+                                                "College and institute admissions",
+                                                "School counseling",
+                                                "Seat booking & confirmation"
+                                            ].map((item, i) => (
+                                                <li key={i} className="flex items-start gap-2 text-sm text-gray-300">
+                                                    <span className="mt-1.5 w-1 h-1 rounded-full bg-blue-500 shrink-0"></span>
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p className="mt-8 text-xs text-gray-500 z-10 border-t border-white/5 pt-4">All services follow ZRYOSS compliance standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Routing Process */}
+            <section className="py-24 bg-[#050505] w-full">
+                <div className="max-w-7xl mx-auto px-6 w-full">
+                    <h2 className="text-3xl font-bold text-center mb-16">How Work Reaches Clink Admission</h2>
+
+                    <div className="relative w-full">
+                        {/* Line */}
+                        <div className="hidden md:block absolute top-[50%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent -translate-y-1/2 z-0"></div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-7 gap-4 relative z-10 w-full">
+                            {[
+                                { step: "1", title: "Client", desc: "IPP/IBP acquires student" },
+                                { step: "2", title: "Validation", desc: "ZRYOSS checks scope" },
+                                { step: "3", title: "Routing", desc: "Routed to Clink" },
+                                { step: "4", title: "Counseling", desc: "Documentation initiated" },
+                                { step: "5", title: "Coordination", desc: "University managed" },
+                                { step: "6", title: "Processing", desc: "Admission & Visa" },
+                                { step: "7", title: "Delivery", desc: "Confirmation" }
+                            ].map((item, i) => (
+                                <div key={i} className="flex flex-col items-center text-center group">
+                                    <div className="w-14 h-14 rounded-full bg-[#111] border border-white/20 flex items-center justify-center text-lg font-bold text-white mb-4 shadow-lg relative overflow-hidden transition-all group-hover:border-orange-500 group-hover:scale-110">
+                                        <span className="relative z-10">{item.step}</span>
+                                        <div className="absolute inset-0 bg-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    </div>
+                                    <h3 className="text-xs font-bold text-white mb-1">{item.title}</h3>
+                                    <p className="text-[10px] text-gray-500 max-w-[100px]">{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="mt-12 text-center">
+                        <p className="text-gray-400 text-sm">IPP or IBP never directly manages universities or consular coordination.</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Partner & Coordination */}
+            <section className="py-24 bg-[#080808]">
+                <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
+
+                    {/* Institutional Coordination */}
+                    <div>
+                        <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <Landmark className="text-orange-500" />
+                            Partner Institution Coordination
+                        </h3>
+                        <div className="bg-[#0a0a0a] p-8 rounded-3xl border border-white/10 mb-8 h-full">
+                            <p className="text-gray-400 mb-6">Clink Admission manages domestic colleges, international universities, and authorized admission channels.</p>
+                            <div className="space-y-4">
+                                <div className="flex items-center gap-4 p-4 bg-[#111] rounded-xl border border-white/5">
+                                    <div className="bg-orange-500/10 p-2 rounded-lg text-orange-500"><Building2 size={20} /></div>
+                                    <div>
+                                        <h4 className="font-bold text-white text-sm">Centrally Managed</h4>
+                                        <p className="text-xs text-gray-500">All coordination happens via Clink.</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-4 p-4 bg-[#111] rounded-xl border border-white/5">
+                                    <div className="bg-orange-500/10 p-2 rounded-lg text-orange-500"><FileCheck size={20} /></div>
+                                    <div>
+                                        <h4 className="font-bold text-white text-sm">Guidelines Aligned</h4>
+                                        <p className="text-xs text-gray-500">Institutional compliance guaranteed.</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-4 p-4 bg-[#111] rounded-xl border border-white/5">
+                                    <div className="bg-orange-500/10 p-2 rounded-lg text-orange-500"><Network size={20} /></div>
+                                    <div>
+                                        <h4 className="font-bold text-white text-sm">System Tracked</h4>
+                                        <p className="text-xs text-gray-500">Through ZRYOSS Operating System.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p className="mt-6 text-sm text-orange-400 font-medium">Ensures transparency, accuracy, and reliability.</p>
+                        </div>
+                    </div>
+
+                    {/* Compliance & Support */}
+                    <div>
+                        <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <Scale className="text-orange-500" />
+                            Compliance & Student Support
+                        </h3>
+                        <div className="bg-[#0a0a0a] p-8 rounded-3xl border border-white/10 h-full">
+                            <div className="grid grid-cols-1 gap-6">
+                                {[
+                                    { title: "Structured Counseling", desc: "Professional guidance frameworks." },
+                                    { title: "Accurate Documentation", desc: "Verification and processing." },
+                                    { title: "Student Communication", desc: "Clear updates and support." },
+                                    { title: "Ethical Practices", desc: "Compliant admission processes." }
+                                ].map((item, i) => (
+                                    <div key={i} className="flex justify-between items-center border-b border-white/5 pb-4 last:border-0 last:pb-0">
+                                        <h4 className="font-bold text-gray-200">{item.title}</h4>
+                                        <span className="text-sm text-gray-500">{item.desc}</span>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="mt-8 p-4 bg-orange-900/10 border border-orange-500/20 rounded-xl text-center">
+                                <p className="text-orange-400 text-sm font-medium">Student journeys are managed professionally from inquiry to confirmation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            {/* Relationship & Scalability */}
+            <section className="py-24 bg-[#0a0a0a]">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid md:grid-cols-2 gap-12">
+                        {/* Relationship */}
+                        <div className="border-l-4 border-white pl-8">
+                            <h3 className="text-2xl font-bold mb-6 text-white">Relationship with IPP & IBP</h3>
+                            <div className="space-y-6">
+                                <div className="group hover:bg-white/5 p-4 rounded-xl transition-colors">
+                                    <h4 className="text-white font-bold text-sm uppercase tracking-wide mb-1">IPP / IBP</h4>
+                                    <p className="text-gray-400">Focuses on student acquisition.</p>
+                                </div>
+                                <div className="group hover:bg-white/5 p-4 rounded-xl transition-colors">
+                                    <h4 className="text-orange-400 font-bold text-sm uppercase tracking-wide mb-1">Clink Admission</h4>
+                                    <p className="text-gray-400">Manages counseling and processing.</p>
+                                </div>
+                                <div className="group hover:bg-white/5 p-4 rounded-xl transition-colors">
+                                    <h4 className="text-white/60 font-bold text-sm uppercase tracking-wide mb-1">ZRYOSS</h4>
+                                    <p className="text-gray-400">Handles governance and tracking.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Scalability */}
+                        <div className="border-l-4 border-orange-500 pl-8">
+                            <h3 className="text-2xl font-bold mb-6 text-white">Scalability Across Geographies</h3>
+                            <p className="text-gray-400 mb-6">Clink Admission is designed to support:</p>
+                            <ul className="space-y-3 mb-6 block">
+                                {["Multiple countries and destinations", "Multiple institutions and programs", "Growing student volumes", "Long-term consultancy operations"].map((item, i) => (
+                                    <li key={i} className="flex gap-2 text-gray-300"><Globe size={18} className="text-orange-500" /> {item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Why Separate Brand */}
+            <section className="py-24 bg-[#050505] relative overflow-hidden">
+                <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+                    <h2 className="text-3xl font-bold mb-8">Why Clink Admission Exists Separate Brand</h2>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                        <div className="p-4 bg-white/5 rounded-xl border border-white/5"><h4 className="font-bold text-white text-sm">Domain Knowledge</h4></div>
+                        <div className="p-4 bg-white/5 rounded-xl border border-white/5"><h4 className="font-bold text-white text-sm">Coordination</h4></div>
+                        <div className="p-4 bg-white/5 rounded-xl border border-white/5"><h4 className="font-bold text-white text-sm">Compliance Discipline</h4></div>
+                        <div className="p-4 bg-white/5 rounded-xl border border-white/5"><h4 className="font-bold text-white text-sm">High Responsibility</h4></div>
+                    </div>
+
+                    <div className="p-8 rounded-3xl bg-gradient-to-r from-gray-900 to-black border border-white/10 shadow-2xl">
+                        <h3 className="text-2xl font-bold text-white mb-4">One Ecosystem. One Standard.</h3>
+                        <div className="flex flex-col md:flex-row justify-center gap-8 mt-8 text-left md:text-center">
+                            <div>
+                                <span className="block text-gray-500 text-xs uppercase tracking-widest mb-1">Partners</span>
+                                <span className="text-xl font-bold text-white">Bring Students</span>
+                            </div>
+                            <div>
+                                <span className="block text-gray-500 text-xs uppercase tracking-widest mb-1">ZRYOSS</span>
+                                <span className="text-xl font-bold text-white/50">Runs the System</span>
+                            </div>
+                            <div>
+                                <span className="block text-gray-500 text-xs uppercase tracking-widest mb-1">Clink Admission</span>
+                                <span className="text-xl font-bold text-orange-500">Delivers Admissions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+            </section>
+
+        </div>
+    );
+};
+
+export default ClinkAdmission;
