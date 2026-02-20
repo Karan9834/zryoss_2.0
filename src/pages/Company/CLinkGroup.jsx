@@ -4,13 +4,9 @@ import FadeUp from "../../components/animations/FadeUp";
 import {
     ArrowRight,
     Shield,
-    Network,
-    Settings,
-    Users,
     BriefcaseBusiness,
     BadgeCheck,
     Globe,
-    Cpu,
     Lightbulb,
     Building,
     Zap,
@@ -34,29 +30,30 @@ export default function CLinkGroup() {
 
     const groupCompanies = [
         {
-            name: "CLink HR",
-            legal: "Clink HR Services Private Ltd.",
-            desc: "Specialized in strategic human resource management, executive search, and workforce planning for global enterprises.",
-            logo: <Users className="w-10 h-10" />,
+            name: "Kryoss",
+            legal: "Kryoss Softech Private Ltd.",
+            desc: "The technology powerhouse driving software engineering, cloud infrastructure, and enterprise digital architecture.",
+            logo: "/brands-logo/kryoss logo (2).png",
+            href: "https://kryosssoftech.org/",
         },
         {
             name: "CCS",
             legal: "CLink Consultancy Services Private Ltd.",
             desc: "Providing high-level business consulting, strategy development, and operational excellence frameworks.",
-            logo: <Settings className="w-10 h-10" />,
+            logo: "/brands-logo/clink cunsultancy logo.png",
         },
         {
-            name: "Rome",
-            legal: "Kryoss Softech Private Ltd.",
-            desc: "The technology powerhouse driving software engineering, cloud infrastructure, and enterprise digital architecture.",
-            logo: <Cpu className="w-10 h-10" />,
+            name: "CLink HR",
+            legal: "Clink HR Services Private Ltd.",
+            desc: "Specialized in strategic human resource management, executive search, and workforce planning for global enterprises.",
+            logo: "/brands-logo/clink hr.png",
         },
     ];
 
     const brands = [
         {
-            title: "CLink Softech",
-            desc: "CLink Softech is providing Customized Software Development, Web Application Development, Mobile Application Development and IT Consulting Services. We have earned the pride of being one of the leading App & web based software solution provider in India, we develop software solution that helps our customers to outperform the competition and stay ahead in today’s competitive business environment.",
+            title: "Kryoss Softech",
+            desc: "Kryoss Softech is providing Customized Software Development, Web Application Development, Mobile Application Development and IT Consulting Services. We have earned the pride of being one of the leading App & web based software solution provider in India, we develop software solution that helps our customers to outperform the competition and stay ahead in today’s competitive business environment.",
             image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop",
         },
         {
@@ -219,7 +216,7 @@ export default function CLinkGroup() {
                         <FadeUp delay={0.2}>
                             <div className="relative rounded-3xl overflow-hidden border border-white/10">
                                 <img
-                                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop"
+                                    src="/CLink_Group/What We do.png"
                                     alt="What We Do"
                                     className="w-full h-auto object-cover"
                                 />
@@ -229,27 +226,7 @@ export default function CLinkGroup() {
                 </div>
             </section>
 
-            {/* SECTION 4: INDUSTRIES WE SERVE */}
-            <section className="py-24 max-w-7xl mx-auto px-6">
-                <FadeUp>
-                    <div className="text-center mb-16 space-y-4">
-                        <h2 className="text-3xl md:text-4xl font-bold uppercase">Industries We Serve</h2>
-                        <div className="w-24 h-1 bg-orange-500 mx-auto" />
-                    </div>
-                </FadeUp>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {industries.map((industry, idx) => (
-                        <FadeUp key={idx} delay={idx * 0.05}>
-                            <div className="group p-8 rounded-[40px] bg-white/5 border border-white/10 hover:bg-orange-500 transition-all duration-500 text-center flex flex-col items-center justify-center gap-6 cursor-default h-full">
-                                <div className="text-orange-500 group-hover:text-white transition-colors duration-500">
-                                    {industry.icon}
-                                </div>
-                                <h3 className="text-lg font-bold text-white uppercase tracking-widest">{industry.title}</h3>
-                            </div>
-                        </FadeUp>
-                    ))}
-                </div>
-            </section>
+            
 
             {/* SECTION 5: STATEMENT SECTION */}
             <section className="py-24 bg-gradient-to-r from-orange-600 to-orange-800 relative overflow-hidden text-center">
@@ -264,27 +241,69 @@ export default function CLinkGroup() {
             </section>
 
             {/* SECTION 6: GROUP COMPANIES */}
-            <section className="py-32 max-w-5xl mx-auto px-6">
-                <FadeUp>
-                    <div className="text-center mb-20">
-                        <h2 className="text-3xl font-bold uppercase tracking-widest">Group Companies</h2>
+            <section className="relative py-32 overflow-hidden">
+                {/* Background Details */}
+                <div className="absolute inset-0 bg-[#0A0A0A]">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,106,0,0.03),transparent_70%)]" />
+                    <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-[linear-gradient(to_top,#050505,transparent)]" />
+                </div>
+
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <FadeUp>
+                        <div className="text-center mb-24 space-y-4">
+                            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest text-white">
+                                Group Companies
+                            </h2>
+                            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent mx-auto opacity-80" />
+                        </div>
+                    </FadeUp>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                        {groupCompanies.map((company, idx) => {
+                            const cardContent = (
+                                <div className={`group h-full relative flex flex-col rounded-[28px] border border-white/5 bg-gradient-to-b from-[#181818] to-[#0F0F0F] hover:from-[#202020] hover:to-[#121212] transition-all duration-300 hover:-translate-y-1.5 hover:border-orange-500/30 hover:shadow-[0_20px_40px_-20px_rgba(255,106,0,0.15)] overflow-hidden ${company.href ? "cursor-pointer" : ""}`}>
+                                    {/* Logo Zone — full-width white banner */}
+                                    <div className="w-full h-[180px] bg-white flex items-center justify-center p-6 shrink-0">
+                                        <img
+                                            src={company.logo}
+                                            alt={company.name}
+                                            className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                                        />
+                                    </div>
+
+                                    {/* Content Zone — dark section */}
+                                    <div className="flex flex-col items-center text-center px-8 py-8 flex-1">
+                                        <h3 className="text-2xl font-bold text-white uppercase tracking-tight mb-3">
+                                            {company.name}
+                                        </h3>
+                                        <div className="text-orange-500 text-xs font-bold uppercase tracking-[0.2em] mb-5 min-h-[1.5em]">
+                                            {company.legal}
+                                        </div>
+                                        <p className="text-gray-400 text-base leading-relaxed line-clamp-3">
+                                            {company.desc}
+                                        </p>
+                                    </div>
+                                </div>
+                            );
+
+                            return (
+                                <FadeUp key={idx} delay={idx * 0.1}>
+                                    {company.href ? (
+                                        <a
+                                            href={company.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block h-full"
+                                        >
+                                            {cardContent}
+                                        </a>
+                                    ) : (
+                                        cardContent
+                                    )}
+                                </FadeUp>
+                            );
+                        })}
                     </div>
-                </FadeUp>
-                <div className="space-y-8">
-                    {groupCompanies.map((company, idx) => (
-                        <FadeUp key={idx} delay={idx * 0.1}>
-                            <div className="flex flex-col md:flex-row items-center gap-8 p-10 rounded-[40px] bg-white/[0.03] border border-white/10 hover:bg-white/[0.05] transition-all">
-                                <div className="w-24 h-24 rounded-3xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 shrink-0">
-                                    {company.logo}
-                                </div>
-                                <div className="flex-1 text-center md:text-left space-y-2">
-                                    <h3 className="text-2xl font-bold text-white uppercase tracking-wide">{company.name}</h3>
-                                    <div className="text-orange-500 text-xs font-bold uppercase tracking-[0.3em] pb-2">{company.legal}</div>
-                                    <p className="text-gray-400 text-base leading-relaxed">{company.desc}</p>
-                                </div>
-                            </div>
-                        </FadeUp>
-                    ))}
                 </div>
             </section>
 
@@ -326,10 +345,32 @@ export default function CLinkGroup() {
                         ))}
                     </div>
                 </div>
+            </section >
+
+            {/* SECTION 4: INDUSTRIES WE SERVE */}
+            <section className="py-24 max-w-7xl mx-auto px-6">
+                <FadeUp>
+                    <div className="text-center mb-16 space-y-4">
+                        <h2 className="text-3xl md:text-4xl font-bold uppercase">Industries We Serve</h2>
+                        <div className="w-24 h-1 bg-orange-500 mx-auto" />
+                    </div>
+                </FadeUp>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {industries.map((industry, idx) => (
+                        <FadeUp key={idx} delay={idx * 0.05}>
+                            <div className="group p-8 rounded-[40px] bg-white/5 border border-white/10 hover:bg-orange-500 transition-all duration-500 text-center flex flex-col items-center justify-center gap-6 cursor-default h-full">
+                                <div className="text-orange-500 group-hover:text-white transition-colors duration-500">
+                                    {industry.icon}
+                                </div>
+                                <h3 className="text-lg font-bold text-white uppercase tracking-widest">{industry.title}</h3>
+                            </div>
+                        </FadeUp>
+                    ))}
+                </div>
             </section>
 
             {/* SECTION 8: CTA SECTION */}
-            <section className="py-32 relative overflow-hidden text-center bg-gradient-to-r from-orange-600 to-orange-800">
+            < section className="py-32 relative overflow-hidden text-center bg-gradient-to-r from-orange-600 to-orange-800" >
                 <div className="max-w-5xl mx-auto px-6 relative z-10 space-y-12">
                     <FadeUp>
                         <h2 className="text-3xl md:text-5xl font-black text-white leading-tight uppercase tracking-tighter">
