@@ -217,7 +217,7 @@ export default function Overview() {
       points: [
         "Company profile / pitch deck",
         "Service brochures or presentations",
-        "Proposal + pricing structure support",
+        "Proposal + positioning structure support",
       ],
       note: "Professional communication from day one",
     },
@@ -253,9 +253,9 @@ export default function Overview() {
         "No. IPP is not a franchise. There is no franchising structure — you operate independently under your own brand.",
     },
     {
-      question: "Is IPP a passive investment product?",
+      question: "Is IPP a passive growth model?",
       answer:
-        "No. IPP is not a passive investment model. You build your business and own clients, while Zryoss powers backend execution.",
+        "No. IPP is not a passive growth model. You build your business and own clients, while Zryoss powers backend execution.",
     },
     {
       question: "Who owns the brand and client relationship?",
@@ -671,7 +671,7 @@ export default function Overview() {
                     "Eliminates early-stage confusion",
                     "Ensures professional market entry",
                     "Aligns brand with execution capability",
-                    "Saves time, cost, and effort",
+                    "Saves time, resources, and effort",
                     "Reduces startup risk",
                   ].map((x, i) => (
                     <div key={i} className="flex items-start gap-3">

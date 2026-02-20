@@ -252,7 +252,7 @@ const Lifecycle = () => {
               "Brand ownership remains with the partner",
               "Execution remains centralized",
               "Governance remains system-controlled",
-              "Income depends on real business",
+              "Growth depends on real business",
               "Roles remain clearly defined"
             ].map((item, i) => (
               <div key={i} className="bg-[#111] px-8 py-4 rounded-full border border-white/5 flex items-center gap-4 hover:border-orange-500/30 transition-all">

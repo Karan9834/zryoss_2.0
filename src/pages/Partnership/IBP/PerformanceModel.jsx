@@ -58,7 +58,7 @@ const AnimatedSection = ({ children, delay = 0, className = "" }) => {
     );
 };
 
-export default function RevenueScaleModel() {
+export default function PerformanceScaleModel() {
     return (
         <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-orange-600/30">
             {/* Background Glows */}
@@ -74,22 +74,22 @@ export default function RevenueScaleModel() {
                             <FadeUp>
                                 <div className="inline-flex items-center gap-2 text-orange-500 text-xs uppercase tracking-[0.45em] mb-6 font-bold">
                                     <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-                                    Execution-Backed Revenue
+                                    Execution-Backed Performance
                                 </div>
                                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
                                     IBP Scale & <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                                        Revenue Model
+                                        Success Model
                                     </span>
                                 </h1>
                                 <p className="text-xl text-gray-400 leading-relaxed font-light mb-8">
-                                    Scale Through Real Businesses, Earn Through Real Execution.
+                                    Scale Through Real Businesses, Grow Through Real Execution.
                                 </p>
 
                                 <div className="flex flex-wrap gap-4">
                                     {[
                                         "IBP Leads Expansion",
-                                        "Revenue from Execution",
+                                        "Success from Execution",
                                         "Sustainable Growth"
                                     ].map((item, i) => (
                                         <div key={i} className="px-6 py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm text-neutral-300 flex items-center gap-2">
@@ -106,8 +106,8 @@ export default function RevenueScaleModel() {
                             <FadeUp delay={0.2}>
                                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-600/20 blur-3xl rounded-3xl transform rotate-3" />
                                 <img
-                                    src="/IBP Revenue & Scale Model.jpg"
-                                    alt="IBP Scale & Revenue Model"
+                                    src="/IBP Performance & Scale Model.jpg"
+                                    alt="IBP Scale & Success Model"
                                     className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
                                 />
                             </FadeUp>
@@ -123,14 +123,14 @@ export default function RevenueScaleModel() {
                         <AnimatedSection>
                             <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
                                 Core Principle of the <br />
-                                <span className="text-orange-500">Revenue Model</span>
+                                <span className="text-orange-500">Execution Model</span>
                             </h2>
                             <p className="text-neutral-400 text-lg mb-8 leading-relaxed">
-                                Zryoss follows one non-negotiable rule: Revenue can only be generated when real services are sold and delivered. Scale is earned, not promised.
+                                Zryoss follows one non-negotiable rule: Growth can only be generated when real services are sold and delivered. Scale is earned, not promised.
                             </p>
                             <div className="p-6 bg-orange-500/10 border-l-4 border-orange-500 rounded-r-lg">
                                 <p className="text-lg text-white font-medium">
-                                    Revenue only from real services sold & delivered.
+                                    Value only from real services sold & delivered.
                                 </p>
                             </div>
                         </AnimatedSection>
@@ -139,8 +139,8 @@ export default function RevenueScaleModel() {
                             <div className="space-y-4">
                                 {[
                                     { text: "No joining incentives", icon: XCircle },
-                                    { text: "No income for hierarchy", icon: XCircle },
-                                    { text: "No payouts without execution", icon: XCircle },
+                                    { text: "No growth for hierarchy", icon: XCircle },
+                                    { text: "No milestones without execution", icon: XCircle },
                                     { text: "Scale requires execution", icon: CheckCircle2 }
                                 ].map((item, i) => (
                                     <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/5 rounded-xl hover:bg-white/10 transition-colors">
@@ -175,7 +175,7 @@ export default function RevenueScaleModel() {
                                 <h4 className="text-xl font-medium text-orange-500 mb-6">Multi-Vertical Expansion</h4>
                                 <p className="text-neutral-400 mb-6 text-sm">Operate across approved verticals like Tech, Marketing, HR, and more.</p>
                                 <div className="p-4 bg-white/5 rounded-xl border border-white/5">
-                                    <h5 className="text-xs font-bold text-white uppercase mb-2">Revenue Impact</h5>
+                                    <h5 className="text-xs font-bold text-white uppercase mb-2">Success Impact</h5>
                                     <p className="text-xs text-neutral-400">More verticals = more addressable markets. Cross-vertical execution increases deal value.</p>
                                 </div>
                             </div>
@@ -191,8 +191,8 @@ export default function RevenueScaleModel() {
                                 <h4 className="text-xl font-medium text-orange-500 mb-6">IPP Enablement</h4>
                                 <p className="text-neutral-400 mb-6 text-sm">Enable multiple IPPs, each with their own brand and client base.</p>
                                 <div className="p-4 bg-white/5 rounded-xl border border-white/5">
-                                    <h5 className="text-xs font-bold text-white uppercase mb-2">Revenue Impact</h5>
-                                    <p className="text-xs text-neutral-400">Benefits only when IPPs generate real business. Adds volume, not hierarchy income.</p>
+                                    <h5 className="text-xs font-bold text-white uppercase mb-2">Success Impact</h5>
+                                    <p className="text-xs text-neutral-400">Benefits only when IPPs generate real business. Adds volume, not hierarchy growth.</p>
                                 </div>
                             </div>
                         </AnimatedSection>
@@ -207,7 +207,7 @@ export default function RevenueScaleModel() {
                                 <h4 className="text-xl font-medium text-orange-500 mb-6">Direct Client Volume</h4>
                                 <p className="text-neutral-400 mb-6 text-sm">Acquire enterprise clients and drive large-ticket engagements.</p>
                                 <div className="p-4 bg-white/5 rounded-xl border border-white/5">
-                                    <h5 className="text-xs font-bold text-white uppercase mb-2">Revenue Impact</h5>
+                                    <h5 className="text-xs font-bold text-white uppercase mb-2">Success Impact</h5>
                                     <p className="text-xs text-neutral-400">Margins on executed services and long-term recurring contracts.</p>
                                 </div>
                             </div>
@@ -216,12 +216,12 @@ export default function RevenueScaleModel() {
                 </div>
             </section>
 
-            {/* Revenue Sources vs Non-Revenue */}
+            {/* Performance Sources vs Non-Performance */}
             <section className="py-24 px-6 bg-[#0a0a0a] border-y border-white/5">
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
                     <AnimatedSection>
                         <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                            <CheckCircle2 className="text-green-500" /> Revenue Sources
+                            <CheckCircle2 className="text-green-500" /> Performance Sources
                         </h3>
                         <div className="bg-[#111] p-8 rounded-2xl border border-green-500/10 h-full">
                             <ul className="space-y-4">
@@ -240,7 +240,7 @@ export default function RevenueScaleModel() {
 
                     <AnimatedSection delay={200}>
                         <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                            <XCircle className="text-red-500" /> No Revenue From
+                            <XCircle className="text-red-500" /> No Rewards From
                         </h3>
                         <div className="bg-[#111] p-8 rounded-2xl border border-red-500/10 h-full">
                             <ul className="space-y-4">
@@ -252,7 +252,7 @@ export default function RevenueScaleModel() {
                                 ))}
                             </ul>
                             <div className="mt-8 pt-6 border-t border-white/5">
-                                <p className="text-red-500 text-sm font-bold">No Execution = No Revenue.</p>
+                                <p className="text-red-500 text-sm font-bold">No Execution = No Rewards.</p>
                             </div>
                         </div>
                     </AnimatedSection>
@@ -263,12 +263,12 @@ export default function RevenueScaleModel() {
             <section className="py-24 px-6 relative z-10">
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
                     <AnimatedSection>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-8">Protects Revenue Integrity</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold mb-8">Protects Performance Integrity</h2>
                         <div className="space-y-6">
                             {[
                                 { t: "Validating all scopes centrally", d: "Ensures what is sold can be delivered." },
                                 { t: "Tracking execution & delivery", d: "Real-time monitoring of progress." },
-                                { t: "Linking payouts to completed work", d: "Earnings released upon milestones." },
+                                { t: "Linking milestones to completed work", d: "Value released upon milestones." },
                                 { t: "Enforcing governance", d: "Strict compliance and reporting." }
                             ].map((item, i) => (
                                 <div key={i} className="flex gap-4">
@@ -309,7 +309,7 @@ export default function RevenueScaleModel() {
                                 <li className="flex gap-2 text-neutral-300"><CheckCircle2 className="text-blue-500" size={18} /> Avoids legal & compliance risks</li>
                                 <li className="flex gap-2 text-neutral-300"><CheckCircle2 className="text-blue-500" size={18} /> Builds real business equity</li>
                             </ul>
-                            <p className="text-sm text-neutral-500 italic">IBPs build business value, not short-term income.</p>
+                            <p className="text-sm text-neutral-500 italic">IBPs build business value, not short-term growth.</p>
                         </div>
                     </AnimatedSection>
 
@@ -321,14 +321,14 @@ export default function RevenueScaleModel() {
                                     <h4 className="text-green-500 font-bold mb-2 flex items-center gap-2 text-sm uppercase"><CheckCircle2 size={16} /> Ideal For</h4>
                                     <ul className="text-sm text-neutral-400 space-y-1">
                                         <li>Think long-term</li>
-                                        <li>Want scalable revenue</li>
+                                        <li>Want scalable performance</li>
                                         <li>Value systems</li>
                                     </ul>
                                 </div>
                                 <div>
                                     <h4 className="text-red-500 font-bold mb-2 flex items-center gap-2 text-sm uppercase"><XCircle size={16} /> Not For</h4>
                                     <ul className="text-sm text-neutral-400 space-y-1">
-                                        <li>Quick-income seekers</li>
+                                        <li>Quick-growth seekers</li>
                                         <li>Recruitment focus</li>
                                         <li>Passive-only expectations</li>
                                     </ul>
@@ -345,16 +345,16 @@ export default function RevenueScaleModel() {
                     <AnimatedSection>
                         <h2 className="text-4xl md:text-6xl font-bold mb-8">
                             One System. Real Scale. <br />
-                            <span className="text-orange-500">Real Revenue.</span>
+                            <span className="text-orange-500">Real Success.</span>
                         </h2>
                         <p className="text-xl text-neutral-400 mb-12">
-                            Zryoss does not manufacture income. It enables business ecosystems that earn through delivery.
+                            Zryoss does not manufacture success. It enables business ecosystems that grow through delivery.
                         </p>
 
                         <div className="inline-block p-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 p-1">
                             <div className="px-12 py-6 bg-black rounded-full">
                                 <h3 className="text-2xl font-bold text-white">
-                                    Scale With Discipline. Earn With Integrity.
+                                    Scale With Discipline. Grow With Integrity.
                                 </h3>
                             </div>
                         </div>

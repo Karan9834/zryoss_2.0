@@ -237,11 +237,11 @@ export default function Vendors() {
                             <div className="md:w-1/2">
                                 <h2 className="text-3xl md:text-4xl font-bold mb-6">The Vendor Tech Suite</h2>
                                 <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                                    Every vendor in the network operates on the Zryoss Vendor App. This ensures real-time job tracking, earnings transparency, and quality control.
+                                    Every vendor in the network operates on the Zryoss Vendor App. This ensures real-time job tracking, transparent commercials, and quality control.
                                 </p>
                                 <div className="space-y-6">
                                     {[
-                                        { icon: <CreditCard className="text-orange-500" />, title: "Instant Payouts", desc: "Earnings released upon job verification." },
+                                        { icon: <CreditCard className="text-orange-500" />, title: "Fast Settlements", desc: "Commercials released upon job verification." },
                                         { icon: <MessageSquare className="text-blue-500" />, title: "Direct Comms", desc: "Chat directly with Zryoss project managers." },
                                         { icon: <MapPin className="text-green-500" />, title: "Geo-Fenced Jobs", desc: "Receive tasks only within service radius." }
                                     ].map((item, i) => (
@@ -297,7 +297,7 @@ export default function Vendors() {
                         <div className="grid md:grid-cols-3 gap-8">
                             {[
                                 { level: "Verified", desc: "For new specialists passing initial vetting.", features: ["Access to Marketplace", "Standard Payment Terms"] },
-                                { level: "Preferred", desc: "For vendors with 95%+ SLA compliance.", features: ["Priority Project Allocation", "Faster Payouts", "Co-Branding Rights"] },
+                                { level: "Preferred", desc: "For vendors with 95%+ SLA compliance.", features: ["Priority Project Allocation", "Faster Settlements", "Co-Branding Rights"] },
                                 { level: "Strategic", desc: "Exclusive partners deeply integrated into Zryoss.", features: ["Equity Options", "Joint Venture Opportunities", "Dedicated Growth Manager"] }
                             ].map((tier, i) => (
                                 <div key={i} className={`p-8 rounded-2xl border ${i === 1 ? 'bg-orange-900/10 border-orange-500' : 'bg-white/5 border-white/10'} relative overflow-hidden`}>
@@ -330,7 +330,7 @@ export default function Vendors() {
                             {[
                                 { q: "Is there a fee to join the network?", a: "No. Zryoss takes a percentage of the contract value only when you get paid." },
                                 { q: "Do I have to find my own clients?", a: "No. Zryoss Brands (like ClinkHR or Kryoss Softech) acquire the clients. You focus on execution." },
-                                { q: "How fast are payments processed?", a: "Payments are released within 7 days of milestone approval by the Zryoss Quality Team." }
+                                { q: "How fast are commercials processed?", a: "Commercials are released within 7 days of milestone approval by the Zryoss Quality Team." }
                             ].map((faq, i) => (
                                 <div key={i} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-orange-500/30 transition-colors">
                                     <h4 className="flex items-center justify-between font-bold text-lg mb-2 cursor-pointer">

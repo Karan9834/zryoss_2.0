@@ -94,7 +94,7 @@ export default function Overview() {
       title: "Partner Layer",
       tagline: "Growth Engine",
       shortDesc: "Independent partners driving client acquisition.",
-      detailedDesc: "The Partner Layer consists of independent partners focused on sales, client relationships, and business growth. Partners acquire clients under their own brand name while Zryoss manages demos, execution, and delivery through the ecosystem. Partner earnings are linked solely to real business closures and delivery.",
+      detailedDesc: "The Partner Layer consists of independent partners focused on sales, client relationships, and business growth. Partners acquire clients under their own brand name while Zryoss manages demos, execution, and delivery through the ecosystem. Partner success is linked solely to real business closures and delivery.",
       gradient: "from-orange-600/20 via-orange-500/10 to-transparent",
       icon: <Users className="w-8 h-8 text-orange-500" />,
       image: partnerImage,
@@ -103,7 +103,7 @@ export default function Overview() {
         "Client acquisition focus",
         "Brand autonomy",
         "Business growth",
-        "Performance-based earnings",
+        "Performance-based success",
         "Demos & execution managed by Zryoss"
       ],
       layerNumber: 4

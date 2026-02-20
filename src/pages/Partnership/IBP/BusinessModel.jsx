@@ -321,23 +321,23 @@ export default function MultiVerticalBusinessModel() {
                 </div>
             </section>
 
-            {/* Revenue Logic & Safety */}
+            {/* Performance Logic & Safety */}
             <section className="py-24 px-6 bg-[#080808] border-y border-white/5">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-16">
                         <AnimatedSection>
                             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                                 <FileText className="text-amber-500" />
-                                Revenue Logic
+                                Performance Logic
                             </h3>
                             <div className="space-y-4 mb-8">
                                 <div className="flex gap-3 items-start">
                                     <CheckCircle2 className="text-green-500 shrink-0 mt-1" size={18} />
-                                    <span className="text-neutral-300">Revenue from actual clients & services delivered</span>
+                                    <span className="text-neutral-300">Success from actual clients & services delivered</span>
                                 </div>
                                 <div className="flex gap-3 items-start">
                                     <XCircle className="text-red-500 shrink-0 mt-1" size={18} />
-                                    <span className="text-neutral-300">No income from just adding verticals or structure</span>
+                                    <span className="text-neutral-300">No rewards from just adding verticals or structure</span>
                                 </div>
                             </div>
                             <p className="text-neutral-500 text-sm">Scale comes from real business activity, not configuration.</p>
@@ -382,7 +382,7 @@ export default function MultiVerticalBusinessModel() {
                                 <h3 className="text-red-500 font-bold mb-4 flex items-center gap-2"><XCircle size={20} /> Not For</h3>
                                 <ul className="space-y-2 text-neutral-300">
                                     <li>• Solo operators without scale intent</li>
-                                    <li>• Short-term income seekers</li>
+                                    <li>• Short-term growth seekers</li>
                                     <li>• Recruitment-driven growth</li>
                                 </ul>
                             </div>

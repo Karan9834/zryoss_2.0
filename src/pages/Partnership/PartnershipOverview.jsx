@@ -296,7 +296,7 @@ export default function PartnershipOverview() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               "Not MLM",
-              "Not referral-based income schemes",
+              "Not referral-based growth models",
               "Not franchise models",
               "Not investment or deposit plans",
               "Not employment contracts"
@@ -308,7 +308,7 @@ export default function PartnershipOverview() {
             ))}
           </div>
 
-          <p className="mt-10 text-white/80 font-medium">Earnings are generated only through real business and service delivery.</p>
+          <p className="mt-10 text-white/80 font-medium">Success is generated only through real business and service delivery.</p>
         </div>
       </section>
 
@@ -387,8 +387,8 @@ export default function PartnershipOverview() {
                   <XCircle className="w-5 h-5" /> Not Suitable If You Want:
                 </h4>
                 <ul className="text-sm text-white/70 space-y-2 pl-7">
-                  <li>• Guaranteed income</li>
-                  <li>• Passive returns without effort</li>
+                  <li>• Guaranteed performance outcomes</li>
+                  <li>• Passive growth without contribution</li>
                   <li>• Recruitment-driven models</li>
                 </ul>
               </div>

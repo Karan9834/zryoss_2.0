@@ -57,7 +57,7 @@ const Compliance = () => {
             icon: <Banknote size={24} />,
             content: [
                 {
-                    text: "Financial processes follow established governance standards including: Transparent service-based fee structures, Proper invoicing and documentation, Lawful accounting and reporting practices, No participation-based or outcome-guaranteed models. All commercial activities are aligned with legitimate business service delivery."
+                    text: "Financial processes follow established governance standards including: Transparent service-based commercial structures, Proper invoicing and documentation, Lawful accounting and reporting practices, No participation-based or outcome-guaranteed models. All commercial activities are aligned with legitimate business service delivery."
                 }
             ]
         },

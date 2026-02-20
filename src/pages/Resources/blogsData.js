@@ -22,7 +22,7 @@ export const blogsData = [
         <li style="margin-bottom: 12px;"><span style="color: #f97316; font-weight: bold; margin-right: 10px;">02.</span> Selection of one specific business domain</li>
         <li style="margin-bottom: 12px;"><span style="color: #f97316; font-weight: bold; margin-right: 10px;">03.</span> ZRYOSS activates the brand, systems, and partners</li>
         <li style="margin-bottom: 12px;"><span style="color: #f97316; font-weight: bold; margin-right: 10px;">04.</span> IPP focuses exclusively on sales, clients, and growth</li>
-        <li style="margin-bottom: 12px;"><span style="color: #f97316; font-weight: bold; margin-right: 10px;">05.</span> Revenue generation through a shared ecosystem model</li>
+        <li style="margin-bottom: 12px;"><span style="color: #f97316; font-weight: bold; margin-right: 10px;">05.</span> Performance generation through a shared ecosystem model</li>
       </ul>
       
       <h3 style="font-weight: bold; margin-top: 25px; margin-bottom: 15px;">3. The Single-Domain Advantage</h3>
@@ -31,7 +31,7 @@ export const blogsData = [
         <li><strong>Faster Execution:</strong> No multitasking between different industries.</li>
         <li><strong>Clear Positioning:</strong> Become an expert in your chosen niche.</li>
         <li><strong>Strong Brand Authority:</strong> Build trust with a focused identity.</li>
-        <li><strong>Predictable Revenue:</strong> Scalable systems lead to steady growth.</li>
+        <li><strong>Predictable Success:</strong> Scalable systems lead to steady growth.</li>
       </ul>
       
       <h3 style="font-weight: bold; margin-top: 25px; margin-bottom: 15px;">4. Available Business Domains</h3>
@@ -126,7 +126,7 @@ export const blogsData = [
       </ol>
       
       <h3 style="font-weight: bold; margin-top: 25px; margin-bottom: 15px;">Why Centralization Wins</h3>
-      <p style="margin-bottom: 15px;">Standardized quality delivery across all verticals means clear accountability, automated routing, and transparent revenue tracking. Partners don't worry about hiring teams or technical failures—ZRYOSS ensures business consistency at scale.</p>
+      <p style="margin-bottom: 15px;">Standardized quality delivery across all verticals means clear accountability, automated routing, and transparent performance tracking. Partners don't worry about hiring teams or technical failures—ZRYOSS ensures business consistency at scale.</p>
     `
   },
   {
@@ -135,7 +135,7 @@ export const blogsData = [
     subtitle: "For Business Leaders and Network Builders",
     date: "January 2026",
     image: "/z_blogs_section_images/blogs_images4.png",
-    excerpt: "If IPP is business ownership, IBP is business leadership. IBP (Independent Business Partner) allows a partner to operate up to 3 business domains, create and manage multiple IPPs, and control revenue routing. While IPP is a single domain operator, IBP is a multi-domain business controller designed for leaders, not operators.",
+    excerpt: "If IPP is business ownership, IBP is business leadership. IBP (Independent Business Partner) allows a partner to operate up to 3 business domains, create and manage multiple IPPs, and control performance routing. While IPP is a single domain operator, IBP is a multi-domain business controller designed for leaders, not operators.",
     content: `
       <p class="lead" style="margin-bottom: 20px;">If IPP is about business <em>ownership</em>, IBP is about business <em>leadership</em>. This model is designed for those who want to build a network, not just a single outlet.</p>
       
@@ -144,14 +144,14 @@ export const blogsData = [
       <ul style="margin-bottom: 20px;">
         <li><strong>Multi-Domain Control:</strong> Operate up to 3 business domains simultaneously.</li>
         <li><strong>Network Building:</strong> Create and manage a network of multiple IPPs.</li>
-        <li><strong>Revenue Routing:</strong> Full control over how growth is distributed.</li>
+        <li><strong>Performance Routing:</strong> Full control over how growth is distributed.</li>
       </ul>
       
       <h3 style="font-weight: bold; margin-top: 25px; margin-bottom: 15px;">IBP vs. IPP: Choosing Your Path</h3>
       <p style="margin-bottom: 15px;">While an <strong>IPP</strong> is a specialized operator focusing on one domain, a <strong>IBP</strong> is a strategic controller managing multiple streams. IBP owners act as the "Operating System" for their localized network of IPPs.</p>
       
-      <h3 style="font-weight: bold; margin-top: 25px; margin-bottom: 15px;">Multiple Revenue Streams</h3>
-      <p style="margin-bottom: 15px;">IBP partners benefit from direct domain revenue, commissions from their IPP network, and recurring service income. It is the ultimate platform for builders and ecosystem leaders.</p>
+      <h3 style="font-weight: bold; margin-top: 25px; margin-bottom: 15px;">Multiple Success Streams</h3>
+      <p style="margin-bottom: 15px;">IBP partners benefit from direct domain success, rewards from their IPP network, and recurring service growth. It is the ultimate platform for builders and ecosystem leaders.</p>
     `
   },
   {
@@ -160,7 +160,7 @@ export const blogsData = [
     subtitle: "High-Demand Industries for the Future",
     date: "January 2026",
     image: "/z_blogs_section_images/blogs_images5.png",
-    excerpt: "The future of business lies in high-demand, service-driven industries. Top domains include Recruitment & HR Services, IT & Software Solutions, Digital Marketing, Professional Services, and Admission consulting. With ZRYOSS, these domains come with ready frameworks, not guesswork, ensuring low asset dependency and high recurring revenue.",
+    excerpt: "The future of business lies in high-demand, service-driven industries. Top domains include Recruitment & HR Services, IT & Software Solutions, Digital Marketing, Professional Services, and Admission consulting. With ZRYOSS, these domains come with ready frameworks, not guesswork, ensuring low asset dependency and high recurring success.",
     content: `
       <p class="lead" style="margin-bottom: 20px;">Success in business is 50% timing and 50% domain selection. For 2026, we've identified the high-growth sectors that yield the best results under the partner model.</p>
       
@@ -286,7 +286,7 @@ export const blogsData = [
       <ul style="margin-bottom: 20px;">
         <li>Industry verticals</li>
         <li>Business maturity levels</li>
-        <li>Revenue and operational scale</li>
+        <li>Success and operational scale</li>
         <li>Innovation or employment impact</li>
       </ul>
       <p style="margin-bottom: 15px;">Selecting the wrong scheme leads to rejection before evaluation even begins.</p>

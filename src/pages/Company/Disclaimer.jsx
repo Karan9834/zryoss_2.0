@@ -140,7 +140,7 @@ export default function Disclaimer() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <FadeUp>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">No Guarantee of Business Results</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">No Guarantee of Performance Outcomes</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
                 Outcomes depend on multiple internal and external factors. Zryoss provides the engine; the driving is yours.
               </p>
@@ -157,9 +157,9 @@ export default function Disclaimer() {
                 </h3>
                 <ul className="space-y-4">
                   {[
-                    "Revenue or income",
+                    "Performance results or outcomes",
                     "Client acquisition",
-                    "Profitability",
+                    "Sustainable Growth",
                     "Business success"
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-gray-300">

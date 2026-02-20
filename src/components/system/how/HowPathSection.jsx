@@ -71,7 +71,7 @@ export default function HowPathSection() {
                     IPP
                   </p>
                   <h3 className="text-white text-2xl font-extrabold">
-                    Individual Platform Partner
+                    Independent Prime Partner
                   </h3>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export default function HowPathSection() {
             </div>
 
             <p className="mt-5 text-white/70 leading-relaxed">
-              For individuals who want to build their own brand or income stream using a system.
+              For individuals who want to build their own brand or growth stream using a system.
             </p>
 
             <div className="mt-7 space-y-3">
@@ -120,7 +120,7 @@ export default function HowPathSection() {
                     IBP
                   </p>
                   <h3 className="text-white text-2xl font-extrabold">
-                    Business Platform Partner
+                    Independent Business Partner
                   </h3>
                 </div>
               </div>

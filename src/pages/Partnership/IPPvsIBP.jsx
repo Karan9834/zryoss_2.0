@@ -67,17 +67,17 @@ export default function IPPvsIBP() {
                     "Handled by Zryoss",
                   ],
                   [
-                    "Revenue Basis",
+                    "Success Basis",
                     "Based on closed business & delivery",
                     "Based on sales contribution only",
                   ],
                   [
-                    "Recruitment Income",
+                    "Recruitment Growth",
                     "Not applicable",
                     "Not applicable",
                   ],
                   [
-                    "Passive Income",
+                    "Passive Growth",
                     "Not applicable",
                     "Not applicable",
                   ],

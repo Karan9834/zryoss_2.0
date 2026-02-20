@@ -293,19 +293,17 @@ export default function BrandAndBusinessSetup() {
               <div className="absolute top-0 right-0 p-4 bg-orange-500 text-black font-bold text-xs uppercase tracking-wider rounded-bl-xl">
                 One-Time
               </div>
-              <h3 className="text-neutral-400 text-lg mb-2">IBP Onboarding Fee</h3>
-              <div className="text-5xl md:text-6xl font-bold text-white mb-6">
-                ₹1,50,000
-              </div>
+              <h3 className="text-neutral-400 text-lg mb-2">IBP Onboarding Process</h3>
+              <div className="text-5xl md:text-6xl font-bold text-white mb-6">Structured Onboarding</div>
               <div className="grid sm:grid-cols-3 gap-4 text-sm text-neutral-300 mb-8 border-t border-white/10 pt-6">
                 <div>Multi-vertical enablement</div>
                 <div>System setup & access</div>
                 <div>Scale support</div>
               </div>
               <div className="flex flex-wrap justify-center gap-4 text-xs text-neutral-500">
-                <span className="flex items-center gap-1"><XCircle size={12} /> No guaranteed incomes</span>
-                <span className="flex items-center gap-1"><XCircle size={12} /> No recruitment payouts</span>
-                <span className="flex items-center gap-1"><XCircle size={12} /> No hidden charges</span>
+                <span className="flex items-center gap-1"><XCircle size={12} /> No guaranteed growth promises</span>
+                <span className="flex items-center gap-1"><XCircle size={12} /> No recruitment rewards</span>
+                <span className="flex items-center gap-1"><XCircle size={12} /> Transparent commercials</span>
               </div>
             </div>
           </AnimatedSection>
@@ -326,7 +324,7 @@ export default function BrandAndBusinessSetup() {
                   <div className="flex items-center gap-2 text-white"><XCircle className="text-red-500" size={16} /> Not a Franchise</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-white"><XCircle className="text-red-500" size={16} /> Not Referral Income Scheme</div>
+                  <div className="flex items-center gap-2 text-white"><XCircle className="text-red-500" size={16} /> Not Referral Growth Model</div>
                   <div className="flex items-center gap-2 text-white"><XCircle className="text-red-500" size={16} /> Not Investment Product</div>
                 </div>
               </div>
@@ -370,7 +368,7 @@ export default function BrandAndBusinessSetup() {
               <div className="space-y-4">
                 <h4 className="text-orange-500 font-bold text-sm uppercase">Zryoss Does Not Own</h4>
                 <ul className="text-neutral-300 text-sm space-y-2 pl-4 border-l border-orange-500/30">
-                  <li>IBP Brands, IBP Clients, IBP Revenues</li>
+                  <li>IBP Brands, IBP Clients, IBP Growth Value</li>
                 </ul>
               </div>
               <p className="mt-6 text-sm text-neutral-500">Zryoss operates the engine behind the business.</p>

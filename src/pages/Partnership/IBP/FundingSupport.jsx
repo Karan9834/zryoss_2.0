@@ -166,7 +166,7 @@ export default function IBPFundingSupport() {
         "Build a stronger and more sustainable IPP network",
         "Increase trust, credibility & retention among your IPPs",
         "Become a leader of financially independent partners",
-        "Unlock recurring income through compliant, scalable operations"
+        "Unlock recurring growth through compliant, scalable operations"
     ];
 
     return (

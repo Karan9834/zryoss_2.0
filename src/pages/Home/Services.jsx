@@ -49,13 +49,13 @@ export default function Services() {
               <div>
                 <h3 className="text-2xl font-light mb-1">IPP</h3>
                 <p className="text-sm font-medium text-orange-500/90 uppercase tracking-widest">
-                  Independent Profit Partner
+                  Independent Prime Partner
                 </p>
               </div>
             </div>
 
             <p className="text-gray-100 text-base leading-relaxed mb-6 font-light">
-              Perfect for deal-closers who want to build their own revenue stream
+              Perfect for deal-closers who want to build their own growth stream
               while Zryoss manages execution and delivery.
             </p>
 
@@ -115,7 +115,7 @@ export default function Services() {
 
             <div className="space-y-3 mb-10">
               {[
-                "Lead-driven earning structure",
+                "Lead-driven performance structure",
                 "No operational responsibility",
                 "Transparent performance tracking",
               ].map((item, idx) => (

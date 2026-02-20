@@ -16,7 +16,7 @@ export default function SalesStructure() {
           <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
             Zryoss follows a simple, transparent sales structure designed to
             support business growth — without any multi-level or recruitment-
-            based earning systems.
+            based growth systems.
           </p>
         </FadeUp>
 
@@ -29,7 +29,7 @@ export default function SalesStructure() {
                 IPP
               </h3>
               <p className="mt-4 text-[var(--text-secondary)]">
-                Independent Profit Partner
+                Independent Prime Partner
               </p>
               <p className="mt-2 text-sm text-[var(--text-secondary)]">
                 Owns sales strategy, clients, and growth
@@ -67,17 +67,17 @@ export default function SalesStructure() {
 
         </div>
 
-        {/* EARNING CLARITY */}
+        {/* PERFORMANCE CLARITY */}
         <FadeUp delay={0.4}>
           <div className="mt-24 border border-[var(--border)] rounded-xl p-10 bg-[var(--bg-card)]">
             <h3 className="text-3xl font-semibold text-[var(--accent)]">
-              Earnings & Performance Logic
+              Performance & Growth Logic
             </h3>
 
             <ul className="mt-6 space-y-3 text-[var(--text-secondary)] max-w-4xl">
-              <li>• Earnings are linked only to direct sales contribution</li>
-              <li>• No earnings from team size or recruitment</li>
-              <li>• No cascading or multi-level payouts</li>
+              <li>• Growth is linked only to direct sales contribution</li>
+              <li>• No growth from team size or recruitment</li>
+              <li>• No cascading or multi-level milestones</li>
               <li>• Performance is evaluated individually</li>
             </ul>
           </div>
@@ -91,11 +91,11 @@ export default function SalesStructure() {
             </h3>
 
             <ul className="mt-6 space-y-3 text-[var(--text-secondary)] max-w-4xl">
-              <li>• No downline income</li>
+              <li>• No downline rewards</li>
               <li>• No recruitment incentives</li>
-              <li>• No hierarchical earnings</li>
+              <li>• No hierarchical performance rewards</li>
               <li>• No rewards for team expansion</li>
-              <li>• Earnings stop if sales stop</li>
+              <li>• Growth stops if sales stop</li>
             </ul>
           </div>
         </FadeUp>

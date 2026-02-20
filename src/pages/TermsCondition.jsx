@@ -30,7 +30,7 @@ const TermsCondition = () => {
             icon: <Info size={24} />,
             content: [
                 {
-                    text: "We are a Business Operating System designed to enable individuals and organizations to build, operate, and scale independent brands using a structured backend ecosystem. We are: Not a franchise, Not an investment scheme, Not a guaranteed income program. We provide business setup, operational support, execution management, and platform enablement services. (Ref: Companies Act, 2013 - Section 447 & 448 regarding transparency and prevention of fraud)."
+                    text: "We are a Business Operating System designed to enable individuals and organizations to build, operate, and scale independent brands using a structured backend ecosystem. We are: Not a franchise, Not an investment scheme, Not a guaranteed success program. We provide business setup, operational support, execution management, and platform enablement services. (Ref: Companies Act, 2013 - Section 447 & 448 regarding transparency and prevention of fraud)."
                 }
             ]
         },
@@ -66,11 +66,11 @@ const TermsCondition = () => {
         },
         {
             id: "5",
-            title: "5. Fees & Payments",
+            title: "5. Commercials & Enablement",
             icon: <CreditCard size={24} />,
             content: [
                 {
-                    text: "We charge service-based fees for: Business setup, Platform enablement, Operational and execution support. Fees are linked to defined services, not participation or recruitment. No income, profit, or business success is guaranteed. All payment terms are communicated transparently during onboarding. (Ref: Companies Act, 2013 - Section 134 regarding financial accountability)."
+                    text: "We charge service-based commercials for: Business setup, Platform enablement, Operational and execution support. Commercials are linked to defined services, not participation or recruitment. No success, outcome, or business performance is guaranteed. All payment terms are communicated transparently during onboarding. (Ref: Companies Act, 2013 - Section 134 regarding financial accountability)."
                 }
             ]
         },
@@ -120,7 +120,7 @@ const TermsCondition = () => {
             icon: <AlertTriangle size={24} />,
             content: [
                 {
-                    text: "We shall not be liable for: Business losses, Revenue shortfall, Indirect or consequential damages, Market or economic risks. Use of the platform is at the user’s own business risk. (Ref: Indian Contract Act, 1872 - Section 73 & 74 regarding damages and liability)."
+                    text: "We shall not be liable for: Business losses, Success or growth shortfall, Indirect or consequential damages, Market or economic risks. Use of the platform is at the user’s own business risk. (Ref: Indian Contract Act, 1872 - Section 73 & 74 regarding damages and liability)."
                 }
             ]
         },
@@ -160,7 +160,7 @@ const TermsCondition = () => {
             icon: <AlertTriangle size={24} />,
             content: [
                 {
-                    text: "We provide systems, support, and execution frameworks. Business outcomes depend on individual effort, market demand, and external factors. We do not guarantee revenue, profitability, or business success. Results may vary based on industry conditions, client acquisition, and execution volume. Users are responsible for their own business decisions and associated risks. We do not assure: Fixed income, Guaranteed profits, Business success. (Ref: Consumer Protection Act, 2019 - Section 2(47) regarding unfair trade practices)."
+                    text: "We provide systems, support, and execution frameworks. Business outcomes depend on individual effort, market demand, and external factors. We do not guarantee performance, outcome consistency, or business success. Results may vary based on industry conditions, client acquisition, and execution volume. Users are responsible for their own business decisions and associated risks. We do not assure: Fixed success, Guaranteed outcomes, Business success. (Ref: Consumer Protection Act, 2019 - Section 2(47) regarding unfair trade practices)."
                 }
             ]
         },

@@ -102,7 +102,7 @@ export default function BrandCreation() {
             points: [
                 "Company profile / pitch deck",
                 "Service brochures or presentations",
-                "Proposal and pricing structure support",
+                "Proposal and positioning structure support",
                 "Professional presentation from day one"
             ]
         },

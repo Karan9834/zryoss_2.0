@@ -17,7 +17,7 @@ export default function IPPRoles() {
 
         <FadeUp delay={0.15}>
           <p className="mt-6 max-w-3xl text-[var(--text-secondary)] text-lg">
-            Independent Profit Partners operate as business owners.
+            Independent Prime Partners operate as business owners.
             This page outlines exactly what IPPs are responsible for
             and how Zryoss supports them operationally.
           </p>

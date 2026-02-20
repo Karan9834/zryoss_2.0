@@ -88,7 +88,7 @@ export default function SubPartnerModel() {
                                 <div className="p-8 border border-white/10 bg-white/5 rounded-[24px] backdrop-blur-sm inline-block w-full shadow-2xl relative overflow-hidden group">
                                     <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                     <p className="text-lg text-gray-300 relative z-10 leading-relaxed italic">
-                                        "Designed for business scale, not recruitment-based income. <strong className="text-white">Expand reach while keeping execution, governance, and control centralized.</strong>"
+                                        "Designed for business scale, not recruitment-based growth. <strong className="text-white">Expand reach while keeping execution, governance, and control centralized.</strong>"
                                     </p>
                                 </div>
                             </FadeUp>
@@ -326,21 +326,21 @@ export default function SubPartnerModel() {
                 </div>
             </section>
 
-            {/* Revenue & What It's NOT */}
+            {/* Performance & What It's NOT */}
             <section className="py-24 px-6 relative z-10">
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
                     <AnimatedSection>
                         <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                             <DollarSign className="text-amber-500" />
-                            Revenue & Benefits
+                            Performance & Benefits
                         </h2>
                         <div className="space-y-6">
                             <p className="text-neutral-400">Any benefit from sub-partners is based on actual business generated, tied to real service delivery, and transparent.</p>
                             <div className="space-y-3">
                                 {[
-                                    "No income for just onboarding",
-                                    "No reward for inactive partners",
-                                    "No promise of passive income without work"
+                                    "No rewards for just onboarding",
+                                    "No incentive for inactive partners",
+                                    "No promise of passive growth without work"
                                 ].map((item, i) => (
                                     <div key={i} className="flex items-center gap-3 text-neutral-300 p-3 bg-white/5 rounded-lg">
                                         <XCircle className="text-red-500" size={18} />
@@ -361,7 +361,7 @@ export default function SubPartnerModel() {
                             {[
                                 "Not MLM",
                                 "Not Referral Scheme",
-                                "Not Chain Earning",
+                                "Not Chain Rewards",
                                 "Not Pyramid",
                                 "Not Recruitment Driven"
                             ].map((item, i) => (
@@ -412,7 +412,7 @@ export default function SubPartnerModel() {
                                         <XCircle size={20} />
                                     </div>
                                     <div>
-                                        <div className="text-white font-medium mb-1">Not for Quick Money</div>
+                                        <div className="text-white font-medium mb-1">Not for Quick Success</div>
                                         <div className="text-neutral-500 text-sm">Not for recruitment-focused growth or passive-only expectations.</div>
                                     </div>
                                 </div>

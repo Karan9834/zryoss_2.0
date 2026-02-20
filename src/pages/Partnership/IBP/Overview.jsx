@@ -104,10 +104,9 @@ export default function Overview() {
                   </button>
 
                   <a
-                    href="#charges"
                     className="px-8 py-4 bg-transparent border border-white/10 hover:border-white rounded-full font-bold text-base transition-all hover:bg-white/5 flex items-center justify-center gap-2 text-white"
                   >
-                    View Charges <ArrowRight size={18} />
+                    View Details <ArrowRight size={18} />
                   </a>
                 </div>
               </FadeUp>
@@ -465,12 +464,12 @@ export default function Overview() {
         </div>
       </section>
 
-      {/* ---------------- CHARGES ---------------- */}
-      <section id="charges" className="py-24 relative z-10 bg-[#050505]">
+      {/* ---------------- ONBOARDING ---------------- */}
+      <section id="commercials" className="py-24 relative z-10 bg-[#050505]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              About IBP Charges & Commercial Model
+              About IBP Onboarding & Commercial Model
             </h2>
             <p className="text-neutral-400 text-lg max-w-3xl mx-auto font-light leading-relaxed">
               IBP onboarding follows a transparent, one-time platform onboarding model.
@@ -485,10 +484,10 @@ export default function Overview() {
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
                   <div>
                     <div className="text-xs uppercase tracking-widest text-neutral-500 font-semibold mb-3">
-                      IBP Onboarding Fee (One-Time)
+                      IBP Onboarding Process (One-Time)
                     </div>
                     <div className="text-5xl font-bold text-white">
-                      ₹1,50,000
+                      Structured Onboarding
                     </div>
                     <p className="text-neutral-400 mt-3">
                       Covers multi-vertical enablement + system setup + execution access + scale support
@@ -498,19 +497,19 @@ export default function Overview() {
                   <div className="p-6 rounded-2xl bg-black/35 border border-white/10">
                     <div className="flex items-center gap-3 mb-3">
                       <Wallet className="text-orange-500" size={18} />
-                      <span className="font-semibold text-white">No Hidden Charges</span>
+                      <span className="font-semibold text-white">Transparent Commercials</span>
                     </div>
                     <div className="space-y-2 text-sm text-neutral-300">
-                      <div>• No guaranteed incomes</div>
-                      <div>• No recruitment-based payouts</div>
-                      <div>• No hidden charges</div>
+                      <div>• No guaranteed growth promises</div>
+                      <div>• No recruitment-based rewards</div>
+                      <div>• Transparent commercials</div>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-orange-500/15 to-transparent border border-orange-500/20">
                   <p className="text-neutral-200 leading-relaxed">
-                    Earnings are generated only through real business and service delivery.
+                    Success is generated only through real business and service delivery.
                   </p>
                 </div>
               </div>
@@ -533,7 +532,7 @@ export default function Overview() {
               {[
                 "Not MLM",
                 "Not a franchise",
-                "Not a referral income scheme",
+                "Not a referral growth model",
                 "Not an investment product",
               ].map((x, i) => (
                 <div
@@ -632,7 +631,7 @@ export default function Overview() {
                   {[
                     "IBP brands",
                     "IBP clients",
-                    "IBP revenues",
+                    "IBP growth value",
                   ].map((x, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <AlertCircle className="text-orange-400 mt-0.5" size={18} />

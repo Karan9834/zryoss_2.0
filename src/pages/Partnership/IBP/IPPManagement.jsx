@@ -166,7 +166,7 @@ export default function CreationManagement() {
                                 {[
                                     "Selling positions",
                                     "Recruiting salespeople",
-                                    "Building hierarchies for income"
+                                    "Building hierarchies for growth"
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-center gap-3 text-neutral-300">
                                         <XCircle className="text-red-500" size={20} />
@@ -290,7 +290,7 @@ export default function CreationManagement() {
                             <p className="text-neutral-400 mb-6">IBP does NOT own:</p>
                             <div className="flex flex-wrap gap-2">
                                 <span className="px-3 py-1 bg-red-900/20 text-red-400 rounded-full text-sm">IPP Brands</span>
-                                <span className="px-3 py-1 bg-red-900/20 text-red-400 rounded-full text-sm">IPP Revenue</span>
+                                <span className="px-3 py-1 bg-red-900/20 text-red-400 rounded-full text-sm">IPP Growth Value</span>
                                 <span className="px-3 py-1 bg-red-900/20 text-red-400 rounded-full text-sm">Client Relationships</span>
                             </div>
                             <p className="mt-6 text-sm text-neutral-500">This prevents dependency and conflict.</p>
@@ -373,7 +373,7 @@ export default function CreationManagement() {
                     <AnimatedSection delay={100}>
                         <div className="p-8 border border-white/10 rounded-2xl bg-[#0f0f0f] h-full">
                             <TrendingUp className="text-green-500 mb-4" size={32} />
-                            <h3 className="text-xl font-bold text-white mb-4">Revenue Logic</h3>
+                            <h3 className="text-xl font-bold text-white mb-4">Performance Logic</h3>
                             <p className="text-neutral-400 text-sm mb-4">Benefit is linked to actual business execution and transparently defined.</p>
                             <div className="text-xs bg-green-900/10 text-green-500 px-3 py-1 rounded inline-block">Performance Based</div>
                         </div>

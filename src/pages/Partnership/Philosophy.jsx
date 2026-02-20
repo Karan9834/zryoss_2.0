@@ -51,7 +51,7 @@ const Philosophy = () => {
 
                 <div className="flex flex-col gap-3 text-sm text-gray-400 mb-10 font-light">
                   <span className="flex items-center gap-3"><AlertTriangle size={16} className="text-orange-500" /> No fast growth without control</span>
-                  <span className="flex items-center gap-3"><AlertTriangle size={16} className="text-orange-500" /> No income promises without execution</span>
+                  <span className="flex items-center gap-3"><AlertTriangle size={16} className="text-orange-500" /> No success promises without execution</span>
                   <span className="flex items-center gap-3"><AlertTriangle size={16} className="text-orange-500" /> No recruitment without responsibility</span>
                 </div>
 
@@ -182,9 +182,9 @@ const Philosophy = () => {
             <div className="bg-red-500/5 p-8 rounded-3xl border border-red-500/10">
               <h3 className="text-xl font-bold text-red-500 mb-6 flex items-center gap-2"><AlertTriangle size={20} /> Zryoss Does Not Promise</h3>
               <ul className="space-y-4">
-                <li className="text-gray-400">Fixed income</li>
+                <li className="text-gray-400">Fixed rewards</li>
                 <li className="text-gray-400">Guaranteed success</li>
-                <li className="text-gray-400">Passive earnings without effort</li>
+                <li className="text-gray-400">Passive growth without effort</li>
               </ul>
             </div>
             <div className="bg-green-500/5 p-8 rounded-3xl border border-green-500/10">
@@ -214,7 +214,7 @@ const Philosophy = () => {
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-3"><Lightbulb className="text-orange-500" /> Transparency Over Hype</h2>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-[#111] p-4 rounded-xl text-center border border-white/5"><span className="text-gray-300 text-sm">Clear Roles</span></div>
-              <div className="bg-[#111] p-4 rounded-xl text-center border border-white/5"><span className="text-gray-300 text-sm">Transparent Charges</span></div>
+              <div className="bg-[#111] p-4 rounded-xl text-center border border-white/5"><span className="text-gray-300 text-sm">Transparent Commercials</span></div>
               <div className="bg-[#111] p-4 rounded-xl text-center border border-white/5"><span className="text-gray-300 text-sm">Defined Boundaries</span></div>
               <div className="bg-[#111] p-4 rounded-xl text-center border border-white/5"><span className="text-gray-300 text-sm">Written Logic</span></div>
             </div>

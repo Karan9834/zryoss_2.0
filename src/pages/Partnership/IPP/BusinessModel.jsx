@@ -80,7 +80,7 @@ export default function BusinessModel() {
                                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5 text-white">
                                     IPP Business <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                                        Model & Charges
+                                        IPP Business Model & Details
                                     </span>
                                 </h1>
                                 <p className="text-xl text-gray-400 leading-relaxed font-light mb-8">
@@ -173,23 +173,15 @@ export default function BusinessModel() {
                 </div>
             </section>
 
-            {/* Charges Section */}
+            {/* Onboarding Section */}
             <section className="py-24 px-6 relative z-10">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <AnimatedSection>
-                            <h2 className="text-4xl md:text-5xl font-bold mb-6">What the Charges Cover</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold mb-6">What Onboarding Covers</h2>
                             <p className="text-xl text-neutral-400 mb-8 leading-relaxed">
-                                IPP onboarding involves a one-time platform onboarding charge. There are no hidden charges in the onboarding stage.
+                                An IPP follows a structured, transparent, one-time platform onboarding process. There are no hidden complexities. Success is generated only through real business and service delivery.
                             </p>
-
-                            <div className="inline-block p-1 rounded-3xl bg-gradient-to-r from-orange-500 to-amber-500 mb-8">
-                                <div className="bg-black rounded-[20px] px-8 py-6">
-                                    <div className="text-sm text-orange-400 uppercase tracking-wider font-bold mb-2">One-Time Fee</div>
-                                    <div className="text-5xl font-bold text-white">₹50,000</div>
-                                    <div className="text-neutral-500 mt-2">Business Setup, Brand Creation & Support</div>
-                                </div>
-                            </div>
                         </AnimatedSection>
 
                         <div className="space-y-6">
@@ -246,7 +238,7 @@ export default function BusinessModel() {
                         </div>
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">Six-Month Structured Support</h2>
                         <p className="text-neutral-400 text-lg mb-10 max-w-2xl mx-auto">
-                            The onboarding fee includes structured support for up to six months. This period is designed to move the IPP from setup to steady operations.
+                            The onboarding process includes structured support for up to six months. This period is designed to move the IPP from setup to steady operations.
                         </p>
                         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
                             {["Brand Stabilized", "Operations Streamlined", "Execution Optimized", "System Ready"].map((item, i) => (
@@ -259,24 +251,24 @@ export default function BusinessModel() {
                 </div>
             </section>
 
-            {/* Revenue & Disclaimer */}
+            {/* Performance & Disclaimer */}
             <section className="py-24 px-6 relative z-10">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-12">
-                        {/* Revenue */}
+                        {/* Performance */}
                         <AnimatedSection>
                             <div className="bg-neutral-900/50 p-8 rounded-3xl border border-white/10 h-full">
                                 <div className="flex items-center gap-3 mb-6">
                                     <DollarSign className="text-green-500" size={32} />
-                                    <h3 className="text-2xl font-bold text-white">Revenue & Earnings Logic</h3>
+                                    <h3 className="text-2xl font-bold text-white">Growth & Performance Logic</h3>
                                 </div>
                                 <ul className="space-y-4 mb-8">
                                     {[
-                                        "Earnings based on real business activity",
-                                        "Revenue from clients acquired by IPP",
-                                        "Earnings depend on services sold & delivered",
-                                        "No fixed income promises",
-                                        "No guaranteed returns"
+                                        "Success based on real business activity",
+                                        "Value from clients acquired by IPP",
+                                        "Growth depends on services sold & delivered",
+                                        "No fixed reward promises",
+                                        "No guaranteed outcomes"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-3 text-neutral-300">
                                             <ArrowRight size={18} className="text-green-500 mt-1 shrink-0" />
@@ -285,7 +277,7 @@ export default function BusinessModel() {
                                     ))}
                                 </ul>
                                 <div className="p-4 bg-green-900/10 border border-green-500/20 rounded-xl text-green-400 text-sm">
-                                    Zryoss does not pay commissions for joining. Earnings come from actual business execution.
+                                    Zryoss does not offer joining rewards. Growth comes from actual business execution.
                                 </div>
                             </div>
                         </AnimatedSection>
@@ -300,7 +292,7 @@ export default function BusinessModel() {
                                 <ul className="space-y-4 mb-8">
                                     {[
                                         "Not MLM",
-                                        "Not a referral income scheme",
+                                        "Not a referral growth model",
                                         "Not a franchise",
                                         "Not an investment or deposit plan",
                                         "Not a job or salary-based role"
@@ -320,7 +312,7 @@ export default function BusinessModel() {
                 </div>
             </section>
 
-            {/* Team Building & Cost Value */}
+            {/* Team Building & Strategy Value */}
             <section className="py-24 px-6 bg-[#080808]">
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
                     <AnimatedSection>
@@ -345,7 +337,7 @@ export default function BusinessModel() {
                     <AnimatedSection delay={200}>
                         <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                             <Box className="text-amber-500" size={28} />
-                            Cost vs Value Perspective
+                            Strategy vs Value Perspective
                         </h3>
                         <p className="text-neutral-400 mb-6">
                             IPP starts with a ready operating system. Instead of spending on trial-and-error vendors, hiring teams, and tool subscriptions.
@@ -353,13 +345,16 @@ export default function BusinessModel() {
                         <div className="grid grid-cols-2 gap-4">
                             <div className="p-4 bg-white/5 border border-white/5 rounded-xl">
                                 <div className="text-neutral-500 text-sm mb-1">Traditional Way</div>
-                                <div className="text-red-400 font-medium">High Risk & Cost</div>
+                                <div className="text-red-400 font-medium">High Risk & Resource Intake</div>
                             </div>
-                            <div className="p-4 bg-white/5 border border-amber-500/30 rounded-xl relative overflow-hidden">
-                                <div className="absolute inset-0 bg-amber-500/5" />
-                                <div className="relative z-10">
-                                    <div className="text-neutral-400 text-sm mb-1">IPP Model</div>
-                                    <div className="text-amber-400 font-medium">Predictable & Lean</div>
+                            <div className="p-8 lg:p-12 rounded-[40px] bg-gradient-to-br from-orange-600/20 via-neutral-900/60 to-transparent border border-orange-500/30 backdrop-blur-sm relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 p-4 bg-orange-500 text-black font-bold text-xs uppercase tracking-wider rounded-bl-2xl">Setup</div>
+                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+                                    <div>
+                                        <h3 className="text-gray-300 text-lg mb-2">Onboarding Process</h3>
+                                        <div className="text-4xl md:text-5xl font-bold text-white mb-4">Complete System Access</div>
+                                        <p className="text-orange-500 font-bold uppercase tracking-widest text-sm">One Platform. One System.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -388,7 +383,7 @@ export default function BusinessModel() {
                         <AnimatedSection delay={200} className="bg-red-900/5 border border-red-500/10 p-8 rounded-3xl">
                             <h3 className="text-xl font-bold text-red-500 mb-6 uppercase tracking-wide">Not Suitable If You</h3>
                             <div className="space-y-4">
-                                {["Expect guaranteed income", "Want passive returns without effort", "Looking for quick money models"].map((item, i) => (
+                                {["Expect guaranteed success", "Want passive results without effort", "Looking for quick win models"].map((item, i) => (
                                     <div key={i} className="flex items-center gap-3 text-neutral-300">
                                         <XCircle size={20} className="text-red-500" />
                                         {item}
@@ -405,11 +400,11 @@ export default function BusinessModel() {
                 <div className="max-w-4xl mx-auto">
                     <AnimatedSection>
                         <h2 className="text-4xl md:text-6xl font-bold mb-8">
-                            One Fee. One System. <br />
+                            One Platform. One System. <br />
                             <span className="text-orange-500">Real Business.</span>
                         </h2>
                         <p className="text-xl text-neutral-400 mb-12">
-                            You invest in a system, a brand foundation, and an operating engine. Your growth depends on how you build the business.
+                            You build upon a system, a brand foundation, and an operating engine. Your growth depends on how you build the business.
                         </p>
 
                         <div className="inline-block p-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 p-1">
@@ -421,7 +416,7 @@ export default function BusinessModel() {
                         </div>
                     </AnimatedSection>
                 </div>
-            </section>
-        </div>
+            </section >
+        </div >
     );
 }

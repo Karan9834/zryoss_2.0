@@ -31,7 +31,7 @@ const trainingLayers = [
             "IPP & IBP roles and boundaries",
             "Sales vs execution responsibility",
             "Demo handling process",
-            "Account management & revenue flow"
+            "Account management & performance flow"
         ],
         purpose: "Ensure everyone understands the system before selling."
     },
@@ -85,7 +85,7 @@ const verticals = [
         icon: <Cpu />,
         color: "blue",
         desc: "SaaS solutions, custom software, ERP/CRM, and high-end IT services.",
-        points: ["What the product does", "Ideal client profiles", "Business benefits", "Indicative revenue"]
+        points: ["What the product does", "Ideal client profiles", "Business benefits", "Indicative success"]
     },
     {
         title: "Digital Marketing",
@@ -101,7 +101,7 @@ const verticals = [
         icon: <Users />,
         color: "green",
         desc: "IT & Non-IT staffing, corporate hiring, and executive search services.",
-        points: ["How to approach companies", "Hiring pain points", "Fee structures", "Delivery workflows"]
+        points: ["How to approach companies", "Hiring pain points", "Commercial structures", "Delivery workflows"]
     },
     {
         title: "Education & Admission",
@@ -202,7 +202,7 @@ export default function TrainingHub() {
                                     "Not knowing exactly what to sell",
                                     "Misunderstanding new offerings",
                                     "Inability to explain business value",
-                                    "Confusion over positioning & earning potential"
+                                    "Confusion over positioning & growth potential"
                                 ].map((item, i) => (
                                     <div key={i} className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
                                         <XCircle className="w-6 h-6 text-red-500 shrink-0" />
@@ -340,7 +340,7 @@ export default function TrainingHub() {
                                     {[
                                         "Generic motivational sessions",
                                         "Theoretical business 'gyaan'",
-                                        "Unrealistic income promises & hype"
+                                        "Unrealistic success promises & hype"
                                     ].map((item, i) => (
                                         <div key={i} className="flex items-center gap-6 text-xl font-light text-gray-500">
                                             <span className="text-red-500/40">❌</span> {item}

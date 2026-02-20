@@ -15,8 +15,8 @@ export default function Partners() {
           desc: "Partners concentrate on sales, growth strategy, and client relationships — not delivery management."
         },
         {
-          title: "No Recruitment-Based Income",
-          desc: "Earnings are strictly tied to real business performance, not referrals or team size."
+          title: "No Recruitment-Based Growth",
+          desc: "Performance rewards are strictly tied to real business delivery, not referrals or team size."
         },
         {
           title: "Scalable Team Structures",

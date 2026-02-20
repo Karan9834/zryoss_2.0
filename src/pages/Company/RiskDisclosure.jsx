@@ -98,7 +98,7 @@ export default function RiskDisclosure() {
                     <FadeUp delay={0.4}>
                         <div className="mt-12 text-center p-6 bg-orange-500/5 rounded-xl border border-orange-500/10 max-w-3xl mx-auto">
                             <p className="text-orange-200 font-medium">
-                                Zryoss does not guarantee business outcomes, revenue, or success.
+                                Zryoss does not guarantee business outcomes, performance results, or success.
                                 Results depend on market conditions, effort, strategy, and execution volume.
                             </p>
                         </div>
@@ -106,7 +106,7 @@ export default function RiskDisclosure() {
                 </div>
             </section>
 
-            {/* ================= NO GUARANTEED INCOME ================= */}
+            {/* ================= NO GUARANTEED PERFORMANCE RESULTS ================= */}
             <section className="py-24 bg-[#0A0A0A] border-y border-white/5">
                 <div className="max-w-5xl mx-auto px-6 text-center">
                     <FadeUp>
@@ -114,13 +114,13 @@ export default function RiskDisclosure() {
                             <AlertTriangle className="w-8 h-8 text-red-500" />
                         </div>
                         <h2 className="text-3xl md:text-5xl font-bold mb-8">
-                            No Guaranteed Income or Outcomes
+                            No Guaranteed Performance Results or Outcomes
                         </h2>
                         <div className="space-y-4 text-lg text-gray-300 mb-12">
                             <p>Operating through Zryoss involves real business activity and therefore real business risk.</p>
                             <ul className="flex flex-col gap-3 items-center">
-                                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-red-500" /> There are no guaranteed earnings</li>
-                                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-red-500" /> There is no assured profitability</li>
+                                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-red-500" /> There are no guaranteed outcomes</li>
+                                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-red-500" /> There is no assured outcome sustainability</li>
                                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-red-500" /> Outcomes vary based on multiple external and internal factors</li>
                             </ul>
                         </div>
@@ -319,7 +319,7 @@ export default function RiskDisclosure() {
                             <p>Zryoss provides operational systems and execution support but:</p>
                             <ul className="space-y-2 list-disc pl-5">
                                 <li>Does not assume liability for indirect business losses</li>
-                                <li>Does not guarantee client conversion or revenue outcomes</li>
+                                <li>Does not guarantee client conversion or performance outcomes</li>
                             </ul>
                             <p className="text-sm italic">Partners and clients are encouraged to make independent assessments before engagement.</p>
                         </div>

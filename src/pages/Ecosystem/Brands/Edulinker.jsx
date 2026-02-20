@@ -170,7 +170,7 @@ const Edulinker = () => {
                 <h3 className="text-2xl font-bold text-white">Ready-Made SaaS Solutions</h3>
               </div>
               <ul className="space-y-4">
-                {["School management systems (ERP)", "Learning management systems (LMS)", "Online classes & digital learning platforms", "Student, teacher & parent portals", "Attendance, fees, exams & reporting systems"].map((item, i) => (
+                {["School management systems (ERP)", "Learning management systems (LMS)", "Online classes & digital learning platforms", "Student, teacher & parent portals", "Attendance, commercials, exams & reporting systems"].map((item, i) => (
                   <li key={i} className="flex gap-3 text-gray-300">
                     <span className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2"></span>
                     {item}

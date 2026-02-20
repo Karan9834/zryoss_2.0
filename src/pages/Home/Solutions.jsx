@@ -16,7 +16,7 @@ const solutions = [
     title: "Digital Marketing",
     fullTitle: "Digital Marketing Solutions",
     subtitle:
-      "Growth systems designed to generate revenue through data-driven performance marketing.",
+      "Growth systems designed to generate performance through data-driven performance marketing.",
     link: "/solutions/digital-marketing",
   },
   {

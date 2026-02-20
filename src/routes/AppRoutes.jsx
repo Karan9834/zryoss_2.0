@@ -51,7 +51,7 @@ import IBPBusinessModel from "../pages/Partnership/IBP/BusinessModel";
 import IBPSetup from "../pages/Partnership/IBP/Setup";
 import IBPOperations from "../pages/Partnership/IBP/Operations";
 import IBPIPPManagement from "../pages/Partnership/IBP/IPPManagement";
-import IBPRevenueModel from "../pages/Partnership/IBP/RevenueModel";
+import IBPPerformanceModel from "../pages/Partnership/IBP/PerformanceModel";
 import IBPAccountManager from "../pages/Partnership/IBP/AccountManager";
 import IBPFundingSupport from "../pages/Partnership/IBP/FundingSupport";
 
@@ -152,7 +152,7 @@ export default function AppRoutes() {
       <Route path="/partnership/IBP/setup" element={<IBPSetup />} />
       <Route path="/partnership/IBP/operations" element={<IBPOperations />} />
       <Route path="/partnership/IBP/ipp-management" element={<IBPIPPManagement />} />
-      <Route path="/partnership/IBP/revenue-model" element={<IBPRevenueModel />} />
+      <Route path="/partnership/IBP/performance-model" element={<IBPPerformanceModel />} />
       <Route path="/partnership/IBP/account-manager" element={<IBPAccountManager />} />
       <Route path="/partnership/IBP/funding-support" element={<IBPFundingSupport />} />
 

@@ -24,23 +24,23 @@ export default function WhatZryossIsNot() {
           {[
             {
               title: "Not a Multi-Level Marketing (MLM) Program",
-              desc: "Zryoss does not offer income based on recruitment, downlines, or network expansion.",
+              desc: "Zryoss does not offer growth based on recruitment, downlines, or network expansion.",
             },
             {
               title: "Not a Franchise Model",
               desc: "Partners do not purchase or operate a franchise under Zryoss branding.",
             },
             {
-              title: "Not a Referral Income Scheme",
-              desc: "There are no earnings for referrals without actual business execution.",
+              title: "Not a Referral Model",
+              desc: "There are no rewards for referrals without actual business execution.",
             },
             {
               title: "Not an Investment Scheme",
-              desc: "Zryoss does not accept investments with promises of returns or fixed income.",
+              desc: "Zryoss does not accept investments with promises of performance rewards or fixed rewards.",
             },
             {
-              title: "Not a Passive Income Opportunity",
-              desc: "All earnings are linked to active sales and business participation.",
+              title: "Not a Passive Growth Opportunity",
+              desc: "All success is linked to active sales and business participation.",
             },
             {
               title: "Not a Get-Rich-Quick Program",

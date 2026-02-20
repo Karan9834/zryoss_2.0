@@ -65,7 +65,7 @@ export default function RiskDisclosure() {
         <FadeUp delay={0.4}>
           <div className="mt-24 border border-red-500/30 rounded-xl p-10 bg-gradient-to-r from-red-500/10 to-transparent">
             <p className="max-w-4xl text-[var(--text-secondary)] text-sm">
-              Zryoss does not provide any assurance of income, business success,
+              Zryoss does not provide any assurance of success, business outcomes,
               or financial returns. Participation in the platform involves
               inherent risks, and individuals or organizations should evaluate
               their suitability before engaging.

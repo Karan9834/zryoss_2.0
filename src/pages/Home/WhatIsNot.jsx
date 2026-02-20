@@ -12,12 +12,12 @@ import FadeUp from "../../components/animations/FadeUp";
 const items = [
   {
     title: "Not MLM",
-    description: "No pyramid earnings, no recruitment-based income, and no chain structures.",
+    description: "No pyramid growth, no recruitment-based rewards, and no chain structures.",
     icon: <Users className="w-5 h-5" />,
   },
   {
     title: "Not Franchise",
-    description: "No brand licensing fees, no territory restrictions, and no fixed royalty dependency.",
+    description: "No brand licensing commercials, no territory restrictions, and no fixed royalty commercials.",
     icon: <Store className="w-5 h-5" />,
   },
   {
@@ -27,12 +27,12 @@ const items = [
   },
   {
     title: "Not Investment",
-    description: "This is not a passive or speculative return scheme. Income comes from real-world execution.",
+    description: "This is not a passive or speculative return scheme. Success comes from real-world execution.",
     icon: <TrendingDown className="w-5 h-5" />,
   },
   {
     title: "Not Guaranteed",
-    description: "Revenue is generated only from successful business execution and client delivery.",
+    description: "Growth results are generated only from successful business execution and client delivery.",
     icon: <ShieldAlert className="w-5 h-5" />,
   },
 ];
@@ -187,7 +187,7 @@ export default function WhatIsNot() {
         <FadeUp delay={0.8}>
           <div className="mt-12 sm:mt-16 md:mt-20 text-center px-4">
             <p className="text-xs sm:text-sm text-gray-500 italic max-w-2xl mx-auto leading-relaxed">
-              We are a structured business operating system designed for real execution, not passive income or speculative returns.
+              We are a structured business operating system designed for real execution, not passive growth or speculative returns.
             </p>
           </div>
         </FadeUp>

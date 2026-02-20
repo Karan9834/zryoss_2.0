@@ -109,7 +109,7 @@ export default function FundingSupport() {
             icon: Wallet,
             title: "MUDRA Loan",
             subtitle: "Shishu / Kishor / Tarun",
-            description: "For startups and service-based entrepreneurs — loans up to ₹10 Lakhs",
+            description: "For startups and service-based entrepreneurs — Flexible Support Plans",
         },
         {
             icon: Building2,
@@ -133,7 +133,7 @@ export default function FundingSupport() {
             icon: Users2,
             title: "Stand-Up India",
             subtitle: "Inclusive Entrepreneurship",
-            description: "For women and SC/ST entrepreneurs — loans ₹10 Lakhs to ₹1 Crore",
+            description: "For women and SC/ST entrepreneurs — Scale-Up Funding Support",
         },
     ];
 

@@ -114,7 +114,7 @@ const BrandOwnership = () => {
             </div>
             <p className="text-gray-400 mb-6">These remain 100% with the partner.</p>
             <ul className="space-y-4">
-              {["Partner brand names", "Partner websites or domains", "Partner social media pages", "Partner client lists", "Partner revenue streams"].map((item, i) => (
+              {["Partner brand names", "Partner websites or domains", "Partner social media pages", "Partner client lists", "Partner performance streams"].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-gray-300">
                   <span className="text-red-500">✕</span> {item}
                 </li>

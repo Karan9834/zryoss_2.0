@@ -126,8 +126,8 @@ export default function ApplyPage() {
     // ... benefits array
     {
       icon: <TrendingUp className="w-6 h-6" />,
-      title: "Performance-Based Earnings",
-      desc: "Earnings are generated only through real business closures.",
+      title: "Performance-Based Results",
+      desc: "Value is generated only through real business closures.",
     },
     {
       icon: <Users className="w-6 h-6" />,
@@ -137,7 +137,7 @@ export default function ApplyPage() {
     {
       icon: <Award className="w-6 h-6" />,
       title: "No MLM / No Recruitment",
-      desc: "No downlines, no hierarchy, no passive income model.",
+      desc: "No downlines, no hierarchy, no passive growth model.",
     },
   ];
 
@@ -240,7 +240,7 @@ export default function ApplyPage() {
                 </li>
               </ul>
               <p className="text-xs text-gray-500 mt-4 italic">
-                Not a franchise · Not MLM · Not passive income
+                Not a franchise · Not MLM · Not passive growth
               </p>
             </div>
 
@@ -250,7 +250,7 @@ export default function ApplyPage() {
                 Independent Business Partner (IBP)
               </h3>
               <p className="text-sm text-gray-400 mb-4">
-                IBPs are sales-focused partners earning only on successful
+                IBPs are sales-focused partners rewarded only on successful
                 business closures.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
@@ -268,7 +268,7 @@ export default function ApplyPage() {
                 </li>
               </ul>
               <p className="text-xs text-gray-500 mt-4 italic">
-                No recruitment · No downlines · No guaranteed income
+                No recruitment · No downlines · No guaranteed outcomes
               </p>
             </div>
 

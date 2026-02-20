@@ -345,7 +345,7 @@ export default function KryossIPP() {
                     <div className="w-12 h-12 rounded-full bg-orange-600/20 flex items-center justify-center text-orange-500">
                       <Zap size={24} />
                     </div>
-                    <span>No franchising fees. No hidden costs.</span>
+                    <span>Seamless onboarding. No execution barriers.</span>
                   </div>
                 </div>
               </div>
@@ -395,7 +395,7 @@ export default function KryossIPP() {
                 title: "Zero Risk Entry",
                 desc: "Start immediately without capital expenditure. No need to hire expensive technical teams.",
                 metrics: [
-                  { label: "Capex", value: "$0.00" },
+                  { label: "Entry Barrier", value: "Zero" },
                   { label: "Hiring Time", value: "0 Days" },
                 ],
                 color: "text-blue-400",
@@ -801,12 +801,12 @@ export default function KryossIPP() {
               {
                 question: "Do you offer post-launch support?",
                 answer:
-                  "Yes, we provide comprehensive SLA-based support packages that you can resell to your clients, generating recurring revenue streams.",
+                  "Yes, we provide comprehensive SLA-based support packages that you can offer to your clients, generating recurring growth opportunities.",
               },
               {
-                question: "What is the cost structure?",
+                question: "What is the onboarding process?",
                 answer:
-                  "We offer flexible models: Fixed Cost for defined scopes, or Time & Material for evolving projects. Partners receive special wholesale rates allowing for healthy margins.",
+                  "We follow a transparent, structured onboarding process that includes legal setup, technical orientation, and brand alignment. Once completed, you gain full access to the Zryoss operating system.",
               },
             ].map((faq, i) => (
               <AnimatedSection key={i} delay={i * 60}>

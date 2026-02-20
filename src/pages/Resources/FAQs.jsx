@@ -26,7 +26,7 @@ const faqsData = [
       },
       {
         q: "2. Is Zryoss a franchise or investment program?",
-        a: "No. Zryoss is not a franchise, MLM, or investment-based system. It’s a business enablement platform where IPPs and IBPs operate independently under their own brand names using Zryoss’s system and support."
+        a: "No. Zryoss is not a franchise, MLM, or investment-based system. It’s a business enablement platform where IPPs and IBPs operate independently under their own brand names using Zryoss’s system and performance models."
       },
       {
         q: "3. Who owns Zryoss?",
@@ -62,7 +62,7 @@ const faqsData = [
           <li>Operational handling by Zryoss teams</li>
         </ul>
         <br/>
-        <strong>Cost:</strong> ₹50,000 (one-time setup)`
+        <strong>Model:</strong> Partnership Model`
       },
       {
         q: "6. What is an IBP (Independent Business Partner)?",
@@ -76,11 +76,11 @@ const faqsData = [
           <li>Demo and pre-sales support</li>
         </ul>
         <br/>
-        <strong>Cost:</strong> ₹1,50,000 (one-time setup)`
+        <strong>Model:</strong> Enterprise Partnership Model`
       },
       {
         q: "7. Can IPPs and IBPs create their own sub-partners?",
-        a: "Yes. IPP and IBP models allow limited-level sub-partnerships (up to Level 3) for local expansion and passive income — but all demos, execution, and delivery remain managed by Zryoss to maintain quality and control."
+        a: "Yes. IPP and IBP models allow limited-level sub-partnerships (up to Level 3) for local expansion and growth contribution — but all demos, execution, and delivery remain managed by Zryoss to maintain quality and control."
       },
       {
         q: "8. Who handles client delivery — IPP/IBP or Zryoss?",
@@ -187,7 +187,7 @@ const faqsData = [
       },
       {
         q: "17. Are there written agreements or terms for partners?",
-        a: "Yes. Every IPP/IBP onboarding includes a formal agreement defining: Scope of services, Roles and responsibilities, Commercial terms, Platform usage policies."
+        a: "Yes. Every IPP/IBP onboarding includes a formal agreement defining: Scope of services, Roles and responsibilities, Operational terms, Platform usage policies."
       },
       {
         q: "18. Does Zryoss comply with data protection and confidentiality?",

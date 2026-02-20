@@ -152,7 +152,7 @@ export default function Navbar() {
           links: [
             { title: "IPP Overview", to: "/partnership/ipp", icon: <LayoutGrid className="w-4 h-4" /> },
             { title: "Brand Creation for IPP", to: "/partnership/ipp/brand-creation", icon: <Rocket className="w-4 h-4" /> },
-            { title: "IPP Business Model & Charges", to: "/partnership/ipp/business-model", icon: <FileText className="w-4 h-4" /> },
+            { title: "IPP Business Model & Commercials", to: "/partnership/ipp/business-model", icon: <FileText className="w-4 h-4" /> },
             { title: "IPP Operations Managed by Zryoss", to: "/partnership/ipp/operations", icon: <Settings className="w-4 h-4" /> },
             { title: "IPP Client Handling & Demo Support", to: "/partnership/ipp/support", icon: <Users className="w-4 h-4" /> },
             { title: "IPP Sub-Partner Model (Limited Levels)", to: "/partnership/ipp/sub-partner", icon: <Network className="w-4 h-4" /> },
@@ -168,7 +168,7 @@ export default function Navbar() {
             { title: "Brand & Business Setup by Zryoss", to: "/partnership/IBP/setup", icon: <Rocket className="w-4 h-4" /> },
             { title: "IBP Operations & Demo Authority", to: "/partnership/IBP/operations", icon: <Settings className="w-4 h-4" /> },
             { title: "IBP IPP Creation & Management", to: "/partnership/IBP/ipp-management", icon: <Network className="w-4 h-4" /> },
-            { title: "IBP Revenue & Scale Model", to: "/partnership/IBP/revenue-model", icon: <Shield className="w-4 h-4" /> },
+            { title: "IBP Performance & Scale Model", to: "/partnership/IBP/performance-model", icon: <Shield className="w-4 h-4" /> },
             { title: "IBP Dedicated Account Manager", to: "/partnership/IBP/account-manager", icon: <Users className="w-4 h-4" /> },
             { title: "Funding Support for IBPs", to: "/partnership/IBP/funding-support", icon: <FileText className="w-4 h-4" /> },
           ],

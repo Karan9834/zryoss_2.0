@@ -6,17 +6,17 @@ import HeroContact from "../Home/HeroContact";
 const guidelines = [
   {
     title: "Ethical Representation",
-    desc: "Partners must represent Zryoss accurately and avoid misleading claims related to income, partnerships, or outcomes.",
+    desc: "Partners must represent Zryoss accurately and avoid misleading claims related to success, performance, or outcomes.",
     icon: <Briefcase className="w-5 h-5" />
   },
   {
-    title: "No Income Guarantees",
-    desc: "Partners must not promise fixed, guaranteed, or passive income to any individual or organization.",
+    title: "No Result Guarantees",
+    desc: "Partners must not promise fixed, guaranteed, or passive success to any individual or organization.",
     icon: <Scale className="w-5 h-5" />
   },
   {
     title: "No Recruitment-Based Promotion",
-    desc: "Zryoss must never be positioned as an MLM, referral, or recruitment income opportunity.",
+    desc: "Zryoss must never be positioned as an MLM, referral, or recruitment-driven growth model.",
     icon: <ShieldAlert className="w-5 h-5" />
   },
   {

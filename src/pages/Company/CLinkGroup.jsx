@@ -54,42 +54,42 @@ export default function CLinkGroup() {
         {
             title: "Kryoss Softech",
             desc: "Kryoss Softech is providing Customized Software Development, Web Application Development, Mobile Application Development and IT Consulting Services. We have earned the pride of being one of the leading App & web based software solution provider in India, we develop software solution that helps our customers to outperform the competition and stay ahead in today’s competitive business environment.",
-            image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop",
+            image: "/CLink_Group/Kryoss softech 2.jpg",
         },
         {
             title: "CLink Works",
             desc: "CLink works is a tech loaded solution for your on-demand business. CLink Works is a one-stop solution for customized mobile apps, web apps, app clone scripts, web hosting, developer hiring and an array of other related services. We are experts in developing reliable tailored apps. We aim to inspire all the professionals by showing it’s possible to deliver happiness to customers, vendors, and business partners in a sustainable way.",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+            image: "/CLink_Group/clink works.jpg",
         },
         {
             title: "CLink HR",
             desc: "CLink Hr has set a new benchmark in the competitive world of talent acquisition through diligently conceptualized talent services and pioneer of organized recruitment as we grew, we built and acquired new businesses to provide our customers and candidates with greater degrees of partnership and value. CLink Hr is a preferred talent acquisition partner to Multinationals and leading Indian businesses.",
-            image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1200&auto=format&fit=crop",
+            image: "/CLink_Group/clink hr 2.png",
         },
         {
             title: "Edu-Linkers",
             desc: "LMS Platform for Educators, Teachers, Trainers and Institutes. Edu-Linker's is a complete solution for creating, managing and administrating your own online educational services. Edu-Linker's provides Online Teaching apps to sell courses, tests, Quiz and take Live Classes from branded web, iOS & Android Apps, for independent teachers, Trainers and Institutes.",
-            image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1200&auto=format&fit=crop",
+            image: "/CLink_Group/edulinkers.png",
         },
         {
             title: "Vyom Works",
             desc: "Vyom Works ® has a dedicated team of professionals to provide a comprehensive service. Not only we help the startup to incorporation of the business but also, we provide end to end services to maintain and take care of Mandatory Compliance of your Company. Vyom Works is the India’s largest online key to open the door of your business by saving your time and money with extreme satisfaction. Our company has 5000 huge network with brilliant professionals of Charted Accountants, CS, Lawyers, and Bankers across all over the India.",
-            image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
+            image: "/CLink_Group/vyomworks.png",
         },
         {
             title: "QR Tech Menu",
             desc: "QR-Tech Menu is a revolutionary online software that allows restaurants to create their own digital menu for dine-in and takeaway orders. Our platform creates unique QR codes by table number, room number for hotels, or by sunbed number for poolside/beachside venues. So when the guest scans the QR code, the system already knows where the order is coming from.",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+            image: "/CLink_Group/tech menu.png",
         },
         {
             title: "MediKryoss",
-            desc: "We design essential medical technology to make care more informed, personalized, interactive, and adaptable. Today’s eClinicalWorks offers unified and integrated healthcare IT solutions for medical professionals of every size and type — ambulatory practices, urgent care facilities, health centers, hospitals, and more than 50 specialties — along with tools for Patient Engagement, Population Health, and Revenue Cycle Management.",
-            image: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=1200&auto=format&fit=crop",
+            desc: "We design essential medical technology to make care more informed, personalized, interactive, and adaptable. Today’s eClinicalWorks offers unified and integrated healthcare IT solutions for medical professionals of every size and type — ambulatory practices, urgent care facilities, health centers, hospitals, and more than 50 specialties — along with tools for Patient Engagement, Population Health, and Performance Cycle Management.",
+            image: "/CLink_Group/medikryoss.png",
         },
         {
             title: "Edu Kryoss",
             desc: "At Edu-Kryoss, we have abilities to deliver the best mobility solutions for education industry from an app for play group students to an app for engineering students. In order to accomplish the need of online education and e-learning, an educational mobile app needs to build using most advanced features gives users’ real time experience to use an app.",
-            image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop",
+            image: "/CLink_Group/edukryoss.png",
         },
     ];
 
@@ -134,7 +134,7 @@ export default function CLinkGroup() {
                                 <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/20 to-blue-500/20 blur-3xl rounded-[40px]" />
                                 <div className="relative rounded-[40px] border border-white/10 overflow-hidden shadow-2xl">
                                     <img
-                                        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop"
+                                        src="/CLink_Group/Hero-img.png"
                                         alt="CLink Group Technology"
                                         className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                                     />
@@ -152,7 +152,7 @@ export default function CLinkGroup() {
                     <FadeUp>
                         <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-video lg:aspect-square">
                             <img
-                                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
+                                src="/CLink_Group/who we are.webp"
                                 alt="Who We Are"
                                 className="w-full h-full object-cover"
                             />
@@ -226,7 +226,7 @@ export default function CLinkGroup() {
                 </div>
             </section>
 
-            
+
 
             {/* SECTION 5: STATEMENT SECTION */}
             <section className="py-24 bg-gradient-to-r from-orange-600 to-orange-800 relative overflow-hidden text-center">
@@ -287,7 +287,7 @@ export default function CLinkGroup() {
                             );
 
                             return (
-                                <FadeUp key={idx} delay={idx * 0.1}>
+                                <FadeUp key={idx} delay={idx * 0.1} className="h-full">
                                     {company.href ? (
                                         <a
                                             href={company.href}
@@ -357,8 +357,8 @@ export default function CLinkGroup() {
                 </FadeUp>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {industries.map((industry, idx) => (
-                        <FadeUp key={idx} delay={idx * 0.05}>
-                            <div className="group p-8 rounded-[40px] bg-white/5 border border-white/10 hover:bg-orange-500 transition-all duration-500 text-center flex flex-col items-center justify-center gap-6 cursor-default h-full">
+                        <FadeUp key={idx} delay={idx * 0.05} className="h-full">
+                            <div className="group p-8 rounded-[40px] bg-white/5 border border-white/10 hover:bg-orange-500 transition-all duration-500 text-center flex flex-col items-center justify-center gap-6 cursor-default h-full aspect-[16/10]">
                                 <div className="text-orange-500 group-hover:text-white transition-colors duration-500">
                                     {industry.icon}
                                 </div>
