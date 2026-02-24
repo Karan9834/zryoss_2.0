@@ -70,7 +70,7 @@ export default function Hero() {
             }`}
         >
           <source
-            src="/video/zryoss_intro_video.mp4"
+            src="https://cdn.pixabay.com/video/2021/08/01/83542-583271427_large.mp4"
             type="video/mp4"
           />
         </video>
