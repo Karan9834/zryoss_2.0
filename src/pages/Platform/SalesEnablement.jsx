@@ -68,7 +68,7 @@ const SalesEnablement = () => {
 
               <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
                 <img
-                  src="/Sales trablement & Deme System.jpg"
+                  src="/sales_enablement_demo_system.jpg"
                   alt="Sales Enablement Dashboard"
                   className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
                 />

@@ -73,7 +73,7 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-6">
             <Link to="/">
               <img
-                src="/Zryoss_logo_2_white.jpg"
+                src="/zryoss_logo_2_white.jpg"
                 alt="Zryoss Logo"
                 className="h-10 w-auto object-contain brightness-110"
               />
@@ -177,9 +177,12 @@ export default function Footer() {
           {/* PARTNERSHIP */}
           <FooterSection title="Partnership">
             <FooterLink to="/partnership">Overview</FooterLink>
-            <FooterLink to="/partnership/ipp">IPP</FooterLink>
-            <FooterLink to="/partnership/IBP">IBP</FooterLink>
+            <FooterLink to="/partnership/philosophy">Philosophy</FooterLink>
+            <FooterLink to="/partnership/brand-ownership">Brand Ownership</FooterLink>
             <FooterLink to="/partnership/support-scope">Support Scope</FooterLink>
+            <FooterLink to="/partnership/lifecycle">Engagement Lifecycle</FooterLink>
+            <FooterLink to="/partnership/ipp">IPP Partner</FooterLink>
+            <FooterLink to="/partnership/IBP">IBP Partner</FooterLink>
           </FooterSection>
 
           {/* SOLUTIONS */}

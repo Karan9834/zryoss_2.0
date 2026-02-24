@@ -134,7 +134,7 @@ export default function AppRoutes() {
       <Route path="/partnership/philosophy" element={<Philosophy />} />
       <Route path="/partnership/brand-ownership" element={<BrandOwnership />} />
       <Route path="/partnership/support-scope" element={<SupportScope />} />
-      <Route path="/partnership/lifestyle" element={<Lifecycle />} />
+      <Route path="/partnership/lifecycle" element={<Lifecycle />} />
 
       {/* IPP */}
       <Route path="/partnership/ipp" element={<IPPOverview />} />

@@ -90,7 +90,7 @@ export default function Blog() {
               <FadeUp delay={0.2}>
                 <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
                 <img
-                  src="/Resources_pages_images/Blog  Insights.png"
+                  src="/resources_pages_images/blog_insights.png"
                   alt="Blog & Insights"
                   className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
                 />
@@ -165,7 +165,7 @@ export default function Blog() {
               <div className="relative flex justify-center lg:justify-start">
                 <div className="absolute inset-0 bg-orange-500/5 blur-3xl rounded-full" />
                 <img
-                  src="/weekly-insight-1.png"
+                  src="/weekly_insight_1.png"
                   alt="Weekly Insights"
                   className="relative w-full max-w-sm aspect-square rounded-[32px] transform hover:scale-105 transition-transform duration-700 object-cover"
                 />

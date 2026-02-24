@@ -56,7 +56,7 @@ export default function VisionLeadership() {
               <FadeUp delay={0.2}>
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-blue-600/20 blur-3xl rounded-3xl transform rotate-3" />
                 <img
-                  src="/company-hero-images/2.png"
+                  src="/company_hero_images/2.png"
                   alt="Corporate Vision"
                   className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
                 />

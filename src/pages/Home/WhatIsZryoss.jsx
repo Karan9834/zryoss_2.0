@@ -75,7 +75,7 @@ export default function WhatIsZryoss() {
                 <div className="p-3">
                   <div className="relative rounded-[28px] overflow-hidden shadow-[0_35px_90px_rgba(0,0,0,0.75)]">
                     <video
-                      src="/video/zryoss-intro-video.mp4"
+                      src="/video/zryoss_intro_video.mp4"
                       autoPlay
                       loop
                       muted

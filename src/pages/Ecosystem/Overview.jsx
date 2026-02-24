@@ -22,14 +22,14 @@ const fadeUp = {
 };
 
 // Image paths from public directory
-const platformLayerImage = "/Platform Layer.png";
-const brandLayerImage = "/Brand Layer.png";
-const vendorImage = "/vender.png";
+const platformLayerImage = "/platform_layer.png";
+const brandLayerImage = "/brand_layer.png";
+const vendorImage = "/vendor.png";
 const partnerImage = "/partner.png";
 
-const globalMapImage = "/images/ecosystem/global-impact-map.png";
-const heroBgImage = "/images/ecosystem/ecosystem-bg.png";
-const coreSystemImage = "/images/ecosystem/ecosystem-core.png";
+const globalMapImage = "/images/ecosystem/global_impact_map.png";
+const heroBgImage = "/images/ecosystem/ecosystem_bg.png";
+const coreSystemImage = "/images/ecosystem/ecosystem_core.png";
 
 export default function Overview() {
   const navigate = useNavigate();
@@ -169,7 +169,7 @@ export default function Overview() {
                 <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
                   <img
-                    src="/overview ecosystem.png"
+                    src="/overview_ecosystem.png"
                     alt="Ecosystem Overview"
                     className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
                   />

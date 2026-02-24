@@ -175,7 +175,7 @@ export default function TrainingHub() {
                             <FadeUp delay={0.2}>
                                 <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
                                 <img
-                                    src="/Resources_pages_images/Training & Enablement Hub.png"
+                                    src="/resources_pages_images/training_enablement_hub.png"
                                     alt="Training & Enablement Hub"
                                     className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
                                 />

@@ -33,20 +33,20 @@ export default function CLinkGroup() {
             name: "Kryoss",
             legal: "Kryoss Softech Private Ltd.",
             desc: "The technology powerhouse driving software engineering, cloud infrastructure, and enterprise digital architecture.",
-            logo: "/brands-logo/kryoss logo (2).png",
+            logo: "/brands_logo/kryoss_logo_2.png",
             href: "https://kryosssoftech.org/",
         },
         {
             name: "CCS",
             legal: "CLink Consultancy Services Private Ltd.",
             desc: "Providing high-level business consulting, strategy development, and operational excellence frameworks.",
-            logo: "/brands-logo/clink cunsultancy logo.png",
+            logo: "/brands_logo/clink_consultancy_logo.png",
         },
         {
             name: "CLink HR",
             legal: "Clink HR Services Private Ltd.",
             desc: "Specialized in strategic human resource management, executive search, and workforce planning for global enterprises.",
-            logo: "/brands-logo/clink hr.png",
+            logo: "/brands_logo/clink_hr.png",
         },
     ];
 
@@ -54,42 +54,42 @@ export default function CLinkGroup() {
         {
             title: "Kryoss Softech",
             desc: "Kryoss Softech is providing Customized Software Development, Web Application Development, Mobile Application Development and IT Consulting Services. We have earned the pride of being one of the leading App & web based software solution provider in India, we develop software solution that helps our customers to outperform the competition and stay ahead in today’s competitive business environment.",
-            image: "/CLink_Group/Kryoss softech 2.jpg",
+            image: "/clink_group/kryoss_softech_2.jpg",
         },
         {
-            title: "CLink Works",
-            desc: "CLink works is a tech loaded solution for your on-demand business. CLink Works is a one-stop solution for customized mobile apps, web apps, app clone scripts, web hosting, developer hiring and an array of other related services. We are experts in developing reliable tailored apps. We aim to inspire all the professionals by showing it’s possible to deliver happiness to customers, vendors, and business partners in a sustainable way.",
-            image: "/CLink_Group/clink works.jpg",
+            title: "Kryoss Works",
+            desc: "Kryoss works is a tech loaded solution for your on-demand business. Kryoss Works is a one-stop solution for customized mobile apps, web apps, app clone scripts, web hosting, developer hiring and an array of other related services. We are experts in developing reliable tailored apps. We aim to inspire all the professionals by showing it’s possible to deliver happiness to customers, vendors, and business partners in a sustainable way.",
+            image: "/clink_group/clink_works.jpg",
         },
         {
             title: "CLink HR",
             desc: "CLink Hr has set a new benchmark in the competitive world of talent acquisition through diligently conceptualized talent services and pioneer of organized recruitment as we grew, we built and acquired new businesses to provide our customers and candidates with greater degrees of partnership and value. CLink Hr is a preferred talent acquisition partner to Multinationals and leading Indian businesses.",
-            image: "/CLink_Group/clink hr 2.png",
+            image: "/clink_group/clink_hr_2.png",
         },
         {
             title: "Edu-Linkers",
             desc: "LMS Platform for Educators, Teachers, Trainers and Institutes. Edu-Linker's is a complete solution for creating, managing and administrating your own online educational services. Edu-Linker's provides Online Teaching apps to sell courses, tests, Quiz and take Live Classes from branded web, iOS & Android Apps, for independent teachers, Trainers and Institutes.",
-            image: "/CLink_Group/edulinkers.png",
+            image: "/clink_group/edulinkers.png",
         },
         {
-            title: "Vyom Works",
-            desc: "Vyom Works ® has a dedicated team of professionals to provide a comprehensive service. Not only we help the startup to incorporation of the business but also, we provide end to end services to maintain and take care of Mandatory Compliance of your Company. Vyom Works is the India’s largest online key to open the door of your business by saving your time and money with extreme satisfaction. Our company has 5000 huge network with brilliant professionals of Charted Accountants, CS, Lawyers, and Bankers across all over the India.",
-            image: "/CLink_Group/vyomworks.png",
-        },
-        {
-            title: "QR Tech Menu",
-            desc: "QR-Tech Menu is a revolutionary online software that allows restaurants to create their own digital menu for dine-in and takeaway orders. Our platform creates unique QR codes by table number, room number for hotels, or by sunbed number for poolside/beachside venues. So when the guest scans the QR code, the system already knows where the order is coming from.",
-            image: "/CLink_Group/tech menu.png",
+            title: "VyomBiz",
+            desc: "VyomBiz has a dedicated team of professionals to provide a comprehensive service. Not only we help the startup to incorporation of the business but also, we provide end to end services to maintain and take care of Mandatory Compliance of your Company. VyomBiz is the India’s largest online key to open the door of your business by saving your time and money with extreme satisfaction. Our company has 5000 huge network with brilliant professionals of Charted Accountants, CS, Lawyers, and Bankers across all over the India.",
+            image: "/clink_group/vyomworks.png",
         },
         {
             title: "MediKryoss",
             desc: "We design essential medical technology to make care more informed, personalized, interactive, and adaptable. Today’s eClinicalWorks offers unified and integrated healthcare IT solutions for medical professionals of every size and type — ambulatory practices, urgent care facilities, health centers, hospitals, and more than 50 specialties — along with tools for Patient Engagement, Population Health, and Performance Cycle Management.",
-            image: "/CLink_Group/medikryoss.png",
+            image: "/clink_group/medikryoss.png",
+        },
+        {
+            title: "AdKryoss",
+            desc: "AdKryoss is the marketing and growth powerhouse of the ecosystem, specializing in performance marketing, brand scaling, and strategic digital execution. We manage end-to-end campaigns, from SEO and content strategy to paid advertising and social media growth, ensuring every brand under the Zryoss umbrella achieves maximum market visibility and measurable ROI.",
+            image: "/adkryoss.jpg",
         },
         {
             title: "Edu Kryoss",
             desc: "At Edu-Kryoss, we have abilities to deliver the best mobility solutions for education industry from an app for play group students to an app for engineering students. In order to accomplish the need of online education and e-learning, an educational mobile app needs to build using most advanced features gives users’ real time experience to use an app.",
-            image: "/CLink_Group/edukryoss.png",
+            image: "/clink_group/edukryoss.png",
         },
     ];
 
@@ -134,7 +134,7 @@ export default function CLinkGroup() {
                                 <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/20 to-blue-500/20 blur-3xl rounded-[40px]" />
                                 <div className="relative rounded-[40px] border border-white/10 overflow-hidden shadow-2xl">
                                     <img
-                                        src="/CLink_Group/Hero-img.png"
+                                        src="/clink_group/hero_img.png"
                                         alt="CLink Group Technology"
                                         className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                                     />
@@ -152,7 +152,7 @@ export default function CLinkGroup() {
                     <FadeUp>
                         <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-video lg:aspect-square">
                             <img
-                                src="/CLink_Group/who we are.webp"
+                                src="/clink_group/who_we_are.webp"
                                 alt="Who We Are"
                                 className="w-full h-full object-cover"
                             />
@@ -216,7 +216,7 @@ export default function CLinkGroup() {
                         <FadeUp delay={0.2}>
                             <div className="relative rounded-3xl overflow-hidden border border-white/10">
                                 <img
-                                    src="/CLink_Group/What We do.png"
+                                    src="/clink_group/what_we_do.png"
                                     alt="What We Do"
                                     className="w-full h-auto object-cover"
                                 />
@@ -348,21 +348,21 @@ export default function CLinkGroup() {
             </section >
 
             {/* SECTION 4: INDUSTRIES WE SERVE */}
-            <section className="py-24 max-w-7xl mx-auto px-6">
+            <section className="py-16 md:py-24 max-w-7xl mx-auto px-6">
                 <FadeUp>
-                    <div className="text-center mb-16 space-y-4">
-                        <h2 className="text-3xl md:text-4xl font-bold uppercase">Industries We Serve</h2>
-                        <div className="w-24 h-1 bg-orange-500 mx-auto" />
+                    <div className="text-center mb-12 md:mb-16 space-y-4">
+                        <h2 className="text-2xl md:text-4xl font-bold uppercase">Industries We Serve</h2>
+                        <div className="w-20 md:w-24 h-1 bg-orange-500 mx-auto" />
                     </div>
                 </FadeUp>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                     {industries.map((industry, idx) => (
                         <FadeUp key={idx} delay={idx * 0.05} className="h-full">
-                            <div className="group p-8 rounded-[40px] bg-white/5 border border-white/10 hover:bg-orange-500 transition-all duration-500 text-center flex flex-col items-center justify-center gap-6 cursor-default h-full aspect-[16/10]">
+                            <div className="group p-6 md:p-8 rounded-3xl md:rounded-[40px] bg-white/5 border border-white/10 hover:bg-orange-500 transition-all duration-500 text-center flex flex-col items-center justify-center gap-4 md:gap-6 cursor-default h-full aspect-[16/10]">
                                 <div className="text-orange-500 group-hover:text-white transition-colors duration-500">
-                                    {industry.icon}
+                                    {React.cloneElement(industry.icon, { className: "w-8 h-8 md:w-10 md:h-10 transition-transform duration-500 group-hover:scale-110" })}
                                 </div>
-                                <h3 className="text-lg font-bold text-white uppercase tracking-widest">{industry.title}</h3>
+                                <h3 className="text-sm md:text-lg font-bold text-white uppercase tracking-widest">{industry.title}</h3>
                             </div>
                         </FadeUp>
                     ))}
@@ -370,22 +370,22 @@ export default function CLinkGroup() {
             </section>
 
             {/* SECTION 8: CTA SECTION */}
-            < section className="py-32 relative overflow-hidden text-center bg-gradient-to-r from-orange-600 to-orange-800" >
-                <div className="max-w-5xl mx-auto px-6 relative z-10 space-y-12">
+            <section className="py-16 relative overflow-hidden text-center bg-gradient-to-r from-orange-600 to-orange-800">
+                <div className="max-w-4xl mx-auto px-6 relative z-10 space-y-8">
                     <FadeUp>
-                        <h2 className="text-3xl md:text-5xl font-black text-white leading-tight uppercase tracking-tighter">
+                        <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight uppercase tracking-tighter">
                             Ready to transform your business with CLink Group?
                         </h2>
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                             <Link
                                 to="/contact"
-                                className="px-10 py-5 rounded-full bg-white text-orange-600 font-black uppercase tracking-[0.1em] hover:bg-gray-100 transition-all shadow-2xl"
+                                className="px-8 py-3 rounded-full bg-white text-orange-600 font-bold uppercase tracking-[0.1em] hover:bg-gray-100 transition-all shadow-xl"
                             >
                                 Contact Us
                             </Link>
                             <Link
                                 to="/apply"
-                                className="px-10 py-5 rounded-full border-2 border-white text-white font-black uppercase tracking-[0.1em] hover:bg-white/10 transition-all"
+                                className="px-8 py-3 rounded-full border-2 border-white text-white font-bold uppercase tracking-[0.1em] hover:bg-white/10 transition-all"
                             >
                                 Partner With Us
                             </Link>

@@ -21,10 +21,10 @@ const fadeUp = {
 };
 
 
-const roadmapImage = "/images/ecosystem/roadmap-timeline.png";
-const techImage = "/images/ecosystem/tech-enablers.png";
-const heroBgImage = "/images/ecosystem/roadmap-bg.png";
-const labImage = "/images/ecosystem/roadmap-lab.png";
+const roadmapImage = "/images/ecosystem/roadmap_timeline.png";
+const techImage = "/images/ecosystem/tech_enablers.png";
+const heroBgImage = "/images/ecosystem/roadmap_bg.png";
+const labImage = "/images/ecosystem/roadmap_lab.png";
 
 export default function Roadmap() {
     const milestones = [
@@ -109,7 +109,7 @@ export default function Roadmap() {
                                 <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
                                 <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
                                     <img
-                                        src="/eco system scale.png"
+                                        src="/eco_system_scale.png"
                                         alt="Ecosystem Scale Roadmap"
                                         className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
                                     />

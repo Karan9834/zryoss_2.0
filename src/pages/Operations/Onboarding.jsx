@@ -260,7 +260,7 @@ export default function Onboarding() {
                 <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
                 <div className="relative bg-black rounded-3xl shadow-2xl border border-white/10 py-16 px-8 min-h-[500px] flex items-center justify-center">
                   <img
-                    src="/operations-hero-images/Client_Onboarding.png"
+                    src="/operations_hero_images/client_onboarding.png"
                     alt="Client Onboarding"
                     className="transform hover:scale-[1.02] transition-transform duration-500 object-contain w-full h-auto max-h-[450px]"
                   />

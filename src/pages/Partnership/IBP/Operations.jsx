@@ -108,7 +108,7 @@ export default function OperationAndDemo() {
                             <FadeUp delay={0.2}>
                                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-600/20 blur-3xl rounded-3xl transform rotate-3" />
                                 <img
-                                    src="/IBP Operations & Demo Authority.png"
+                                    src="/ibp_operations_demo_authority.png"
                                     alt="IBP Operations & Demo Authority"
                                     className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
                                 />

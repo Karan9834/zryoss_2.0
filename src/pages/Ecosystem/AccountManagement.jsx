@@ -25,9 +25,9 @@ const fadeUp = {
 };
 
 
-const dashboardImage = "/images/ecosystem/account-success-dashboard.png";
-const heroBgImage = "/images/ecosystem/account-bg.png";
-const sentimentImage = "/images/ecosystem/account-sentiment.png";
+const dashboardImage = "/images/ecosystem/account_success_dashboard.png";
+const heroBgImage = "/images/ecosystem/account_bg.png";
+const sentimentImage = "/images/ecosystem/account_sentiment.png";
 
 export default function AccountManagement() {
     const navigate = useNavigate();
@@ -90,7 +90,7 @@ export default function AccountManagement() {
                                 <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
                                 <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
                                     <img
-                                        src="/account managment.jpg"
+                                        src="/account_management.jpg"
                                         alt="Account Management"
                                         className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
                                     />

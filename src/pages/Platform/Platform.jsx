@@ -118,7 +118,7 @@ export default function Platform() {
 
           <SlideIn direction="right">
             <img
-              src="/images/platform/platform-overview.png"
+              src="/images/platform/platform_overview.png"
               alt="Zryoss Platform Overview"
               className="w-full drop-shadow-2xl"
             />
@@ -130,7 +130,7 @@ export default function Platform() {
           <div className="grid md:grid-cols-2 gap-20 items-center">
             <SlideIn>
               <img
-                src="/images/platform/traditional-businesses.jpeg"
+                src="/images/platform/traditional_businesses.jpeg"
                 alt="Traditional business problems"
                 className="rounded-3xl grayscale hover:grayscale-0 transition-all duration-1000"
               />

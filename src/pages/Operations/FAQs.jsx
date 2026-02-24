@@ -138,7 +138,7 @@ export default function FAQs() {
                             <div className="relative hidden lg:block">
                                 <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
                                 <img
-                                    src="/operations-hero-images/Operations_FAQs.jpg"
+                                    src="/operations_hero_images/operations_faqs.jpg"
                                     alt="Operations FAQs"
                                     className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
                                 />

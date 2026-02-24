@@ -59,13 +59,13 @@ const solutions = [
 
 // ✅ local images from public/Home-Solution
 const images = {
-  it: "/images/Home-Solution/IT-&-Software-Solutions.jpg",
-  marketing: "/images/Home-Solution/Digital-Marketing-Solutions.jpg",
-  hr: "/images/Home-Solution/HR-&-Recruitment-Solutions.jpg",
-  education: "/images/Home-Solution/Education-&-EdTech-Solutions.jpg",
-  healthcare: "/images/Home-Solution/Healthcare-&-Medical-Technology.jpg",
-  interior: "/images/Home-Solution/Interior-&-Infrastructure-Solutions.jpg",
-  business: "/images/Home-Solution/Business-&-Professional-Services.jpg",
+  it: "/images/home_solution/it_software_solutions.jpg",
+  marketing: "/images/home_solution/digital_marketing_solutions.jpg",
+  hr: "/images/home_solution/hr_recruitment_solutions.jpg",
+  education: "/images/home_solution/education_edtech_solutions.jpg",
+  healthcare: "/images/home_solution/healthcare_medical_technology.jpg",
+  interior: "/images/home_solution/interior_infrastructure_solutions.jpg",
+  business: "/images/home_solution/business_professional_services.jpg",
 };
 
 

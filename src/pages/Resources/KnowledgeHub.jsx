@@ -100,7 +100,7 @@ export default function KnowledgeHub() {
                             <FadeUp delay={0.2}>
                                 <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
                                 <img
-                                    src="/Resources_pages_images/Knowledge-hub.png"
+                                    src="/resources_pages_images/knowledge_hub.png"
                                     alt="Knowledge Hub"
                                     className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
                                 />

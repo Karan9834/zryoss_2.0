@@ -101,7 +101,7 @@ export default function BusinessModel() {
                             <FadeUp delay={0.2}>
                                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-yellow-600/20 blur-3xl rounded-3xl transform rotate-3" />
                                 <img
-                                    src="/IPP-Business.png"
+                                    src="/ipp_business.png"
                                     alt="IPP Business Model"
                                     className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
                                 />

@@ -235,7 +235,7 @@ export default function VendorCoordination() {
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-purple-500/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
                   <img
-                    src="/operations-hero-images/Vendor_Coordination.png"
+                    src="/operations_hero_images/vendor_coordination.png"
                     alt="Vendor Coordination"
                     className="relative rounded-[2rem] shadow-2xl border border-white/10 transform transition-all duration-700 object-cover w-full h-auto aspect-[16/10] grayscale-[20%] group-hover:grayscale-0"
                   />

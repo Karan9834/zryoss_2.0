@@ -29,10 +29,10 @@ const fadeUp = {
 };
 
 
-const governanceFlowImage = "/images/ecosystem/os-governance-flow.png";
-const dashboardMockupImage = "/images/ecosystem/os-dashboard-mockup.png";
-const heroBgImage = "/images/ecosystem/os-bg.png";
-const velocityImage = "/images/ecosystem/os-velocity.png";
+const governanceFlowImage = "/images/ecosystem/os_governance_flow.png";
+const dashboardMockupImage = "/images/ecosystem/os_dashboard_mockup.png";
+const heroBgImage = "/images/ecosystem/os_bg.png";
+const velocityImage = "/images/ecosystem/os_velocity.png";
 
 export default function OperatingSystem() {
   const navigate = useNavigate();
@@ -107,7 +107,7 @@ export default function OperatingSystem() {
                 <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
                   <img
-                    src="/zryoss operating.png"
+                    src="/zryoss_operating.png"
                     alt="Zryoss Operating System"
                     className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
                   />

@@ -104,7 +104,7 @@ export default function About() {
               <div className="relative mt-10 lg:mt-0 flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-blue-600/10 blur-3xl rounded-3xl" />
                 <img
-                  src="/company-hero-images/1.png"
+                  src="/company_hero_images/1.png"
                   alt="About Zryoss"
                   className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.01] transition-transform duration-500 w-full h-auto max-h-[500px] object-contain"
                 />

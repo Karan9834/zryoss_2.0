@@ -84,7 +84,7 @@ const KryossSoftech = () => {
                 <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
                   <img
-                    src="/kryoss softech.jpg"
+                    src="/kryoss_softech.jpg"
                     alt="Kryoss Softech Execution"
                     className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
                   />

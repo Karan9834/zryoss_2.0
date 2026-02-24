@@ -253,7 +253,7 @@ export default function AccountManagement() {
               <div className="relative mt-10 lg:mt-0">
                 <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
                 <img
-                  src="/operations-hero-images/Account_Management.jpeg"
+                  src="/operations_hero_images/Account_Management.jpeg"
                   alt="Account Management"
                   className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
                 />

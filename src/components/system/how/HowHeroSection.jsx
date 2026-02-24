@@ -96,7 +96,7 @@ export default function HowHeroSection() {
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
               <img
-                src="/How yoss Works End-to End.jpg"
+                src="/how_zryoss_works_end_to_end.jpg"
                 alt="How Zryoss Works"
                 className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
               />

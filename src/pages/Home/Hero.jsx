@@ -51,7 +51,7 @@ export default function Hero() {
         <div
           className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
           style={{
-            backgroundImage: `url('/website-banner.jpg')`,
+            backgroundImage: `url('/website_banner.jpg')`,
             opacity: videoLoaded ? 0 : 1,
           }}
         />

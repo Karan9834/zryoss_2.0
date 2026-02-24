@@ -53,7 +53,7 @@ export default function RiskDisclosure() {
                             <FadeUp delay={0.2}>
                                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-blue-600/20 blur-3xl rounded-3xl transform rotate-3" />
                                 <img
-                                    src="/company-hero-images/4.png"
+                                    src="/company_hero_images/4.png"
                                     alt="Risk Disclosure"
                                     className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
                                 />

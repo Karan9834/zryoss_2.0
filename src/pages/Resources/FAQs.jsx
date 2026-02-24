@@ -265,7 +265,7 @@ export default function FAQs() {
               <FadeUp delay={0.2}>
                 <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
                 <img
-                  src="/Resources_pages_images/What-is-an-FAQ-Page.jpg"
+                  src="/resources_pages_images/what_is_an_faq_page.jpg"
                   alt="FAQs"
                   className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
                 />

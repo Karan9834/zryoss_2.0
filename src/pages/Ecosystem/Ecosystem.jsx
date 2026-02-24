@@ -10,7 +10,7 @@ export default function Ecosystem() {
       shortDesc: "Central systems, governance, reporting, and controls.",
       detailedDesc: "The Platform Layer is the centralized control system of Zryoss. It manages core technology, sales workflows, CRM, reporting, governance frameworks, and quality controls to ensure consistency, compliance, and scalability across the ecosystem. This layer ensures every transaction and delivery follows defined standards.",
       gradient: "from-orange-500/20 via-orange-400/10 to-transparent",
-      image: "/images/platform/platform-overview.png",
+      image: "/images/platform/platform_overview.png",
       features: [
         "Centralized control system",
         "Core technology management",
@@ -26,7 +26,7 @@ export default function Ecosystem() {
       shortDesc: "Execution brands delivering domain-specific services.",
       detailedDesc: "The Brand Layer consists of Zryoss-owned execution brands operating in specific domains such as HR, IT, marketing, and compliance. These brands own service standards, pricing frameworks, delivery responsibility, and vendor coordination within their domain. They act as the execution authority between the platform and vendors.",
       gradient: "from-orange-500/15 via-orange-400/10 to-transparent",
-      image: "/images/platform/zryoss-solves.jpg",
+      image: "/images/platform/zryoss_solves.jpg",
       features: [
         "Domain-specific execution brands",
         "Service standards ownership",
@@ -42,7 +42,7 @@ export default function Ecosystem() {
       shortDesc: "Verified vendors executing delivery at scale.",
       detailedDesc: "The Vendor Layer includes vetted service providers and domain specialists responsible for actual service execution. Vendors operate under defined SLAs, timelines, and quality benchmarks monitored by Zryoss brands. This model enables scalable, asset-light delivery without compromising quality.",
       gradient: "from-orange-500/15 via-orange-400/10 to-transparent",
-      image: "/images/platform/traditional-businesses.jpeg",
+      image: "/images/platform/traditional_businesses.jpeg",
       features: [
         "Vetted service providers",
         "Domain specialists",
@@ -58,7 +58,7 @@ export default function Ecosystem() {
       shortDesc: "Sales-focused partners driving client acquisition.",
       detailedDesc: "The Partner Layer consists of independent partners focused on sales, client relationships, and business growth. Partners acquire clients under their own brand name while Zryoss manages demos, execution, and delivery through the ecosystem. Performance rewards are linked solely to real business closures and delivery.",
       gradient: "from-orange-500/20 via-orange-400/10 to-transparent",
-      image: "/images/platform/zryoss-solves.jpg",
+      image: "/images/platform/zryoss_solves.jpg",
       features: [
         "Independent sales partners",
         "Client acquisition focus",

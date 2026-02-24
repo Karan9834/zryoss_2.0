@@ -320,7 +320,7 @@ export default function Navbar() {
         {/* Home (Logo) */}
         <Link to="/" className="flex items-center gap-3 relative z-50">
           <img
-            src="/Zryoss_logo_2_white.jpg"
+            src="/zryoss_logo_2_white.jpg"
             alt="Zryoss Logo"
             className="h-10 w-auto object-contain brightness-110"
           />

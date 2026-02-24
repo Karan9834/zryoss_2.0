@@ -2,11 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const logos = [
-    { id: 1, src: "/core-execution-model/clinkhr.jpg", alt: "Clink HR" },
-    { id: 2, src: "/core-execution-model/edulinker.png", alt: "Edulinker" },
-    { id: 3, src: "/core-execution-model/kryoss.jpg", alt: "Kryoss" },
-    { id: 4, src: "/core-execution-model/medikryoss.png", alt: "Medikryoss" },
-    { id: 5, src: "/core-execution-model/vyombiz.jpg", alt: "Vyombiz" },
+    { id: 1, src: "/core_execution_model/clinkhr.jpg", alt: "Clink HR" },
+    { id: 2, src: "/core_execution_model/edulinker.png", alt: "Edulinker" },
+    { id: 3, src: "/core_execution_model/kryoss.jpg", alt: "Kryoss" },
+    { id: 4, src: "/core_execution_model/medikryoss.png", alt: "Medikryoss" },
+    { id: 5, src: "/core_execution_model/vyombiz.jpg", alt: "Vyombiz" },
 ];
 
 // Use 4 sets of logos to ensure it covers even ultra-wide screens and loops smoothly

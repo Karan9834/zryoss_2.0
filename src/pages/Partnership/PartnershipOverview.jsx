@@ -398,22 +398,61 @@ export default function PartnershipOverview() {
       </section>
 
       {/* =====================================================
-          PHILOSOPHY
+          PARTNERSHIP FRAMEWORK / MODULES
       ====================================================== */}
-      <section className="py-20 px-6 text-center">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-block p-4 rounded-full bg-orange-500/10 mb-6">
-            <Zap className="w-6 h-6 text-orange-500" />
+      <section className="py-24 px-6 bg-gradient-to-b from-[#050505] to-[#0A0A0A]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">The Partnership <span className="text-orange-500">Framework</span></h2>
+            <p className="text-white/60 max-w-2xl mx-auto">
+              Explore the four core modules that define the Zryoss partnership experience, from philosophy to long-term continuity.
+            </p>
           </div>
-          <h2 className="text-3xl font-bold mb-8">One Partnership Philosophy</h2>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-8">
-            {["Businesses should be system-led", "Partners should own brands", "Execution should be centralized", "Scale should be controlled"].map((item, i) => (
-              <span key={i} className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white/90 text-sm">
-                {item}
-              </span>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: "Partnership Philosophy",
+                desc: "The core beliefs that drive our systematic approach to growth.",
+                path: "/partnership/philosophy",
+                icon: <ShieldCheck className="w-6 h-6 text-orange-500" />
+              },
+              {
+                title: "Brand Ownership",
+                desc: "How we empower partners to own their brand and client assets.",
+                path: "/partnership/brand-ownership",
+                icon: <Briefcase className="w-6 h-6 text-orange-500" />
+              },
+              {
+                title: "Execution Support",
+                desc: "The scope of centralized support and delivery management.",
+                path: "/partnership/support-scope",
+                icon: <Zap className="w-6 h-6 text-orange-500" />
+              },
+              {
+                title: "Engagement Lifecycle",
+                desc: "The 9-stage journey from application to long-term continuity.",
+                path: "/partnership/lifecycle",
+                icon: <TrendingUp className="w-6 h-6 text-orange-500" />
+              }
+            ].map((module, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -5 }}
+                onClick={() => navigate(module.path)}
+                className="p-8 rounded-2xl bg-[#0E0E0E] border border-white/10 hover:border-orange-500/50 transition-all duration-300 cursor-pointer group"
+              >
+                <div className="p-3 bg-white/5 rounded-xl border border-white/10 w-fit mb-6 group-hover:bg-orange-500/10 group-hover:border-orange-500/30 transition-all">
+                  {module.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-orange-500 transition-colors">{module.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed mb-6">{module.desc}</p>
+                <div className="flex items-center gap-2 text-orange-500 text-xs font-bold uppercase tracking-widest">
+                  Learn More <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </motion.div>
             ))}
           </div>
-          <p className="text-white/60">This philosophy shapes every partnership offered.</p>
         </div>
       </section>
 

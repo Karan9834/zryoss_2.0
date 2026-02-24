@@ -27,9 +27,9 @@ const fadeUp = {
 };
 
 
-const vendorHubImage = "/images/ecosystem/vendor-network-hub.png";
-const heroBgImage = "/images/ecosystem/vendor-bg.png";
-const vendorAppImage = "/images/ecosystem/vendor-app.png";
+const vendorHubImage = "/images/ecosystem/vendor_network_hub.png";
+const heroBgImage = "/images/ecosystem/vendor_bg.png";
+const vendorAppImage = "/images/ecosystem/vendor_app.png";
 
 export default function Vendors() {
     const navigate = useNavigate();
@@ -101,7 +101,7 @@ export default function Vendors() {
                                 <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
                                 <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
                                     <img
-                                        src="/partner and vendors.png"
+                                        src="/partner_and_vendors.png"
                                         alt="Partner and Vendor Network"
                                         className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
                                     />

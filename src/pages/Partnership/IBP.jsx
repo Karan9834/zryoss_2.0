@@ -26,7 +26,7 @@ import {
   Clock
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import BenifitsSection from '../../components/ui/BenifitsSection'
+import BenefitsSection from '../../components/ui/BenefitsSection'
 import { useEmail } from '../../hooks/useEmail';
 
 /* --- Hooks & Utility Components --- */
@@ -368,7 +368,7 @@ export default function IBPPage() {
         </div>
       </section>
 
-      <BenifitsSection />
+      <BenefitsSection />
 
       {/* NEW: Workflow Section - Pipeline Design */}
       <section className="min-h-screen flex flex-col justify-center py-20 px-6 relative z-10 bg-[#050505] overflow-hidden">
