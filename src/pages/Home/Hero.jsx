@@ -90,22 +90,22 @@ export default function Hero() {
 
             {/* Main Headline */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5">
-              Start Your Own{" "}
+              Start Your Own Company{" "}
               <span className="block mt-1">
-                Company With
-              </span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-1">
-                Zryoss
+                With{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                  Zryoss
+                </span>
               </span>
             </h1>
 
             {/* Description */}
             <div className="space-y-3 mb-8">
-              <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light">
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed font-light">
                 Launch your own IT Company, Digital Marketing Agency, HR Firm, Interior Company, or Professional Services Business under your own Brand Name while Zryoss handles the Backend Execution, Vendor Management, and Service Delivery.
               </p>
-              <p className="text-gray-400 text-xs md:text-sm leading-relaxed font-normal border-l-2 border-orange-500/30 pl-3 italic">
-                Build your brand. Bring clients. Zryoss manages the execution.
+              <p className="text-gray-400 text-sm md:text-base leading-relaxed font-normal border-l-2 border-orange-500/30 pl-3 italic">
+                Build your brand. Bring clients. <span className="font-bold text-gray-200">Zryoss</span> manages the execution.
               </p>
             </div>
 
