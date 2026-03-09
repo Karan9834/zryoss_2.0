@@ -51,7 +51,7 @@ export default function HeroCTA() {
                 to="/contact"
                 className="group inline-flex items-center gap-4 px-7 py-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold transition-all"
               >
-                Apply as Partner
+                Become a Partner
                 <ArrowRight
                   size={18}
                   className="group-hover:translate-x-1 transition-transform"

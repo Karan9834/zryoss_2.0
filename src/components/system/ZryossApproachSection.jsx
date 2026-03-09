@@ -125,10 +125,10 @@ export default function ZryossApproachSection() {
             </div>
 
             <button
-              onClick={() => navigate('/platform/business-operating-system')}
+              onClick={() => navigate('/apply')}
               className="mt-7 w-full rounded-2xl bg-orange-500 px-6 py-3 font-bold text-white shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:bg-orange-600 transition inline-flex items-center justify-center gap-2"
             >
-              Explore the System <ArrowUpRight size={18} />
+              Become a Partner <ArrowUpRight size={18} />
             </button>
           </motion.aside>
 

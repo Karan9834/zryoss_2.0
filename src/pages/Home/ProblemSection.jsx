@@ -103,7 +103,7 @@ export default function ProblemSection() {
                 </div>
 
                 <FadeUp delay={0.5}>
-                    <div className="max-w-3xl mx-auto p-8 md:p-10 rounded-[2rem] bg-[#0A0A0A] border border-white/10 text-center relative overflow-hidden group transition-all duration-500 shadow-xl shadow-black/40 hover:-translate-y-[2px] hover:border-orange-500/30">
+                    <div className="max-w-3xl mx-auto p-6 md:p-8 rounded-[2rem] bg-[#0A0A0A] border border-white/10 text-center relative overflow-hidden group transition-all duration-500 shadow-xl shadow-black/40 hover:-translate-y-[2px] hover:border-orange-500/30">
 
                         {/* Background Pattern */}
                         <div className="absolute inset-0 opacity-[0.025] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:28px_28px]" />
@@ -114,25 +114,22 @@ export default function ProblemSection() {
                         {/* Content */}
                         <div className="relative z-10">
 
-                            <h3 className="text-xl md:text-3xl font-light text-white/90 leading-tight mb-2">
-                                “People do not fail because they lack ideas.
-                            </h3>
-
-                            <h3 className="text-xl md:text-3xl leading-tight mb-6">
-                                <span className="text-orange-500 font-semibold">
-                                    They fail because they lack systems.
-                                </span>
-                                <span className="text-orange-500/50">”</span>
+                            <h3 className="text-xl md:text-3xl font-light text-white/90 leading-tight">
+                                Powered by <span className="text-orange-500 font-semibold">Kryoss Softech Pvt Ltd</span>
                             </h3>
 
                             {/* Divider */}
-                            <div className="flex justify-center mb-6">
+                            <div className="flex justify-center my-5">
                                 <div className="w-16 h-[1.5px] bg-gradient-to-r from-transparent via-orange-500 to-transparent rounded-full shadow-[0_0_12px_rgba(249,115,22,0.5)] group-hover:w-24 transition-all duration-500" />
                             </div>
 
                             {/* Zryoss Tagline */}
-                            <p className="text-white/40 uppercase tracking-[0.3em] text-[11px] md:text-[13px] font-semibold">
-                                Business execution, unified under one operating system
+                            <p className="text-white/60 uppercase tracking-[0.2em] text-[11px] md:text-[13px] font-semibold flex flex-wrap items-center justify-center gap-2 md:gap-3">
+                                <span>100+ Vendor Ecosystem</span>
+                                <span className="text-orange-500/50 hidden md:block">|</span>
+                                <span>Dedicated Support</span>
+                                <span className="text-orange-500/50 hidden md:block">|</span>
+                                <span>Scalable Model</span>
                             </p>
                         </div>
 

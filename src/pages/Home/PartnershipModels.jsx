@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { User, Users, Globe, Target, Briefcase, Zap, ArrowRight, Landmark, TrendingUp } from "lucide-react";
+import { User, Users, Globe, Target, Briefcase, Zap, ArrowRight, Landmark, TrendingUp, CheckCircle2 } from "lucide-react";
 
 const FadeUp = ({ children, delay = 0 }) => {
   return (
@@ -42,12 +42,18 @@ const models = [
     focus: "Best for individuals and focused founders",
     icon: <User className="w-8 h-8 text-orange-500" />,
     features: [
-      { icon: <Target size={18} />, text: "Operate in one selected domain" },
-      { icon: <Zap size={18} />, text: "Backend, brand & operations managed by us" },
-      { icon: <Briefcase size={18} />, text: "Sales & business framework provided" },
-      { icon: <Globe size={18} />, text: "Central CRM and routing system" },
-      { icon: <TrendingUp size={18} />, text: "Recurring success model" },
-      { icon: <Landmark size={18} />, text: "Government Funding & Startup Enablement Support" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Operate in one selected business domain" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Backend, brand & operations managed by Zryoss" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Sales & business framework provided" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Dedicated Key Account Manager support" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Marketing brochures under your brand name" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Client demo & service explanation support" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Deal closing assistance from Zryoss team" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Professional quotation & invoice creation" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Access to 100+ verified vendor network" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Central CRM and routing system" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Recurring success model" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Government funding & startup enablement support" },
     ],
     cta: "Join as IPP",
     color: "from-orange-500/20 to-transparent",
@@ -58,12 +64,16 @@ const models = [
     focus: "Best for leaders and scale builders",
     icon: <Users className="w-8 h-8 text-green-500" />,
     features: [
-      { icon: <Target size={18} />, text: "Access up to 3 business domains" },
-      { icon: <Users size={18} />, text: "Create & manage multiple IPPs under you" },
-      { icon: <Globe size={18} />, text: "Central routing & tracking system" },
-      { icon: <TrendingUp size={18} />, text: "Recurring growth from network performance" },
-      { icon: <Zap size={18} />, text: "Complete backend management by us" },
-      { icon: <Landmark size={18} />, text: "Government Funding Enablement for Your IPPs" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Access up to 3 business domains" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Build and manage your own IPP network" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Central routing & partner tracking system" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Recurring growth from network performance" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Dedicated ecosystem support team" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Vendor ecosystem support for project execution" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Marketing and brand support for your network" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Complete backend management by Zryoss" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Scalable business expansion model" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Government funding enablement for your IPPs" },
     ],
     cta: "Join as IBP",
     color: "from-green-500/10 to-transparent",
@@ -173,12 +183,15 @@ export default function PartnershipModels() {
         </div>
 
         <FadeUp delay={0.4}>
-          <div className="text-center">
-            <p className="text-base text-gray-300 font-light">
-              Start building your business empire today —{" "}
-              <span className="text-orange-400 font-semibold">
-                your brand, our execution
-              </span>
+          <div className="text-center mt-12 md:mt-16 relative z-10">
+            {/* Added subtle glow behind the powerful text */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[100px] bg-orange-500/10 blur-[80px] pointer-events-none" />
+
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3 tracking-wide">
+              Your Brand. <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">Our Execution.</span>
+            </h3>
+            <p className="text-lg text-gray-400 font-light tracking-wide">
+              Build Your Business With Zryoss.
             </p>
           </div>
         </FadeUp>

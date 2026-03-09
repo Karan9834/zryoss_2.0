@@ -15,6 +15,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { useEmail } from "../../hooks/useEmail";
+import { Helmet } from "react-helmet-async";
 
 /* ================= FadeUp ================= */
 const FadeUp = ({ children, delay = 0 }) => {
@@ -166,6 +167,11 @@ export default function ApplyPage() {
 
   return (
     <section className="min-h-screen bg-[#050505] text-white py-20">
+      <Helmet>
+        <title>Partner Application | Zryoss</title>
+        <meta name="description" content="Apply to become a Zryoss partner. Join our partner network as an IBP or IPP, build your independent business, and scale with performance-based results." />
+        <link rel="canonical" href="https://zryoss.com/apply" />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-6">
 
         {/* ================= HERO ================= */}

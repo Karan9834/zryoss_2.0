@@ -376,34 +376,162 @@ export default function About() {
       {/* ===================================================== */}
       {/* 6) WHO ZRYOSS IS BUILT FOR */}
       {/* ===================================================== */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
+      <section className="relative w-full max-w-7xl mx-auto px-6 pt-16 pb-6 overflow-hidden">
         <FadeUp>
-          <h2 className="text-3xl font-bold text-center">
-            Who Zryoss Is{" "}
-            <span className="text-[#FF6A00]">Built For</span>
-          </h2>
-
-          <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
-            If you want independence without operational chaos, Zryoss is designed
-            for you.
-          </p>
+          <div className="text-center mb-10 relative z-20">
+            <h2 className="text-3xl font-bold text-center">
+              Who Should <span className="text-[#FF6A00]">Join?</span>
+            </h2>
+            <p className="mt-4 text-gray-300 text-center max-w-3xl mx-auto">
+              If you want independence without operational chaos, Zryoss is designed for you.
+            </p>
+          </div>
         </FadeUp>
 
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="hidden md:block relative w-full aspect-[2.5/1] xl:aspect-[3/1] max-w-7xl mx-auto mt-6 mb-2 px-8 lg:px-16 xl:px-24">
+          <svg
+            className="w-full h-auto overflow-visible pointer-events-none"
+            viewBox="0 0 1200 600"
+          >
+            {/* Soft Outer Glow */}
+            <path
+              d="M -300 300 C -200 400, -100 400, 0 300 C 100 200, 200 200, 300 300 C 400 400, 500 400, 600 300 C 700 200, 800 200, 900 300 C 1000 400, 1100 400, 1200 300 C 1300 200, 1400 200, 1500 300"
+              fill="none"
+              stroke="#FF6A00"
+              strokeWidth="32"
+              strokeLinecap="round"
+              className="opacity-[0.06] blur-[24px]"
+            />
+            {/* Dark Road Border/Shadow */}
+            <path
+              d="M -300 300 C -200 400, -100 400, 0 300 C 100 200, 200 200, 300 300 C 400 400, 500 400, 600 300 C 700 200, 800 200, 900 300 C 1000 400, 1100 400, 1200 300 C 1300 200, 1400 200, 1500 300"
+              fill="none"
+              stroke="#1A0700"
+              strokeWidth="20"
+              strokeLinecap="round"
+            />
+            {/* Main Road Area */}
+            <path
+              d="M -300 300 C -200 400, -100 400, 0 300 C 100 200, 200 200, 300 300 C 400 400, 500 400, 600 300 C 700 200, 800 200, 900 300 C 1000 400, 1100 400, 1200 300 C 1300 200, 1400 200, 1500 300"
+              fill="none"
+              stroke="#D84A00"
+              strokeWidth="12"
+              strokeLinecap="round"
+            />
+            {/* Center Dashed Line */}
+            <path
+              d="M -300 300 C -200 400, -100 400, 0 300 C 100 200, 200 200, 300 300 C 400 400, 500 400, 600 300 C 700 200, 800 200, 900 300 C 1000 400, 1100 400, 1200 300 C 1300 200, 1400 200, 1500 300"
+              fill="none"
+              stroke="#ffffff"
+              strokeWidth="2"
+              strokeDasharray="8 12"
+              opacity="0.3"
+            />
+          </svg>
+
           {[
-            { title: "Professionals seeking business ownership", icon: <Users className="w-6 h-6" /> },
-            { title: "Founders who want structured execution", icon: <Lightbulb className="w-6 h-6" /> },
-            { title: "Businesses looking for scalable systems", icon: <Building2 className="w-6 h-6" /> },
-            { title: "Partners who value governance and clarity", icon: <Handshake className="w-6 h-6" /> },
-          ].map((x, i) => (
-            <FadeUp key={x.title} delay={i * 0.1}>
-              <div
-                className="p-6 rounded-2xl bg-[#1E1E1E] border border-white/10 hover:border-[#FF6A00]/40 transition h-full"
+            {
+              title: "Sales\nprofessionals",
+              icon: <Users size={24} className="text-[#1E1E1E]" />,
+              pos: { x: "12.5%", y: "37.5%" },
+            },
+            {
+              title: "Freelancers &\nconsultants",
+              icon: <Lightbulb size={24} className="text-[#1E1E1E]" />,
+              pos: { x: "37.5%", y: "62.5%" },
+            },
+            {
+              title: "Anyone who\nwants their own\nIT brand",
+              icon: <Building2 size={24} className="text-[#1E1E1E]" />,
+              pos: { x: "62.5%", y: "37.5%" },
+            },
+            {
+              title: "Job-to-business\nswitchers, Aspiring\nentrepreneurs",
+              icon: <Handshake size={24} className="text-[#1E1E1E]" />,
+              pos: { x: "87.5%", y: "62.5%" },
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="absolute z-10 w-0 h-0 flex flex-col items-center justify-start"
+              style={{ left: item.pos.x, top: item.pos.y }}
+            >
+              <FadeUp
+                delay={i * 0.15}
+                className="relative flex flex-col items-center group cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-2xl bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF6A00] flex items-center justify-center">
-                  {x.icon}
+                {/* Map Pin Root - Lifted slightly higher with pb-6 */}
+                <div className="absolute left-1/2 bottom-0 -translate-x-1/2 flex flex-col items-center z-10 w-[72px] pb-[14px]">
+                  <div className="absolute inset-0 bg-[#FF6A00] blur-[24px] opacity-0 group-hover:opacity-20 transition-opacity duration-700 rounded-full" />
+                  <div
+                    className="w-[60px] h-[60px] bg-gradient-to-br from-[#FF6A00] to-[#E65100] flex items-center justify-center relative z-10 transition-transform duration-500 group-hover:-translate-y-2 origin-bottom shadow-md"
+                    style={{ borderRadius: "50% 50% 50% 0", transform: "rotate(-45deg)" }}
+                  >
+                    <div
+                      className="w-[38px] h-[38px] bg-white rounded-full flex items-center justify-center m-auto shadow-inner border border-[#FF6A00]/20"
+                      style={{ transform: "rotate(45deg)" }}
+                    >
+                      {item.icon}
+                    </div>
+                  </div>
+                  {/* Elegant anchored shadow right on the line */}
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[3px] bg-[#FF6A00] blur-[3px] rounded-full opacity-40 z-0" />
                 </div>
-                <p className="mt-4 font-semibold text-gray-200">{x.title}</p>
+
+                {/* Text Container - Spaced further down */}
+                <div className="absolute top-[68px] left-1/2 -translate-x-1/2 text-center select-none w-56 md:w-68 px-1">
+                  <h3 className="font-medium text-[#f5f5f5] text-[15px] md:text-[16px] leading-[1.6] tracking-wide whitespace-pre-wrap opacity-95">
+                    {item.title}
+                  </h3>
+                </div>
+              </FadeUp>
+            </div>
+          ))}
+        </div>
+
+        {/* MOBILE VERTICAL LIST */}
+        <div className="flex md:hidden flex-col items-center gap-14 mt-6 relative px-4 text-center pb-4">
+          {/* Vertical Road */}
+          <div className="absolute top-4 bottom-4 left-1/2 -translate-x-1/2 w-4 h-[calc(100%-2rem)]">
+            <div className="w-full h-full bg-[#D84A00] border-[3px] border-[#1A0700] rounded-full shadow-[0_0_15px_rgba(255,106,0,0.1)] relative flex justify-center overflow-hidden">
+              <div className="w-[2px] h-full" style={{ backgroundImage: "linear-gradient(to bottom, #ffffff 50%, transparent 50%)", backgroundSize: "100% 16px", opacity: 0.3 }} />
+            </div>
+          </div>
+
+          {[
+            {
+              title: "Sales professionals",
+              icon: <Users size={22} className="text-[#1E1E1E]" />,
+            },
+            {
+              title: "Freelancers & consultants",
+              icon: <Lightbulb size={22} className="text-[#1E1E1E]" />,
+            },
+            {
+              title: "Anyone who wants their own IT brand",
+              icon: <Building2 size={22} className="text-[#1E1E1E]" />,
+            },
+            {
+              title: "Job-to-business switchers,\nAspiring entrepreneurs",
+              icon: <Handshake size={22} className="text-[#1E1E1E]" />,
+            },
+          ].map((item, i) => (
+            <FadeUp key={i} delay={i * 0.1} className="relative flex flex-col items-center w-full z-10 max-w-[280px]">
+              <div
+                className="w-[60px] h-[60px] bg-gradient-to-br from-[#FF6A00] to-[#E65100] flex items-center justify-center relative shadow-md z-10 transition-transform duration-500 mb-6"
+                style={{ borderRadius: "50% 50% 50% 0", transform: "rotate(-45deg)" }}
+              >
+                <div
+                  className="w-[38px] h-[38px] bg-white rounded-full flex items-center justify-center m-auto shadow-inner border border-[#FF6A00]/20"
+                  style={{ transform: "rotate(45deg)" }}
+                >
+                  {item.icon}
+                </div>
+              </div>
+              <div className="w-full bg-[#121212]/95 backdrop-blur-md border border-white/5 py-4 px-6 rounded-xl shadow-2xl">
+                <h3 className="font-medium text-[#f5f5f5] text-[15px] leading-relaxed tracking-wide whitespace-pre-wrap">
+                  {item.title}
+                </h3>
               </div>
             </FadeUp>
           ))}

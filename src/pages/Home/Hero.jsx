@@ -84,42 +84,42 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5">
               <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
               <span className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
-                Your Brand. Our Engine.
+                Your Brand. Our Execution.
               </span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5">
-              Build, Run & Scale{" "}
+              Start Your Own{" "}
               <span className="block mt-1">
-                Real Businesses —
+                Company With
               </span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-1">
-                With a System, Not Chaos
+                Zryoss
               </span>
             </h1>
 
             {/* Description */}
             <div className="space-y-3 mb-8">
               <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light">
-                We are a Business Operating System designed to help individuals and organizations build independent brands, while we manage execution, operations, and delivery behind the scenes.
+                Launch your own IT Company, Digital Marketing Agency, HR Firm, Interior Company, or Professional Services Business under your own Brand Name while Zryoss handles the Backend Execution, Vendor Management, and Service Delivery.
               </p>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed font-normal border-l-2 border-orange-500/30 pl-3 italic">
-                We're not a company you work for. We're the system that works for your business.
+                Build your brand. Bring clients. Zryoss manages the execution.
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6">
-              <Link to="/platform/how-zryoss-works">
+              <Link to="/apply">
                 <Button primary>
-                  Explore How We Works
+                  Become a Partner
                   <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link to="/apply">
+              <Link to="/contact">
                 <Button outline>
-                  Join as IPP / IBP
+                  Book a Demo
                 </Button>
               </Link>
             </div>

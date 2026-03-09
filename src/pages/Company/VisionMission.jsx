@@ -156,7 +156,7 @@ export default function VisionMission() {
                 transition-all
               "
             >
-              Start Your Journey →
+              Become a Partner →
             </button>
           </div>
         </FadeUp>

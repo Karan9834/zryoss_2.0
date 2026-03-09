@@ -340,7 +340,7 @@ export default function OperatingSystem() {
             <button
               onClick={() => navigate("/contact")}
               className="px-12 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl font-bold transition-all hover:scale-105 shadow-xl shadow-orange-500/20">
-              Get Started Today
+              Become a Partner
             </button>
           </FadeUp>
         </div>

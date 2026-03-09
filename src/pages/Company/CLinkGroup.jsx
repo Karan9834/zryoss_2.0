@@ -86,11 +86,11 @@ export default function CLinkGroup() {
             desc: "AdKryoss is the marketing and growth powerhouse of the ecosystem, specializing in performance marketing, brand scaling, and strategic digital execution. We manage end-to-end campaigns, from SEO and content strategy to paid advertising and social media growth, ensuring every brand under the Zryoss umbrella achieves maximum market visibility and measurable ROI.",
             image: "/adkryoss.jpg",
         },
-        {
-            title: "Edu Kryoss",
-            desc: "At Edu-Kryoss, we have abilities to deliver the best mobility solutions for education industry from an app for play group students to an app for engineering students. In order to accomplish the need of online education and e-learning, an educational mobile app needs to build using most advanced features gives users’ real time experience to use an app.",
-            image: "/clink_group/edukryoss.png",
-        },
+        // {
+        //     title: "Edu Kryoss",
+        //     desc: "At Edu-Kryoss, we have abilities to deliver the best mobility solutions for education industry from an app for play group students to an app for engineering students. In order to accomplish the need of online education and e-learning, an educational mobile app needs to build using most advanced features gives users’ real time experience to use an app.",
+        //     image: "/clink_group/edukryoss.png",
+        // },
     ];
 
     return (
@@ -358,11 +358,14 @@ export default function CLinkGroup() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                     {industries.map((industry, idx) => (
                         <FadeUp key={idx} delay={idx * 0.05} className="h-full">
-                            <div className="group p-6 md:p-8 rounded-3xl md:rounded-[40px] bg-white/5 border border-white/10 hover:bg-orange-500 transition-all duration-500 text-center flex flex-col items-center justify-center gap-4 md:gap-6 cursor-default h-full aspect-[16/10]">
-                                <div className="text-orange-500 group-hover:text-white transition-colors duration-500">
+                            <div className="group p-6 md:p-8 rounded-3xl md:rounded-[40px] bg-white/5 border border-white/10 transition-all duration-500 text-center flex flex-col items-center justify-center gap-4 md:gap-6 cursor-default h-full aspect-[16/10] relative overflow-hidden">
+                                {/* Bottom-to-top orange fill background */}
+                                <div className="absolute inset-0 bg-orange-500 translate-y-[105%] group-hover:translate-y-0 transition-transform duration-500 ease-out z-0" />
+
+                                <div className="relative z-10 text-orange-500 group-hover:text-white transition-colors duration-500">
                                     {React.cloneElement(industry.icon, { className: "w-8 h-8 md:w-10 md:h-10 transition-transform duration-500 group-hover:scale-110" })}
                                 </div>
-                                <h3 className="text-sm md:text-lg font-bold text-white uppercase tracking-widest">{industry.title}</h3>
+                                <h3 className="relative z-10 text-sm md:text-lg font-bold text-white uppercase tracking-widest">{industry.title}</h3>
                             </div>
                         </FadeUp>
                     ))}

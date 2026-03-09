@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Hero from "./Hero";
 import ProblemSection from "./ProblemSection";
 import WhatIsZryoss from "./WhatIsZryoss";
@@ -18,6 +19,11 @@ import HeroContact from "./HeroContact";
 export default function Home() {
   return (
     <>
+      <Helmet>
+        <title>Home | Zryoss</title>
+        <meta name="description" content="Zryoss is the ultimate business operating system. Build, scale, and manage multiple business verticals through one centralized ecosystem." />
+        <link rel="canonical" href="https://zryoss.com/" />
+      </Helmet>
       <Hero />
       <ProblemSection />
       <WhatIsZryoss />

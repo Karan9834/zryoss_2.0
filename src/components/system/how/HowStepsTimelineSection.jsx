@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link2, Route, Hammer, Zap, TrendingUp } from "lucide-react";
+import { PenTool, Users, MonitorPlay, Handshake, Cog } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -11,43 +11,43 @@ export default function HowStepsTimelineSection() {
   const steps = [
     {
       id: "01",
-      title: "Connect with the System",
-      icon: Link2,
+      title: "Create Your Brand",
+      icon: PenTool,
       desc:
-        "Start by connecting with Zryoss. Instead of starting from zero, you begin with a system already in place.",
-      bullets: ["Proven business framework", "Execution support", "Existing ecosystem"],
+        "Create and build your own brand.",
+      bullets: ["Brand Identity", "Company Profile", "Marketing Assets"],
     },
     {
       id: "02",
-      title: "Choose Your Path (IPP or IBP)",
-      icon: Route,
+      title: "Generate Leads",
+      icon: Users,
       desc:
-        "Pick the path that matches your stage today — individual growth or business scaling.",
-      bullets: ["IPP: individuals", "IBP: businesses", "Structured partner paths"],
+        "Generate leads and connect with clients.",
+      bullets: ["Client Outreach", "Network Building", "Lead Generation"],
     },
     {
       id: "03",
-      title: "Build Using the Framework",
-      icon: Hammer,
+      title: "Conduct Demos",
+      icon: MonitorPlay,
       desc:
-        "Zryoss provides a structured build process so you don’t figure everything out alone.",
-      bullets: ["Positioning & structure", "Processes & workflows", "Systems setup"],
+        "Zryoss helps explain services and conduct demos.",
+      bullets: ["Service Explanation", "Demo Support", "Expert Assistance"],
     },
     {
       id: "04",
-      title: "Execute with Ecosystem Support",
-      icon: Zap,
+      title: "Close Deals",
+      icon: Handshake,
       desc:
-        "Execution is where most fail. Zryoss solves this through ecosystem-led support layers.",
-      bullets: ["Marketing engines", "HR & talent", "Tech & automation"],
+        "Deals close with support from our team.",
+      bullets: ["Closing Assistance", "Quotation Creation", "Negotiation Support"],
     },
     {
       id: "05",
-      title: "Scale Without Chaos",
-      icon: TrendingUp,
+      title: "Execution & Delivery",
+      icon: Cog,
       desc:
-        "As growth happens, the OS ensures stability — roles, quality control, predictable systems.",
-      bullets: ["Accountability", "Quality control", "Reduced dependency"],
+        "Our vendor network executes the service under your brand name.",
+      bullets: ["Backend Execution", "Vendor Network", "Seamless Delivery"],
     },
   ];
 
@@ -71,7 +71,7 @@ export default function HowStepsTimelineSection() {
             A Predictable Journey — Not a Gamble
           </h2>
           <p className="mt-4 text-white/70 text-base md:text-lg leading-relaxed">
-            You always know what step you’re on, what comes next, and what support is available.
+            Starting your business with Zryoss is simple.
           </p>
         </motion.div>
 

@@ -109,7 +109,7 @@ export default function Platform() {
                   text-white font-bold transition-all hover:scale-105
                   shadow-[0_0_30px_rgba(234,88,12,0.35)]
                   flex items-center gap-2">
-                  Get Started Today
+                  Become a Partner
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </FadeUp>
@@ -273,7 +273,7 @@ export default function Platform() {
               text-white font-bold transition-all hover:scale-105
               shadow-[0_0_30px_rgba(234,88,12,0.35)]
               flex items-center gap-2 mx-auto">
-              Launch Your Platform
+              Book a Demo
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>

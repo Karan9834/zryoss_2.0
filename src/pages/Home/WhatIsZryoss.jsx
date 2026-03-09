@@ -1,21 +1,26 @@
 import React from "react";
 import FadeUp from "../../components/animations/FadeUp";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function WhatIsZryoss() {
+  const navigate = useNavigate();
   const points = [
-    "Launch your own independent brand",
-    "Acquire and manage clients directly",
-    "Deliver services professionally via specialist brands",
-    "Scale without the burden of building internal teams",
-    "Operate with absolute clarity and systemized control",
-    "Access Government Funding & Startup Enablement Support",
+    "Brand creation & company profile",
+    "Marketing brochures under your brand",
+    "Social media setup & marketing support",
+    "Dedicated Key Account Manager",
+    "Client demo & service explanation support",
+    "Deal closing assistance",
+    "Professional quotation & invoice creation",
+    "Complete backend execution",
+    "Access to 100+ vendor network",
   ];
 
   return (
     <section
       id="platform"
-      className="py-24 bg-[#050505] relative overflow-hidden scroll-mt-24 z-10"
+      className="py-24 bg-[#0A0A0A] relative overflow-hidden scroll-mt-24 z-10"
     >
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full" />
@@ -23,40 +28,41 @@ export default function WhatIsZryoss() {
 
       {/* ✅ width aligned with navbar/footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* LEFT CONTENT */}
-          <div className="flex flex-col justify-between h-full gap-8 lg:gap-12">
+          <div className="flex flex-col w-full h-auto">
             <FadeUp>
               <div>
                 <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-4 block">
-                  A Business Operating System
+                  Start Your Business Without Building The Backend
                 </span>
 
-                <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
-                  Your Growth {" "}
+                <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-white mb-6">
+                  Start Your{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                    Partner
+                    Business
                   </span>
                 </h2>
 
-                <div className="w-24 h-1 bg-orange-500 rounded-full mb-10" />
+                <div className="w-20 h-1 bg-orange-500 rounded-full mb-8" />
 
-                <p className="text-gray-300 text-lg leading-relaxed font-light max-w-xl">
-                  We provide a ready-to-use business operating backbone that
-                  lets you focus on growth and relationships — while we handle the
-                  complex execution behind the scenes.
+                <p className="text-gray-300 text-lg leading-relaxed font-light max-w-xl mb-4">
+                  With the Zryoss ecosystem, you can build your own service-based
+                  business while we manage the operational infrastructure.
+                </p>
+
+                <p className="text-gray-400 text-base leading-relaxed font-light max-w-xl mb-10">
+                  Zryoss provides complete support including:
                 </p>
               </div>
             </FadeUp>
 
             {/* Bullet Points */}
             <FadeUp delay={0.2}>
-              <div className="space-y-5">
+              <div className="flex flex-col gap-4 mb-10">
                 {points.map((point, idx) => (
-                  <div key={idx} className="flex items-start gap-4">
-                    <div className="mt-0.5">
-                      <CheckCircle2 className="w-6 h-6 text-orange-500 shrink-0" />
-                    </div>
+                  <div key={idx} className="flex items-center gap-4">
+                    <CheckCircle2 className="w-6 h-6 text-orange-500 shrink-0" />
 
                     <span className="text-gray-300 text-lg font-light leading-snug">
                       {point}
@@ -64,12 +70,16 @@ export default function WhatIsZryoss() {
                   </div>
                 ))}
               </div>
+
+              <p className="text-gray-500 text-sm font-medium mt-6 tracking-wide">
+                Powered by <span className="text-orange-400">Kryoss Softech Pvt Ltd</span>
+              </p>
             </FadeUp>
           </div>
 
           {/* RIGHT (Image frame + Quote frame) */}
-          <div className="flex flex-col justify-between h-full gap-6">
-            <FadeUp delay={0.15}>
+          <div className="flex flex-col w-full gap-8">
+            <FadeUp delay={0.15} className="w-full">
               {/* ✅ TOP IMAGE FRAME */}
               <div className="relative rounded-[42px] border border-orange-500/25 bg-black/40 overflow-hidden h-full">
                 <div className="p-3">
@@ -99,22 +109,50 @@ export default function WhatIsZryoss() {
               </div>
             </FadeUp>
 
-            {/* ✅ BOTTOM QUOTE FRAME */}
-            <FadeUp delay={0.3}>
-              <div className="relative rounded-[24px] border border-white/10 bg-white/[0.04] backdrop-blur-xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.45)]">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-50 pointer-events-none" />
+            {/* ✅ BOTTOM CARD FRAME */}
+            <FadeUp delay={0.3} className="w-full relative z-10">
+              <div className="relative rounded-[32px] border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.01] backdrop-blur-2xl overflow-hidden shadow-[0_25px_50px_rgba(0,0,0,0.5)] group hover:border-white/15 transition-all duration-500 w-full block">
+                {/* Glow effects */}
+                <div className="absolute inset-0 bg-orange-500/5 mix-blend-overlay pointer-events-none transition-opacity duration-500 opacity-50 group-hover:opacity-100" />
+                <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-orange-500/10 blur-[80px] rounded-full pointer-events-none" />
 
-                <div className="relative p-8 md:p-10">
-                  <div className="absolute left-0 top-4 bottom-4 w-[3px] bg-orange-500 rounded-full" />
+                <div className="relative p-8 lg:p-12 flex flex-col gap-8 h-full">
 
-                  <p className="text-white text-xl md:text-2xl font-light leading-snug italic pl-6">
-                    “You focus on growth and relationships.
-                    <br />
-                    <span className="text-orange-400 font-semibold italic">
-                      We handle execution and operations.
-                    </span>
-                    ”
-                  </p>
+                  {/* Top Text Content */}
+                  <div className="flex items-stretch gap-6">
+                    <div className="w-[3px] bg-gradient-to-b from-orange-400 to-orange-600 rounded-full shrink-0 shadow-[0_0_15px_rgba(249,115,22,0.4)]" />
+
+                    <div className="flex flex-col justify-center">
+                      <p className="text-white text-2xl md:text-3xl font-bold leading-tight tracking-tight">
+                        Build Your Company With Zryoss
+                      </p>
+                      <p className="text-gray-400 text-[15px] font-medium leading-relaxed mt-3 max-w-[420px]">
+                        Start your entrepreneurial journey and grow your business with the power of the Zryoss ecosystem.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Separator */}
+                  <div className="h-px w-full bg-gradient-to-r from-white/10 via-white/5 to-transparent" />
+
+                  {/* CTA Buttons Row */}
+                  <div className="flex flex-wrap items-center gap-4">
+                    <button
+                      onClick={() => navigate('/apply')}
+                      className="px-8 py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm font-bold tracking-wide rounded-[16px] shadow-[0_10px_30px_rgba(249,115,22,0.3)] hover:shadow-[0_15px_40px_rgba(249,115,22,0.5)] hover:bg-orange-600 hover:-translate-y-0.5 transition-all duration-300"
+                    >
+                      Become a Partner
+                    </button>
+
+                    <button
+                      onClick={() => navigate('/contact')}
+                      className="px-8 py-3.5 bg-white/5 hover:bg-white/10 text-white text-sm font-semibold tracking-wide rounded-[16px] border border-white/10 hover:border-orange-500/50 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 group/btn"
+                    >
+                      Book a Demo
+                      <ArrowRight className="w-4 h-4 text-orange-400 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+
                 </div>
               </div>
             </FadeUp>

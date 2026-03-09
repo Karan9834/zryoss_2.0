@@ -187,7 +187,7 @@ export default function SolutionLayout({
             No fluff. No overspending. Just structured execution.
           </p>
           <Button primary className="px-10 py-4">
-            Get Started →
+            Become a Partner →
           </Button>
         </div>
       </FadeUp>

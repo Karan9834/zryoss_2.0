@@ -54,14 +54,16 @@ export default function ZryossIntroSection() {
             {/* CTA */}
             <div className="flex flex-wrap gap-4 mb-6">
               <button
-                onClick={() => navigate('/platform/business-operating-system')}
+                onClick={() => navigate('/apply')}
                 className="rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:shadow-orange-500/60 transition"
               >
-                Explore the System
+                Become a Partner
               </button>
 
-              <button className="rounded-xl border border-white/10 px-6 py-3 font-semibold text-white hover:border-orange-500/50 hover:text-orange-400 transition inline-flex items-center gap-2">
-                Learn More <ArrowUpRight size={18} />
+              <button className="rounded-xl border border-white/10 px-6 py-3 font-semibold text-white hover:border-orange-500/50 hover:text-orange-400 transition inline-flex items-center gap-2"
+                onClick={() => navigate('/contact')}
+              >
+                Book a Demo <ArrowUpRight size={18} />
               </button>
             </div>
 

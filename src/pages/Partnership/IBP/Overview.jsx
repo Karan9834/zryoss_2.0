@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import FadeUp from "../../../components/animations/FadeUp";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 /* ---------------- Hooks & Utility ---------------- */
 
@@ -70,6 +71,11 @@ export default function Overview() {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-orange-600/30">
+      <Helmet>
+        <title>Independent Business Partner (IBP) | Zryoss</title>
+        <meta name="description" content="Become an Independent Business Partner (IBP) with Zryoss. Build multiple business verticals at scale using our centralized digital execution operating system." />
+        <link rel="canonical" href="https://zryoss.com/partnership/IBP" />
+      </Helmet>
       {/* Background Glows */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/10 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       <div className="absolute middle-0 left-0 w-[500px] h-[500px] bg-orange-500/5 blur-[130px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
@@ -127,58 +133,52 @@ export default function Overview() {
         </div>
       </section>
 
-      {/* ---------------- IBP IS NOT ---------------- */}
+      {/* ---------------- WHAT IS IBP ---------------- */}
       <section className="py-24 relative z-10 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">What IBP Is</h2>
-              <p className="text-neutral-400 text-lg leading-relaxed font-light mb-6">
-                IBP is designed for business builders who think at scale.
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                What is <span className="text-orange-500">IBP?</span>
+              </h2>
+              <p className="text-neutral-400 text-lg leading-relaxed font-light mb-8">
+                Independent Business Partner
               </p>
 
-              <div className="space-y-4">
-                {[
-                  "Operates multiple business verticals",
-                  "Functions as a scale-first partner",
-                  "Powered by Zryoss backend execution system",
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="p-4 rounded-2xl bg-neutral-900/50 border border-white/5 flex items-start gap-3"
-                  >
-                    <CheckCircle2 className="text-orange-500 mt-0.5" size={18} />
-                    <span className="text-neutral-200">{item}</span>
-                  </div>
-                ))}
+              <div className="p-8 rounded-3xl bg-neutral-900/40 border border-white/5 mb-10 relative overflow-hidden group hover:border-orange-500/20 transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <h3 className="text-2xl font-bold mb-4 relative z-10">A senior-level product & network partner</h3>
+                <p className="text-neutral-300 leading-relaxed text-lg relative z-10">
+                  An IBP gets exclusive access to an expansive digital ecosystem, empowering them to aggressively scale and build a massive independent business network.
+                </p>
+              </div>
+
+              <div className="inline-flex flex-col sm:flex-row items-center gap-4 px-8 py-5 rounded-2xl bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/30">
+                <Crown className="text-orange-500 flex-shrink-0" size={28} />
+                <span className="text-white font-bold text-xl tracking-wide text-center sm:text-left">
+                  IBP = Product Leader + Network Builder
+                </span>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={150}>
-              <div className="p-10 rounded-3xl bg-neutral-900/40 border border-white/5">
-                <h3 className="text-2xl font-bold mb-6">Important Clarification</h3>
-
-                <div className="space-y-4">
-                  {[
-                    "IBP is not a job.",
-                    "IBP is not a franchise.",
-                    "IBP is not a recruitment-driven model.",
-                  ].map((item, i) => (
-                    <div
-                      key={i}
-                      className="flex items-start gap-3 p-4 rounded-2xl bg-black/35 border border-white/5"
-                    >
-                      <AlertCircle className="text-orange-400 mt-0.5" size={18} />
-                      <span className="text-neutral-300">{item}</span>
+              <div className="space-y-4">
+                {[
+                  "Gets access to 50+ software & app products",
+                  "Can sell all products under own brand",
+                  "Can create IPPs under itself",
+                  "Earns direct income + passive income",
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="group flex items-center gap-5 p-6 rounded-3xl bg-neutral-900/30 border border-white/5 hover:bg-neutral-900/60 hover:border-orange-500/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_10px_30px_-15px_rgba(234,88,12,0.3)]"
+                  >
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-orange-600/5 border border-orange-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-orange-500 transition-all duration-300">
+                      <CheckCircle2 className="text-orange-500 group-hover:text-white transition-colors duration-300" size={24} />
                     </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-orange-500/15 to-transparent border border-orange-500/20">
-                  <p className="text-neutral-200 leading-relaxed">
-                    IBP is a business operating partnership model focused on execution and scale.
-                  </p>
-                </div>
+                    <span className="text-neutral-200 text-xl font-medium leading-snug">{item}</span>
+                  </div>
+                ))}
               </div>
             </AnimatedSection>
           </div>
