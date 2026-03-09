@@ -51,8 +51,6 @@ const models = [
       { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Deal closing assistance from Zryoss team" },
       { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Professional quotation & invoice creation" },
       { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Access to 100+ verified vendor network" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Central CRM and routing system" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Recurring success model" },
       { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Government funding & startup enablement support" },
     ],
     cta: "Join as IPP",
