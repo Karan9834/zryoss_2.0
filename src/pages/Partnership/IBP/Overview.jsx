@@ -289,32 +289,53 @@ export default function Overview() {
       </section>
 
       {/* ---------------- WHO IS IDEAL ---------------- */}
-      <section className="py-24 relative z-10 bg-[#050505]">
+      <section className="py-14 relative z-10 bg-[#050505]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Who Is an IBP Ideal For?</h2>
-            <p className="text-neutral-400 text-lg max-w-3xl mx-auto font-light leading-relaxed">
-              If you want to operate at strategic and scale level, IBP is built for you.
+          {/* Centered Header */}
+          <AnimatedSection className="text-center mb-10 px-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+              Who Is an <span className="text-orange-500">IBP</span> Ideal For?
+            </h2>
+            <p className="text-neutral-400 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto">
+              The IBP model is designed for experienced leaders and growth-oriented entities who want to build a high-scale business ecosystem without being bogged down by operational delivery.
             </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              "Experienced entrepreneurs",
-              "Business owners and consultants",
-              "Agency founders",
-              "Organizations looking to expand service offerings",
-              "Leaders who want to build business ecosystems",
-            ].map((x, i) => (
-              <AnimatedSection key={i} delay={i * 60}>
-                <div className="p-6 rounded-3xl bg-neutral-900/40 border border-white/5 hover:border-orange-500/20 transition-colors">
-                  <div className="flex items-center gap-3">
-                    <Briefcase className="text-orange-500" size={18} />
-                    <span className="text-neutral-200">{x}</span>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left Column: Image */}
+            <AnimatedSection delay={100}>
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent blur-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl" />
+                <img 
+                  src="/partnership/Who Is an IBP Ideal For.png" 
+                  alt="Who Is an IBP Ideal For" 
+                  className="relative rounded-3xl border border-white/10 shadow-2xl w-full h-auto transform group-hover:scale-[1.01] transition-transform duration-500"
+                />
+              </div>
+            </AnimatedSection>
+
+            {/* Right Column: List Items */}
+            <AnimatedSection delay={200}>
+              <div className="space-y-4">
+                {[
+                  { icon: Briefcase, text: "Experienced entrepreneurs" },
+                  { icon: TrendingUp, text: "Business owners and consultants" },
+                  { icon: Users2, text: "Agency founders" },
+                  { icon: Layers, text: "Organizations looking to expand service offerings" },
+                  { icon: Globe, text: "Leaders who want to build business ecosystems" },
+                ].map((item, i) => (
+                  <div 
+                    key={i}
+                    className="flex items-center gap-4 p-5 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-orange-500/20 hover:bg-neutral-900/60 transition-all duration-300 group"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center group-hover:bg-orange-500 transition-all duration-300">
+                      <item.icon size={18} className="text-orange-500 group-hover:text-white" />
+                    </div>
+                    <span className="text-neutral-200 font-medium">{item.text}</span>
                   </div>
-                </div>
-              </AnimatedSection>
-            ))}
+                ))}
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>

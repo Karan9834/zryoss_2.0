@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Hero from "./Hero";
 import ProblemSection from "./ProblemSection";
 import WhatIsZryoss from "./WhatIsZryoss";
+import PredictableJourneySection from "./PredictableJourneySection";
 import HowItWorks from "./HowItWorks";
 import PartnershipModels from "./PartnershipModels";
 import ManagementSection from "./ManagementSection";
@@ -27,6 +28,7 @@ export default function Home() {
       <Hero />
       <ProblemSection />
       <WhatIsZryoss />
+      <PredictableJourneySection />
       <HowItWorks />
       <PartnershipModels />
       <ManagementSection />

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { PenTool, Users, MonitorPlay, Handshake, Cog } from "lucide-react";
+import { PenTool, Users, MonitorPlay, Handshake, Cog, Globe } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -48,6 +48,14 @@ export default function HowStepsTimelineSection() {
       desc:
         "Our vendor network executes the service under your brand name.",
       bullets: ["Backend Execution", "Vendor Network", "Seamless Delivery"],
+    },
+    {
+      id: "06",
+      title: "Expand Through the Ecosystem",
+      icon: Globe,
+      desc:
+        "Once the business stabilizes, partners can expand their network and revenue channels inside the ecosystem.",
+      bullets: ["Build partner networks", "Create IPP under IBP", "Generate long-term recurring income"],
     },
   ];
 

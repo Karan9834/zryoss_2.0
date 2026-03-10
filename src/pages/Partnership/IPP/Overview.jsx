@@ -14,6 +14,7 @@ import {
   Fingerprint,
   Plus,
   Minus,
+  FileText,
 } from "lucide-react";
 import FadeUp from "../../../components/animations/FadeUp";
 
@@ -164,6 +165,7 @@ export default function Overview() {
     "Business positioning",
     "Sales readiness",
     "Operational alignment",
+    "Market authority positioning",
   ];
 
   const failReasons = [
@@ -232,6 +234,17 @@ export default function Overview() {
       ],
       note: "Credibility + market visibility ensured",
     },
+    {
+      num: "06",
+      title: "Content & Market Authority",
+      icon: FileText,
+      points: [
+        "Niche-specific content pillars",
+        "Authority-driven case studies",
+        "High-conversion service whitepapers",
+      ],
+      note: "Establish yourself as a trusted market leader",
+    },
   ];
 
   const ecosystemPoints = [
@@ -271,7 +284,7 @@ export default function Overview() {
       <div className="absolute middle-0 left-0 w-[500px] h-[500px] bg-orange-500/5 blur-[130px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-24 overflow-hidden border-b border-white/5">
+      <section className="relative pt-20 pb-24 overflow-hidden border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column: Content */}
@@ -355,6 +368,7 @@ export default function Overview() {
                   "You build your independent business brand",
                   "You operate under your chosen name and positioning",
                   "Zryoss powers backend execution as the operating system",
+                  "You scale your business without the overhead of managing service delivery teams",
                 ].map((item, i) => (
                   <div
                     key={i}
@@ -422,16 +436,41 @@ export default function Overview() {
 
           <div className="grid lg:grid-cols-2 gap-10">
             <AnimatedSection>
-              <div className="p-10 rounded-3xl bg-neutral-900/40 border border-white/5 relative overflow-hidden">
+              <div className="p-10 rounded-3xl bg-neutral-900/40 border border-white/5 relative overflow-hidden h-full flex flex-col justify-between">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-60" />
                 <div className="relative">
                   <h3 className="text-2xl font-bold mb-4 text-white">
                     You own the brand.
                   </h3>
-                  <p className="text-neutral-300 leading-relaxed">
+                  <p className="text-neutral-300 leading-relaxed mb-8">
                     Zryoss builds the foundation, aligns positioning with execution
                     capability, and ensures you launch as a real business—not just a logo.
                   </p>
+
+                  <div className="space-y-4 mb-10">
+                    <div className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.8)]" />
+                      <p className="text-white font-bold tracking-tight">Your Identity. Our Infrastructure. Zero Limits.</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.8)]" />
+                      <p className="text-white font-bold tracking-tight">Build the Brand you imagine. Use the System you need.</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.8)]" />
+                      <p className="text-white font-bold tracking-tight">Focus on the Front. We Power the Back.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative">
+                  <button
+                    onClick={() => navigate("/apply")}
+                    className="group px-8 py-4 bg-orange-600 hover:bg-orange-500 text-white rounded-2xl font-bold text-sm transition-all flex items-center gap-3 shadow-[0_10px_30px_-10px_rgba(234,88,12,0.35)] w-fit"
+                  >
+                    Become a Partner
+                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
                 </div>
               </div>
             </AnimatedSection>
@@ -641,16 +680,16 @@ export default function Overview() {
             subtitle="Fast, structured, predictable — and built to reduce startup risk."
           />
 
-          <div className="grid lg:grid-cols-2 gap-10">
-            <AnimatedSection>
-              <div className="p-10 rounded-3xl bg-neutral-900/55 border border-white/5">
+          <div className="grid lg:grid-cols-2 gap-10 items-stretch">
+            <AnimatedSection className="h-full">
+              <div className="p-10 rounded-3xl bg-neutral-900/55 border border-white/5 h-full flex flex-col">
                 <h3 className="text-2xl font-bold mb-6">Timeline & Readiness</h3>
 
                 <p className="text-neutral-400 leading-relaxed mb-6">
                   Brand creation is designed to be fast, structured, and predictable.
                 </p>
 
-                <div className="p-6 rounded-2xl bg-black/35 border border-white/5">
+                <div className="p-6 rounded-2xl bg-black/35 border border-white/5 mb-8">
                   <div className="flex items-center gap-3 mb-2">
                     <Zap size={18} className="text-orange-500" />
                     <span className="font-bold text-white">Goal</span>
@@ -659,14 +698,28 @@ export default function Overview() {
                     The goal is not perfection — the goal is business readiness.
                   </p>
                 </div>
+
+                <div className="mt-auto pt-6 border-t border-white/5 space-y-4">
+                  <p className="text-xs uppercase tracking-[0.2em] text-orange-500/60 font-bold">Predictable Launch Path</p>
+                  {[
+                    "Phase 1: Brand Discovery & Strategy",
+                    "Phase 2: Visual & Digital Foundation",
+                    "Phase 3: Ecosystem Activation & Launch",
+                  ].map((p, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500/50" />
+                      <span className="text-neutral-300 text-sm font-medium">{p}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={120}>
-              <div className="p-10 rounded-3xl bg-neutral-900/55 border border-white/5">
+            <AnimatedSection delay={120} className="h-full">
+              <div className="p-10 rounded-3xl bg-neutral-900/55 border border-white/5 h-full flex flex-col">
                 <h3 className="text-2xl font-bold mb-6">Why This Model Works</h3>
 
-                <div className="space-y-4 text-neutral-300">
+                <div className="space-y-4 text-neutral-300 flex-1">
                   {[
                     "Eliminates early-stage confusion",
                     "Ensures professional market entry",
