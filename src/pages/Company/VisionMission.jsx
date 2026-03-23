@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import FadeUp from "../../components/animations/FadeUp";
-import SplitSection from "../../components/layout/SplitSection";
+import SplitSection from "../../layouts/SplitSection";
 
 export default function VisionMission() {
   return (

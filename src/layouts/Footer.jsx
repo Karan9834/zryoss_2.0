@@ -11,7 +11,7 @@ import {
   CheckCircle2,
   AlertCircle,
 } from "lucide-react";
-import { useEmail } from "../../hooks/useEmail";
+import { useEmail } from "../hooks/useEmail";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

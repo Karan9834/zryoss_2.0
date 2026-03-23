@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUp, MessageSquare } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import ContactModal from "../ContactModal";
+import ContactModal from "../components/ContactModal";
 
 export default function FloatingActions() {
     const [showScroll, setShowScroll] = useState(false);

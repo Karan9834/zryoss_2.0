@@ -1,6 +1,6 @@
 import FadeUp from "../../components/animations/FadeUp";
 import Button from "../../components/ui/Button";
-import SplitSection from "../../components/layout/SplitSection";
+import SplitSection from "../../layouts/SplitSection";
 
 export default function Careers() {
   return (
