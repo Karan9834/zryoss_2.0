@@ -12,17 +12,18 @@ export const useEmail = () => {
     /**
      * Sends email using emailjs.sendForm
      * @param {Object} formRef - The React ref object pointing to the form element
+     * @param {string} [customTemplateId] - Optional template ID to override default
+     * @param {string} [customServiceId] - Optional service ID to override default
      * @returns {Promise<{success: boolean, text?: string, error?: any}>}
      */
-    const sendEmail = async (formRef) => {
+    const sendEmail = async (formRef, customTemplateId, customServiceId) => {
+        const serviceId = customServiceId || import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = customTemplateId || import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
         // Basic environment variable check
-        if (
-            !import.meta.env.VITE_EMAILJS_SERVICE_ID ||
-            !import.meta.env.VITE_EMAILJS_TEMPLATE_ID ||
-            !import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-        ) {
-            console.warn("EmailJS environment variables are missing!");
-            // We don't block here to allow testing if someone hardcodes, but good to warn.
+        if (!serviceId || !templateId || !publicKey) {
+            console.warn("EmailJS environment variables or custom IDs are missing!");
         }
 
         setLoading(true);
@@ -30,11 +31,11 @@ export const useEmail = () => {
 
         try {
             const result = await emailjs.sendForm(
-                import.meta.env.VITE_EMAILJS_SERVICE_ID,
-                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                serviceId,
+                templateId,
                 formRef.current,
                 {
-                    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+                    publicKey: publicKey,
                 }
             );
 

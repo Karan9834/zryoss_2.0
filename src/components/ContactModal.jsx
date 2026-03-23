@@ -6,8 +6,8 @@ export default function ContactModal({ open, onClose }) {
     const formRef = useRef();
     const { sendEmail, loading: emailLoading } = useEmail();
     const [formData, setFormData] = useState({
-        first_name: "",
-        email: "",
+        full_name: "",
+        work_email: "",
         phone: "",
         message: "",
     });
@@ -18,13 +18,13 @@ export default function ContactModal({ open, onClose }) {
 
     const validate = () => {
         let tempErrors = {};
-        if (!formData.first_name.trim()) tempErrors.first_name = "Full Name is required";
+        if (!formData.full_name.trim()) tempErrors.full_name = "Full Name is required";
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!formData.email) {
-            tempErrors.email = "Email is required";
-        } else if (!emailRegex.test(formData.email)) {
-            tempErrors.email = "Please enter a valid work email";
+        if (!formData.work_email) {
+            tempErrors.work_email = "Email is required";
+        } else if (!emailRegex.test(formData.work_email)) {
+            tempErrors.work_email = "Please enter a valid work email";
         }
 
         if (!formData.phone) {
@@ -66,12 +66,16 @@ export default function ContactModal({ open, onClose }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (validate()) {
-            const result = await sendEmail(formRef);
+            const result = await sendEmail(
+                formRef,
+                import.meta.env.VITE_EMAILJS_FLOATING_TEMPLATE_ID,
+                import.meta.env.VITE_EMAILJS_FLOATING_SERVICE_ID
+            );
             if (result.success) {
                 setSubmitted(true);
                 setFormData({
-                    first_name: "",
-                    email: "",
+                    full_name: "",
+                    work_email: "",
                     phone: "",
                     message: "",
                 });
@@ -169,23 +173,23 @@ export default function ContactModal({ open, onClose }) {
 
                             <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
                                 <div className="relative">
-                                    {errors.first_name && <ErrorBubble msg={errors.first_name} />}
+                                    {errors.full_name && <ErrorBubble msg={errors.full_name} />}
                                     <input
-                                        name="first_name"
-                                        className={`w-full px-6 py-4 rounded-xl bg-white/[0.04] border ${errors.first_name ? "border-orange-600" : "border-white/10"} focus:border-orange-500/50 focus:bg-white/[0.06] outline-none transition-all placeholder:text-gray-600 text-white`}
+                                        name="full_name"
+                                        className={`w-full px-6 py-4 rounded-xl bg-white/[0.04] border ${errors.full_name ? "border-orange-600" : "border-white/10"} focus:border-orange-500/50 focus:bg-white/[0.06] outline-none transition-all placeholder:text-gray-600 text-white`}
                                         placeholder="Full Name"
-                                        value={formData.first_name}
+                                        value={formData.full_name}
                                         onChange={handleChange}
                                     />
                                 </div>
 
                                 <div className="relative">
-                                    {errors.email && <ErrorBubble msg={errors.email} />}
+                                    {errors.work_email && <ErrorBubble msg={errors.work_email} />}
                                     <input
-                                        name="email"
-                                        className={`w-full px-6 py-4 rounded-xl bg-white/[0.04] border ${errors.email ? "border-orange-600" : "border-white/10"} focus:border-orange-500/50 focus:bg-white/[0.06] outline-none transition-all placeholder:text-gray-600 text-white`}
+                                        name="work_email"
+                                        className={`w-full px-6 py-4 rounded-xl bg-white/[0.04] border ${errors.work_email ? "border-orange-600" : "border-white/10"} focus:border-orange-500/50 focus:bg-white/[0.06] outline-none transition-all placeholder:text-gray-600 text-white`}
                                         placeholder="Work Email"
-                                        value={formData.email}
+                                        value={formData.work_email}
                                         onChange={handleChange}
                                     />
                                 </div>
