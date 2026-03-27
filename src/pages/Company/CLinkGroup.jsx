@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 import FadeUp from "../../components/animations/FadeUp";
 import {
     ArrowRight,
-    Shield,
     BriefcaseBusiness,
-    BadgeCheck,
     Globe,
-    Lightbulb,
     Building,
     Zap,
     Phone,
@@ -47,6 +44,7 @@ export default function CLinkGroup() {
             legal: "Clink HR Services Private Ltd.",
             desc: "Specialized in strategic human resource management, executive search, and workforce planning for global enterprises.",
             logo: "/brands_logo/clink_hr.png",
+            href: "https://clinkhr.com/",
         },
     ];
 
@@ -54,7 +52,8 @@ export default function CLinkGroup() {
         {
             title: "Kryoss Softech",
             desc: "Kryoss Softech is providing Customized Software Development, Web Application Development, Mobile Application Development and IT Consulting Services. We have earned the pride of being one of the leading App & web based software solution provider in India, we develop software solution that helps our customers to outperform the competition and stay ahead in today’s competitive business environment.",
-            image: "/clink_group/kryoss_softech_2.jpg",
+            image: "/clink_group/Kryoss-softech.png",
+            href: "https://kryosssoftech.org/",
         },
         {
             title: "Kryoss Works",
@@ -64,7 +63,8 @@ export default function CLinkGroup() {
         {
             title: "CLink HR",
             desc: "CLink Hr has set a new benchmark in the competitive world of talent acquisition through diligently conceptualized talent services and pioneer of organized recruitment as we grew, we built and acquired new businesses to provide our customers and candidates with greater degrees of partnership and value. CLink Hr is a preferred talent acquisition partner to Multinationals and leading Indian businesses.",
-            image: "/clink_group/clink_hr_2.png",
+            image: "/clink_group/Clink-hr.png",
+            href: "https://clinkhr.com/",
         },
         {
             title: "Edu-Linkers",
@@ -74,7 +74,8 @@ export default function CLinkGroup() {
         {
             title: "VyomBiz",
             desc: "VyomBiz has a dedicated team of professionals to provide a comprehensive service. Not only we help the startup to incorporation of the business but also, we provide end to end services to maintain and take care of Mandatory Compliance of your Company. VyomBiz is the India’s largest online key to open the door of your business by saving your time and money with extreme satisfaction. Our company has 5000 huge network with brilliant professionals of Charted Accountants, CS, Lawyers, and Bankers across all over the India.",
-            image: "/clink_group/vyomworks.png",
+            image: "/clink_group/Vyombiz.png",
+            href: "https://vyombiz.in/",
         },
         {
             title: "MediKryoss",
@@ -84,13 +85,9 @@ export default function CLinkGroup() {
         {
             title: "AdKryoss",
             desc: "AdKryoss is the marketing and growth powerhouse of the ecosystem, specializing in performance marketing, brand scaling, and strategic digital execution. We manage end-to-end campaigns, from SEO and content strategy to paid advertising and social media growth, ensuring every brand under the Zryoss umbrella achieves maximum market visibility and measurable ROI.",
-            image: "/adkryoss.jpg",
+            image: "/clink_group/adkryoss.png",
+            href: "https://adkryoss.com/",
         },
-        // {
-        //     title: "Edu Kryoss",
-        //     desc: "At Edu-Kryoss, we have abilities to deliver the best mobility solutions for education industry from an app for play group students to an app for engineering students. In order to accomplish the need of online education and e-learning, an educational mobile app needs to build using most advanced features gives users’ real time experience to use an app.",
-        //     image: "/clink_group/edukryoss.png",
-        // },
     ];
 
     return (
@@ -136,7 +133,7 @@ export default function CLinkGroup() {
                                     <img
                                         src="/clink_group/hero_img.png"
                                         alt="CLink Group Technology"
-                                        className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                                        className="w-full h-auto transform hover:scale-105 transition-transform duration-700"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
                                 </div>
@@ -148,9 +145,9 @@ export default function CLinkGroup() {
 
             {/* SECTION 2: WHO WE ARE */}
             <section className="py-24 max-w-7xl mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-16 items-stretch">
                     <FadeUp>
-                        <div className="relative rounded-3xl overflow-hidden border border-white/10 aspect-video lg:aspect-square">
+                        <div className="relative rounded-3xl overflow-hidden border border-white/10 h-full">
                             <img
                                 src="/clink_group/who_we_are.webp"
                                 alt="Who We Are"
@@ -170,22 +167,7 @@ export default function CLinkGroup() {
                                     Clink Group is a global systems integrator committed to delivering leading-edge, technology-enabled, and business-driven solutions to small, medium, and global organizations in verticals such as the public sector, financial services, energy & utility, telecommunications, pharmaceutical & biotech, healthcare, and technology. We are a provider of software, solutions, and services focused on deploying business-driven, technology-enabled solutions that create next-generation competitive advantages for our global customers.
                                 </p>
                             </div>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
-                                {[
-                                    { label: "Global Reach", value: "20+ Countries", icon: <Globe className="text-orange-500 w-6 h-6" /> },
-                                    { label: "Experience", value: "10+ Years", icon: <BadgeCheck className="text-orange-500 w-6 h-6" /> },
-                                    { label: "Enterprise Scale", value: "Fortune 500 Ready", icon: <Shield className="text-orange-500 w-6 h-6" /> },
-                                    { label: "Innovation", value: "Tech-Driven", icon: <Lightbulb className="text-orange-500 w-6 h-6" /> },
-                                ].map((item) => (
-                                    <div key={item.label} className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-4">
-                                        <div className="mt-1">{item.icon}</div>
-                                        <div>
-                                            <div className="text-xs text-gray-400 uppercase tracking-widest">{item.label}</div>
-                                            <div className="text-lg font-bold text-white">{item.value}</div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
+
                         </div>
                     </FadeUp>
                 </div>
@@ -194,31 +176,31 @@ export default function CLinkGroup() {
             {/* SECTION 3: WHAT WE DO */}
             <section className="py-24 bg-white/[0.02] border-y border-white/5">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <FadeUp>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-12">What We Do</h2>
+                    </FadeUp>
+                    <div className="grid lg:grid-cols-2 gap-16 items-stretch">
                         <FadeUp>
-                            <div className="space-y-10">
-                                <h2 className="text-3xl md:text-4xl font-bold">What We Do</h2>
-                                <div className="space-y-4">
-                                    {[
-                                        { title: "Consulting & Digital Transformation", desc: "Strategic advice and implementation to modernize legacy operations." },
-                                        { title: "Technology & Engineering Services", desc: "High-end software engineering and infrastructure management." },
-                                        { title: "System Integration", desc: "Seamlessly connecting disparate tech stacks into a unified ecosystem." },
-                                        { title: "Industry-specific solutions", desc: "Tailored frameworks for finance, telecom, healthcare, and more." },
-                                    ].map((item, idx) => (
-                                        <div key={idx} className="group p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-orange-500/50 transition-all">
-                                            <h3 className="text-lg font-bold text-white group-hover:text-orange-500 transition-colors uppercase tracking-wide">{item.title}</h3>
-                                            <p className="text-gray-400 mt-2 text-sm">{item.desc}</p>
-                                        </div>
-                                    ))}
-                                </div>
+                            <div className="space-y-4 h-full flex flex-col justify-between">
+                                {[
+                                    { title: "Consulting & Digital Transformation", desc: "Strategic advice and implementation to modernize legacy operations." },
+                                    { title: "Technology & Engineering Services", desc: "High-end software engineering and infrastructure management." },
+                                    { title: "System Integration", desc: "Seamlessly connecting disparate tech stacks into a unified ecosystem." },
+                                    { title: "Industry-specific solutions", desc: "Tailored frameworks for finance, telecom, healthcare, and more." },
+                                ].map((item, idx) => (
+                                    <div key={idx} className="group p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-orange-500/50 transition-all flex-1 flex flex-col justify-center">
+                                        <h3 className="text-lg font-bold text-orange-500 transition-colors uppercase tracking-wide">{item.title}</h3>
+                                        <p className="text-gray-400 mt-2 text-sm">{item.desc}</p>
+                                    </div>
+                                ))}
                             </div>
                         </FadeUp>
                         <FadeUp delay={0.2}>
-                            <div className="relative rounded-3xl overflow-hidden border border-white/10">
+                            <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-white p-8 h-full flex items-center">
                                 <img
                                     src="/clink_group/what_we_do.png"
                                     alt="What We Do"
-                                    className="w-full h-auto object-cover"
+                                    className="w-full h-auto object-contain max-h-full"
                                 />
                             </div>
                         </FadeUp>
@@ -316,34 +298,49 @@ export default function CLinkGroup() {
                             <div className="w-32 h-1 bg-orange-500 mx-auto" />
                         </div>
                     </FadeUp>
-                    <div className="space-y-32">
-                        {brands.map((brand, idx) => (
-                            <FadeUp key={idx} delay={0.1}>
-                                <div className={`flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-16 items-center`}>
-                                    <div className="w-full lg:w-1/2 relative">
-                                        <div className="absolute -inset-4 bg-orange-500/5 blur-2xl rounded-3xl" />
-                                        <img
-                                            src={brand.image}
-                                            alt={brand.title}
-                                            className="relative rounded-[40px] border border-white/10 w-full aspect-[16/10] object-cover shadow-2xl"
-                                        />
+                </div>
+                <div className="space-y-0">
+                    {brands.map((brand, idx) => (
+                        <div key={idx} className={`${idx % 2 !== 0 ? "bg-zinc-900/50 border-y border-white/5" : ""} py-24 w-full`}>
+                            <div className="max-w-7xl mx-auto px-6">
+                                <FadeUp delay={0.1}>
+                                    <div className={`flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-16 items-center`}>
+                                        <div className="w-full lg:w-1/2 relative">
+                                            <div className="absolute -inset-4 bg-orange-500/5 blur-2xl rounded-3xl" />
+                                            <img
+                                                src={brand.image}
+                                                alt={brand.title}
+                                                className="relative rounded-[40px] border border-white/10 w-full h-auto shadow-2xl"
+                                            />
+                                        </div>
+                                        <div className="w-full lg:w-1/2 space-y-6">
+                                            <h3 className="text-3xl font-extrabold text-white uppercase tracking-tight">{brand.title}</h3>
+                                            <p className="text-gray-300 text-lg leading-relaxed font-normal">
+                                                {brand.desc}
+                                            </p>
+                                            {brand.href ? (
+                                                <a
+                                                    href={brand.href}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-3 text-orange-500 font-bold uppercase tracking-[0.2em] hover:text-orange-400 transition-colors group"
+                                                >
+                                                    Visit Website <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                                                </a>
+                                            ) : (
+                                                <Link
+                                                    to="/contact"
+                                                    className="inline-flex items-center gap-3 text-orange-500 font-bold uppercase tracking-[0.2em] hover:text-orange-400 transition-colors group"
+                                                >
+                                                    Visit Website <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                                                </Link>
+                                            )}
+                                        </div>
                                     </div>
-                                    <div className="w-full lg:w-1/2 space-y-6">
-                                        <h3 className="text-3xl font-extrabold text-white uppercase tracking-tight">{brand.title}</h3>
-                                        <p className="text-gray-300 text-lg leading-relaxed font-normal">
-                                            {brand.desc}
-                                        </p>
-                                        <Link
-                                            to="/contact"
-                                            className="inline-flex items-center gap-3 text-orange-500 font-bold uppercase tracking-[0.2em] hover:text-orange-400 transition-colors group"
-                                        >
-                                            Visit Website <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                                        </Link>
-                                    </div>
-                                </div>
-                            </FadeUp>
-                        ))}
-                    </div>
+                                </FadeUp>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section >
 

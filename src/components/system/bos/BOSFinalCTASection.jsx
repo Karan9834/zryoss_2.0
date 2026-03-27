@@ -48,7 +48,7 @@ export default function BOSFinalCTASection() {
               onClick={() => navigate('/apply')}
               className="rounded-2xl border border-white/15 px-8 py-3 font-semibold text-white hover:border-orange-500 hover:text-orange-300 transition inline-flex items-center justify-center gap-2"
             >
-              Join as IPP / IBP <ArrowUpRight size={18} />
+              Join as a Partner <ArrowUpRight size={18} />
             </button>
           </div>
         </motion.div>

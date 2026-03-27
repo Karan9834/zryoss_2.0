@@ -63,7 +63,7 @@ export default function BOSHeroSection() {
                 onClick={() => navigate('/apply')}
                 className="rounded-xl border border-white/10 bg-white/5 px-8 py-4 font-semibold text-white hover:border-orange-500/50 hover:text-orange-300 transition inline-flex items-center justify-center gap-2"
               >
-                Join as IPP / IBP <ArrowUpRight size={18} />
+                Join as a Partner <ArrowUpRight size={18} />
               </button>
             </div>
           </div>

@@ -63,13 +63,18 @@ const KryossSoftech = () => {
               <div className="flex flex-wrap gap-4 mb-6">
                 <button
                   onClick={() => navigate('/apply')}
-                  className="rounded-xl bg-gradient-to-r from-orange-500 to-white px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:shadow-orange-500/60 transition"
+                  className="rounded-xl bg-gradient-to-r from-orange-500 to-white px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/30 hover:shadow-orange-500/60 transition"
                 >
                   Partner with Zryoss
                 </button>
-                {/* <button className="rounded-xl border border-white/10 px-6 py-3 font-semibold text-white hover:border-orange-500/50 hover:text-orange-400 transition inline-flex items-center gap-2">
-                  View Solutions <ArrowRight size={18} />
-                </button> */}
+                <a
+                  href="https://kryosssoftech.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl border border-white/10 px-6 py-3 font-semibold text-white hover:border-orange-500/50 hover:text-orange-400 transition inline-flex items-center gap-2"
+                >
+                  Visit Website <ArrowRight size={18} />
+                </a>
               </div>
 
               {/* Small text */}
