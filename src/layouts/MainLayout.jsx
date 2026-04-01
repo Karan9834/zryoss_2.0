@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import FloatingActions from "./FloatingActions";
 import ScrollToTop from "../components/ScrollToTop";
+import DustTrail from "../components/animations/DustTrail";
 
 const LoadingFallback = () => (
   <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
@@ -13,6 +14,7 @@ const LoadingFallback = () => (
 export default function MainLayout({ children }) {
   return (
     <div className="min-h-screen flex flex-col bg-slate-950 text-white selection:bg-orange-500/30">
+      <DustTrail />
       <ScrollToTop />
       <FloatingActions />
       <Navbar />
