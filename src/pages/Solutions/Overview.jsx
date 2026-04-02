@@ -25,6 +25,8 @@ import {
   Megaphone
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "../../components/common/SEO";
+import { pagesSEO } from "../../data/seoData";
 import FadeUp from "../../components/animations/FadeUp";
 
 const SolutionsOverview = () => {
@@ -34,6 +36,7 @@ const SolutionsOverview = () => {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white selection:bg-orange-500/30 font-sans">
+      <SEO {...pagesSEO.solutions} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">

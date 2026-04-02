@@ -14,6 +14,8 @@ import {
   Zap,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import SEO from "../../components/common/SEO";
+import { pagesSEO } from "../../data/seoData";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -34,6 +36,7 @@ export default function PartnershipOverview() {
   const navigate = useNavigate();
   return (
     <div className="bg-[#050505] text-white overflow-hidden font-sans">
+      <SEO {...pagesSEO.partnership} />
       <section className="relative pt-40 pb-24 overflow-hidden border-b border-white/5">
 
         {/* Background Glows (Matching Solutions Layout) */}

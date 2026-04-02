@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Pages -->
+  <url>
+    <loc>https://zryoss.com/</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://zryoss.com/apply</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://zryoss.com/contact</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Platform -->
+  <url>
+    <loc>https://zryoss.com/platform/what-is-zryoss</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://zryoss.com/platform/business-operating-system</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Solutions -->
+  <url>
+    <loc>https://zryoss.com/solutions</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Partnership -->
+  <url>
+    <loc>https://zryoss.com/partnership</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://zryoss.com/resources/blog</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Company -->
+  <url>
+    <loc>https://zryoss.com/company/about</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.80</priority>
+  </url>
+  
+  <!-- Policies -->
+  <url>
+    <loc>https://zryoss.com/terms</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://zryoss.com/privacy</loc>
+    <lastmod>2026-04-02</lastmod>
+    <priority>0.50</priority>
+  </url>
+</urlset>

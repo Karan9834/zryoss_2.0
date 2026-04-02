@@ -1,3 +1,5 @@
+import SEO from "../../components/common/SEO";
+import { pagesSEO } from "../../data/seoData";
 import ZryossIntroSection from "../../components/system/ZryossIntroSection";
 import ProblemZryossSolvesSection from "../../components/system/ProblemZryossSolvesSection";
 import WhatExactlyZryossSection from "../../components/system/WhatExactlyZryossSection";
@@ -12,6 +14,7 @@ import BrandEngineSection from "../../components/system/BrandEngineSection";
 export default function WhatIsZryossPage() {
   return (
     <>
+      <SEO {...pagesSEO.whatIsZryoss} />
       <ZryossIntroSection />
       {/* next sections here */}
       <ProblemZryossSolvesSection />

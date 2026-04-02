@@ -1,4 +1,6 @@
 import React from "react";
+import SEO from "../../components/common/SEO";
+import { pagesSEO } from "../../data/seoData";
 import FadeUp from "../../components/animations/FadeUp";
 import { Link } from "react-router-dom";
 import {
@@ -42,6 +44,7 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-[#121212] text-white">
+      <SEO {...pagesSEO.about} />
       {/* ===================================================== */}
       {/* 1) HERO SECTION */}
       {/* ===================================================== */}

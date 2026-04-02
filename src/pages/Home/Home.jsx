@@ -1,4 +1,5 @@
-import { Helmet } from "react-helmet-async";
+import SEO from "../../components/common/SEO";
+import { pagesSEO, organizationSchema } from "../../data/seoData";
 import Hero from "./Hero";
 import ProblemSection from "./ProblemSection";
 import WhatIsZryoss from "./WhatIsZryoss";
@@ -20,11 +21,10 @@ import HeroContact from "./HeroContact";
 export default function Home() {
   return (
     <>
-      <Helmet>
-        <title>Home | Zryoss</title>
-        <meta name="description" content="Zryoss is the ultimate business operating system. Build, scale, and manage multiple business verticals through one centralized ecosystem." />
-        <link rel="canonical" href="https://zryoss.com/" />
-      </Helmet>
+      <SEO 
+        {...pagesSEO.home} 
+        structuredData={organizationSchema}
+      />
       <Hero />
       <ProblemSection />
       <WhatIsZryoss />
