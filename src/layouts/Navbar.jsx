@@ -259,7 +259,8 @@ export default function Navbar() {
   const activeConfig = navData.find((n) => n.key === activeMenu);
 
   // dropdown width based on columns
-  const getWidthByColumns = (cols) => {
+  const getWidthByColumns = (key, cols) => {
+    if (key === "resources") return 620;
     if (!cols) return 700;
     if (cols.length === 1) return 560;
     if (cols.length === 2) return 980;
@@ -271,7 +272,7 @@ export default function Navbar() {
     if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
 
     const config = navData.find((n) => n.key === key);
-    const desiredWidth = getWidthByColumns(config?.columns);
+    const desiredWidth = getWidthByColumns(key, config?.columns);
 
     const btnRect = e.currentTarget.getBoundingClientRect();
     const navRect = navRef.current?.getBoundingClientRect();
@@ -417,7 +418,11 @@ export default function Navbar() {
                   className={`p-8 ${idx !== 0 ? "border-t lg:border-t-0 lg:border-l border-white/10" : ""
                     }`}
                 >
-                  <MegaColumn column={col} onNavigate={() => setActiveMenu(null)} />
+                  <MegaColumn
+                    column={col}
+                    onNavigate={() => setActiveMenu(null)}
+                    forceSingle={activeConfig?.key === "resources"}
+                  />
                 </div>
               ))}
             </div>
@@ -481,14 +486,14 @@ export default function Navbar() {
 }
 
 /* Mega Column */
-function MegaColumn({ column, onNavigate }) {
+function MegaColumn({ column, onNavigate, forceSingle }) {
   return (
     <div>
       <div className="text-[11px] uppercase tracking-[0.25em] text-white/45 mb-5 font-semibold">
         {column.heading}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+      <div className={`grid grid-cols-1 ${forceSingle ? "" : "sm:grid-cols-2"} gap-x-6 gap-y-3`}>
         {column.links.map((link) => (
           <Link
             key={link.title}
