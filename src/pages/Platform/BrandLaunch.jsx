@@ -80,11 +80,11 @@ export default function BrandLaunchSupport() {
             {/* Right Image */}
             <FadeUp delay={0.2} className="relative">
               <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+              <div className="relative w-full overflow-hidden group">
                 <img
-                  src="/support_and_framework.jpg"
+                  src="/images/platform/execution.jpg"
                   alt="Brand Launch Framework"
-                  className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                  className="w-full h-auto object-contain rounded-2xl transform hover:scale-105 transition-transform duration-700"
                 />
               </div>
             </FadeUp>

@@ -250,12 +250,12 @@ export default function AccountManagement() {
 
             {/* Right Column: Image */}
             <FadeUp delay={0.2}>
-              <div className="relative mt-10 lg:mt-0">
-                <div className="absolute inset-0 bg-orange-500/20 blur-[100px] rounded-full" />
+              <div className="relative mt-10 lg:mt-0 w-full overflow-hidden group">
+                <div className="absolute inset-0 bg-orange-500/10 blur-[100px] rounded-full -z-10" />
                 <img
-                  src="/operations_hero_images/Account_Management.jpeg"
+                  src="/account_management_hero_new.png"
                   alt="Account Management"
-                  className="relative rounded-3xl shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-transform duration-500 object-cover w-full h-auto aspect-[4/3]"
+                  className="relative w-full h-auto object-contain rounded-2xl transform hover:scale-105 transition-transform duration-700"
                 />
               </div>
             </FadeUp>

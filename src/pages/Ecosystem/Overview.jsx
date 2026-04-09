@@ -30,6 +30,8 @@ const partnerImage = "/partner.png";
 const globalMapImage = "/images/ecosystem/global_impact_map.png";
 const heroBgImage = "/images/ecosystem/ecosystem_bg.png";
 const coreSystemImage = "/images/ecosystem/ecosystem_core.png";
+const ecosystemFlowImage = "/images/ecosystem/Ecosystem-flow.jpg";
+
 
 export default function Overview() {
   const navigate = useNavigate();
@@ -167,11 +169,11 @@ export default function Overview() {
             <FadeUp delay={0.2}>
               <div className="relative">
                 <div className="absolute inset-0 rounded-3xl bg-orange-500/10 blur-2xl -z-10" />
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-2">
+                <div className="relative w-full overflow-hidden group">
                   <img
-                    src="/overview_ecosystem.png"
-                    alt="Ecosystem Overview"
-                    className="w-full h-[260px] md:h-[420px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-700"
+                    src={ecosystemFlowImage}
+                    alt="Ecosystem Flow"
+                    className="w-full h-auto object-contain rounded-2xl transform hover:scale-105 transition-transform duration-700"
                   />
                 </div>
               </div>

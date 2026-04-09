@@ -30,6 +30,8 @@ const fadeUp = {
 const vendorHubImage = "/images/ecosystem/vendor_network_hub.png";
 const heroBgImage = "/images/ecosystem/vendor_bg.png";
 const vendorAppImage = "/images/ecosystem/vendor_app.png";
+const roleClarityImage = "/images/ecosystem/Role-clarity.jpg";
+
 
 export default function Vendors() {
     const navigate = useNavigate();
@@ -256,9 +258,12 @@ export default function Vendors() {
                                 </div>
                             </div>
                             <div className="md:w-1/2 flex justify-center">
-                                <div className="relative w-[300px] h-[600px] bg-[#050505] rounded-[3rem] border-8 border-neutral-900 shadow-2xl relative overflow-hidden group">
-                                    <img src={vendorAppImage} alt="Vendor App Interface" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
-                                    <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/80 to-transparent pointer-events-none" />
+                                <div className="relative w-full max-w-[650px] overflow-hidden group">
+                                    <img
+                                        src={roleClarityImage}
+                                        alt="Role Clarity"
+                                        className="w-full h-auto object-contain rounded-2xl opacity-95 group-hover:opacity-100 transition-opacity"
+                                    />
                                 </div>
                             </div>
                         </div>
