@@ -9,6 +9,7 @@ import PartnershipModels from "./PartnershipModels";
 import ManagementSection from "./ManagementSection";
 // import Brands from "./Brands";
 import CoreBrands from "./CoreBrands";
+import ConnectedBrandsSection from "./ConnectedBrandsSection";
 import Solutions from "./Solutions";
 import BlogSection from "./BlogSection";
 import WhyZryoss from "./WhyZryoss";
@@ -34,6 +35,7 @@ export default function Home() {
       <ManagementSection />
       {/* <Brands /> */}
       <CoreBrands />
+      <ConnectedBrandsSection />
       <Solutions />
       <BlogSection />
       <WhyZryoss />
