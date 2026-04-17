@@ -29,13 +29,13 @@ export default function Home() {
       <Hero />
       <ProblemSection />
       <WhatIsZryoss />
+      <ConnectedBrandsSection />
       <PredictableJourneySection />
       <HowItWorks />
       <PartnershipModels />
       <ManagementSection />
       {/* <Brands /> */}
       <CoreBrands />
-      <ConnectedBrandsSection />
       <Solutions />
       <BlogSection />
       <WhyZryoss />
