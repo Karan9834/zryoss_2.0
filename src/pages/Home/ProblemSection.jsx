@@ -13,23 +13,23 @@ const FadeUp = ({ children, delay = 0 }) => {
 
 const problems = [
     {
-        title: "Limited Career Paths",
-        desc: "Traditional job markets are increasingly constrained, leaving high-potential individuals with limited avenues for true growth and ownership.",
+        title: "Low Brand Visibility",
+        desc: "Most businesses struggle to reach the right audience because they lack consistent content, online presence, and personal branding.",
         icon: "💼"
     },
     {
-        title: "Execution Gaps",
-        desc: "Most startups and businesses fail not due to a lack of vision, but because they cannot bridge the gap between idea and professional execution.",
+        title: "Execution Challenges",
+        desc: "Even with great ideas, businesses fail to execute due to lack of systems, expert support, and reliable backend infrastructure.",
         icon: "⚙️"
     },
     {
-        title: "The Founder's Trap",
-        desc: "Business owners often get stuck managing vendors, internal teams, and day-to-day chaos instead of focusing on strategic growth.",
+        title: "Stuck in Daily Operations",
+        desc: "Business owners get trapped in managing tasks, vendors, and daily work instead of focusing on growth and scaling.",
         icon: "🕸️"
     },
     {
-        title: "Scaling Paradox",
-        desc: "Without robust systems, rapid growth often breaks internal operations, leading to decreased quality and systemic collapse.",
+        title: "Unstable Growth",
+        desc: "Without strong branding and systems, growth becomes inconsistent, unpredictable, and difficult to sustain long-term.",
         icon: "📈"
     }
 ];
@@ -61,17 +61,17 @@ export default function ProblemSection() {
                 <FadeUp>
                     <div className="text-center mb-20">
                         <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-4 block">
-                            The Problem We Solve
+                            THE PROBLEM WE SOLVE
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
-                            Why Most People and{" "}
+                            Why Most Businesses Fail to{" "}
                             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-1">
-                                Businesses Struggle
+                                Build a Strong Brand
                             </span>
                         </h2>
                         <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-6" />
                         <p className="text-gray-400 text-lg max-w-3xl mx-auto font-light">
-                            The modern business reality is difficult. Effort alone is no longer enough to guarantee success in a fragmented market.
+                            In today&apos;s digital-first world, businesses don&apos;t fail because of lack of effort — they fail because they lack visibility, content, and structured execution systems.
                         </p>
                     </div>
                 </FadeUp>
@@ -127,7 +127,7 @@ export default function ProblemSection() {
                             <p className="text-white/60 uppercase tracking-[0.2em] text-[11px] md:text-[13px] font-semibold flex flex-wrap items-center justify-center gap-2 md:gap-3">
                                 <span>100+ Vendor Ecosystem</span>
                                 <span className="text-orange-500/50 hidden md:block">|</span>
-                                <span>Dedicated Support</span>
+                                <span>Content-Driven Growth</span>
                                 <span className="text-orange-500/50 hidden md:block">|</span>
                                 <span>Scalable Model</span>
                             </p>

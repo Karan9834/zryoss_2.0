@@ -25,3 +25,4 @@ dist-ssr
 *.sw?
 dist.zip
 dist/
+bundle-analysis.html

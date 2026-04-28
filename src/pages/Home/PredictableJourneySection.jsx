@@ -15,7 +15,7 @@ import {
   GitBranch,
   Hammer
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 /**
  * PredictableJourneySection
@@ -29,54 +29,53 @@ const fadeUp = {
 };
 
 export default function PredictableJourneySection() {
-  const navigate = useNavigate();
   const steps = [
     {
       id: "01",
-      title: "Connect with the System",
-      desc: "Start by connecting with Zryoss. Instead of starting from zero, you begin with a system already in place.",
+      title: "Connect with Zryoss",
+      desc: "Start with a ready ecosystem instead of building everything from scratch.",
       icon: LinkIcon,
-      bullets: ["Proven business framework", "Execution support", "Existing ecosystem"],
+      bullets: ["Business framework", "Content + branding system", "Execution support"],
       color: "from-orange-500/20 to-amber-500/20",
     },
     {
       id: "02",
-      title: "Choose Your Path (IPP or IBP)",
-      desc: "Pick the path that matches your stage today — individual growth or business scaling.",
+      title: "Choose Your Growth Path",
+      desc: "Pick what fits you: Start Your Own Brand (for new founders) or Scale Your Existing Business (for business owners).",
       icon: GitBranch,
-      bullets: ["IPP: individuals", "IBP: businesses", "Structured partner paths"],
+      bullets: ["For individuals & founders", "For agencies & businesses", "Structured growth paths"],
       color: "from-amber-500/10 to-transparent",
     },
     {
       id: "03",
-      title: "Build Using the Framework",
-      desc: "Zryoss provides a structured build process so you don’t figure everything out alone.",
+      title: "Build Your Brand & Presence",
+      desc: "We help you create authority through consistent content and digital presence.",
       icon: Hammer,
-      bullets: ["Positioning & structure", "Processes & workflows", "Systems setup"],
+      bullets: ["Podcast creation", "Reels & content production", "Personal branding", "Website & digital presence"],
       color: "from-orange-500/20 to-amber-500/20",
     },
     {
       id: "04",
-      title: "Execute with Ecosystem Support",
-      desc: "Execution is where most fail. Zryoss solves this through ecosystem-led support layers.",
+      title: "Execute with Zryoss Backend",
+      desc: "You focus on clients — we handle delivery.",
       icon: Zap,
-      bullets: ["Marketing engines", "HR & talent", "Tech & automation"],
+      bullets: ["Vendor execution", "Operations management", "Tech & automation", "HR & resources"],
       color: "from-amber-500/10 to-transparent",
     },
     {
       id: "05",
       title: "Scale Without Chaos",
-      desc: "As growth happens, the OS ensures stability — roles, quality control, predictable systems.",
+      desc: "Grow without breaking your system.",
       icon: ShieldCheck,
-      bullets: ["Accountability", "Quality control", "Reduced dependency"],
+      bullets: ["Quality control", "Process stability", "Team support", "Reduced dependency"],
       color: "from-orange-500/20 to-amber-500/20",
     },
     {
       id: "06",
-      title: "Expand Through the Ecosystem",
-      desc: "Once the business stabilizes, partners can expand their network and revenue channels inside the ecosystem.",
+      title: "Expand Your Business",
+      desc: "Unlock more growth opportunities.",
       icon: Share2,
-      bullets: ["Build partner networks", "Create IPP under IBP", "Generate recurring income"],
+      bullets: ["Build your network", "Multiple revenue streams", "Recurring income model", "Funding & scaling support"],
       color: "from-amber-500/10 to-transparent",
     },
   ];
@@ -108,7 +107,7 @@ export default function PredictableJourneySection() {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
           >
-            Precision Systems — A <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Reliable Roadmap</span>
+            A Clear System to <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Build &amp; Scale Your Brand</span>
           </motion.h2>
 
           <motion.p 
@@ -118,7 +117,7 @@ export default function PredictableJourneySection() {
             transition={{ delay: 0.2 }}
             className="mt-6 text-gray-400 text-lg md:text-xl leading-relaxed font-light"
           >
-            You always know what step you’re on, what comes next, and what support is available.
+            Whether you&apos;re starting fresh or already running a business — Zryoss gives you a structured path to grow.
           </motion.p>
         </div>
 
@@ -187,13 +186,14 @@ export default function PredictableJourneySection() {
           transition={{ delay: 0.5 }}
           className="mt-12 text-center"
         >
-          <button 
-            onClick={() => navigate('/apply')}
-            className="group px-8 py-3.5 bg-gradient-to-r from-orange-600 to-amber-600 text-white rounded-full font-bold text-base transition-all hover:scale-105 hover:shadow-[0_20px_40px_rgba(234,88,12,0.3)] flex items-center gap-3 mx-auto"
-          >
-            Build Your Predictable Business
-            <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          <Link to="/apply">
+            <button 
+              className="group px-8 py-3.5 bg-gradient-to-r from-orange-600 to-amber-600 text-white rounded-full font-bold text-base transition-all hover:scale-105 hover:shadow-[0_20px_40px_rgba(234,88,12,0.3)] flex items-center gap-3 mx-auto"
+            >
+              Start Building Your Brand
+              <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+          </Link>
         </motion.div>
       </div>
     </section>

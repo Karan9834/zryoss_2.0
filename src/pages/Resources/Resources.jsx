@@ -1,4 +1,6 @@
+import React from 'react';
 import { BookOpen, FileText, Sparkles, ShieldCheck, Library, ArrowRight } from "lucide-react";
+
 import { Link } from "react-router-dom";
 import FadeUp from "../../components/animations/FadeUp";
 import HeroContact from "../Home/HeroContact";

@@ -6,15 +6,17 @@ import { useNavigate } from "react-router-dom";
 export default function WhatIsZryoss() {
   const navigate = useNavigate();
   const points = [
-    "Brand creation & company profile",
-    "Marketing brochures under your brand",
-    "Social media setup & marketing support",
-    "Dedicated Key Account Manager",
-    "Client demo & service explanation support",
-    "Deal closing assistance",
-    "Professional quotation & invoice creation",
-    "Complete backend execution",
-    "Access to 100+ vendor network",
+    "Brand identity & premium positioning setup",
+    "Personal branding via podcasts, reels & content",
+    "Social media growth & lead generation system",
+    "Website, apps & high-converting funnels",
+    "Marketing creatives (brochures, videos & ad campaigns)",
+    "Dedicated growth strategist & account manager",
+    "Client pitching, demo & closing support",
+    "Funding readiness (pitch deck, strategy & guidance)",
+    "Investor & government funding support",
+    "Complete backend execution & vendor management",
+    "Access to 100+ verified service ecosystem",
   ];
 
   return (
@@ -38,21 +40,20 @@ export default function WhatIsZryoss() {
                 </span>
 
                 <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-white mb-6">
-                  Start Your{" "}
+                  Build Your{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                    Business
+                    Brand 
                   </span>
                 </h2>
 
                 <div className="w-20 h-1 bg-orange-500 rounded-full mb-8" />
 
                 <p className="text-gray-300 text-lg leading-relaxed font-light max-w-xl mb-4">
-                  With the Zryoss ecosystem, you can build your own service-based
-                  business while we manage the operational infrastructure.
+                  With Zryoss, you don&apos;t just start a business — you build a powerful brand. We help you create visibility through content, podcasts, reels, and digital presence while we handle the backend, execution, and delivery.
                 </p>
 
                 <p className="text-gray-400 text-base leading-relaxed font-light max-w-xl mb-10">
-                  Zryoss provides complete support including:
+                  Zryoss provides complete brand + business support including:
                 </p>
               </div>
             </FadeUp>
@@ -124,10 +125,10 @@ export default function WhatIsZryoss() {
 
                     <div className="flex flex-col justify-center">
                       <p className="text-white text-2xl md:text-3xl font-bold leading-tight tracking-tight">
-                        Build Your Company With Zryoss
+                        Launch &amp; Scale Your Brand With Zryoss
                       </p>
                       <p className="text-gray-400 text-[15px] font-medium leading-relaxed mt-3 max-w-[420px]">
-                        Start your entrepreneurial journey and grow your business with the power of the Zryoss ecosystem.
+                        Start your journey as a brand owner, not just a service provider. With Zryoss, you build authority through content, attract clients, and scale your business while we handle execution.
                       </p>
                     </div>
                   </div>
@@ -141,14 +142,14 @@ export default function WhatIsZryoss() {
                       onClick={() => navigate('/apply')}
                       className="px-8 py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm font-bold tracking-wide rounded-[16px] shadow-[0_10px_30px_rgba(249,115,22,0.3)] hover:shadow-[0_15px_40px_rgba(249,115,22,0.5)] hover:bg-orange-600 hover:-translate-y-0.5 transition-all duration-300"
                     >
-                      Become a Partner
+                      Start Building Your Brand
                     </button>
 
                     <button
                       onClick={() => navigate('/contact')}
                       className="px-8 py-3.5 bg-white/5 hover:bg-white/10 text-white text-sm font-semibold tracking-wide rounded-[16px] border border-white/10 hover:border-orange-500/50 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 group/btn"
                     >
-                      Book a Demo
+                      Book a Growth Demo
                       <ArrowRight className="w-4 h-4 text-orange-400 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                   </div>

@@ -10,6 +10,7 @@ import ManagementSection from "./ManagementSection";
 // import Brands from "./Brands";
 import CoreBrands from "./CoreBrands";
 import ConnectedBrandsSection from "./ConnectedBrandsSection";
+import ContentEngineSection from "./ContentEngineSection";
 import Solutions from "./Solutions";
 import BlogSection from "./BlogSection";
 import WhyZryoss from "./WhyZryoss";
@@ -30,6 +31,7 @@ export default function Home() {
       <ProblemSection />
       <WhatIsZryoss />
       <ConnectedBrandsSection />
+      <ContentEngineSection />
       <PredictableJourneySection />
       <HowItWorks />
       <PartnershipModels />

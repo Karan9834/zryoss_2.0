@@ -84,13 +84,13 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5">
               <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
               <span className="text-[10px] uppercase tracking-[0.2em] text-orange-400 font-bold">
-                Your Brand. Our Execution.
+                YOUR BRAND. OUR EXECUTION.
               </span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.15] tracking-tight mb-5">
-              Start Your Own Company{" "}
+              Build &amp; Grow Your Brand{" "}
               <span className="block mt-1">
                 With{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
@@ -102,10 +102,10 @@ export default function Hero() {
             {/* Description */}
             <div className="space-y-3 mb-8">
               <p className="text-gray-300 text-base md:text-lg leading-relaxed font-light">
-                Launch your own IT Company, Digital Marketing Agency, HR Firm, Interior Company, or Professional Services Business under your own Brand Name while Zryoss handles the Backend Execution, Vendor Management, and Service Delivery.
+                From content creation to complete business execution — Zryoss helps you build your brand, generate visibility through podcasts &amp; reels, and scale your business with powerful backend support.
               </p>
               <p className="text-gray-400 text-sm md:text-base leading-relaxed font-normal border-l-2 border-orange-500/30 pl-3 italic">
-                Build your brand. Bring clients. <span className="font-bold text-gray-200">Zryoss</span> manages the execution.
+                Create content. Build your brand. <span className="font-bold text-gray-200">We handle everything else.</span>
               </p>
             </div>
 
@@ -113,7 +113,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6">
               <Link to="/apply">
                 <Button primary>
-                  Become a Partner
+                  Start Your Growth
                   <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
               </Link>

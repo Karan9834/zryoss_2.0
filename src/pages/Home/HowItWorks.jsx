@@ -1,5 +1,6 @@
 import React from "react";
-import { CheckCircle2, ArrowDown } from "lucide-react";
+import { CheckCircle2, ArrowDown, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FadeUp = ({ children, delay = 0 }) => {
   return (
@@ -16,55 +17,55 @@ export default function HowItWorks() {
   const sections = [
     {
       label: "Step 01",
-      title: "Brand Ownership",
-      desc: "You create and own your brand. We provide the underlying structure, but your business identity remains entirely yours.",
-      points: ["Full Brand Identity", "Independent Ownership", "Legal Independence"],
+      title: "Build Your Authority Engine",
+      desc: "We don't just create brands — we build visibility systems that position you as a leader in your space.",
+      points: ["Personal / Business Brand Positioning", "Authority Content Strategy (podcast, short-form, insights)", "Digital Presence Setup"],
     },
     {
       label: "Step 02",
-      title: "Client Acquisition",
-      desc: "You focus on bringing clients or opportunities. Whether it's a small project or a large enterprise deal, your job is the relationship.",
-      points: ["Relationship Management", "Lead Generation", "Opportunity Identification"],
+      title: "Amplify Reach & Attract Opportunities",
+      desc: "Your visibility is strategically distributed to bring consistent inbound opportunities.",
+      points: ["Multi-platform Content Distribution", "Influencer & Network Amplification", "Audience-to-Opportunity Conversion"],
     },
     {
       label: "Step 03",
-      title: "Central Validation",
-      desc: "Requirements are validated centrally by us to ensure technical feasibility and commercial viability before moving to the next stage.",
-      points: ["Technical Auditing", "Feasibility Check", "Commercial Alignment"],
+      title: "Filter & Focus on High-Value Deals",
+      desc: "We ensure your time goes into the right opportunities.",
+      points: ["Opportunity Qualification", "Strategic Fit Analysis", "High-Value Deal Mapping"],
     },
     {
       label: "Step 04",
-      title: "Expert Demos",
-      desc: "Solutions and demos are delivered by domain experts under your brand name, ensuring the highest professional standards in every pitch.",
-      points: ["Subject Matter Experts", "Professional Pitching", "White-labeled Presentation"],
+      title: "Convert Attention into Revenue",
+      desc: "We help you turn visibility into actual business.",
+      points: ["Sales & Closing Support", "Professional Pitching", "Conversion Strategy"],
     },
     {
       label: "Step 05",
-      title: "Routed Execution",
-      desc: "Execution is routed to our network of specialist brands and verified vendors who specialize in specific technology and business domains.",
-      points: ["Specialist Branding", "Domain Expertise", "Scale-ready Delivery"],
+      title: "Execution Powered by Zryoss",
+      desc: "You bring the opportunity — we deliver the result.",
+      points: ["Expert Vendor Network", "White-label Execution", "Scalable Delivery Systems"],
     },
     {
       label: "Step 06",
-      title: "Governance & Quality",
-      desc: "Quality and timelines are strictly governed by us. We monitor every stage of the lifecycle to ensure delivery excellence.",
-      points: ["SLA Monitoring", "Quality Control", "Timeline Governance"],
+      title: "Maintain Quality & Brand Trust",
+      desc: "We ensure every delivery upholds the standard your brand promises.",
+      points: ["Quality Control Systems", "Timeline Governance", "Performance Monitoring"],
     },
     {
       label: "Step 07",
-      title: "Seamless Coordination",
-      desc: "A dedicated account manager coordinates everything. You stay client-facing while the system runs everything behind you.",
-      points: ["Single Point of Contact", "Resource Management", "Unified Reporting"],
+      title: "Operate Without Overload",
+      desc: "You stay focused on growth while we handle the backend complexity.",
+      points: ["Dedicated Account Manager", "Backend Operations Handling", "Centralized Coordination"],
     },
     {
       label: "Step 08",
-      title: "Funding Support",
-      desc: "Starting a business should never stop because of finance. Through our Funding Enablement Program, we ensure you have access to professional guidance for funding readiness. We don’t promise funding — we prepare you for it.",
+      title: "Enable Scale & Funding Readiness",
+      desc: "We prepare your business for the next level of growth and investor readiness.",
       points: [
-        "MSME / Udyam registration",
-        "Startup India (DPIIT) recognition",
-        "MUDRA, PMEGP & Stand-Up India schemes",
-        "Documentation & consultant support",
+        "MSME / Startup Registration",
+        "Govt Scheme Guidance",
+        "Investor Readiness Support",
+        "Documentation Assistance",
       ],
     },
   ];
@@ -92,16 +93,16 @@ export default function HowItWorks() {
             </span>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight max-w-4xl mx-auto mb-6">
-              A Structured Execution Model
+              A Visibility-to-Business Engine
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-2">
-                Built for Scale & Control
+                Built for Scale &amp; Control
               </span>
             </h2>
 
             <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-6" />
 
             <p className="text-gray-400 text-lg max-w-3xl mx-auto font-light">
-              Eight systematic steps that transform your business idea into a professionally executed reality
+              Build authority, attract opportunities, and scale your business — powered by structured content, strategic distribution, and Zryoss execution systems.
             </p>
           </div>
         </FadeUp>
@@ -174,11 +175,27 @@ export default function HowItWorks() {
         {/* Bottom CTA */}
         <FadeUp delay={0.8}>
           <div className="mt-16 text-center">
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-orange-500/30 bg-orange-500/10">
-              <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-              <span className="text-orange-400 text-sm font-semibold uppercase tracking-wider">
-                Systemized • Structured • Scale-Ready
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              From Visibility to Revenue —{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                Build a Business That Scales
               </span>
+            </h3>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8 font-light">
+              Leverage content, distribution, and execution — all in one system designed to grow your business faster.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link to="/apply">
+                <button className="px-8 py-3.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-sm rounded-full shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 group">
+                  Start Your Growth Journey
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
+              <Link to="/contact">
+                <button className="px-8 py-3.5 border border-white/20 text-white font-semibold text-sm rounded-full hover:border-orange-500/50 hover:bg-white/5 hover:scale-105 hover:-translate-y-0.5 transition-all duration-300">
+                  Book a Strategy Call
+                </button>
+              </Link>
             </div>
           </div>
         </FadeUp>

@@ -37,43 +37,70 @@ const Button = ({ children, primary, outline, className = "", onClick }) => {
 
 const models = [
   {
-    type: "IPP",
-    label: "Independent Prime Partner",
-    focus: "Best for individuals and focused founders",
+    type: "BGE",
+    label: "Brand Growth Engine",
+    focus: "BEST FOR EXISTING BUSINESSES & PERSONAL BRANDS",
+    subtext: "Turn your business into a visible, trusted and lead-generating brand using content + systems.",
+    icon: <Target className="w-8 h-8 text-blue-500" />,
+    features: [
+      { icon: <CheckCircle2 size={18} className="text-blue-500" />, text: "Podcast-based authority building" },
+      { icon: <CheckCircle2 size={18} className="text-blue-500" />, text: "Reels & short-form content system" },
+      { icon: <CheckCircle2 size={18} className="text-blue-500" />, text: "Social media growth & management" },
+      { icon: <CheckCircle2 size={18} className="text-blue-500" />, text: "Website & lead funnel setup" },
+      { icon: <CheckCircle2 size={18} className="text-blue-500" />, text: "CRM & automation integration" },
+      { icon: <CheckCircle2 size={18} className="text-blue-500" />, text: "Personal + business brand positioning" },
+      { icon: <CheckCircle2 size={18} className="text-blue-500" />, text: "Influencer & distribution support" },
+      { icon: <CheckCircle2 size={18} className="text-blue-500" />, text: "Consistent lead generation system" },
+      { icon: <CheckCircle2 size={18} className="text-blue-500" />, text: "Low-cost, high-visibility growth model" },
+      { icon: <CheckCircle2 size={18} className="text-blue-500" />, text: "Strategy + execution handled by Zryoss" },
+    ],
+    cta: "Grow My Brand",
+    color: "from-blue-500/10 to-transparent",
+  },
+  {
+    type: "SYOB",
+    label: "Start Your Own Business",
+    focus: "BEST FOR INDIVIDUALS & NEW FOUNDERS",
+    subtext: "Launch your own business with a ready system, brand support, and execution engine.",
     icon: <User className="w-8 h-8 text-orange-500" />,
     features: [
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Operate in one selected business domain" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Backend, brand & operations managed by Zryoss" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Sales & business framework provided" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Dedicated Key Account Manager support" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Marketing brochures under your brand name" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Client demo & service explanation support" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Deal closing assistance from Zryoss team" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Professional quotation & invoice creation" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Start in a focused business domain" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Complete backend, brand & operations support" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Ready sales & business framework" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Dedicated account manager guidance" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Marketing materials under your brand name" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Client demo & professional pitch support" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Deal closing assistance by experts" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Quotation, invoicing & process setup" },
       { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Access to 100+ verified vendor network" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Government funding & startup enablement support" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Government funding & startup support" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Basic content & branding guidance (reels + presence setup)" },
+      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Initial authority building support (podcast exposure)" },
     ],
-    cta: "Join as IPP",
+    cta: "Start My Business",
     color: "from-orange-500/20 to-transparent",
   },
   {
-    type: "IBP",
-    label: "Independent Business Partner",
-    focus: "Best for leaders and scale builders",
+    type: "BSBN",
+    label: "Build & Scale Your Business Network",
+    focus: "BEST FOR BUILDERS & ENTREPRENEURS",
+    subtext: "Expand into multiple domains and create a scalable business ecosystem with recurring growth.",
     icon: <Users className="w-8 h-8 text-green-500" />,
     features: [
-      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Access up to 3 business domains" },
-      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Build and manage your own IPP network" },
-      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Central routing & partner tracking system" },
-      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Recurring growth from network performance" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Operate across multiple business domains" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Build and manage your own partner network" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Central routing & tracking system" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Recurring revenue through network model" },
       { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Dedicated ecosystem support team" },
-      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Vendor ecosystem support for project execution" },
-      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Marketing and brand support for your network" },
-      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Complete backend management by Zryoss" },
-      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Scalable business expansion model" },
-      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Government funding enablement for your IPPs" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Access to 100+ verified vendor network" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Marketing & brand support for your network" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Complete backend & operations handled" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Scalable expansion framework" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Government funding enablement support" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Content engine support (reels, content flow)" },
+      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Brand authority development (podcast + positioning)" },
     ],
-    cta: "Join as IBP",
+    cta: "Scale My Business",
     color: "from-green-500/10 to-transparent",
   },
 ];
@@ -105,7 +132,7 @@ export default function PartnershipModels() {
 
             {/* ✅ match ProblemSection */}
             <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
-              Two Partnership{" "}
+              Growth & Partnership{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 Models
               </span>
@@ -120,7 +147,7 @@ export default function PartnershipModels() {
           </div>
         </FadeUp>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
           {models.map((model, idx) => (
             <FadeUp key={idx} delay={idx * 0.2}>
               <div
@@ -148,6 +175,11 @@ export default function PartnershipModels() {
                   <p className="text-orange-400/80 text-xs uppercase tracking-[0.3em] font-bold group-hover:text-orange-300 transition-colors duration-500">
                     {model.focus}
                   </p>
+                  {model.subtext && (
+                    <p className="text-gray-300 text-sm mt-4 font-light leading-relaxed">
+                      {model.subtext}
+                    </p>
+                  )}
                 </div>
 
                 <div className="space-y-4 flex-grow mb-8 relative z-10">
