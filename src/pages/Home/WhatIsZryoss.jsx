@@ -22,37 +22,37 @@ export default function WhatIsZryoss() {
   return (
     <section
       id="platform"
-      className="py-24 bg-[#0A0A0A] relative overflow-hidden scroll-mt-24 z-10"
+      className="py-8 md:py-12 lg:py-16 bg-[#0A0A0A] relative overflow-hidden scroll-mt-24 z-10"
     >
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/3 blur-[100px] rounded-full" />
 
       {/* ✅ width aligned with navbar/footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-start">
           {/* LEFT CONTENT */}
           <div className="flex flex-col w-full h-auto">
             <FadeUp>
               <div>
-                <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-4 block">
+                <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-3 block">
                   Start Your Business Without Building The Backend
                 </span>
 
-                <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-white mb-6">
+                <h2 className="text-3xl lg:text-4xl font-bold leading-tight md:leading-snug text-white mb-4">
                   Build Your{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                     Brand 
                   </span>
                 </h2>
 
-                <div className="w-20 h-1 bg-orange-500 rounded-full mb-8" />
+                <div className="w-20 h-1 bg-orange-500 rounded-full mb-4" />
 
-                <p className="text-gray-300 text-lg leading-relaxed font-light max-w-xl mb-4">
+                <p className="text-gray-300 text-base md:text-lg leading-snug md:leading-relaxed font-light max-w-xl mb-3">
                   With Zryoss, you don&apos;t just start a business — you build a powerful brand. We help you create visibility through content, podcasts, reels, and digital presence while we handle the backend, execution, and delivery.
                 </p>
 
-                <p className="text-gray-400 text-base leading-relaxed font-light max-w-xl mb-10">
+                <p className="text-gray-400 text-sm md:text-base leading-snug md:leading-relaxed font-light max-w-xl mb-6">
                   Zryoss provides complete brand + business support including:
                 </p>
               </div>
@@ -60,7 +60,7 @@ export default function WhatIsZryoss() {
 
             {/* Bullet Points */}
             <FadeUp delay={0.2}>
-              <div className="flex flex-col gap-4 mb-10">
+              <div className="flex flex-col gap-3 mb-6">
                 {points.map((point, idx) => (
                   <div key={idx} className="flex items-center gap-4">
                     <CheckCircle2 className="w-6 h-6 text-orange-500 shrink-0" />
@@ -79,7 +79,7 @@ export default function WhatIsZryoss() {
           </div>
 
           {/* RIGHT (Image frame + Quote frame) */}
-          <div className="flex flex-col w-full gap-8">
+          <div className="flex flex-col w-full gap-4 md:gap-6">
             <FadeUp delay={0.15} className="w-full">
               {/* ✅ TOP IMAGE FRAME */}
               <div className="relative rounded-[42px] border border-orange-500/25 bg-black/40 overflow-hidden h-full">
@@ -117,17 +117,17 @@ export default function WhatIsZryoss() {
                 <div className="absolute inset-0 bg-orange-500/5 mix-blend-overlay pointer-events-none transition-opacity duration-500 opacity-50 group-hover:opacity-100" />
                 <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-orange-500/10 blur-[80px] rounded-full pointer-events-none" />
 
-                <div className="relative p-8 lg:p-12 flex flex-col gap-8 h-full">
+                <div className="relative p-6 lg:p-8 flex flex-col gap-5 md:gap-6 h-full">
 
                   {/* Top Text Content */}
-                  <div className="flex items-stretch gap-6">
+                  <div className="flex items-stretch gap-4 md:gap-6">
                     <div className="w-[3px] bg-gradient-to-b from-orange-400 to-orange-600 rounded-full shrink-0 shadow-[0_0_15px_rgba(249,115,22,0.4)]" />
 
                     <div className="flex flex-col justify-center">
-                      <p className="text-white text-2xl md:text-3xl font-bold leading-tight tracking-tight">
+                      <p className="text-white text-2xl md:text-3xl font-bold leading-tight md:leading-snug tracking-tight">
                         Launch &amp; Scale Your Brand With Zryoss
                       </p>
-                      <p className="text-gray-400 text-[15px] font-medium leading-relaxed mt-3 max-w-[420px]">
+                      <p className="text-gray-400 text-sm md:text-[15px] font-medium leading-snug md:leading-relaxed mt-2 max-w-[420px]">
                         Start your journey as a brand owner, not just a service provider. With Zryoss, you build authority through content, attract clients, and scale your business while we handle execution.
                       </p>
                     </div>

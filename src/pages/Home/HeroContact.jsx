@@ -85,22 +85,22 @@ export default function HeroContact() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(251,146,60,0.18),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(249,115,22,0.18),transparent_50%)]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 grid lg:grid-cols-12 gap-20 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12 lg:py-16 grid lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-center">
         {/* LEFT CONTENT */}
-        <div className="lg:col-span-6 space-y-10">
+        <div className="lg:col-span-6 space-y-8">
           <div>
-            <p className="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-orange-400 mb-6 font-bold">
+            <p className="flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-orange-400 mb-4 font-bold">
               <span className="w-2 h-2 rounded-full bg-orange-400" />
               Contact Us
             </p>
 
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight md:leading-snug text-white mb-4">
               Ready To Fuel Your <span className="text-orange-400">Vision</span>{" "}
-              With <span className="block mt-3">AI-Powered Innovation?</span>
+              With <span className="block mt-2">AI-Powered Innovation?</span>
             </h1>
           </div>
 
-          <div className="max-w-md space-y-5">
+          <div className="max-w-md space-y-4">
             {/* Address */}
             <a
               href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Office No. 837-A, 8th Floor, JMD Megapolis, Sohna Road, Gurgaon, Haryana, India")}`}
@@ -189,15 +189,15 @@ export default function HeroContact() {
 
         {/* RIGHT FORM */}
         <div className="lg:col-span-6">
-          <div className="relative rounded-3xl border border-white/15 bg-white/[0.06] backdrop-blur-2xl p-8 md:p-10 shadow-2xl">
+          <div className="relative rounded-3xl border border-white/15 bg-white/[0.06] backdrop-blur-2xl p-6 md:p-8 lg:p-10 shadow-2xl">
             <div className="absolute -top-6 -right-6 w-20 h-20 border-2 border-orange-400/40 rounded-xl rotate-45" />
 
-            <p className="text-lg mb-8 max-w-sm text-white/90">
+            <p className="text-base md:text-lg mb-6 max-w-sm text-white/90 leading-snug md:leading-relaxed">
               Partner With Experts Who Leverage AI & Tech To Transform Ideas
               Into Market-Leading Solutions.
             </p>
 
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative">
                   {errors.first_name && <ErrorBubble msg={errors.first_name} />}

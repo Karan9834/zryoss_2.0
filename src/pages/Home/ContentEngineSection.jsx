@@ -59,48 +59,48 @@ export default function ContentEngineSection() {
   ];
 
   return (
-    <section className="relative py-24 bg-[#050505] overflow-hidden">
+    <section className="relative py-8 md:py-12 lg:py-16 bg-[#050505] overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 xl:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
         
         {/* Header Content */}
         <FadeUp>
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <span className="text-orange-500 text-[10px] sm:text-xs font-bold tracking-[0.45em] uppercase block mb-4">
+          <div className="text-center max-w-4xl mx-auto mb-10 lg:mb-12">
+            <span className="text-orange-500 text-[10px] sm:text-xs font-bold tracking-[0.45em] uppercase block mb-3">
               From Visibility to Business
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight md:leading-snug text-white mb-4">
               Content Engine by{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 Zryoss
               </span>
             </h2>
-            <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent mx-auto rounded-full mb-6 opacity-60" />
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mx-auto max-w-2xl">
+            <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent mx-auto rounded-full mb-4 opacity-60" />
+            <p className="text-gray-300 text-sm md:text-base leading-snug md:leading-relaxed font-light mx-auto max-w-2xl">
               We help you grow your visibility, bring the right audience, and turn that attention into real business — while we handle the backend execution.
             </p>
           </div>
         </FadeUp>
 
         {/* 3 Steps */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-10 md:mb-12">
           {steps.map((step, idx) => (
             <FadeUp key={idx} delay={idx * 0.15} className="h-full">
               <div className="h-full rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-8 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-500 group relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 blur-[40px] group-hover:bg-orange-500/10 transition-colors" />
                 
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500/20 to-orange-600/20 border border-orange-500/30 flex items-center justify-center text-orange-400 font-bold text-lg mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500/20 to-orange-600/20 border border-orange-500/30 flex items-center justify-center text-orange-400 font-bold text-lg mb-4 group-hover:scale-110 transition-transform duration-300">
                   {step.number}
                 </div>
                 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors">
                   {step.title}
                 </h3>
                 
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed font-light mb-6">
+                <p className="text-gray-300 text-sm md:text-base leading-snug md:leading-relaxed font-light mb-4">
                   {step.desc}
                 </p>
                 
@@ -121,7 +121,7 @@ export default function ContentEngineSection() {
 
         {/* Simple Power Line */}
         <FadeUp delay={0.3}>
-          <div className="relative rounded-2xl border border-orange-500/20 bg-orange-500/5 p-6 md:p-8 text-center max-w-4xl mx-auto mb-20 shadow-[0_0_40px_rgba(249,115,22,0.1)]">
+          <div className="relative rounded-2xl border border-orange-500/20 bg-orange-500/5 p-6 md:p-8 text-center max-w-4xl mx-auto mb-10 md:mb-12 shadow-[0_0_40px_rgba(249,115,22,0.1)]">
             <h4 className="text-lg md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500 tracking-wide">
               People see you <span className="text-white/50 mx-2">→</span> People trust you <span className="text-white/50 mx-2">→</span> People buy from you
             </h4>
@@ -129,14 +129,14 @@ export default function ContentEngineSection() {
         </FadeUp>
 
         {/* Bottom Section: Who is this for + CTA */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-center max-w-6xl mx-auto">
           {/* Who is this for */}
           <FadeUp delay={0.4}>
             <div>
-              <span className="text-orange-500 text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase block mb-4">
+              <span className="text-orange-500 text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase block mb-3">
                 Who Is This For
               </span>
-              <h3 className="text-3xl font-bold text-white mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
                 Designed for those ready to scale
               </h3>
               <div className="space-y-4">
@@ -159,7 +159,7 @@ export default function ContentEngineSection() {
             <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-8 md:p-12 text-center overflow-hidden">
               <div className="absolute inset-0 bg-orange-500/5 mix-blend-overlay pointer-events-none" />
               
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 relative z-10">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 relative z-10">
                 Start Building Your Business with Zryoss
               </h3>
               

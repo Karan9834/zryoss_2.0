@@ -65,13 +65,13 @@ const models = [
     icon: <User className="w-8 h-8 text-orange-500" />,
     features: [
       { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Start in a focused business domain" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Complete backend, brand & operations support" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Ready sales & business framework" },
+      // { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Complete backend, brand & operations support" },
+      // { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Ready sales & business framework" },
       { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Dedicated account manager guidance" },
       { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Marketing materials under your brand name" },
       { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Client demo & professional pitch support" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Deal closing assistance by experts" },
-      { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Quotation, invoicing & process setup" },
+      // { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Deal closing assistance by experts" },
+      // { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Quotation, invoicing & process setup" },
       { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Access to 100+ verified vendor network" },
       { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Government funding & startup support" },
       { icon: <CheckCircle2 size={18} className="text-orange-500" />, text: "Basic content & branding guidance (reels + presence setup)" },
@@ -89,13 +89,13 @@ const models = [
     features: [
       { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Operate across multiple business domains" },
       { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Build and manage your own partner network" },
-      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Central routing & tracking system" },
-      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Recurring revenue through network model" },
-      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Dedicated ecosystem support team" },
+      // { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Central routing & tracking system" },
+      // { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Recurring revenue through network model" },
+      // { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Dedicated ecosystem support team" },
       { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Access to 100+ verified vendor network" },
       { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Marketing & brand support for your network" },
       { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Complete backend & operations handled" },
-      { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Scalable expansion framework" },
+      // { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Scalable expansion framework" },
       { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Government funding enablement support" },
       { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Content engine support (reels, content flow)" },
       { icon: <CheckCircle2 size={18} className="text-green-500" />, text: "Brand authority development (podcast + positioning)" },
@@ -113,7 +113,7 @@ export default function PartnershipModels() {
   };
 
   return (
-    <section id="partnerships" className="py-24 bg-[#050505] relative overflow-hidden">
+    <section id="partnerships" className="py-8 md:py-12 lg:py-16 bg-[#070A0F] relative overflow-hidden">
       <style>{`
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(30px); }
@@ -122,32 +122,32 @@ export default function PartnershipModels() {
         .animate-fadeUp { animation: fadeUp 0.8s ease-out; }
       `}</style>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <FadeUp>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 lg:mb-12">
             {/* ✅ match ProblemSection */}
-            <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-4 block">
+            <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-3 block">
               Choose Your Path
             </span>
 
             {/* ✅ match ProblemSection */}
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight md:leading-snug text-white mb-4">
               Growth & Partnership{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 Models
               </span>
             </h2>
 
-            <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-6" />
+            <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-4" />
 
             {/* ✅ match ProblemSection */}
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light">
+            <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto font-light leading-snug md:leading-relaxed">
               Select the partnership model that aligns with your vision and growth ambitions
             </p>
           </div>
         </FadeUp>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-12">
           {models.map((model, idx) => (
             <FadeUp key={idx} delay={idx * 0.2}>
               <div
@@ -213,14 +213,14 @@ export default function PartnershipModels() {
         </div>
 
         <FadeUp delay={0.4}>
-          <div className="text-center mt-12 md:mt-16 relative z-10">
+          <div className="text-center mt-10 md:mt-12 relative z-10">
             {/* Added subtle glow behind the powerful text */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[100px] bg-orange-500/10 blur-[80px] pointer-events-none" />
 
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3 tracking-wide">
+            <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight md:leading-snug mb-3 tracking-wide">
               Your Brand. <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">Our Execution.</span>
             </h3>
-            <p className="text-lg text-gray-400 font-light tracking-wide">
+            <p className="text-base md:text-lg text-gray-400 font-light tracking-wide">
               Build Your Business With Zryoss.
             </p>
           </div>

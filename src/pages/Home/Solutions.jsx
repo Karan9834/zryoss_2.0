@@ -147,7 +147,7 @@ export default function SolutionsMarquee() {
   return (
     <section
       id="solutions"
-      className="relative bg-[#050505] py-16 sm:py-20 md:py-24 overflow-hidden border-t border-white/5"
+      className="relative bg-[#050505] py-8 md:py-12 lg:py-16 overflow-hidden border-t border-white/5"
     >
       {/* glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -160,20 +160,20 @@ export default function SolutionsMarquee() {
       </div>
 
       {/* header */}
-      <div className="relative max-w-[90rem] mx-auto px-5 sm:px-6 md:px-10 lg:px-28 xl:px-32">
+      <div className="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto">
-          <p className="text-orange-500 text-[10px] sm:text-[11px] md:text-xs uppercase tracking-[0.45em] mb-5 font-semibold">
+          <p className="text-orange-500 text-[10px] sm:text-[11px] md:text-xs uppercase tracking-[0.45em] mb-3 font-semibold">
             Solutions
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight md:leading-snug text-white">
             Purpose-built Solutions
             <span className="block text-orange-400 mt-2">
               That Help Teams Move Faster
             </span>
           </h2>
 
-          <p className="text-gray-400 text-sm sm:text-base md:text-lg mt-5">
+          <p className="text-gray-400 text-sm md:text-base leading-snug md:leading-relaxed mt-3">
             Zryoss combines strategy, automation and execution to deliver measurable
             outcomes across departments — from product to growth.
           </p>

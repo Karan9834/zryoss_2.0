@@ -57,19 +57,19 @@ const services = [
 
 export default function ManagementSection() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-[#0a0a0a] border-y border-white/5 relative z-10">
-      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-28 xl:px-32">
+    <section className="py-8 md:py-12 lg:py-16 bg-[#0a0a0a] border-y border-white/5 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <FadeUp>
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 md:mb-20 gap-6 sm:gap-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 lg:mb-12 gap-6 sm:gap-8">
             <div className="max-w-2xl">
-              <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-4 sm:mb-6 block">
+              <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-3 block">
                 The Backend Engine
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-4 sm:mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight md:leading-snug text-white mb-3">
                 What We <br className="hidden sm:block" />
                 <span className="text-orange-400">Manage for You</span>
               </h2>
-              <p className="text-gray-400 text-lg font-light leading-relaxed">
+              <p className="text-gray-400 text-base md:text-lg font-light leading-snug md:leading-relaxed">
                 We operate as your complete backend business engine, removing the
                 operational friction of running a professional service brand.
               </p>
@@ -84,7 +84,7 @@ export default function ManagementSection() {
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {services.map((svc, idx) => (
             <FadeUp key={idx} delay={idx * 0.1}>
               <div className="group p-8 rounded-3xl bg-[#121212] border border-white/5 
@@ -99,11 +99,11 @@ export default function ManagementSection() {
                   {svc.icon}
                 </div>
 
-                <h3 className="text-lg md:text-xl font-semibold text-white mb-4">
+                <h3 className="text-lg md:text-xl font-semibold text-white mb-3">
                   {svc.title}
                 </h3>
 
-                <p className="text-gray-400 text-sm md:text-base leading-relaxed font-light">
+                <p className="text-gray-400 text-sm md:text-base leading-snug md:leading-relaxed font-light">
                   {svc.desc}
                 </p>
               </div>

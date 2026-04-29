@@ -71,7 +71,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="relative bg-[#050505] text-white py-24 overflow-hidden">
+    <section className="relative bg-[#050505] text-white py-8 md:py-12 lg:py-16 overflow-hidden">
       <style>{`
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(24px); }
@@ -84,24 +84,24 @@ export default function HowItWorks() {
       <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/10 blur-[140px] rounded-full" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/7 blur-[140px] rounded-full" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 xl:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <FadeUp>
-          <div className="text-center mb-20">
-            <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-4 block">
+          <div className="text-center mb-10 md:mb-12">
+            <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-3 block">
               How It Works
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight max-w-4xl mx-auto mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight md:leading-snug max-w-4xl mx-auto mb-4">
               A Visibility-to-Business Engine
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-2">
                 Built for Scale &amp; Control
               </span>
             </h2>
 
-            <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-6" />
+            <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-4" />
 
-            <p className="text-gray-400 text-lg max-w-3xl mx-auto font-light">
+            <p className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto font-light leading-snug md:leading-relaxed">
               Build authority, attract opportunities, and scale your business — powered by structured content, strategic distribution, and Zryoss execution systems.
             </p>
           </div>
@@ -117,7 +117,7 @@ export default function HowItWorks() {
                   <div className="absolute left-6 top-20 bottom-0 w-0.5 bg-gradient-to-b from-orange-500/50 to-orange-500/10 group-hover:from-orange-500 group-hover:to-orange-500/30 transition-all duration-500" />
                 )}
 
-                <div className="relative flex gap-6 md:gap-8">
+                <div className="relative flex gap-4 md:gap-6 lg:gap-8">
                   {/* Step Number Circle */}
                   <div className="shrink-0">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-black font-bold text-lg shadow-lg shadow-orange-500/50 group-hover:scale-110 transition-transform duration-300">
@@ -126,25 +126,25 @@ export default function HowItWorks() {
                   </div>
 
                   {/* Content Card */}
-                  <div className="flex-1 pb-8">
-                    <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-8 md:p-10 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-500 group-hover:-translate-y-1">
+                  <div className="flex-1 pb-6">
+                    <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-6 md:p-8 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-500 group-hover:-translate-y-1">
                       {/* Badge */}
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-[10px] uppercase tracking-[0.3em] font-bold mb-4">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-[10px] uppercase tracking-[0.3em] font-bold mb-3">
                         {section.label}
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">
+                      <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">
                         {section.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-gray-300 text-base md:text-lg leading-relaxed font-light mb-6">
+                      <p className="text-gray-300 text-sm md:text-base leading-snug md:leading-relaxed font-light mb-4">
                         {section.desc}
                       </p>
 
                       {/* Key Points */}
-                      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+                      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 lg:gap-6">
                         {section.points.map((point, idx) => (
                           <div
                             key={idx}
@@ -174,14 +174,14 @@ export default function HowItWorks() {
 
         {/* Bottom CTA */}
         <FadeUp delay={0.8}>
-          <div className="mt-16 text-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <div className="mt-10 md:mt-12 text-center">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
               From Visibility to Revenue —{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 Build a Business That Scales
               </span>
             </h3>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-8 font-light">
+            <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-6 font-light leading-snug md:leading-relaxed">
               Leverage content, distribution, and execution — all in one system designed to grow your business faster.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

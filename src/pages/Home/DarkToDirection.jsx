@@ -10,26 +10,24 @@ export default function DarkToDirection() {
     ];
 
     return (
-        <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-[#050505] relative overflow-hidden">
-            {/* Dynamic Background */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] to-[#050505]" />
+        <section className="py-8 md:py-12 lg:py-16 bg-[#0A0A0A] relative overflow-hidden">
 
-            <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-28 xl:px-32 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
                 <FadeUp>
-                    <div className="text-center mb-16 sm:mb-20 md:mb-24">
-                        <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] text-orange-500 font-semibold mb-4 sm:mb-6 block">
+                    <div className="text-center mb-10 sm:mb-12 md:mb-14">
+                        <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] text-orange-500 font-semibold mb-3 sm:mb-4 block">
                             Moving Forward
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
+                        <h2 className="text-3xl md:text-4xl font-bold leading-tight md:leading-snug text-white mb-4">
                             From Dark to <span className="text-orange-400">Direction</span>
                         </h2>
-                        <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-light px-4">
+                        <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-light leading-snug md:leading-relaxed px-4">
                             Many start in confusion, job pressure, or failed businesses. ZRYOSS exists to shift your trajectory.
                         </p>
                     </div>
                 </FadeUp>
 
-                <div className="space-y-8 sm:space-y-10 md:space-y-12">
+                <div className="space-y-6 sm:space-y-8 md:space-y-10">
                     {transitions.map((item, idx) => (
                         <FadeUp key={idx} delay={idx * 0.2}>
                             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-6 sm:gap-8 md:gap-12 lg:gap-20 group">
@@ -49,8 +47,9 @@ export default function DarkToDirection() {
                     ))}
                 </div>
 
+
                 {/* Visual Decoration */}
-                <div className="mt-20 sm:mt-24 md:mt-32 flex justify-center">
+                <div className="mt-12 sm:mt-16 md:mt-20 flex justify-center">
                     <div className="relative">
                         <div className="w-1 h-24 sm:h-28 md:h-32 bg-gradient-to-b from-orange-500 to-transparent" />
                         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-orange-500 blur-sm" />

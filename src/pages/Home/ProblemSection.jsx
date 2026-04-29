@@ -36,7 +36,7 @@ const problems = [
 
 export default function ProblemSection() {
     return (
-        <section className="py-24 bg-[#050505] relative overflow-hidden">
+        <section className="py-8 md:py-12 lg:py-16 bg-[#050505] relative overflow-hidden">
             <style>{`
                 @keyframes fadeUp {
                     from {
@@ -57,26 +57,26 @@ export default function ProblemSection() {
             <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/3 blur-[100px] rounded-full" />
 
-            <div className="max-w-7xl mx-auto px-6 lg:px-16 xl:px-20 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
                 <FadeUp>
-                    <div className="text-center mb-20">
-                        <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-4 block">
+                    <div className="text-center mb-10 md:mb-14">
+                        <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-3 block">
                             THE PROBLEM WE SOLVE
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
+                        <h2 className="text-3xl md:text-4xl font-bold leading-tight md:leading-snug text-white mb-4">
                             Why Most Businesses Fail to{" "}
-                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mt-1">
+                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                                 Build a Strong Brand
                             </span>
                         </h2>
-                        <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-6" />
-                        <p className="text-gray-400 text-lg max-w-3xl mx-auto font-light">
+                        <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-4" />
+                        <p className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto font-light leading-snug md:leading-relaxed">
                             In today&apos;s digital-first world, businesses don&apos;t fail because of lack of effort — they fail because they lack visibility, content, and structured execution systems.
                         </p>
                     </div>
                 </FadeUp>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mb-8">
                     {problems.map((prob, idx) => (
                         <FadeUp key={idx} delay={idx * 0.1}>
                             <div className="relative p-8 rounded-3xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 hover:border-orange-500/40 transition-all duration-500 group h-full hover:shadow-2xl hover:shadow-orange-500/10 hover:-translate-y-2">
@@ -102,43 +102,7 @@ export default function ProblemSection() {
                     ))}
                 </div>
 
-                <FadeUp delay={0.5}>
-                    <div className="max-w-3xl mx-auto p-6 md:p-8 rounded-[2rem] bg-[#0A0A0A] border border-white/10 text-center relative overflow-hidden group transition-all duration-500 shadow-xl shadow-black/40 hover:-translate-y-[2px] hover:border-orange-500/30">
 
-                        {/* Background Pattern */}
-                        <div className="absolute inset-0 opacity-[0.025] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:28px_28px]" />
-
-                        {/* Subtle Top Gradient */}
-                        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-orange-500/25 to-transparent" />
-
-                        {/* Content */}
-                        <div className="relative z-10">
-
-                            <h3 className="text-xl md:text-3xl font-light text-white/90 leading-tight">
-                                Powered by <span className="text-orange-500 font-semibold">Kryoss Softech Pvt Ltd</span>
-                            </h3>
-
-                            {/* Divider */}
-                            <div className="flex justify-center my-5">
-                                <div className="w-16 h-[1.5px] bg-gradient-to-r from-transparent via-orange-500 to-transparent rounded-full shadow-[0_0_12px_rgba(249,115,22,0.5)] group-hover:w-24 transition-all duration-500" />
-                            </div>
-
-                            {/* Zryoss Tagline */}
-                            <p className="text-white/60 uppercase tracking-[0.2em] text-[11px] md:text-[13px] font-semibold flex flex-wrap items-center justify-center gap-2 md:gap-3">
-                                <span>100+ Vendor Ecosystem</span>
-                                <span className="text-orange-500/50 hidden md:block">|</span>
-                                <span>Content-Driven Growth</span>
-                                <span className="text-orange-500/50 hidden md:block">|</span>
-                                <span>Scalable Model</span>
-                            </p>
-                        </div>
-
-                        {/* Decorative Glows */}
-                        <div className="absolute -top-32 -right-32 w-56 h-56 bg-orange-500/10 blur-[100px] rounded-full pointer-events-none" />
-                        <div className="absolute -bottom-32 -left-32 w-56 h-56 bg-orange-500/10 blur-[100px] rounded-full pointer-events-none" />
-
-                    </div>
-                </FadeUp>
 
             </div>
         </section>

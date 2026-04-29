@@ -8,7 +8,7 @@ export default function BlogSection() {
     const displayBlogs = blogsData.slice(0, 4);
 
     return (
-        <section id="blogs" className="py-24 bg-[#050505] relative overflow-hidden border-t border-white/5">
+        <section id="blogs" className="py-8 md:py-12 lg:py-16 bg-[#050505] relative overflow-hidden border-t border-white/5">
             {/* Glow Background Effect */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div
@@ -19,26 +19,26 @@ export default function BlogSection() {
                 />
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="text-center mb-16">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+                <div className="text-center mb-10 lg:mb-12">
                     <FadeUp>
-                        <p className="text-orange-500 text-xs uppercase tracking-[0.45em] mb-5 font-bold">
+                        <p className="text-orange-500 text-xs uppercase tracking-[0.45em] mb-3 font-bold">
                             Blog & Insights
                         </p>
-                        <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
+                        <h2 className="text-3xl md:text-4xl font-bold leading-tight md:leading-snug text-white mb-4">
                             Latest Articles &
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 block sm:inline sm:ml-2">
                                 Insights
                             </span>
                         </h2>
-                        <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-6" />
-                        <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light">
+                        <div className="w-24 h-1 bg-orange-500 mx-auto rounded-full mb-4" />
+                        <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto font-light leading-snug md:leading-relaxed">
                             Stay updated with the latest trends in business ecosystems, partner platforms, and centralized operations.
                         </p>
                     </FadeUp>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
                     {displayBlogs.map((blog, index) => (
                         <FadeUp key={blog.id} delay={index * 0.1}>
                             <div className="group relative bg-white/5 border border-white/10 rounded-[24px] overflow-hidden hover:border-orange-500/30 transition-all duration-500 flex flex-col h-full shadow-[0_18px_70px_rgba(0,0,0,0.55)] hover:scale-[1.02] hover:-translate-y-2">
@@ -81,7 +81,7 @@ export default function BlogSection() {
                     ))}
                 </div>
 
-                <div className="mt-16 text-center">
+                <div className="mt-10 md:mt-12 text-center">
                     <FadeUp delay={0.4}>
                         <Link
                             to="/resources/blog"

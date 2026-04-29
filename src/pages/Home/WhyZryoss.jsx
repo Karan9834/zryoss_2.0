@@ -35,21 +35,21 @@ const comparisons = [
 
 export default function WhyZryoss() {
   return (
-    <section className="py-20 md:py-24 bg-[#050505] relative overflow-hidden z-10">
+    <section className="py-8 md:py-12 lg:py-16 bg-[#050505] relative overflow-hidden z-10">
       {/* ✅ Removed orange background shade/glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_60%)]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-16 xl:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <FadeUp>
-          <div className="text-center mb-14 md:mb-20">
-            <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-4 block">
+          <div className="text-center mb-10 md:mb-12">
+            <span className="text-xs uppercase tracking-[0.3em] text-orange-500 font-bold mb-3 block">
               The Fundamental Difference
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight md:leading-snug text-white mb-4">
               Why{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                 ZRYOSS
@@ -57,7 +57,7 @@ export default function WhyZryoss() {
               is Different
             </h2>
 
-            <p className="text-gray-400 text-lg max-w-3xl mx-auto font-light">
+            <p className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto font-light leading-snug md:leading-relaxed">
               Traditional models break at scale because they rely on human effort
               over systemic structure. We flip the script.
             </p>
@@ -156,7 +156,7 @@ export default function WhyZryoss() {
         </div>
 
         {/* Mobile Cards */}
-        <div className="md:hidden space-y-6">
+        <div className="md:hidden space-y-4 md:space-y-6 lg:space-y-8">
           {comparisons.map((item, idx) => (
             <FadeUp key={idx} delay={idx * 0.08}>
               <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 relative overflow-hidden">
@@ -207,8 +207,8 @@ export default function WhyZryoss() {
 
         {/* Quote */}
         <FadeUp delay={0.45}>
-          <div className="mt-14 md:mt-20 text-center px-4">
-            <p className="text-2xl md:text-3xl font-light text-white leading-relaxed italic">
+          <div className="mt-10 md:mt-12 text-center px-4">
+            <p className="text-2xl md:text-3xl font-light text-white leading-snug md:leading-relaxed italic">
               "We do not sell services. <br className="hidden sm:block" />
               <span className="text-orange-400 font-semibold italic">
                 We run businesses through systems.

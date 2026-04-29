@@ -81,19 +81,19 @@ export default function PredictableJourneySection() {
   ];
 
   return (
-    <section className="relative bg-[#070A0F] py-12 md:py-16 overflow-hidden border-t border-white/5">
+    <section className="relative bg-[#070A0F] py-8 md:py-12 lg:py-16 overflow-hidden border-t border-white/5">
       {/* Background Glows */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/10 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/5 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12 px-4">
+        <div className="text-center max-w-4xl mx-auto mb-10 md:mb-12 px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 mb-4"
+            className="inline-flex items-center gap-2 mb-3"
           >
             <p className="text-xs tracking-[0.3em] uppercase text-orange-500 font-bold">
               Step-by-step system
@@ -105,7 +105,7 @@ export default function PredictableJourneySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
+            className="text-3xl md:text-4xl font-bold text-white leading-tight md:leading-snug"
           >
             A Clear System to <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Build &amp; Scale Your Brand</span>
           </motion.h2>
@@ -115,14 +115,14 @@ export default function PredictableJourneySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-6 text-gray-400 text-lg md:text-xl leading-relaxed font-light"
+            className="mt-4 text-gray-400 text-base md:text-lg leading-snug md:leading-relaxed font-light"
           >
             Whether you&apos;re starting fresh or already running a business — Zryoss gives you a structured path to grow.
           </motion.p>
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
           {steps.map((step, idx) => {
             const Icon = step.icon;
             return (
@@ -136,11 +136,11 @@ export default function PredictableJourneySection() {
                 className="group h-full"
               >
                 {/* Card Container */}
-                <div className="h-full rounded-[24px] border border-white/10 bg-[#0F1217] p-6 lg:p-8 transition-all duration-500 hover:border-orange-500/40 hover:bg-[#12161d] hover:shadow-[0_0_40px_rgba(249,115,22,0.1)] flex flex-col relative overflow-hidden">
+                <div className="h-full rounded-[24px] border border-white/10 bg-[#0F1217] p-5 lg:p-6 transition-all duration-500 hover:border-orange-500/40 hover:bg-[#12161d] hover:shadow-[0_0_40px_rgba(249,115,22,0.1)] flex flex-col relative overflow-hidden">
                   
                   <div className="relative z-10 flex flex-col h-full">
                     {/* Top Row: Step Label & Icon */}
-                    <div className="flex items-start justify-between mb-5">
+                    <div className="flex items-start justify-between mb-3">
                       <p className="text-orange-500 font-bold text-[10px] uppercase tracking-[0.2em] pt-1">
                         Step {step.id}
                       </p>
@@ -154,7 +154,7 @@ export default function PredictableJourneySection() {
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-orange-500 transition-colors duration-300">
                       {step.title}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-6 font-light">
+                    <p className="text-gray-400 text-sm leading-snug md:leading-relaxed mb-3 font-light">
                       {step.desc}
                     </p>
 

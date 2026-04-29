@@ -16,23 +16,23 @@ const CoreBrands = () => {
     return (
         <section
             id="core-model"
-            className="relative py-24 lg:py-32 bg-[#050505] overflow-hidden"
+            className="relative py-8 md:py-12 lg:py-16 bg-[#050505] overflow-hidden"
         >
             {/* Background Glow */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.03)_0%,transparent_70%)] pointer-events-none" />
 
-            <div className="relative max-w-[90rem] mx-auto px-6 lg:px-28 xl:px-32">
-                <div className="mb-16 text-center max-w-3xl mx-auto">
+            <div className="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+                <div className="mb-10 lg:mb-12 text-center max-w-3xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="text-orange-500 text-xs font-bold tracking-[0.4em] uppercase block mb-6">
+                        <span className="text-orange-500 text-xs font-bold tracking-[0.4em] uppercase block mb-3">
                             The Ecosystem
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white mb-6">
+                        <h2 className="text-3xl md:text-4xl font-bold leading-tight md:leading-snug text-white mb-4">
                             Core Execution <span className="text-orange-500">Brands</span>
                         </h2>
                         <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-transparent mx-auto rounded-full opacity-50" />

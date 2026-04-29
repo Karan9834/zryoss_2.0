@@ -78,7 +78,7 @@ export default function Hero() {
 
       {/* CONTENT */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="w-full px-6 lg:px-16 xl:px-20 max-w-7xl mx-auto">
+        <div className="w-full px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="max-w-2xl opacity-0 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-sm mb-5">
